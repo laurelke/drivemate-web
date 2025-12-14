@@ -4,36 +4,60 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
+const LINE_LINK = 'https://lin.ee/J22IVRg'
+
 export default function Header() {
   const [open, setOpen] = useState(false)
 
   return (
     <>
       {/* Header */}
-      <header className="fixed top-0 left-0 z-50 w-full bg-white border-b">
+      <header className="fixed top-0 left-0 z-50 w-full border-b bg-white">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/drivemate-logo.JPG"
-              alt="DriveMate"
+              alt="DriveMate 道路駕駛課程"
               width={36}
               height={36}
+              priority
             />
-            <span className="text-lg font-bold">DriveMate</span>
+            <span className="text-lg font-bold tracking-tight">
+              DriveMate
+            </span>
           </Link>
 
-          {/* Desktop Menu - 只在 md 以上顯示 */}
-<nav className="hidden md:flex items-center gap-6 text-sm">
-  <Link href="#courses">課程</Link>
-  <Link href="#pricing">價格</Link>
-  <Link href="#contact">聯絡</Link>
-</nav>
+          {/* Desktop Navigation */}
+          <nav
+            className="hidden items-center gap-6 text-sm md:flex"
+            aria-label="Primary Navigation"
+          >
+            <Link href="#courses" className="hover:text-black/70">
+              常見 Q&A
+            </Link>
+            <Link href="#pricing" className="hover:text-black/70">
+              付款方式
+            </Link>
+            <Link href="#contact" className="hover:text-black/70">
+              聯絡我們
+            </Link>
+            <a
+              href={LINE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-black px-4 py-2 text-white transition hover:scale-105"
+            >
+              立即預約
+            </a>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-2xl"
+            type="button"
+            className="text-2xl md:hidden"
             aria-label="Open menu"
+            aria-expanded={open}
             onClick={() => setOpen(true)}
           >
             ☰
@@ -47,26 +71,38 @@ export default function Header() {
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/40"
+            aria-hidden="true"
             onClick={() => setOpen(false)}
           />
 
-          {/* Drawer */}
-          <div className="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-white p-6 shadow-lg">
-            <div className="flex items-center justify-between mb-8">
+          {/* Drawer Panel */}
+          <div
+            className="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-white p-6 shadow-lg"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div className="mb-8 flex items-center justify-between">
               <span className="text-lg font-bold">選單</span>
               <button
+                type="button"
                 aria-label="Close menu"
-                onClick={() => setOpen(false)}
                 className="text-2xl"
+                onClick={() => setOpen(false)}
               >
                 ✕
               </button>
             </div>
 
             <nav className="flex flex-col gap-6 text-base">
-              <Link href="#courses" onClick={() => setOpen(false)}>課程</Link>
-              <Link href="#pricing" onClick={() => setOpen(false)}>價格</Link>
-              <Link href="#contact" onClick={() => setOpen(false)}>聯絡</Link>
+              <Link href="#courses" onClick={() => setOpen(false)}>
+                課程介紹
+              </Link>
+              <Link href="#pricing" onClick={() => setOpen(false)}>
+                價格方案
+              </Link>
+              <Link href="#contact" onClick={() => setOpen(false)}>
+                聯絡我們
+              </Link>
               <a
                 href="https://instagram.com"
                 target="_blank"
@@ -76,9 +112,15 @@ export default function Header() {
               </a>
             </nav>
 
-            <button className="mt-10 w-full rounded-lg bg-black py-3 text-white">
+            {/* Mobile CTA */}
+            <a
+              href={LINE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 block w-full rounded-lg bg-black py-3 text-center text-white transition hover:scale-[1.02]"
+            >
               立即預約
-            </button>
+            </a>
           </div>
         </div>
       )}
