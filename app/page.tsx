@@ -258,43 +258,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= Info ================= */}
+        {/* ================= Info ================= */}
       <section className="bg-white py-20">
-        {/* ⭐ 三個 Header 對應錨點（位置完全相同） */}
-        <div id="qa" className="scroll-mt-24" />
-        <div id="payment" className="scroll-mt-24" />
-        <div id="booking" className="scroll-mt-24" />
+        {/* ⭐ 唯一錨點（Header 三個都指向這裡） */}
+        <div
+          id="info-anchor"
+          className="scroll-mt-[96px]"
+        />
 
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
-            {infoCards.map((item) => {
-              const isOpen = open === item.key
-              return (
+        <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-6">
+          {infoCards.map((item) => {
+            const isOpen = open === item.key
+            return (
+              <div key={item.key} className="rounded-2xl border p-6">
                 <div
-                  key={item.key}
-                  className="min-w-[280px] rounded-2xl border p-6 shadow-sm"
+                  className="flex justify-between cursor-pointer"
+                  onClick={() => setOpen(isOpen ? null : item.key)}
                 >
-                  <div
-                    onClick={() => setOpen(isOpen ? null : item.key)}
-                    className="flex cursor-pointer justify-between"
-                  >
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
-                  </div>
-
-                  <div
-                    className={`transition-all ${
-                      isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
-                    }`}
-                  >
-                    <div className="border-t pt-4">{item.content}</div>
-                  </div>
+                  <h3 className="font-semibold">{item.title}</h3>
+                  <ChevronDown className={isOpen ? 'rotate-180' : ''} />
                 </div>
-              )
-            })}
-          </div>
+                {isOpen && <div className="mt-4">{item.content}</div>}
+              </div>
+            )
+          })}
         </div>
       </section>
+
 
       {/* ================= CTA ================= */}
       <section id="contact" className="bg-white py-24 text-center">
