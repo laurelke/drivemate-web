@@ -5,7 +5,7 @@ export default function HomePage() {
       <section
         className="relative flex min-h-[70vh] items-center justify-center text-white"
         style={{
-          backgroundImage: "url('/hero-driving.JPG')",
+          backgroundImage: "url('/hero-driving.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
