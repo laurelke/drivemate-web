@@ -17,7 +17,7 @@ export default function Home() {
               href="#contact"
               className="inline-block rounded-xl bg-black px-8 py-4 text-white text-base font-medium hover:bg-neutral-800 transition"
             >
-              立即預約試駕課程
+              立即預約
             </a>
           </div>
         </div>
