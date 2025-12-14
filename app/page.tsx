@@ -55,15 +55,56 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <div className="text-white max-w-2xl text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">DriveMate 道路駕駛課程</h1>
-            <p className="text-lg mb-6">從新手到進階操駕，陪你安全、自信地上路</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              DriveMate 道路駕駛課程
+            </h1>
+            <p className="text-lg mb-6">
+              從新手到進階操駕，陪你安全、自信地上路
+            </p>
             <a
               href={LINE_LINK}
               target="_blank"
-              className="inline-block rounded-full bg-black px-8 py-3 text-white"
+              className="inline-block rounded-full bg-black px-8 py-3 text-white
+                         transition-all duration-300
+                         hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,0,0.4)]
+                         animate-pulse hover:animate-none"
             >
               立即預約
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why DriveMate */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            為什麼選擇 DriveMate？
+          </h2>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: '實際道路教學',
+                desc: '非模擬環境，直接上路訓練，培養真正能應付日常交通的駕駛能力。',
+              },
+              {
+                title: '專業教練指導',
+                desc: '依學員程度客製課程，循序漸進提升技巧與信心。',
+              },
+              {
+                title: '安心陪駕',
+                desc: '強化路況判斷與心理建設，讓你上路不再緊張。',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md"
+              >
+                <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -73,19 +114,25 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">課程簡介</h2>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          {/* Mobile horizontal scroll */}
+          <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
             {courses.map((course) => {
               const isOpen = open === course.key
 
               return (
                 <div
                   key={course.key}
-                  onClick={() => setOpen(isOpen ? null : course.key)}
-                  className="group cursor-pointer rounded-2xl border bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg"
+                  className="min-w-[280px] md:min-w-0 rounded-2xl border bg-white p-6 shadow-sm transition hover:shadow-lg"
                 >
-                  <div className="flex items-start justify-between">
+                  {/* Clickable Header ONLY */}
+                  <div
+                    onClick={() => setOpen(isOpen ? null : course.key)}
+                    className="flex cursor-pointer items-start justify-between"
+                  >
                     <div>
-                      <h3 className="mb-1 text-xl font-semibold">{course.title}</h3>
+                      <h3 className="mb-1 text-xl font-semibold">
+                        {course.title}
+                      </h3>
                       <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
                         <Sparkles className="h-3 w-3" />
                         {course.badge}
@@ -110,7 +157,9 @@ export default function HomePage() {
                       isOpen ? 'max-h-40 mt-4' : 'max-h-0'
                     }`}
                   >
-                    <div className="border-t pt-4 text-gray-700">{course.detail}</div>
+                    <div className="border-t pt-4 text-gray-700">
+                      {course.detail}
+                    </div>
                   </div>
                 </div>
               )
@@ -119,44 +168,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why DriveMate */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold">為什麼選擇 DriveMate？</h2>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border p-6 text-center shadow-sm">
-              <h3 className="mb-2 text-lg font-semibold">實際道路教學</h3>
-              <p className="text-gray-600">
-                非模擬環境，直接上路訓練，培養真正能應付日常交通的駕駛能力。
-              </p>
-            </div>
-
-            <div className="rounded-2xl border p-6 text-center shadow-sm">
-              <h3 className="mb-2 text-lg font-semibold">專業教練指導</h3>
-              <p className="text-gray-600">
-                依學員程度客製課程，循序漸進提升技巧與信心。
-              </p>
-            </div>
-
-            <div className="rounded-2xl border p-6 text-center shadow-sm">
-              <h3 className="mb-2 text-lg font-semibold">安心陪駕</h3>
-              <p className="text-gray-600">
-                強化路況判斷與心理建設，讓你上路不再緊張。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="bg-white py-24 text-center">
-        <h2 className="mb-4 text-3xl font-bold">準備好開始你的駕駛旅程了嗎？</h2>
-        <p className="mb-8 text-gray-600">現在就預約課程，讓 DriveMate 陪你安全上路</p>
+        <h2 className="mb-4 text-3xl font-bold">
+          準備好開始你的駕駛旅程了嗎？
+        </h2>
+        <p className="mb-8 text-gray-600">
+          現在就預約課程，讓 DriveMate 陪你安全上路
+        </p>
         <a
           href={LINE_LINK}
           target="_blank"
-          className="inline-block rounded-full bg-black px-10 py-4 text-white"
+          className="inline-block rounded-full bg-black px-10 py-4 text-white
+                     transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
           立即預約
         </a>
