@@ -17,7 +17,7 @@ export default function HomePage() {
     }
   }, [])
 
-  /* ================= Header Active Scroll Spy（唯一新增） ================= */
+  /* ================= Header Active Scroll Spy ================= */
   useEffect(() => {
     const sections = [
       { id: 'courses' },
@@ -136,7 +136,6 @@ export default function HomePage() {
     },
   ]
 
-
   return (
     <>
       {/* ================= Hero ================= */}
@@ -193,7 +192,10 @@ export default function HomePage() {
       </section>
 
       {/* ================= Courses ================= */}
-      <section id="courses" className="bg-gray-50 py-20">
+      <section
+        id="courses"
+        className="bg-gray-50 py-20 scroll-mt-20"  /* ⭐新增 */
+      >
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
             道路駕駛課程介紹（新手・運動・賽道）
@@ -257,7 +259,10 @@ export default function HomePage() {
       </section>
 
       {/* ================= Info ================= */}
-      <section id="info" className="bg-white py-20">
+      <section
+        id="info"
+        className="bg-white py-20 scroll-mt-20"  /* ⭐新增 */
+      >
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
             ← 左右滑動查看更多資訊 →
@@ -294,7 +299,10 @@ export default function HomePage() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section id="contact" className="bg-white py-24 text-center">
+      <section
+        id="contact"
+        className="bg-white py-24 text-center scroll-mt-20" /* ⭐新增 */
+      >
         <h2 className="text-3xl font-bold mb-4">
           準備好開始你的駕駛旅程了嗎？
         </h2>
