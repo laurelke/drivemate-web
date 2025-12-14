@@ -143,6 +143,8 @@ export default function HomePage() {
     alt="DriveMate 專業道路駕駛課程"
     fill
     priority
+    quality={90}
+    sizes="100vw"
     className="object-cover"
     style={{ objectPosition: '50% 30%' }}
   />
