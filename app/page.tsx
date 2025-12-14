@@ -14,7 +14,7 @@ export default function HomePage() {
       key: 'beginner',
       title: '新手上路',
       badge: '最受歡迎',
-      summary: '適合剛考到駕照、缺乏實際道路經驗者 📍全台到府服務',
+      summary: '適合剛考到駕照、缺乏實際道路經驗者（📍 全台到府服務）',
       detail:
         '基本控制、市區道路駕駛、各類停車技巧，建立正確車感與駕駛信心。',
       duration: '單堂 180 分鐘',
@@ -28,7 +28,7 @@ export default function HomePage() {
       key: 'advanced',
       title: '運動駕駛',
       badge: '技術提升',
-      summary: '適合已有駕駛經驗、想提升操控技巧者 📍全台到府服務',
+      summary: '適合已有駕駛經驗、想提升操控技巧者（📍 全台到府服務）',
       detail:
         '學習掌握車輛荷重轉移、方向盤操作、山路駕駛路線選擇與實戰應用。',
       duration: '單堂 180 分鐘',
@@ -43,8 +43,7 @@ export default function HomePage() {
       title: '賽道駕駛',
       badge: '進階體驗',
       summary: '適合熱愛操控與極限體驗的學員',
-      detail:
-        '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
+      detail: '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
       duration: '單節 30 分鐘',
       pricing: [{ label: '4 節', price: '$12,000' }],
     },
@@ -88,7 +87,7 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            為什麼選擇 DriveMate 道路駕駛課程？
+            為什麼選擇 DriveMate 道路駕駛教練？
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -173,30 +172,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ / Pricing / Reservation Info Cards */}
       <section id="courses" className="bg-white py-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="mb-10 text-center text-3xl font-bold">常見 Q&A</h2>
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border p-6 shadow-sm">
+              <h3 className="mb-4 text-lg font-semibold">常見 Q&A</h3>
+              <p className="text-gray-600 text-sm">
+                可以使用自己的車或教練車，新手完全沒經驗也可上課。
+                新手上路與運動駕駛提供全台到府服務。
+              </p>
+            </div>
 
-          <div className="space-y-6 text-gray-700">
-            <p><strong>Q：</strong>可以使用自己的車上課嗎？<br />A：可以，或使用教練車。</p>
-            <p><strong>Q：</strong>完全沒經驗可以上課嗎？<br />A：可以，新手上路專為此設計。</p>
-            <p><strong>Q：</strong>是否提供到府服務？<br />A：新手上路與運動駕駛課程提供全台到府服務。</p>
+            <div className="rounded-2xl border p-6 shadow-sm">
+              <h3 className="mb-4 text-lg font-semibold">付款方式</h3>
+              <p className="text-gray-600 text-sm">
+                LINE 預約確認後付款，支援單堂與多堂優惠方案。
+              </p>
+            </div>
+
+            <div className="rounded-2xl border p-6 shadow-sm">
+              <h3 className="mb-4 text-lg font-semibold">預約資訊</h3>
+              <p className="text-gray-600 text-sm">
+                點擊立即預約加入 LINE，由教練協助安排課程時間。
+              </p>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* Pricing */}
-      <section id="pricing" className="bg-gray-50 py-20 text-center">
-        <h2 className="mb-6 text-3xl font-bold">付款方式</h2>
-        <p className="text-gray-600">LINE 預約確認後付款，支援多堂優惠方案</p>
       </section>
 
       {/* Contact */}
       <section id="contact" className="bg-white py-24 text-center">
         <h2 className="mb-4 text-3xl font-bold">聯絡我們</h2>
         <p className="mb-8 text-gray-600">
-          歡迎透過 LINE 與 DriveMate 聯絡
+          歡迎透過 LINE 與 DriveMate 教練聯絡
         </p>
         <a
           href={LINE_LINK}
