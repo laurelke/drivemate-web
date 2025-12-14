@@ -139,16 +139,13 @@ export default function HomePage() {
   {/* 背景圖容器（限制最大寬度，防模糊） */}
   <div className="absolute inset-0 mx-auto max-w-[1920px]">
     <Image
-      src="/hero-driving.jpg"
-      alt="DriveMate 專業道路駕駛課程"
-      fill
-      priority
-      sizes="100vw"
-      className="object-cover animate-hero-zoom"
-      style={{
-        objectPosition: '50% 30%', // ⭐ 你指定的構圖重心
-      }}
-    />
+    src="/hero-driving.jpg"
+    alt="DriveMate 專業道路駕駛課程"
+    fill
+    priority
+    className="object-cover"
+    style={{ objectPosition: '50% 30%' }}
+  />
   </div>
 
   {/* 遮罩 */}
