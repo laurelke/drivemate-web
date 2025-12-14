@@ -1,9 +1,8 @@
 'use client'
 
-import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import { ChevronDown, Sparkles, Hand } from 'lucide-react'
+import { ChevronDown, Sparkles } from 'lucide-react'
 
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 
@@ -17,7 +16,8 @@ export default function HomePage() {
       title: '新手上路',
       badge: '最受歡迎',
       summary: '適合剛考到駕照、缺乏實際道路經驗者',
-      detail: '基本控制、市區道路駕駛、各類停車技巧，建立正確車感與駕駛信心。',
+      detail:
+        '基本控制、市區道路駕駛、各類停車技巧，建立正確車感與駕駛信心。',
       duration: '單堂 180 分鐘',
       highlight: '📍 全台到府服務',
       pricing: [
@@ -31,7 +31,8 @@ export default function HomePage() {
       title: '運動駕駛',
       badge: '技術提升',
       summary: '適合已有駕駛經驗、想提升操控技巧者',
-      detail: '學習掌握車輛荷重轉移、方向盤操作、山路駕駛路線選擇與實戰應用。',
+      detail:
+        '學習掌握車輛荷重轉移、方向盤操作、山路駕駛路線選擇與實戰應用。',
       duration: '單堂 180 分鐘',
       highlight: '📍 全台到府服務',
       pricing: [
@@ -51,67 +52,103 @@ export default function HomePage() {
     },
   ]
 
+  /* ================= 資訊卡片 ================= */
+  const infoCards = [
+    {
+      key: 'qa',
+      title: '常見 Q&A',
+      content: (
+        <ul className="space-y-3 text-sm text-gray-600">
+          <li>Q：可以使用自己的車上課嗎？<br />A：可以，或加購教練車。</li>
+          <li>Q：完全沒經驗可以上課嗎？<br />A：可以，新手上路專為此設計。</li>
+          <li>Q：可以帶家人旁聽嗎？<br />A：以學員專注度為優先，需陪同請事先告知。</li>
+          <li>Q：使用自家車會不會危險？<br />A：教練具備專業訓練與經驗，能完整控管教學安全。</li>
+        </ul>
+      ),
+    },
+    {
+      key: 'payment',
+      title: '付款方式',
+      content: (
+        <div className="space-y-2 text-sm text-gray-600">
+          <p>付款方式僅接受 <b>轉帳匯款</b></p>
+          <p>銀行：005 土地銀行</p>
+          <p>帳號：022005804039</p>
+          <p className="pt-2 text-xs text-gray-500">
+            轉帳完成麻煩主動告知並提供轉帳後五碼，我們將於確認款項後，主動告知課程預約完成。
+          </p>
+        </div>
+      ),
+    },
+    {
+      key: 'booking',
+      title: '預約資訊',
+      content: (
+        <div className="space-y-3 text-sm text-gray-600">
+          <p>課程時段：</p>
+          <ul className="list-disc pl-5">
+            <li>09:00 – 12:00</li>
+            <li>14:00 – 17:00</li>
+            <li>19:00 – 22:00</li>
+          </ul>
+          <p>單次課程為 3 小時</p>
+          <p>教練將依學員狀況設定 4–8 個課綱，協助改善駕駛問題。</p>
+        </div>
+      ),
+    },
+  ]
+
   return (
     <>
-      {/* ================= SEO ================= */}
-      <Head>
-        <title>DriveMate 道路駕駛課程｜新手上路・運動駕駛・賽道體驗</title>
-        <meta
-          name="description"
-          content="DriveMate 提供一對一專業道路駕駛課程，從新手上路、運動駕駛到賽道體驗，全台到府服務，安全建立駕駛信心。"
-        />
-        <meta
-          name="keywords"
-          content="道路駕駛課程, 新手駕駛, 到府駕駛教學, 運動駕駛, 賽道駕駛"
-        />
-
-        {/* FAQ 結構化資料 */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: [
-                {
-                  '@type': 'Question',
-                  name: '可以使用自己的車上課嗎？',
-                  acceptedAnswer: { '@type': 'Answer', text: '可以，或加購教練車。' },
-                },
-                {
-                  '@type': 'Question',
-                  name: '完全沒經驗可以上課嗎？',
-                  acceptedAnswer: { '@type': 'Answer', text: '可以，新手上路專為此設計。' },
-                },
-                {
-                  '@type': 'Question',
-                  name: '可以帶家人旁聽嗎？',
-                  acceptedAnswer: { '@type': 'Answer', text: '以學員專注度為優先，若需陪同可事先告知。' },
-                },
-                {
-                  '@type': 'Question',
-                  name: '使用自家車會不會危險？',
-                  acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: '教練具備專業訓練與經驗，可完整控管教學安全。',
-                  },
-                },
-              ],
-            }),
-          }}
-        />
-      </Head>
-
       {/* ================= Hero ================= */}
       <section className="relative h-[70vh] w-full">
-        <Image src="/hero-driving.jpg" alt="DriveMate 專業道路駕駛課程" fill className="object-cover" priority />
+        <Image
+          src="/hero-driving.jpg"
+          alt="DriveMate 專業道路駕駛課程"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <div className="text-white max-w-2xl text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">DriveMate 道路駕駛課程</h1>
-            <p className="text-lg mb-6">專業教練一對一指導<br />從新手到進階，安全建立駕駛信心</p>
-            <a href={LINE_LINK} target="_blank" className="inline-block rounded-full bg-black px-8 py-3 text-white animate-pulse">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              DriveMate 道路駕駛課程
+            </h1>
+            <p className="text-lg mb-6">
+              專業教練一對一指導<br />
+              從新手到進階，安全建立駕駛信心
+            </p>
+            <a
+              href={LINE_LINK}
+              target="_blank"
+              className="inline-block rounded-full bg-black px-8 py-3 text-white
+                         transition-all duration-300 hover:scale-105 hover:shadow-lg
+                         animate-pulse hover:animate-none"
+            >
               立即預約
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= Why ================= */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            為什麼選擇 DriveMate 道路駕駛課程？
+          </h2>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              ['實際道路教學', '真實交通環境訓練，學到每天都用得到的駕駛技巧'],
+              ['專業教練指導', '依學員程度客製課程，循序漸進提升'],
+              ['安心陪駕', '強化路況判斷與心理穩定度，安心上路'],
+            ].map(([t, d]) => (
+              <div key={t} className="rounded-2xl border p-6 text-center shadow-sm">
+                <h3 className="mb-2 font-semibold">{t}</h3>
+                <p className="text-gray-600">{d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -119,33 +156,42 @@ export default function HomePage() {
       {/* ================= Courses ================= */}
       <section id="courses" className="bg-gray-50 py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-6 text-center text-3xl font-bold">道路駕駛課程介紹</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            道路駕駛課程介紹（新手・運動・賽道）
+          </h2>
 
-          {/* 行動版滑動提示 */}
-          <div className="mb-6 flex justify-center gap-2 text-sm text-gray-400 md:hidden animate-bounce">
-            <Hand className="h-4 w-4" /> 左右滑動查看更多
-          </div>
+          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
+            ← 左右滑動查看更多課程 →
+          </p>
 
-          <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
-            {courses.map(course => {
+          <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
+            {courses.map((course) => {
               const isOpen = open === course.key
               return (
                 <div key={course.key} className="min-w-[280px] rounded-2xl border bg-white p-6 shadow-sm">
-                  <div onClick={() => setOpen(isOpen ? null : course.key)} className="flex justify-between cursor-pointer">
+                  <div
+                    onClick={() => setOpen(isOpen ? null : course.key)}
+                    className="flex cursor-pointer justify-between"
+                  >
                     <div>
-                      <h3 className="text-xl font-semibold">{course.title}</h3>
+                      <h3 className="font-semibold text-xl">{course.title}</h3>
                       <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
-                        <Sparkles className="h-3 w-3" />{course.badge}
+                        <Sparkles className="h-3 w-3" />
+                        {course.badge}
                       </span>
                     </div>
                     <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
                   </div>
 
                   <p className="mt-4 text-gray-600">{course.summary}</p>
-                  {course.highlight && <p className="mt-2 text-sm">{course.highlight}</p>}
+                  {course.highlight && (
+                    <p className="mt-2 text-sm font-medium text-gray-700">
+                      {course.highlight}
+                    </p>
+                  )}
                   <p className="mt-2 text-sm text-gray-500">⏱ {course.duration}</p>
 
-                  <div className={`${isOpen ? 'max-h-96 mt-4' : 'max-h-0'} overflow-hidden transition-all`}>
+                  <div className={`transition-all ${isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'}`}>
                     <div className="border-t pt-4 space-y-3">
                       <p>{course.detail}</p>
                       <ul className="text-sm text-gray-600">
@@ -162,39 +208,53 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= Q&A ================= */}
-      <section id="qa" className="bg-white py-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-3xl font-bold mb-6">常見 Q&A</h2>
-          <ul className="space-y-4 text-gray-600">
-            <li>可以使用自己的車上課嗎？可以，或加購教練車。</li>
-            <li>完全沒經驗可以上課嗎？可以，新手上路專為此設計。</li>
-            <li>可以帶家人旁聽嗎？需事先告知。</li>
-            <li>使用自家車會不會危險？教練可完整控管安全。</li>
-          </ul>
+      {/* ================= Info ================= */}
+      <section id="info" className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+
+          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
+            ← 左右滑動查看更多資訊 →
+          </p>
+
+          <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
+            {infoCards.map((item) => {
+              const isOpen = open === item.key
+              return (
+                <div key={item.key} className="min-w-[280px] rounded-2xl border p-6 shadow-sm">
+                  <div
+                    onClick={() => setOpen(isOpen ? null : item.key)}
+                    className="flex cursor-pointer justify-between"
+                  >
+                    <h3 className="font-semibold">{item.title}</h3>
+                    <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
+                  </div>
+                  <div className={`transition-all ${isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'}`}>
+                    <div className="border-t pt-4">{item.content}</div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </section>
 
-      <section id="payment" className="bg-gray-50 py-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-3xl font-bold mb-6">付款方式</h2>
-          <p>僅接受轉帳匯款<br />005 土地銀行<br />022005804039</p>
-        </div>
-      </section>
-
-      <section id="booking" className="bg-white py-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-3xl font-bold mb-6">預約資訊</h2>
-          <p>09:00–12:00 / 14:00–17:00 / 19:00–22:00<br />單次課程 3 小時</p>
-        </div>
-      </section>
-
+      {/* ================= CTA ================= */}
       <section id="contact" className="bg-white py-24 text-center">
-        <h2 className="text-3xl font-bold mb-4">準備好開始你的駕駛旅程了嗎？</h2>
-        <a href={LINE_LINK} target="_blank" className="inline-block rounded-full bg-black px-10 py-4 text-white">
+        <h2 className="text-3xl font-bold mb-4">
+          準備好開始你的駕駛旅程了嗎？
+        </h2>
+        <p className="mb-8 text-gray-600">
+          立即預約 DriveMate 道路駕駛課程，由專業教練陪同，安心累積實際駕駛經驗。
+        </p>
+        <a
+          href={LINE_LINK}
+          target="_blank"
+          className="inline-block rounded-full bg-black px-10 py-4 text-white hover:scale-105 transition"
+        >
           DriveMate 官方 LINE
         </a>
       </section>
     </>
   )
 }
+
