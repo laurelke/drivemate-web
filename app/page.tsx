@@ -259,10 +259,10 @@ export default function HomePage() {
       </section>
 
       {/* ================= Info ================= */}
-      <section
-        id="info"
-        className="bg-white py-20 scroll-mt-20"  /* ⭐新增 */
-      >
+      <section className="bg-white py-20">
+        {/* ⭐ 新增：精準對齊 Header 導航的錨點 */}
+        <div id="info-anchor" className="scroll-mt-20" />
+
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
             ← 左右滑動查看更多資訊 →
@@ -299,10 +299,7 @@ export default function HomePage() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section
-        id="contact"
-        className="bg-white py-24 text-center scroll-mt-20" /* ⭐新增 */
-      >
+      <section id="contact" className="bg-white py-24 text-center scroll-mt-20">
         <h2 className="text-3xl font-bold mb-4">
           準備好開始你的駕駛旅程了嗎？
         </h2>
