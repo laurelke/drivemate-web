@@ -9,15 +9,17 @@ const LINE_LINK = 'https://lin.ee/J22IVRg'
 export default function HomePage() {
   const [open, setOpen] = useState<string | null>(null)
 
+  /* ================= 課程資料 ================= */
   const courses = [
     {
       key: 'beginner',
       title: '新手上路',
       badge: '最受歡迎',
-      summary: '適合剛考到駕照、缺乏實際道路經驗者 📍 全台到府服務 ',
+      summary: '適合剛考到駕照、缺乏實際道路經驗者',
       detail:
         '基本控制、市區道路駕駛、各類停車技巧，建立正確車感與駕駛信心。',
       duration: '單堂 180 分鐘',
+      highlight: '📍 全台到府服務',
       pricing: [
         { label: '3 小時', price: '$4,990' },
         { label: '12 小時', price: '$16,990' },
@@ -28,10 +30,11 @@ export default function HomePage() {
       key: 'advanced',
       title: '運動駕駛',
       badge: '技術提升',
-      summary: '適合已有駕駛經驗、想提升操控技巧者 📍 全台到府服務 ',
+      summary: '適合已有駕駛經驗、想提升操控技巧者',
       detail:
         '學習掌握車輛荷重轉移、方向盤操作、山路駕駛路線選擇與實戰應用。',
       duration: '單堂 180 分鐘',
+      highlight: '📍 全台到府服務',
       pricing: [
         { label: '3 小時', price: '$9,000' },
         { label: '9 小時', price: '$25,000' },
@@ -43,22 +46,24 @@ export default function HomePage() {
       title: '賽道駕駛',
       badge: '進階體驗',
       summary: '適合熱愛操控與極限體驗的學員',
-      detail: '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
+      detail:
+        '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
       duration: '單節 30 分鐘',
       pricing: [{ label: '4 節', price: '$12,000' }],
     },
   ]
 
+  /* ================= 資訊卡片（Q&A / 付款 / 預約） ================= */
   const infoCards = [
     {
-      key: 'faq',
+      key: 'qa',
       title: '常見 Q&A',
       content: (
         <ul className="space-y-3 text-sm text-gray-600">
-          <li>Q: 可以使用自己的車上課嗎？<br />A: 可以，或加購教練車。</li>
-          <li>Q: 完全沒經驗可以上課嗎？<br />A: 可以，新手上路專為此設計。</li>
-          <li>Q: 可以帶家人旁聽嗎？<br />A: 以學員專注度為優先，若需陪同可事先告知。</li>
-          <li>Q: 使用自家車會不會危險？<br />A: 我們受過極度嚴格的培訓且有一定的專業水準及信心來控管教學過程的安全性。</li>
+          <li>Q：可以使用自己的車上課嗎？<br />A：可以，或加購教練車。</li>
+          <li>Q：完全沒經驗可以上課嗎？<br />A：可以，新手上路專為此設計。</li>
+          <li>Q：可以帶家人旁聽嗎？<br />A：以學員專注度為優先，需陪同請事先告知。</li>
+          <li>Q：使用自家車會不會危險？<br />A：教練具備專業訓練與經驗，能完整控管教學安全。</li>
         </ul>
       ),
     },
@@ -66,11 +71,11 @@ export default function HomePage() {
       key: 'payment',
       title: '付款方式',
       content: (
-        <div className="space-y-3 text-sm text-gray-600">
-          <p>僅接受「轉帳匯款」</p>
+        <div className="space-y-2 text-sm text-gray-600">
+          <p>付款方式僅接受 <b>轉帳匯款</b></p>
           <p>銀行：005 土地銀行</p>
-          <p>帳戶：022005804039</p>
-          <p>
+          <p>帳號：022005804039</p>
+          <p className="pt-2 text-xs text-gray-500">
             轉帳完成麻煩主動告知並提供轉帳後五碼，我們將於確認款項後，主動告知課程預約完成。
           </p>
         </div>
@@ -83,14 +88,12 @@ export default function HomePage() {
         <div className="space-y-3 text-sm text-gray-600">
           <p>課程時段：</p>
           <ul className="list-disc pl-5">
-            <li>09:00 - 12:00</li>
-            <li>14:00 - 17:00</li>
-            <li>19:00 - 22:00</li>
+            <li>09:00 – 12:00</li>
+            <li>14:00 – 17:00</li>
+            <li>19:00 – 22:00</li>
           </ul>
-          <p>單次課程 3 小時</p>
-          <p>
-            教練將依學員狀況設定 4–8 個課綱，協助解決駕駛問題。
-          </p>
+          <p>單次課程為 3 小時</p>
+          <p>教練將依學員狀況設定 4–8 個課綱，協助改善駕駛問題。</p>
         </div>
       ),
     },
@@ -98,38 +101,126 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero / Why / Courses 區塊完全不動 */}
-      {/* ……（中略，與你原本完全一致）…… */}
+      {/* ================= Hero ================= */}
+      <section className="relative h-[70vh] w-full">
+        <Image
+          src="/hero-driving.jpg"
+          alt="DriveMate 專業道路駕駛課程"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div className="text-white max-w-2xl text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              DriveMate 道路駕駛課程
+            </h1>
+            <p className="text-lg mb-6">
+              專業教練一對一指導<br />
+              從新手到進階，安全建立駕駛信心
+            </p>
+            <a
+              href={LINE_LINK}
+              target="_blank"
+              className="inline-block rounded-full bg-black px-8 py-3 text-white
+                         transition-all duration-300
+                         hover:scale-105 hover:shadow-lg animate-pulse hover:animate-none"
+            >
+              立即預約
+            </a>
+          </div>
+        </div>
+      </section>
 
-      {/* Q&A / Payment / Booking - Expandable */}
+      {/* ================= Why ================= */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
-            {infoCards.map((item) => {
-              const isOpen = open === item.key
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            為什麼選擇 DriveMate？
+          </h2>
 
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              ['實際道路教學', '真實交通環境，學到每天都用得到的技巧'],
+              ['專業教練指導', '依學員程度客製課程'],
+              ['安心陪駕', '穩定心理、安心上路'],
+            ].map(([t, d]) => (
+              <div key={t} className="rounded-2xl border p-6 text-center shadow-sm">
+                <h3 className="mb-2 font-semibold">{t}</h3>
+                <p className="text-gray-600">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= Courses ================= */}
+      <section className="bg-gray-50 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            道路駕駛課程介紹
+          </h2>
+
+          <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
+            {courses.map((course) => {
+              const isOpen = open === course.key
               return (
-                <div
-                  key={item.key}
-                  className="min-w-[280px] md:min-w-0 rounded-2xl border bg-white p-6 shadow-sm transition hover:shadow-lg"
-                >
+                <div key={course.key} className="min-w-[280px] rounded-2xl border bg-white p-6 shadow-sm">
                   <div
-                    onClick={() => setOpen(isOpen ? null : item.key)}
-                    className="flex cursor-pointer items-center justify-between"
+                    onClick={() => setOpen(isOpen ? null : course.key)}
+                    className="flex cursor-pointer justify-between"
                   >
-                    <h3 className="text-lg font-semibold">{item.title}</h3>
-                    <ChevronDown
-                      className={`h-5 w-5 text-gray-400 transition-transform ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
-                    />
+                    <div>
+                      <h3 className="font-semibold text-xl">{course.title}</h3>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
+                        <Sparkles className="h-3 w-3" />
+                        {course.badge}
+                      </span>
+                    </div>
+                    <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
                   </div>
 
+                  <p className="mt-4 text-gray-600">{course.summary}</p>
+                  {course.highlight && (
+                    <p className="mt-2 text-sm font-medium text-gray-700">
+                      {course.highlight}
+                    </p>
+                  )}
+                  <p className="mt-2 text-sm text-gray-500">⏱ {course.duration}</p>
+
+                  <div className={`transition-all ${isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'}`}>
+                    <div className="border-t pt-4 space-y-3">
+                      <p>{course.detail}</p>
+                      <ul className="text-sm text-gray-600">
+                        {course.pricing.map(p => (
+                          <li key={p.label}>▸ {p.label}｜{p.price}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= Info Cards ================= */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
+            {infoCards.map((item) => {
+              const isOpen = open === item.key
+              return (
+                <div key={item.key} className="min-w-[280px] rounded-2xl border p-6 shadow-sm">
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      isOpen ? 'max-h-96 mt-4' : 'max-h-0'
-                    }`}
+                    onClick={() => setOpen(isOpen ? null : item.key)}
+                    className="flex cursor-pointer justify-between"
                   >
+                    <h3 className="font-semibold">{item.title}</h3>
+                    <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
+                  </div>
+                  <div className={`transition-all ${isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'}`}>
                     <div className="border-t pt-4">{item.content}</div>
                   </div>
                 </div>
@@ -139,17 +230,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 聯絡我們（完全不動） */}
-      <section id="contact" className="bg-white py-24 text-center">
-        <h2 className="mb-4 text-3xl font-bold">準備好開始你的駕駛旅程了嗎？</h2>
+      {/* ================= CTA ================= */}
+      <section className="bg-white py-24 text-center">
+        <h2 className="text-3xl font-bold mb-4">
+          準備好開始你的駕駛旅程了嗎？
+        </h2>
         <p className="mb-8 text-gray-600">
-          立即加入 DriveMate 道路駕駛課程，由專業教練陪同，安心累積實際駕駛經驗。
+          立即預約 DriveMate 道路駕駛課程，由專業教練陪同，安心累積實際駕駛經驗。
         </p>
         <a
           href={LINE_LINK}
           target="_blank"
-          className="inline-block rounded-full bg-black px-10 py-4 text-white
-                     transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          className="inline-block rounded-full bg-black px-10 py-4 text-white hover:scale-105 transition"
         >
           DriveMate 官方LINE
         </a>
