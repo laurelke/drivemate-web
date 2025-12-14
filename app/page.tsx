@@ -88,7 +88,7 @@ export default function HomePage() {
               <h3 className="mb-2 text-lg font-semibold">實際道路教學</h3>
               <p className="text-gray-600">
                 以真實交通環境進行訓練，非模擬、不紙上談兵，
-                學到的是每天都用得到的駕駛能力。
+                學到的是每天都用得到的駕駛技巧。
               </p>
             </div>
 
@@ -179,7 +179,7 @@ export default function HomePage() {
         </h2>
         <p className="mb-8 text-gray-600">
           立即加入 DriveMate 道路駕駛課程，
-          由專業教練陪同，安心累積實際駕駛經驗
+          由專業教練陪同，安心累積實際駕駛經驗。
         </p>
         <a
           href={LINE_LINK}
