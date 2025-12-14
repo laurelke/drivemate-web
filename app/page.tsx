@@ -181,7 +181,8 @@ export default function HomePage() {
           準備好開始你的駕駛旅程了嗎？
         </h2>
         <p className="mb-8 text-gray-600">
-          立即加入 DriveMate，道路駕駛由專業教練陪同
+          立即加入 DriveMate 道路駕駛課程，
+          由專業教練陪同，安心累積實際駕駛經驗。
         </p>
         <a
           href={LINE_LINK}
