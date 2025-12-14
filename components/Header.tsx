@@ -40,7 +40,7 @@ export default function Header() {
               付款方式
             </Link>
             <Link href="#contact" className="hover:text-black/70">
-              聯絡我們
+              預約資訊
             </Link>
             <a
               href={LINE_LINK}
@@ -101,7 +101,7 @@ export default function Header() {
                 付款方式
               </Link>
               <Link href="#contact" onClick={() => setOpen(false)}>
-                聯絡我們
+                預約資訊
               </Link>
               <a
                 href="https://instagram.com"
