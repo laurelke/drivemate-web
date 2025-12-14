@@ -95,10 +95,10 @@ export default function Header() {
 
             <nav className="flex flex-col gap-6 text-base">
               <Link href="#courses" onClick={() => setOpen(false)}>
-                課程介紹
+                常見Q&A
               </Link>
               <Link href="#pricing" onClick={() => setOpen(false)}>
-                價格方案
+                付款方式
               </Link>
               <Link href="#contact" onClick={() => setOpen(false)}>
                 聯絡我們
