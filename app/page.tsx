@@ -46,14 +46,13 @@ export default function HomePage() {
       title: '賽道駕駛',
       badge: '進階體驗',
       summary: '適合熱愛操控與極限體驗的學員',
-      detail:
-        '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
+      detail: '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
       duration: '單節 30 分鐘',
       pricing: [{ label: '4 節', price: '$12,000' }],
     },
   ]
 
-  /* ================= 資訊卡片（Q&A / 付款 / 預約） ================= */
+  /* ================= 資訊卡片 ================= */
   const infoCards = [
     {
       key: 'qa',
@@ -123,8 +122,8 @@ export default function HomePage() {
               href={LINE_LINK}
               target="_blank"
               className="inline-block rounded-full bg-black px-8 py-3 text-white
-                         transition-all duration-300
-                         hover:scale-105 hover:shadow-lg animate-pulse hover:animate-none"
+                         transition-all duration-300 hover:scale-105 hover:shadow-lg
+                         animate-pulse hover:animate-none"
             >
               立即預約
             </a>
@@ -155,11 +154,15 @@ export default function HomePage() {
       </section>
 
       {/* ================= Courses ================= */}
-      <section className="bg-gray-50 py-20">
+      <section id="courses" className="bg-gray-50 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
             道路駕駛課程介紹（新手・運動・賽道）
           </h2>
+
+          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
+            ← 左右滑動查看更多課程 →
+          </p>
 
           <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
             {courses.map((course) => {
@@ -205,9 +208,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= Info Cards ================= */}
-      <section className="bg-white py-20">
+      {/* ================= Info ================= */}
+      <section id="info" className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
+
+          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
+            ← 左右滑動查看更多資訊 →
+          </p>
+
           <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
             {infoCards.map((item) => {
               const isOpen = open === item.key
@@ -231,7 +239,7 @@ export default function HomePage() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="bg-white py-24 text-center">
+      <section id="contact" className="bg-white py-24 text-center">
         <h2 className="text-3xl font-bold mb-4">
           準備好開始你的駕駛旅程了嗎？
         </h2>
@@ -243,7 +251,7 @@ export default function HomePage() {
           target="_blank"
           className="inline-block rounded-full bg-black px-10 py-4 text-white hover:scale-105 transition"
         >
-          DriveMate 官方LINE
+          DriveMate 官方 LINE
         </a>
       </section>
     </>
