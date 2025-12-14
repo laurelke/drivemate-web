@@ -17,6 +17,36 @@ export default function HomePage() {
     }
   }, [])
 
+  /* ================= Header Active Scroll Spy（唯一新增） ================= */
+  useEffect(() => {
+    const sections = [
+      { id: 'courses' },
+      { id: 'info' },
+      { id: 'contact' },
+    ]
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            history.replaceState(null, '', `#${entry.target.id}`)
+          }
+        })
+      },
+      {
+        rootMargin: '-40% 0px -50% 0px',
+        threshold: 0,
+      }
+    )
+
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   /* ================= 課程資料 ================= */
   const courses = [
     {
@@ -105,6 +135,7 @@ export default function HomePage() {
       ),
     },
   ]
+
 
   return (
     <>
