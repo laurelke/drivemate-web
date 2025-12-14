@@ -1,13 +1,21 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronDown, Sparkles } from 'lucide-react'
 
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 
 export default function HomePage() {
   const [open, setOpen] = useState<string | null>(null)
+
+  /* ================= 全站平滑滾動 ================= */
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth'
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto'
+    }
+  }, [])
 
   /* ================= 課程資料 ================= */
   const courses = [
@@ -92,7 +100,7 @@ export default function HomePage() {
             <li>19:00 – 22:00</li>
           </ul>
           <p>單次課程為 3 小時</p>
-          <p>教練將依學員狀況設定 4–8 個課綱，協助改善駕駛問題。</p>
+          <p>教練將依學員狀況設定 2–3 個課綱，協助改善駕駛問題。</p>
         </div>
       ),
     },
@@ -168,7 +176,10 @@ export default function HomePage() {
             {courses.map((course) => {
               const isOpen = open === course.key
               return (
-                <div key={course.key} className="min-w-[280px] rounded-2xl border bg-white p-6 shadow-sm">
+                <div
+                  key={course.key}
+                  className="min-w-[280px] rounded-2xl border bg-white p-6 shadow-sm"
+                >
                   <div
                     onClick={() => setOpen(isOpen ? null : course.key)}
                     className="flex cursor-pointer justify-between"
@@ -191,12 +202,18 @@ export default function HomePage() {
                   )}
                   <p className="mt-2 text-sm text-gray-500">⏱ {course.duration}</p>
 
-                  <div className={`transition-all ${isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'}`}>
+                  <div
+                    className={`transition-all ${
+                      isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
+                    }`}
+                  >
                     <div className="border-t pt-4 space-y-3">
                       <p>{course.detail}</p>
                       <ul className="text-sm text-gray-600">
-                        {course.pricing.map(p => (
-                          <li key={p.label}>▸ {p.label}｜{p.price}</li>
+                        {course.pricing.map((p) => (
+                          <li key={p.label}>
+                            ▸ {p.label}｜{p.price}
+                          </li>
                         ))}
                       </ul>
                     </div>
@@ -211,7 +228,6 @@ export default function HomePage() {
       {/* ================= Info ================= */}
       <section id="info" className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
-
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
             ← 左右滑動查看更多資訊 →
           </p>
@@ -220,7 +236,10 @@ export default function HomePage() {
             {infoCards.map((item) => {
               const isOpen = open === item.key
               return (
-                <div key={item.key} className="min-w-[280px] rounded-2xl border p-6 shadow-sm">
+                <div
+                  key={item.key}
+                  className="min-w-[280px] rounded-2xl border p-6 shadow-sm"
+                >
                   <div
                     onClick={() => setOpen(isOpen ? null : item.key)}
                     className="flex cursor-pointer justify-between"
@@ -228,7 +247,12 @@ export default function HomePage() {
                     <h3 className="font-semibold">{item.title}</h3>
                     <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
                   </div>
-                  <div className={`transition-all ${isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'}`}>
+
+                  <div
+                    className={`transition-all ${
+                      isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
+                    }`}
+                  >
                     <div className="border-t pt-4">{item.content}</div>
                   </div>
                 </div>
@@ -257,5 +281,3 @@ export default function HomePage() {
     </>
   )
 }
-
-
