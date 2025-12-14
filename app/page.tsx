@@ -130,7 +130,9 @@ export default function HomePage() {
                     className="flex cursor-pointer items-start justify-between"
                   >
                     <div>
-                      <h3 className="mb-1 text-xl font-semibold">{course.title}</h3>
+                      <h3 className="mb-1 text-xl font-semibold">
+                        {course.title}
+                      </h3>
                       <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
                         <Sparkles className="h-3 w-3" />
                         {course.badge}
@@ -145,10 +147,12 @@ export default function HomePage() {
 
                   <p className="mt-4 text-gray-600">{course.summary}</p>
 
-                  {/* 全台到府服務亮點 */}
-                  <p className="mt-2 text-sm font-medium text-black">
-                    📍 全台到府服務
-                  </p>
+                  {/* 只在新手上路 & 運動駕駛顯示 */}
+                  {course.key !== 'track' && (
+                    <p className="mt-2 text-sm font-medium text-black">
+                      📍 全台到府服務
+                    </p>
+                  )}
 
                   <p className="mt-2 text-sm text-gray-500">
                     ⏱ {course.duration}
