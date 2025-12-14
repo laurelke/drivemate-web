@@ -23,12 +23,12 @@ export default function Header() {
             <span className="text-lg font-bold">DriveMate</span>
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex gap-6 text-sm">
-            <Link href="#courses">課程</Link>
-            <Link href="#pricing">價格</Link>
-            <Link href="#contact">聯絡</Link>
-          </nav>
+          {/* Desktop Menu - 只在 md 以上顯示 */}
+<nav className="hidden md:flex items-center gap-6 text-sm">
+  <Link href="#courses">課程</Link>
+  <Link href="#pricing">價格</Link>
+  <Link href="#contact">聯絡</Link>
+</nav>
 
           {/* Mobile Menu Button */}
           <button
