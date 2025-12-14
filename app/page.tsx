@@ -48,7 +48,7 @@ export default function HomePage() {
       <section className="relative h-[70vh] w-full">
         <Image
           src="/hero-driving.jpg"
-          alt="DriveMate 道路駕駛課程"
+          alt="DriveMate 專業道路駕駛課程"
           fill
           className="object-cover"
           priority
@@ -59,7 +59,8 @@ export default function HomePage() {
               DriveMate 道路駕駛課程
             </h1>
             <p className="text-lg mb-6">
-              從新手到進階操駕，陪你安全、自信地上路
+              專為新手與進階駕駛打造的實際道路駕駛課程<br />
+              由專業教練一對一指導，安全、自信地上路
             </p>
             <a
               href={LINE_LINK}
@@ -79,32 +80,33 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            為什麼選擇 DriveMate？
+            為什麼選擇 DriveMate 道路駕駛教練？
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: '實際道路教學',
-                desc: '非模擬環境，直接上路訓練，培養真正能應付日常交通的駕駛能力。',
-              },
-              {
-                title: '專業教練指導',
-                desc: '依學員程度客製課程，循序漸進提升技巧與信心。',
-              },
-              {
-                title: '安心陪駕',
-                desc: '強化路況判斷與心理建設，讓你上路不再緊張。',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md"
-              >
-                <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
+            <div className="rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md">
+              <h3 className="mb-2 text-lg font-semibold">實際道路教學</h3>
+              <p className="text-gray-600">
+                以真實交通環境進行訓練，非模擬、不紙上談兵，
+                學到的是每天都用得到的駕駛能力。
+              </p>
+            </div>
+
+            <div className="rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md">
+              <h3 className="mb-2 text-lg font-semibold">專業教練指導</h3>
+              <p className="text-gray-600">
+                由具備實務經驗的專業教練一對一指導，
+                依學員程度客製課程內容。
+              </p>
+            </div>
+
+            <div className="rounded-2xl border p-6 text-center shadow-sm transition hover:shadow-md">
+              <h3 className="mb-2 text-lg font-semibold">安心陪駕</h3>
+              <p className="text-gray-600">
+                針對緊張、缺乏信心的學員，
+                強化路況判斷與心理穩定度，安心上路。
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -112,7 +114,9 @@ export default function HomePage() {
       {/* Course Cards */}
       <section className="bg-gray-50 py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold">課程簡介</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            道路駕駛課程介紹（新手・進階・賽道）
+          </h2>
 
           {/* Mobile horizontal scroll */}
           <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
@@ -174,7 +178,8 @@ export default function HomePage() {
           準備好開始你的駕駛旅程了嗎？
         </h2>
         <p className="mb-8 text-gray-600">
-          現在就預約課程，讓 DriveMate 陪你安全上路
+          立即加入 DriveMate 道路駕駛課程，
+          由專業教練陪同，安心累積實際駕駛經驗
         </p>
         <a
           href={LINE_LINK}
