@@ -14,7 +14,7 @@ export default function HomePage() {
       key: 'beginner',
       title: '新手上路',
       badge: '最受歡迎',
-      summary: '適合剛考到駕照、缺乏實際道路經驗者',
+      summary: '適合剛考到駕照、缺乏實際道路經驗者（全台到府服務）',
       detail:
         '基本控制、市區道路駕駛、各類停車技巧，建立正確車感與駕駛信心。',
       duration: '單堂 180 分鐘',
@@ -28,7 +28,7 @@ export default function HomePage() {
       key: 'advanced',
       title: '運動駕駛',
       badge: '技術提升',
-      summary: '適合已有駕駛經驗、想提升操控技巧者',
+      summary: '適合已有駕駛經驗、想提升操控技巧者（全台到府服務）',
       detail:
         '學習掌握車輛荷重轉移、方向盤操作、山路駕駛路線選擇與實戰應用。',
       duration: '單堂 180 分鐘',
@@ -130,9 +130,7 @@ export default function HomePage() {
                     className="flex cursor-pointer items-start justify-between"
                   >
                     <div>
-                      <h3 className="mb-1 text-xl font-semibold">
-                        {course.title}
-                      </h3>
+                      <h3 className="mb-1 text-xl font-semibold">{course.title}</h3>
                       <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
                         <Sparkles className="h-3 w-3" />
                         {course.badge}
@@ -146,17 +144,7 @@ export default function HomePage() {
                   </div>
 
                   <p className="mt-4 text-gray-600">{course.summary}</p>
-
-                  {/* 只在新手上路 & 運動駕駛顯示 */}
-                  {course.key !== 'track' && (
-                    <p className="mt-2 text-sm font-medium text-black">
-                      📍 全台到府服務
-                    </p>
-                  )}
-
-                  <p className="mt-2 text-sm text-gray-500">
-                    ⏱ {course.duration}
-                  </p>
+                  <p className="mt-2 text-sm text-gray-500">⏱ {course.duration}</p>
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
@@ -185,14 +173,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-white py-24 text-center">
-        <h2 className="mb-4 text-3xl font-bold">
-          準備好開始你的駕駛旅程了嗎？
-        </h2>
+      {/* FAQ */}
+      <section id="courses" className="bg-white py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="mb-10 text-center text-3xl font-bold">常見 Q&A</h2>
+
+          <div className="space-y-6 text-gray-700">
+            <p><strong>Q：</strong>可以使用自己的車上課嗎？<br />A：可以，或使用教練車。</p>
+            <p><strong>Q：</strong>完全沒經驗可以上課嗎？<br />A：可以，新手上路專為此設計。</p>
+            <p><strong>Q：</strong>是否提供到府服務？<br />A：新手上路與運動駕駛課程提供全台到府服務。</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="bg-gray-50 py-20 text-center">
+        <h2 className="mb-6 text-3xl font-bold">付款方式</h2>
+        <p className="text-gray-600">LINE 預約確認後付款，支援多堂優惠方案</p>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-white py-24 text-center">
+        <h2 className="mb-4 text-3xl font-bold">聯絡我們</h2>
         <p className="mb-8 text-gray-600">
-          立即加入 DriveMate 道路駕駛課程，
-          由專業教練陪同，安心累積實際駕駛經驗。
+          歡迎透過 LINE 與 DriveMate 聯絡
         </p>
         <a
           href={LINE_LINK}
@@ -200,7 +204,7 @@ export default function HomePage() {
           className="inline-block rounded-full bg-black px-10 py-4 text-white
                      transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
-          立即預約
+          LINE 聯絡 DriveMate
         </a>
       </section>
     </>
