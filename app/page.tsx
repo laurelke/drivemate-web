@@ -14,7 +14,7 @@ export default function HomePage() {
       key: 'beginner',
       title: '新手上路',
       badge: '最受歡迎',
-      summary: '適合剛考到駕照、缺乏實際道路經驗者（全台到府服務）',
+      summary: '適合剛考到駕照、缺乏實際道路經驗者 📍全台到府服務',
       detail:
         '基本控制、市區道路駕駛、各類停車技巧，建立正確車感與駕駛信心。',
       duration: '單堂 180 分鐘',
@@ -28,7 +28,7 @@ export default function HomePage() {
       key: 'advanced',
       title: '運動駕駛',
       badge: '技術提升',
-      summary: '適合已有駕駛經驗、想提升操控技巧者（全台到府服務）',
+      summary: '適合已有駕駛經驗、想提升操控技巧者 📍全台到府服務',
       detail:
         '學習掌握車輛荷重轉移、方向盤操作、山路駕駛路線選擇與實戰應用。',
       duration: '單堂 180 分鐘',
