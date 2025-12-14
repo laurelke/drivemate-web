@@ -135,30 +135,26 @@ export default function HomePage() {
   return (
     <>
       {/* ================= Hero ================= */}
-<section className="relative h-[70vh] min-h-[560px] w-full overflow-hidden">
-  <Image
-    src="/hero-driving.jpg"
-    alt="DriveMate 專業道路駕駛課程"
-    fill
-    priority
-    sizes="100vw"
-    className="
-      object-cover
-      object-[50%_35%]
-    "
-  />
+<section className="relative h-[70vh] w-full overflow-hidden">
+  {/* 背景圖動畫容器 */}
+  <div className="absolute inset-0 animate-hero-zoom">
+    <Image
+      src="/hero-driving.jpg"
+      alt="DriveMate 專業道路駕駛課程"
+      fill
+      priority
+      sizes="100vw"
+      className="
+        object-cover
+        object-[50%_25%]
+        md:object-[50%_30%]
+        xl:object-[50%_35%]
+      "
+    />
+  </div>
 
   {/* 專業漸層遮罩，提升質感與可讀性 */}
-  <div
-    className="
-      absolute inset-0
-      bg-gradient-to-b
-      from-black/45
-      via-black/30
-      to-black/55
-      flex items-center justify-center
-    "
-  >
+  <div className="text-white max-w-2xl text-center animate-hero-fade">
     <div className="text-white max-w-2xl text-center px-6">
       <h1 className="text-4xl md:text-5xl font-bold mb-4">
         DriveMate 道路駕駛課程
@@ -170,9 +166,11 @@ export default function HomePage() {
       <a
         href={LINE_LINK}
         target="_blank"
-        className="inline-block rounded-full bg-black px-8 py-3 text-white
-                   transition-all duration-300 hover:scale-105 hover:shadow-lg
-                   animate-pulse hover:animate-none"
+        className="
+  inline-block rounded-full bg-black px-8 py-3 text-white
+  transition-all duration-300 hover:scale-105 hover:shadow-lg
+  animate-hero-cta
+"
       >
         立即預約
       </a>
