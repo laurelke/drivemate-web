@@ -136,14 +136,14 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            為什麼選擇 DriveMate？
+            為什麼選擇 DriveMate 道路駕駛課程？
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              ['實際道路教學', '真實交通環境，學到每天都用得到的技巧'],
-              ['專業教練指導', '依學員程度客製課程'],
-              ['安心陪駕', '穩定心理、安心上路'],
+              ['實際道路教學', '真實交通環境訓練，學到每天都用得到的駕駛技巧'],
+              ['專業教練指導', '依學員程度客製課程，循序漸進提升'],
+              ['安心陪駕', '強化路況判斷與心理穩定度，安心上路'],
             ].map(([t, d]) => (
               <div key={t} className="rounded-2xl border p-6 text-center shadow-sm">
                 <h3 className="mb-2 font-semibold">{t}</h3>
@@ -158,7 +158,7 @@ export default function HomePage() {
       <section className="bg-gray-50 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            道路駕駛課程介紹
+            道路駕駛課程介紹（新手・運動・賽道）
           </h2>
 
           <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
