@@ -1,83 +1,93 @@
+import Link from 'next/link'
+
 export default function HomePage() {
   return (
-    <>
-      {/* Hero / 課程主視覺 */}
+    <main className="pt-16">
+      {/* Hero Section */}
       <section
-        className="relative flex min-h-[70vh] items-center justify-center text-white"
+        className="relative flex min-h-[75vh] items-center justify-center text-white"
         style={{
           backgroundImage: "url('/hero-driving.jpg')",
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center top',
+          backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* 黑色遮罩 */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* 內容 */}
-        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <h1 className="text-3xl font-bold leading-tight md:text-5xl">
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <h1 className="text-3xl font-bold md:text-5xl">
             DriveMate 道路駕駛課程
           </h1>
 
-          <p className="mt-4 text-base md:text-lg">
+          <p className="mt-6 text-base md:text-lg">
             從新手到進階操駕，陪你安全、自信地上路
           </p>
 
-          <a
-            href="#contact"
-            className="mt-8 inline-block rounded-full bg-black px-8 py-4 text-white transition hover:bg-neutral-800"
-          >
-            立即預約
-          </a>
-        </div>
-      </section>
-
-      {/* 課程內容 */}
-      <section id="courses" className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="mb-10 text-2xl font-bold md:text-3xl">
-          課程內容
-        </h2>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {/* 課程卡片 1 */}
-          <div className="rounded-2xl border bg-white p-6 shadow-sm">
-            <h3 className="text-xl font-semibold">新手上路</h3>
-            <p className="mt-2 text-neutral-600">
-              實際道路教學，提升真實駕駛能力
-            </p>
-          </div>
-
-          {/* 課程卡片 2 */}
-          <div className="rounded-2xl border bg-white p-6 shadow-sm">
-            <h3 className="text-xl font-semibold">進階駕駛</h3>
-            <p className="mt-2 text-neutral-600">
-              路況判斷、駕駛技巧與安全觀念強化
-            </p>
+          <div className="mt-10">
+            <Link
+              href="/booking"
+              className="inline-block rounded-full bg-black px-10 py-4 text-white transition hover:bg-gray-800"
+            >
+              立即預約
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 聯絡 / 預約 */}
-      <section
-        id="contact"
-        className="mx-auto max-w-4xl px-6 py-20 text-center"
-      >
-        <h2 className="text-2xl font-bold md:text-3xl">
-          立即預約
+      {/* Intro Section */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="text-center text-2xl font-bold md:text-3xl">
+          為什麼選擇 DriveMate？
         </h2>
 
-        <p className="mt-4 text-neutral-600">
-          歡迎透過LINE與我們聯繫
-        </p>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="rounded-2xl border p-6 text-center">
+            <h3 className="text-lg font-semibold">實際道路教學</h3>
+            <p className="mt-4 text-sm text-gray-600">
+              非模擬場地，直接上路，培養真實駕駛判斷力
+            </p>
+          </div>
 
-        <a
-          href="https://lin.ee/J22IVRg"
-          target="_blank"
-          className="mt-8 inline-block rounded-full bg-black px-10 py-4 text-white transition hover:bg-neutral-800"
-        >
-          前往 LINE
-        </a>
+          <div className="rounded-2xl border p-6 text-center">
+            <h3 className="text-lg font-semibold">專業教練指導</h3>
+            <p className="mt-4 text-sm text-gray-600">
+              循序漸進，依學員程度量身調整課程
+            </p>
+          </div>
+
+          <div className="rounded-2xl border p-6 text-center">
+            <h3 className="text-lg font-semibold">安心陪駕</h3>
+            <p className="mt-4 text-sm text-gray-600">
+              加強路況判斷與信心建立，安心上路不緊張
+            </p>
+          </div>
+        </div>
       </section>
-    </>
+
+      {/* CTA Section */}
+      <section className="bg-gray-100 py-20">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-2xl font-bold md:text-3xl">
+            準備好開始你的駕駛旅程了嗎？
+          </h2>
+
+          <p className="mt-4 text-gray-600">
+            現在就預約課程，讓 DriveMate 陪你安全上路
+          </p>
+
+          <div className="mt-8">
+            <Link
+              href="/booking"
+              className="inline-block rounded-full bg-black px-10 py-4 text-white transition hover:bg-gray-800"
+            >
+              立即預約
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
