@@ -135,35 +135,52 @@ export default function HomePage() {
   return (
     <>
       {/* ================= Hero ================= */}
-      <section className="relative h-[70vh] w-full">
-        <Image
-          src="/hero-driving.jpg"
-          alt="DriveMate 專業道路駕駛課程"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <div className="text-white max-w-2xl text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              DriveMate 道路駕駛課程
-            </h1>
-            <p className="text-lg mb-6">
-              專業教練一對一指導<br />
-              從新手到進階，安全建立駕駛信心
-            </p>
-            <a
-              href={LINE_LINK}
-              target="_blank"
-              className="inline-block rounded-full bg-black px-8 py-3 text-white
-                         transition-all duration-300 hover:scale-105 hover:shadow-lg
-                         animate-pulse hover:animate-none"
-            >
-              立即預約
-            </a>
-          </div>
-        </div>
-      </section>
+<section className="relative h-[70vh] min-h-[560px] w-full overflow-hidden">
+  <Image
+    src="/hero-driving.jpg"
+    alt="DriveMate 專業道路駕駛課程"
+    fill
+    priority
+    sizes="100vw"
+    className="
+      object-cover
+      object-[center_30%]
+      md:object-center
+    "
+  />
+
+  {/* 專業漸層遮罩，提升質感與可讀性 */}
+  <div
+    className="
+      absolute inset-0
+      bg-gradient-to-b
+      from-black/45
+      via-black/30
+      to-black/55
+      flex items-center justify-center
+    "
+  >
+    <div className="text-white max-w-2xl text-center px-6">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        DriveMate 道路駕駛課程
+      </h1>
+      <p className="text-lg mb-6">
+        專業教練一對一指導<br />
+        從新手到進階，安全建立駕駛信心
+      </p>
+      <a
+        href={LINE_LINK}
+        target="_blank"
+        className="inline-block rounded-full bg-black px-8 py-3 text-white
+                   transition-all duration-300 hover:scale-105 hover:shadow-lg
+                   animate-pulse hover:animate-none"
+      >
+        立即預約
+      </a>
+    </div>
+  </div>
+</section>
+
 
       {/* ================= Why ================= */}
       <section className="bg-white py-20">
