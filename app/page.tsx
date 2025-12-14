@@ -135,42 +135,43 @@ export default function HomePage() {
   return (
     <>
       {/* ================= Hero ================= */}
-<section className="relative h-[70vh] w-full overflow-hidden">
-  {/* 背景圖動畫容器 */}
-  <div className="absolute inset-0 animate-hero-zoom">
+<section className="relative h-[72vh] w-full bg-black overflow-hidden">
+  {/* 背景圖容器（限制最大寬度，防模糊） */}
+  <div className="absolute inset-0 mx-auto max-w-[1920px]">
     <Image
       src="/hero-driving.jpg"
       alt="DriveMate 專業道路駕駛課程"
       fill
       priority
       sizes="100vw"
-      className="
-        object-cover
-        object-[50%_25%]
-        md:object-[50%_30%]
-        xl:object-[50%_35%]
-      "
+      className="object-cover animate-hero-zoom"
+      style={{
+        objectPosition: '50% 30%', // ⭐ 你指定的構圖重心
+      }}
     />
   </div>
 
-  {/* 專業漸層遮罩，提升質感與可讀性 */}
-  <div className="text-white max-w-2xl text-center animate-hero-fade">
-    <div className="text-white max-w-2xl text-center px-6">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4">
+  {/* 遮罩 */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
+
+  {/* 文字內容 */}
+  <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
+    <div className="max-w-xl text-white">
+      <h1 className="mb-4 text-4xl font-bold leading-tight md:text-5xl animate-hero-fade">
         DriveMate 道路駕駛課程
       </h1>
-      <p className="text-lg mb-6">
+
+      <p className="mb-8 text-lg text-gray-100 animate-hero-fade">
         專業教練一對一指導<br />
         從新手到進階，安全建立駕駛信心
       </p>
+
       <a
         href={LINE_LINK}
         target="_blank"
-        className="
-  inline-block rounded-full bg-black px-8 py-3 text-white
-  transition-all duration-300 hover:scale-105 hover:shadow-lg
-  animate-hero-cta
-"
+        className="inline-block rounded-full bg-white px-8 py-3
+                   font-medium text-black transition
+                   hover:scale-105 hover:shadow-lg animate-hero-cta"
       >
         立即預約
       </a>
