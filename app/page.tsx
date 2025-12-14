@@ -260,14 +260,12 @@ export default function HomePage() {
 
       {/* ================= Info ================= */}
       <section className="bg-white py-20">
-        {/* ⭐ 新增：精準對齊 Header 導航的錨點 */}
-        <div id="info-anchor" className="scroll-mt-20" />
+        {/* ⭐ 三個 Header 對應錨點（位置完全相同） */}
+        <div id="qa" className="scroll-mt-24" />
+        <div id="payment" className="scroll-mt-24" />
+        <div id="booking" className="scroll-mt-24" />
 
         <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
-            ← 左右滑動查看更多資訊 →
-          </p>
-
           <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
             {infoCards.map((item) => {
               const isOpen = open === item.key
@@ -299,13 +297,10 @@ export default function HomePage() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section id="contact" className="bg-white py-24 text-center scroll-mt-20">
+      <section id="contact" className="bg-white py-24 text-center">
         <h2 className="text-3xl font-bold mb-4">
           準備好開始你的駕駛旅程了嗎？
         </h2>
-        <p className="mb-8 text-gray-600">
-          立即預約 DriveMate 道路駕駛課程，由專業教練陪同，安心累積實際駕駛經驗。
-        </p>
         <a
           href={LINE_LINK}
           target="_blank"
