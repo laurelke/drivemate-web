@@ -63,19 +63,19 @@ export default function HomePage() {
         className="mx-auto max-w-4xl px-6 py-20 text-center"
       >
         <h2 className="text-2xl font-bold md:text-3xl">
-          立即預約試駕課程
+          立即預約
         </h2>
 
         <p className="mt-4 text-neutral-600">
-          歡迎透過 Instagram 或表單與我們聯繫
+          歡迎透過LINE與我們聯繫
         </p>
 
         <a
-          href="https://instagram.com"
+          href="https://lin.ee/J22IVRg"
           target="_blank"
           className="mt-8 inline-block rounded-full bg-black px-10 py-4 text-white transition hover:bg-neutral-800"
         >
-          前往 Instagram
+          前往 LINE
         </a>
       </section>
     </>
