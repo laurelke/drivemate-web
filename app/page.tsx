@@ -46,9 +46,7 @@ export default function HomePage() {
       detail:
         '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
       duration: '單節 30 分鐘',
-      pricing: [
-        { label: '4 節', price: '$12,000' },
-      ],
+      pricing: [{ label: '4 節', price: '$12,000' }],
     },
   ]
 
@@ -146,7 +144,15 @@ export default function HomePage() {
                   </div>
 
                   <p className="mt-4 text-gray-600">{course.summary}</p>
-                  <p className="mt-2 text-sm text-gray-500">⏱ {course.duration}</p>
+
+                  {/* 全台到府服務亮點 */}
+                  <p className="mt-2 text-sm font-medium text-black">
+                    📍 全台到府服務
+                  </p>
+
+                  <p className="mt-2 text-sm text-gray-500">
+                    ⏱ {course.duration}
+                  </p>
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
