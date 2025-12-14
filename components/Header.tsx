@@ -15,7 +15,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo.png"
+              src="/drivemate-logo.JPG"
               alt="DriveMate"
               width={36}
               height={36}
@@ -30,53 +30,58 @@ export default function Header() {
             <Link href="#contact">聯絡</Link>
           </nav>
 
-          {/* Mobile Button */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-2xl"
-            onClick={() => setOpen(true)}
             aria-label="Open menu"
+            onClick={() => setOpen(true)}
           >
             ☰
           </button>
         </div>
       </header>
 
-      {/* Mobile Overlay */}
-      {open && (
-        <div className="fixed inset-0 z-40 bg-black/40" onClick={() => setOpen(false)} />
-      )}
-
       {/* Mobile Drawer */}
-      <aside
-        className={`fixed top-0 right-0 z-50 h-full w-full bg-white transform transition-transform duration-300
-        ${open ? 'translate-x-0' : 'translate-x-full'}
-        md:hidden`}
-      >
-        {/* Drawer Header */}
-        <div className="flex h-16 items-center justify-between px-4 border-b">
-          <span className="text-lg font-bold">選單</span>
-          <button
-            className="text-2xl"
+      {open && (
+        <div className="fixed inset-0 z-[999] md:hidden">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/40"
             onClick={() => setOpen(false)}
-            aria-label="Close menu"
-          >
-            ×
-          </button>
+          />
+
+          {/* Drawer */}
+          <div className="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-white p-6 shadow-lg">
+            <div className="flex items-center justify-between mb-8">
+              <span className="text-lg font-bold">選單</span>
+              <button
+                aria-label="Close menu"
+                onClick={() => setOpen(false)}
+                className="text-2xl"
+              >
+                ✕
+              </button>
+            </div>
+
+            <nav className="flex flex-col gap-6 text-base">
+              <Link href="#courses" onClick={() => setOpen(false)}>課程</Link>
+              <Link href="#pricing" onClick={() => setOpen(false)}>價格</Link>
+              <Link href="#contact" onClick={() => setOpen(false)}>聯絡</Link>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </nav>
+
+            <button className="mt-10 w-full rounded-lg bg-black py-3 text-white">
+              立即預約
+            </button>
+          </div>
         </div>
-
-        {/* Menu Content */}
-        <nav className="flex flex-col gap-6 px-6 py-8 text-lg">
-          <Link href="#courses" onClick={() => setOpen(false)}>課程</Link>
-          <Link href="#pricing" onClick={() => setOpen(false)}>價格</Link>
-          <Link href="#contact" onClick={() => setOpen(false)}>聯絡</Link>
-          <Link
-            href="https://instagram.com"
-            target="_blank"
-            onClick={() => setOpen(false)}
-          >
-            Instagram
-          </Link>
-
-          <Link
-            href="/booking"
-            className
+      )}
+    </>
+  )
+}
