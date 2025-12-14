@@ -9,7 +9,7 @@ export default function HomePage() {
         style={{
           backgroundImage: "url('/hero-driving.jpg')",
           backgroundSize: 'cover',
-          backgroundPosition: 'center top',
+          backgroundPosition: '50% 30%',
           backgroundRepeat: 'no-repeat',
         }}
       >
