@@ -88,7 +88,7 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            為什麼選擇 DriveMate 道路駕駛教練？
+            為什麼選擇 DriveMate 道路駕駛課程？
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
