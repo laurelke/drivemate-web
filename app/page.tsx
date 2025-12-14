@@ -144,7 +144,7 @@ export default function HomePage() {
     sizes="100vw"
     className="
       object-cover
-      object-[center_30%]
+      object-[50%_30%]
       md:object-center
     "
   />
