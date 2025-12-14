@@ -145,7 +145,6 @@ export default function HomePage() {
     className="
       object-cover
       object-[50%_35%]
-      md:object-center
     "
   />
 
