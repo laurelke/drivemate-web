@@ -1,10 +1,11 @@
 import './globals.css'
-import Header from '@/components/Header'
 import type { Metadata } from 'next'
+import Header from '@/components/Header'
+import MobileCTA from '@/components/MobileCTA'
 
 export const metadata: Metadata = {
   title: 'DriveMate｜道路駕駛課程',
-  description: '從新手到進階操駕，陪你安全、自信地上路',
+  description: '實際道路教學，陪你安全、自信地上路',
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -19,10 +20,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-Hant">
-      <body className="bg-white text-gray-900">
+      <body className="bg-white text-neutral-900">
+        {/* 固定 Header */}
         <Header />
-        {/* Header 是 fixed，高度 h-16 */}
-        <main className="pt-16">{children}</main>
+
+        {/* 主內容
+            pt-16：避開 Header
+            pb-16：避開手機底部 CTA */}
+        <main className="pt-16 pb-16">
+          {children}
+        </main>
+
+        {/* 手機底部固定 CTA */}
+        <MobileCTA />
       </body>
     </html>
   )
