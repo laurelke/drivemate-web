@@ -194,8 +194,7 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            道路駕駛課程介紹
-            （新手・運動・賽道）
+            道路駕駛課程介紹（新手・運動・賽道）
           </h2>
 
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
@@ -255,39 +254,57 @@ export default function HomePage() {
         </div>
       </section>
 
-        {/* ================= Info ================= */}
-      <section className="bg-white py-20">
-        {/* ⭐ 唯一錨點（Header 三個都指向這裡） */}
-        <div
-          id="info-anchor"
-          className="scroll-mt-[96px]"
-        />
+      {/* ================= Info ================= */}
+      <section
+        id="info"
+        className="bg-white py-20 scroll-mt-20"  /* ⭐新增 */
+      >
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
+            ← 左右滑動查看更多資訊 →
+          </p>
 
-        <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-6">
-          {infoCards.map((item) => {
-            const isOpen = open === item.key
-            return (
-              <div key={item.key} className="rounded-2xl border p-6">
+          <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
+            {infoCards.map((item) => {
+              const isOpen = open === item.key
+              return (
                 <div
-                  className="flex justify-between cursor-pointer"
-                  onClick={() => setOpen(isOpen ? null : item.key)}
+                  key={item.key}
+                  className="min-w-[280px] rounded-2xl border p-6 shadow-sm"
                 >
-                  <h3 className="font-semibold">{item.title}</h3>
-                  <ChevronDown className={isOpen ? 'rotate-180' : ''} />
+                  <div
+                    onClick={() => setOpen(isOpen ? null : item.key)}
+                    className="flex cursor-pointer justify-between"
+                  >
+                    <h3 className="font-semibold">{item.title}</h3>
+                    <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
+                  </div>
+
+                  <div
+                    className={`transition-all ${
+                      isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
+                    }`}
+                  >
+                    <div className="border-t pt-4">{item.content}</div>
+                  </div>
                 </div>
-                {isOpen && <div className="mt-4">{item.content}</div>}
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </section>
 
-
       {/* ================= CTA ================= */}
-      <section id="contact" className="bg-white py-24 text-center">
+      <section
+        id="contact"
+        className="bg-white py-24 text-center scroll-mt-20" /* ⭐新增 */
+      >
         <h2 className="text-3xl font-bold mb-4">
           準備好開始你的駕駛旅程了嗎？
         </h2>
+        <p className="mb-8 text-gray-600">
+          立即預約 DriveMate 道路駕駛課程，由專業教練陪同，安心累積實際駕駛經驗。
+        </p>
         <a
           href={LINE_LINK}
           target="_blank"
