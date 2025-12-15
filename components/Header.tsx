@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const LINE_LINK = 'https://lin.ee/J22IVRg'
+const INSTAGRAM_LINK = 'https://www.instagram.com/drivemate.tw'
 
 function handleCTAClick() {
   if (typeof window !== 'undefined' && (window as any).trackCTAConversion) {
@@ -48,6 +49,18 @@ export default function Header() {
             <Link href="#contact" className="hover:text-black/70">
               預約資訊
             </Link>
+
+            {/* Instagram */}
+            <a
+              href={INSTAGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-black/70"
+            >
+              Instagram
+            </a>
+
+            {/* CTA */}
             <a
               href={LINE_LINK}
               target="_blank"
@@ -110,8 +123,10 @@ export default function Header() {
               <Link href="#contact" onClick={() => setOpen(false)}>
                 預約資訊
               </Link>
+
+              {/* Instagram */}
               <a
-                href="https://instagram.com"
+                href={INSTAGRAM_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
               >
