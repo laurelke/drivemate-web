@@ -26,18 +26,24 @@ export default function HomePage() {
     ]
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            history.replaceState(null, '', `#${entry.target.id}`)
-          }
-        })
-      },
-      {
-        rootMargin: '-40% 0px -50% 0px',
-        threshold: 0,
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return
+
+      const currentHash = window.location.hash.replace('#', '')
+
+      // 避免 Scroll Spy 覆蓋 Info 卡片 hash
+      if (!['qa', 'payment', 'booking'].includes(currentHash)) {
+        history.replaceState(null, '', `#${entry.target.id}`)
       }
-    )
+    })
+  },
+  {
+    rootMargin: '-40% 0px -50% 0px',
+    threshold: 0,
+  }
+)
+
 
     sections.forEach(({ id }) => {
       const el = document.getElementById(id)
@@ -47,24 +53,31 @@ export default function HomePage() {
     return () => observer.disconnect()
   }, [])
   
-/* ================= Hash → 自動打開 Info 卡片 ================= */
+/* ================= Hash → 自動打開 Info 卡片（修正版） ================= */
 useEffect(() => {
-  const hash = window.location.hash.replace('#', '')
+  const handleHashChange = () => {
+    const hash = window.location.hash.replace('#', '')
 
-  if (!hash) return
+    if (['qa', 'payment', 'booking'].includes(hash)) {
+      setOpen(hash)
 
-  // 只處理 info 區的卡片 key
-  if (['qa', 'payment', 'booking'].includes(hash)) {
-    setOpen(hash)
+      requestAnimationFrame(() => {
+        const el = document.getElementById(hash)
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
+    }
+  }
 
-    // 確保捲動到卡片本身（手機特別重要）
-    setTimeout(() => {
-      const el = document.getElementById(hash)
-      el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, 100)
+  // 初次載入
+  handleHashChange()
+
+  // 監聽之後的 Header 點擊
+  window.addEventListener('hashchange', handleHashChange)
+
+  return () => {
+    window.removeEventListener('hashchange', handleHashChange)
   }
 }, [])
-
 
   /* ================= 課程資料 ================= */
   const courses = [
