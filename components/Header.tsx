@@ -56,13 +56,13 @@ export default function Header() {
             className="hidden items-center gap-6 text-sm md:flex"
             aria-label="Primary Navigation"
           >
-            <Link href="#qa" className="hover:text-black/70">
+            <Link href="#info" className="hover:text-black/70">
               常見 Q&A
             </Link>
-            <Link href="#payment" className="hover:text-black/70">
+            <Link href="#info" className="hover:text-black/70">
               付款方式
             </Link>
-            <Link href="#booking" className="hover:text-black/70">
+            <Link href="#info" className="hover:text-black/70">
               預約資訊
             </Link>
 
