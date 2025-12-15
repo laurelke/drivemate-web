@@ -1,87 +1,51 @@
 'use client'
 
-
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ChevronDown, Sparkles } from 'lucide-react'
 
-
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 
-
 export default function HomePage() {
-/** ================= 狀態（關鍵修正） ================= */
-const [openCourse, setOpenCourse] = useState<string | null>(null)
-const [openInfo, setOpenInfo] = useState<string | null>(null)
+  const [open, setOpen] = useState<string | null>(null)
 
+  /* ================= 全站平滑滾動 ================= */
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth'
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto'
+    }
+  }, [])
 
-/* ================= 全站平滑滾動 ================= */
-useEffect(() => {
-document.documentElement.style.scrollBehavior = 'smooth'
-return () => {
-document.documentElement.style.scrollBehavior = 'auto'
-}
-}, [])
+  /* ================= Header Active Scroll Spy ================= */
+  useEffect(() => {
+    const sections = [
+      { id: 'courses' },
+      { id: 'info' },
+      { id: 'contact' },
+    ]
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            history.replaceState(null, '', `#${entry.target.id}`)
+          }
+        })
+      },
+      {
+        rootMargin: '-40% 0px -50% 0px',
+        threshold: 0,
+      }
+    )
 
-/* ================= Header Active Scroll Spy ================= */
-useEffect(() => {
-const sections = [{ id: 'courses' }, { id: 'info' }, { id: 'contact' }]
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
 
-
-const observer = new IntersectionObserver(
-(entries) => {
-entries.forEach((entry) => {
-if (!entry.isIntersecting) return
-
-
-const currentHash = window.location.hash.replace('#', '')
-
-
-// ⭐ 不覆蓋 Info 卡片 hash
-if (!['qa', 'payment', 'booking'].includes(currentHash)) {
-history.replaceState(null, '', `#${entry.target.id}`)
-}
-})
-},
-{ rootMargin: '-40% 0px -50% 0px', threshold: 0 }
-)
-
-
-sections.forEach(({ id }) => {
-const el = document.getElementById(id)
-if (el) observer.observe(el)
-})
-
-
-return () => observer.disconnect()
-}, [])
-
-
-/* ================= Hash → 自動打開 Info 卡片（最終版） ================= */
-useEffect(() => {
-const handleHash = () => {
-const hash = window.location.hash.replace('#', '')
-
-
-if (['qa', 'payment', 'booking'].includes(hash)) {
-setOpenInfo(hash)
-
-
-requestAnimationFrame(() => {
-document.getElementById(hash)?.scrollIntoView({
-behavior: 'smooth',
-block: 'start',
-})
-})
-}
-}
-
-
-handleHash()
-window.addEventListener('hashchange', handleHash)
-return () => window.removeEventListener('hashchange', handleHash)
-}, [])
+    return () => observer.disconnect()
+  }, [])
 
   /* ================= 課程資料 ================= */
   const courses = [
@@ -179,6 +143,8 @@ return () => window.removeEventListener('hashchange', handleHash)
     alt="DriveMate 專業道路駕駛課程"
     fill
     priority
+    quality={90}
+    sizes="100vw"
     className="object-cover"
     style={{ objectPosition: '50% 30%' }}
   />
@@ -236,53 +202,111 @@ return () => window.removeEventListener('hashchange', handleHash)
       </section>
 
       {/* ================= Courses ================= */}
-<section id="courses" className="bg-gray-50 py-20 scroll-mt-20">
-<div className="mx-auto max-w-6xl px-6">
-<div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
-{courses.map((course) => {
-const isOpen = openCourse === course.key
-return (
-<div key={course.key} className="min-w-[280px] rounded-2xl border bg-white p-6">
-<div
-onClick={() => setOpenCourse(isOpen ? null : course.key)}
-className="flex cursor-pointer justify-between"
->
-<h3 className="font-semibold text-xl">{course.title}</h3>
-<ChevronDown className={isOpen ? 'rotate-180' : ''} />
-</div>
-<div className={isOpen ? 'mt-4' : 'hidden'}>
-<p>{course.detail}</p>
-</div>
-</div>
-)
-})}
-</div>
-</div>
-</section>
+      <section
+        id="courses"
+        className="bg-gray-50 py-20 scroll-mt-20"  /* ⭐新增 */
+      >
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            道路駕駛課程介紹（新手・運動・賽道）
+          </h2>
 
+          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
+            ← 左右滑動查看更多課程 →
+          </p>
 
-{/* ================= Info ================= */}
-<section id="info" className="bg-white py-20 scroll-mt-20">
-<div className="mx-auto max-w-6xl px-6">
-<div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
-{infoCards.map((item) => {
-const isOpen = openInfo === item.key
-return (
-<div id={item.key} key={item.key} className="min-w-[280px] rounded-2xl border p-6">
-<div
-onClick={() => setOpenInfo(isOpen ? null : item.key)}
-className="flex cursor-pointer justify-between"
->
-<h3 className="font-semibold">{item.title}</h3>
-<ChevronDown className={isOpen ? 'rotate-180' : ''} />
-</div>
-{isOpen && <div className="mt-4 border-t pt-4">{item.content}</div>}
-</div>
-)
-})}
-</div>
-</div>
-</section>
+          <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
+            {courses.map((course) => {
+              const isOpen = open === course.key
+              return (
+                <div
+                  key={course.key}
+                  className="min-w-[280px] rounded-2xl border bg-white p-6 shadow-sm"
+                >
+                  <div
+                    onClick={() => setOpen(isOpen ? null : course.key)}
+                    className="flex cursor-pointer justify-between"
+                  >
+                    <div>
+                      <h3 className="font-semibold text-xl">{course.title}</h3>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
+                        <Sparkles className="h-3 w-3" />
+                        {course.badge}
+                      </span>
+                    </div>
+                    <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
+                  </div>
+
+                  <p className="mt-4 text-gray-600">{course.summary}</p>
+                  {course.highlight && (
+                    <p className="mt-2 text-sm font-medium text-gray-700">
+                      {course.highlight}
+                    </p>
+                  )}
+                  <p className="mt-2 text-sm text-gray-500">⏱ {course.duration}</p>
+
+                  <div
+                    className={`transition-all ${
+                      isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
+                    }`}
+                  >
+                    <div className="border-t pt-4 space-y-3">
+                      <p>{course.detail}</p>
+                      <ul className="text-sm text-gray-600">
+                        {course.pricing.map((p) => (
+                          <li key={p.label}>
+                            ▸ {p.label}｜{p.price}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= Info ================= */}
+      <section
+        id="info"
+        className="bg-white py-20 scroll-mt-20"  /* ⭐新增 */
+      >
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
+            ← 左右滑動查看更多資訊 →
+          </p>
+
+          <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
+            {infoCards.map((item) => {
+              const isOpen = open === item.key
+              return (
+                <div
+                  key={item.key}
+                  className="min-w-[280px] rounded-2xl border p-6 shadow-sm"
+                >
+                  <div
+                    onClick={() => setOpen(isOpen ? null : item.key)}
+                    className="flex cursor-pointer justify-between"
+                  >
+                    <h3 className="font-semibold">{item.title}</h3>
+                    <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
+                  </div>
+
+                  <div
+                    className={`transition-all ${
+                      isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
+                    }`}
+                  >
+                    <div className="border-t pt-4">{item.content}</div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* ================= CTA ================= */}
       <section
