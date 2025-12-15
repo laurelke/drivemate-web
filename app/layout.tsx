@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import Header from '@/components/Header'
 import MobileCTA from '@/components/MobileCTA'
 
@@ -45,6 +46,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-Hant">
+      <head>
+        {/* Google tag (GA4 + Google Ads 共用) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            // Google Analytics
+            gtag('config', 'G-XXXXXXXXXX');
+
+            // Google Ads
+            gtag('config', 'AW-17613789230');
+          `}
+        </Script>
+      </head>
+
       <body className="bg-white text-neutral-900">
         <Header />
 
