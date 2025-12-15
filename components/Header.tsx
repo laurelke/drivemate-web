@@ -40,10 +40,10 @@ export default function Header() {
             className="hidden items-center gap-6 text-sm md:flex"
             aria-label="Primary Navigation"
           >
-            <Link href="#courses" className="hover:text-black/70">
+            <Link href="#contact" className="hover:text-black/70">
               常見 Q&A
             </Link>
-            <Link href="#pricing" className="hover:text-black/70">
+            <Link href="#contact" className="hover:text-black/70">
               付款方式
             </Link>
             <Link href="#contact" className="hover:text-black/70">
