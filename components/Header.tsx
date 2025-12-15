@@ -124,6 +124,7 @@ export default function Header() {
                 className="text-left"
                 onClick={() => {
                   setOpen(false)
+                  window.history.replaceState(null, '', '#qa')
                   setTimeout(() => scrollToCard('qa'), 80)
                 }}
               >
@@ -134,6 +135,7 @@ export default function Header() {
                 className="text-left"
                 onClick={() => {
                   setOpen(false)
+                  window.history.replaceState(null, '', '#payment')
                   setTimeout(() => scrollToCard('payment'), 80)
                 }}
               >
@@ -144,7 +146,8 @@ export default function Header() {
                 className="text-left"
                 onClick={() => {
                   setOpen(false)
-                  setTimeout(() => scrollToCard('contact'), 80)
+                  window.history.replaceState(null, '', '#booking')
+                  setTimeout(() => scrollToCard('booking'), 80)
                 }}
               >
                 預約資訊
