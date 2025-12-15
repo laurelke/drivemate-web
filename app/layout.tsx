@@ -63,6 +63,14 @@ export default function RootLayout({
 
             // Google Ads
             gtag('config', 'AW-17613789230');
+
+            window.trackCTAConversion = function () {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-17613789230/CTA_CLICK'
+        });
+      }
+    };
           `}
         </Script>
       </head>
