@@ -47,32 +47,24 @@ export default function HomePage() {
     return () => observer.disconnect()
   }, [])
   
-/* ================= Header 點擊 → 自動展開 Info 卡片 ================= */
+/* ================= Hash → 自動打開 Info 卡片 ================= */
 useEffect(() => {
-  if (typeof window === 'undefined') return
-
   const hash = window.location.hash.replace('#', '')
 
-  if (hash === 'qa' || hash === 'payment' || hash === 'booking') {
+  if (!hash) return
+
+  // 只處理 info 區的卡片 key
+  if (['qa', 'payment', 'booking'].includes(hash)) {
     setOpen(hash)
 
-    // 等卡片展開後再校正滾動位置（避免手機高度錯位）
+    // 確保捲動到卡片本身（手機特別重要）
     setTimeout(() => {
       const el = document.getElementById(hash)
-      if (!el) return
-
-      const headerOffset = 64 // Header 高度
-      const elementPosition = el.getBoundingClientRect().top
-      const offsetPosition =
-        elementPosition + window.scrollY - headerOffset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      })
-    }, 120)
+      el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
   }
 }, [])
+
 
   /* ================= 課程資料 ================= */
   const courses = [
