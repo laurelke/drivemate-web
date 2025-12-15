@@ -125,7 +125,7 @@ export default function Header() {
                 onClick={() => {
                   setOpen(false)
                   window.history.replaceState(null, '', '#qa')
-                  setTimeout(() => scrollToCard('qa'), 80)
+                  setTimeout(() => scrollToCard('info'), 80)
                 }}
               >
                 常見 Q&A
@@ -136,7 +136,7 @@ export default function Header() {
                 onClick={() => {
                   setOpen(false)
                   window.history.replaceState(null, '', '#payment')
-                  setTimeout(() => scrollToCard('payment'), 80)
+                  setTimeout(() => scrollToCard('info'), 80)
                 }}
               >
                 付款方式
@@ -147,7 +147,7 @@ export default function Header() {
                 onClick={() => {
                   setOpen(false)
                   window.history.replaceState(null, '', '#booking')
-                  setTimeout(() => scrollToCard('booking'), 80)
+                  setTimeout(() => scrollToCard('info'), 80)
                 }}
               >
                 預約資訊
