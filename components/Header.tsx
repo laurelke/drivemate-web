@@ -13,6 +13,22 @@ function handleCTAClick() {
   }
 }
 
+/* ⭐ 手機專用精準滾動 */
+function scrollToCard(id: string) {
+  const el = document.getElementById(id)
+  if (!el) return
+
+  const headerOffset = 64 // h-16
+  const elementPosition = el.getBoundingClientRect().top
+  const offsetPosition =
+    elementPosition + window.scrollY - headerOffset
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  })
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false)
 
@@ -35,7 +51,7 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation（維持原本） */}
           <nav
             className="hidden items-center gap-6 text-sm md:flex"
             aria-label="Primary Navigation"
@@ -50,7 +66,6 @@ export default function Header() {
               預約資訊
             </Link>
 
-            {/* Instagram */}
             <a
               href={INSTAGRAM_LINK}
               target="_blank"
@@ -60,7 +75,6 @@ export default function Header() {
               Instagram
             </a>
 
-            {/* CTA */}
             <a
               href={LINE_LINK}
               target="_blank"
@@ -88,24 +102,15 @@ export default function Header() {
       {/* Mobile Drawer */}
       {open && (
         <div className="fixed inset-0 z-[999] md:hidden">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/40"
-            aria-hidden="true"
             onClick={() => setOpen(false)}
           />
 
-          {/* Drawer Panel */}
-          <div
-            className="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-white p-6 shadow-lg"
-            role="dialog"
-            aria-modal="true"
-          >
+          <div className="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-white p-6 shadow-lg">
             <div className="mb-8 flex items-center justify-between">
               <span className="text-lg font-bold">選單</span>
               <button
-                type="button"
-                aria-label="Close menu"
                 className="text-2xl"
                 onClick={() => setOpen(false)}
               >
@@ -113,18 +118,38 @@ export default function Header() {
               </button>
             </div>
 
+            {/* ⭐ 手機版：精準導向卡片 */}
             <nav className="flex flex-col gap-6 text-base">
-              <Link href="#courses" onClick={() => setOpen(false)}>
+              <button
+                className="text-left"
+                onClick={() => {
+                  setOpen(false)
+                  setTimeout(() => scrollToCard('qa'), 80)
+                }}
+              >
                 常見 Q&A
-              </Link>
-              <Link href="#pricing" onClick={() => setOpen(false)}>
-                付款方式
-              </Link>
-              <Link href="#contact" onClick={() => setOpen(false)}>
-                預約資訊
-              </Link>
+              </button>
 
-              {/* Instagram */}
+              <button
+                className="text-left"
+                onClick={() => {
+                  setOpen(false)
+                  setTimeout(() => scrollToCard('payment'), 80)
+                }}
+              >
+                付款方式
+              </button>
+
+              <button
+                className="text-left"
+                onClick={() => {
+                  setOpen(false)
+                  setTimeout(() => scrollToCard('contact'), 80)
+                }}
+              >
+                預約資訊
+              </button>
+
               <a
                 href={INSTAGRAM_LINK}
                 target="_blank"
@@ -134,13 +159,11 @@ export default function Header() {
               </a>
             </nav>
 
-            {/* Mobile CTA */}
             <a
               href={LINE_LINK}
               target="_blank"
-              rel="noopener noreferrer"
               onClick={handleCTAClick}
-              className="mt-10 block w-full rounded-lg bg-black py-3 text-center text-white transition hover:scale-[1.02]"
+              className="mt-10 block w-full rounded-lg bg-black py-3 text-center text-white"
             >
               立即預約
             </a>
