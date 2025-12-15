@@ -6,6 +6,12 @@ import { useState } from 'react'
 
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 
+function handleCTAClick() {
+  if (typeof window !== 'undefined' && (window as any).trackCTAConversion) {
+    ;(window as any).trackCTAConversion()
+  }
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false)
 
@@ -46,6 +52,7 @@ export default function Header() {
               href={LINE_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleCTAClick}
               className="rounded-full bg-black px-4 py-2 text-white transition hover:scale-105"
             >
               立即預約
@@ -95,7 +102,7 @@ export default function Header() {
 
             <nav className="flex flex-col gap-6 text-base">
               <Link href="#courses" onClick={() => setOpen(false)}>
-                常見Q&A
+                常見 Q&A
               </Link>
               <Link href="#pricing" onClick={() => setOpen(false)}>
                 付款方式
@@ -117,6 +124,7 @@ export default function Header() {
               href={LINE_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleCTAClick}
               className="mt-10 block w-full rounded-lg bg-black py-3 text-center text-white transition hover:scale-[1.02]"
             >
               立即預約
