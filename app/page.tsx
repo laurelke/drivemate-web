@@ -46,6 +46,33 @@ export default function HomePage() {
 
     return () => observer.disconnect()
   }, [])
+  
+/* ================= Header 點擊 → 自動展開 Info 卡片 ================= */
+useEffect(() => {
+  if (typeof window === 'undefined') return
+
+  const hash = window.location.hash.replace('#', '')
+
+  if (hash === 'qa' || hash === 'payment' || hash === 'booking') {
+    setOpen(hash)
+
+    // 等卡片展開後再校正滾動位置（避免手機高度錯位）
+    setTimeout(() => {
+      const el = document.getElementById(hash)
+      if (!el) return
+
+      const headerOffset = 64 // Header 高度
+      const elementPosition = el.getBoundingClientRect().top
+      const offsetPosition =
+        elementPosition + window.scrollY - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+    }, 120)
+  }
+}, [])
 
   /* ================= 課程資料 ================= */
   const courses = [
@@ -143,8 +170,6 @@ export default function HomePage() {
     alt="DriveMate 專業道路駕駛課程"
     fill
     priority
-    quality={90}
-    sizes="100vw"
     className="object-cover"
     style={{ objectPosition: '50% 30%' }}
   />
@@ -283,6 +308,7 @@ export default function HomePage() {
               const isOpen = open === item.key
               return (
                 <div
+                  id={item.key}
                   key={item.key}
                   className="min-w-[280px] rounded-2xl border p-6 shadow-sm"
                 >
