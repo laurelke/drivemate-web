@@ -6,23 +6,8 @@ import { ChevronDown, Sparkles } from 'lucide-react'
 
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 
-const HERO_IMAGES = [
-  '/hero-2.JPG',
-  '/hero-4.JPG',
-]
-
 export default function HomePage() {
   const [open, setOpen] = useState<string | null>(null)
-  const [currentHero, setCurrentHero] = useState(0)
-
-  /* ================= Hero 輪播 ================= */
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentHero((prev) => (prev + 1) % HERO_IMAGES.length)
-    }, 5000)
-
-    return () => clearInterval(timer)
-  }, [])
 
   /* ================= 全站平滑滾動 ================= */
   useEffect(() => {
@@ -149,65 +134,56 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ================= Hero（動態輪播） ================= */}
-      <section className="relative h-[72vh] w-full overflow-hidden bg-black">
-        {/* 輪播圖片 */}
-        <div className="absolute inset-0 mx-auto max-w-[1920px]">
-          {HERO_IMAGES.map((src, index) => (
-            <div
-              key={src}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentHero ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <Image
-                src={src}
-                alt="DriveMate 駕駛訓練中心"
-                fill
-                priority={index === 0}
-                quality={90}
-                sizes="100vw"
-                className="object-cover"
-                style={{ objectPosition: '50% 30%' }}
-              />
-            </div>
-          ))}
-        </div>
+      {/* ================= Hero ================= */}
+<section className="relative h-[72vh] w-full bg-black overflow-hidden">
+  {/* 背景圖容器（限制最大寬度，防模糊） */}
+  <div className="absolute inset-0 mx-auto max-w-[1920px]">
+    <Image
+    src="/hero-driving.jpg"
+    alt="DriveMate 專業道路駕駛課程"
+    fill
+    priority
+    quality={90}
+    sizes="100vw"
+    className="object-cover"
+    style={{ objectPosition: '50% 30%' }}
+  />
+  </div>
 
-        {/* 遮罩 */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
+  {/* 遮罩 */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
 
-        {/* 文字內容 */}
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
-          <div className="max-w-xl text-white">
-            <h1 className="mb-4 text-4xl font-bold leading-tight md:text-5xl">
-              DriveMate 駕駛訓練中心
-            </h1>
+  {/* 文字內容 */}
+  <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
+    <div className="max-w-xl text-white">
+      <h1 className="mb-4 text-4xl font-bold leading-tight md:text-5xl animate-hero-fade">
+        DriveMate 道路駕駛課程
+      </h1>
 
-            <p className="mb-8 text-lg text-gray-100">
-              專業教練一對一指導<br />
-              從新手到進階，安全建立駕駛信心
-            </p>
+      <p className="mb-8 text-lg text-gray-100 animate-hero-fade">
+        專業教練一對一指導<br />
+        從新手到進階，安全建立駕駛信心
+      </p>
 
-            <a
-              href={LINE_LINK}
-              target="_blank"
-              className="inline-block rounded-full bg-white px-8 py-3
-                         font-medium text-black transition
-                         hover:scale-105 hover:shadow-lg"
-            >
-              立即預約
-            </a>
-          </div>
-        </div>
-      </section>
+      <a
+        href={LINE_LINK}
+        target="_blank"
+        className="inline-block rounded-full bg-white px-8 py-3
+                   font-medium text-black transition
+                   hover:scale-105 hover:shadow-lg animate-hero-cta"
+      >
+        立即預約
+      </a>
+    </div>
+  </div>
+</section>
 
 
       {/* ================= Why ================= */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            為什麼選擇 DriveMate 駕駛訓練中心？
+            為什麼選擇 DriveMate 道路駕駛課程？
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -232,7 +208,7 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            駕駛訓練課程介紹（新手・運動・賽道）
+            道路駕駛課程介紹（新手・運動・賽道）
           </h2>
 
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
@@ -341,7 +317,7 @@ export default function HomePage() {
           準備好開始你的駕駛旅程了嗎？
         </h2>
         <p className="mb-8 text-gray-600">
-          立即預約 DriveMate 駕駛訓練課程，由專業教練陪同，安心累積實際駕駛經驗。
+          立即預約 DriveMate 道路駕駛課程，由專業教練陪同，安心累積實際駕駛經驗。
         </p>
         <a
           href={LINE_LINK}
