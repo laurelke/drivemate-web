@@ -4,24 +4,26 @@ import { motion } from 'framer-motion'
 
 export default function HeroText() {
   return (
-    <div className="text-center space-y-4">
+    <>
       <motion.h1
-        className="text-3xl md:text-5xl font-bold"
-        initial={{ opacity: 0, y: 20 }}
+        className="mb-4 text-4xl font-bold leading-tight md:text-5xl"
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.6 }}
       >
-        專業駕駛訓練，打造真正的駕駛實力
+        DriveMate 駕駛訓練中心
       </motion.h1>
 
       <motion.p
-        className="text-gray-600 text-base md:text-lg"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+        className="mb-8 text-lg text-gray-100"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
       >
-        道路駕駛・運動駕駛・賽道課程・教練培訓
+        專業教練一對一指導<br />
+        從新手到進階，安全建立駕駛信心<br />
+        台中 / 全台｜道路駕駛・運動駕駛・賽道駕駛・教練培訓
       </motion.p>
-    </div>
+    </>
   )
 }
