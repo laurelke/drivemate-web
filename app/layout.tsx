@@ -6,11 +6,20 @@ import MobileCTA from '@/components/MobileCTA'
 
 export const metadata: Metadata = {
   title: 'DriveMate道路駕駛課程｜運動駕駛、賽道課程',
-  description: 'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+  description:
+    'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
 
+  /* ================= 網站圖示（Google 紅圈來源） ================= */
+  icons: [
+    { rel: 'icon', url: '/favicon.png' },
+    { rel: 'apple-touch-icon', url: '/favicon.png' },
+  ],
+
+  /* ================= Open Graph ================= */
   openGraph: {
     title: 'DriveMate道路駕駛課程｜運動駕駛、賽道課程',
-    description: 'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+    description:
+      'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
     url: 'https://drivemate-tw.com',
     siteName: 'DriveMate',
     images: [
@@ -25,13 +34,16 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
+  /* ================= Twitter ================= */
   twitter: {
     card: 'summary_large_image',
     title: 'DriveMate道路駕駛課程｜運動駕駛、賽道課程',
-    description: 'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+    description:
+      'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
     images: ['/og-image.jpg'],
   },
 
+  /* ================= Viewport ================= */
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -47,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="zh-Hant">
       <head>
-        {/* Google tag (GA4 + Google Ads 共用) */}
+        {/* ================= Google tag (GA4 + Google Ads 共用) ================= */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
           strategy="afterInteractive"
@@ -65,12 +77,12 @@ export default function RootLayout({
             gtag('config', 'AW-17613789230');
 
             window.trackCTAConversion = function () {
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-17613789230/CTA_CLICK'
-        });
-      }
-    };
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'conversion', {
+                  send_to: 'AW-17613789230/CTA_CLICK'
+                });
+              }
+            };
           `}
         </Script>
       </head>
