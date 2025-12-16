@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 import MobileCTA from '@/components/MobileCTA'
 
 export const metadata: Metadata = {
-  title: 'DriveMate駕駛訓練中心｜運動駕駛、賽道課程',
+  title: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
   description:
     'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
   /* ================= Open Graph ================= */
   openGraph: {
-    title: 'DriveMate駕駛訓練中心｜運動駕駛、賽道課程',
+    title: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
     description:
       'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
     url: 'https://drivemate-tw.com',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'DriveMate駕駛訓練中心｜運動駕駛、賽道課程',
+        alt: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
       },
     ],
     locale: 'zh_TW',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   /* ================= Twitter ================= */
   twitter: {
     card: 'summary_large_image',
-    title: 'DriveMate駕駛訓練中心｜運動駕駛、賽道課程',
+    title: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
     description:
       'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
     images: ['/og-image.jpg'],
