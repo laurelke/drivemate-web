@@ -7,7 +7,7 @@ import MobileCTA from '@/components/MobileCTA'
 export const metadata: Metadata = {
   title: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
   description:
-    'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+    'DriveMate 駕駛訓練中心專注於道路駕駛、運動駕駛與賽道訓練，結合系統化課程與專業教練培訓，打造安全、精準且具實戰力的駕駛能力。',
 
   /* ================= 網站圖示（Google 紅圈來源） ================= */
   icons: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
     description:
-      'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+      '專業道路駕駛、運動駕駛與賽道課程，從新手到教練培訓，DriveMate 陪你建立安全與自信的駕駛實力。',
     url: 'https://drivemate-tw.com',
     siteName: 'DriveMate',
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
     description:
-      'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+      '專業道路駕駛、運動駕駛與賽道課程，從新手到教練培訓，ㄜDriveMate 陪你建立安全與自信的駕駛實力。',
     images: ['/og-image.jpg'],
   },
 
