@@ -38,18 +38,26 @@ export default function Header() {
       <header className="fixed top-0 left-0 z-50 w-full border-b bg-white">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/drivemate-logo.JPG"
-              alt="DriveMate 道路駕駛課程"
-              width={36}
-              height={36}
-              priority
-            />
-            <span className="text-lg font-bold tracking-tight">
-              DriveMate
-            </span>
-          </Link>
+<a
+  href="/"
+  onClick={(e) => {
+    e.preventDefault()
+    window.location.href = '/'
+  }}
+  className="flex items-center gap-2 cursor-pointer"
+>
+  <Image
+    src="/drivemate-logo.JPG"
+    alt="DriveMate 道路駕駛課程"
+    width={36}
+    height={36}
+    priority
+  />
+  <span className="text-lg font-bold tracking-tight">
+    DriveMate
+  </span>
+</a>
+
 
           {/* Desktop Navigation（維持原本） */}
           <nav
