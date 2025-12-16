@@ -1,4 +1,10 @@
 'use client'
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void
+    trackCTAConversion?: () => void
+  }
+}
 
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
@@ -194,6 +200,7 @@ export default function HomePage() {
             <p className="mb-8 text-lg text-gray-100">
               專業教練一對一指導<br />
               從新手到進階，安全建立駕駛信心
+              台中 / 全台｜道路駕駛・運動駕駛・賽道駕駛・教練培訓
             </p>
 
             <a
@@ -222,6 +229,8 @@ export default function HomePage() {
               ['實際道路教學', '在真實市區道路、高速與複雜路況中進行駕駛訓練，從變換車道、路口判斷到臨場應變，學會每天實際用得到的安全駕駛技巧，而不只是考照而已。'],
               ['專業駕駛教練一對一指導', '由經驗豐富的專業駕駛教練依照學員程度量身規劃課程，不論是新手上路、久未開車，或想加強特定路段，皆以循序漸進的方式，建立穩定且正確的駕駛觀念。'],
               ['安心陪駕，克服上路恐懼', '針對容易緊張、害怕上路的學員，透過陪駕訓練與實戰引導，強化路況判斷與心理穩定度，讓你從「不敢開」到「敢開、會開、開得安心」。'],
+              ['✓ 新手、久未開車、怕上路、增強駕駛技巧'],
+              ['✓ 可使用自家車 / 教練車'],
             ].map(([t, d]) => (
               <div key={t} className="rounded-2xl border p-6 text-center shadow-sm">
                 <h3 className="mb-2 font-semibold">{t}</h3>
@@ -255,8 +264,12 @@ export default function HomePage() {
                   className="min-w-[280px] rounded-2xl border bg-white p-6 shadow-sm"
                 >
                   <div
-                    onClick={() => setOpen(isOpen ? null : course.key)}
-                    className="flex cursor-pointer justify-between"
+                    onClick={() => {
+  setOpen(isOpen ? null : course.key)
+  window.gtag?.('event', 'course_expand', {
+    course: course.key
+  })
+}}
                   >
                     <div>
                       <h3 className="font-semibold text-xl">{course.title}</h3>
@@ -352,8 +365,14 @@ export default function HomePage() {
         </p>
         <a
           href={LINE_LINK}
-          target="_blank"
-          className="inline-block rounded-full bg-black px-10 py-4 text-white hover:scale-105 transition"
+  target="_blank"
+  onClick={() => {
+    window.gtag?.('event', 'hero_cta_click', {
+      event_category: 'engagement',
+      event_label: 'hero_line'
+    })
+    window.trackCTAConversion?.()
+  }}
         >
           DriveMate 官方 LINE
         </a>
