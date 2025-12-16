@@ -6,7 +6,7 @@ import MobileCTA from '@/components/MobileCTA'
 
 export const metadata: Metadata = {
   title: {
-    default: 'DDriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
+    default: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
     template: '%s｜DriveMate 駕駛訓練中心',
   },
   description:
