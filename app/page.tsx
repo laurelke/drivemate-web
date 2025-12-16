@@ -157,7 +157,7 @@ export default function HomePage() {
   <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
     <div className="max-w-xl text-white">
       <h1 className="mb-4 text-4xl font-bold leading-tight md:text-5xl animate-hero-fade">
-        DriveMate 道路駕駛課程
+        DriveMate 駕駛訓練中心
       </h1>
 
       <p className="mb-8 text-lg text-gray-100 animate-hero-fade">
@@ -183,7 +183,7 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            為什麼選擇 DriveMate 道路駕駛課程？
+            為什麼選擇 DriveMate 駕駛訓練中心？
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -208,7 +208,7 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            道路駕駛課程介紹（新手・運動・賽道）
+            駕駛訓練課程介紹（新手・運動・賽道）
           </h2>
 
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
@@ -317,7 +317,7 @@ export default function HomePage() {
           準備好開始你的駕駛旅程了嗎？
         </h2>
         <p className="mb-8 text-gray-600">
-          立即預約 DriveMate 道路駕駛課程，由專業教練陪同，安心累積實際駕駛經驗。
+          立即預約 DriveMate 駕駛訓練課程，由專業教練陪同，安心累積實際駕駛經驗。
         </p>
         <a
           href={LINE_LINK}
