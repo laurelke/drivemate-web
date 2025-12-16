@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import HomePage from './page.client'
 
 export const metadata: Metadata = {
-  title: '道路駕駛・運動駕駛・賽道課程・教練培訓',
+  title: 'DriveMate駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
   description:
     'DriveMate 駕駛訓練中心提供專業道路駕駛、運動駕駛與賽道課程，從新手上路到教練培訓，一對一實戰教學，讓你安全、自信、真正掌控每一次駕駛。',
   openGraph: {
