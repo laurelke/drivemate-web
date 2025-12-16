@@ -7,8 +7,8 @@ import { ChevronDown, Sparkles } from 'lucide-react'
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 
 const HERO_IMAGES = [
-  '/hero-2.jpg',
-  '/hero-4.jpg',
+  '/hero-2.JPG',
+  '/hero-4.JPG',
 ]
 
 export default function HomePage() {
