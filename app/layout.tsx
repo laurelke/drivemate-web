@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
     description:
-      '專業道路駕駛、運動駕駛與賽道課程，從新手到教練培訓，ㄜDriveMate 陪你建立安全與自信的駕駛實力。',
+      '專業道路駕駛、運動駕駛與賽道課程，從新手到教練培訓，DriveMate 陪你建立安全與自信的駕駛實力。',
     images: ['/og-image.jpg'],
   },
 
