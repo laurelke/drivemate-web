@@ -74,7 +74,7 @@ export default function HomePage() {
       duration: '單堂 180 分鐘',
       highlight: '📍 全台到府服務',
       pricing: [
-        { label: '《道路駕駛能力評估＋一次關鍵矯正》', price: '$4,990' },
+        { label: '《駕駛能力評估＋關鍵矯正》', price: '$4,990' },
         { label: '《14 天獨立上路成果計畫》', price: '$16,990' },
         { label: '《21 天通勤駕駛穩定方案》', price: '$35,000' },
       ],
