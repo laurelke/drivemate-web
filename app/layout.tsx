@@ -5,9 +5,9 @@ import Header from '@/components/Header'
 import MobileCTA from '@/components/MobileCTA'
 
 export const metadata: Metadata = {
-  title: 'DriveMate道路駕駛課程｜運動駕駛、賽道課程',
+  title: 'DriveMate駕駛訓練中心｜運動駕駛、賽道課程',
   description:
-    'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+    'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
 
   /* ================= 網站圖示（Google 紅圈來源） ================= */
   icons: [
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 
   /* ================= Open Graph ================= */
   openGraph: {
-    title: 'DriveMate道路駕駛課程｜運動駕駛、賽道課程',
+    title: 'DriveMate駕駛訓練中心｜運動駕駛、賽道課程',
     description:
-      'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+      'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
     url: 'https://drivemate-tw.com',
     siteName: 'DriveMate',
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'DriveMate道路駕駛課程｜運動駕駛、賽道課程',
+        alt: 'DriveMate駕駛訓練中心｜運動駕駛、賽道課程',
       },
     ],
     locale: 'zh_TW',
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   /* ================= Twitter ================= */
   twitter: {
     card: 'summary_large_image',
-    title: 'DriveMate道路駕駛課程｜運動駕駛、賽道課程',
+    title: 'DriveMate駕駛訓練中心｜運動駕駛、賽道課程',
     description:
-      'DriveMate道路駕駛團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
+      'DriveMate駕駛訓練團隊具有豐富的駕駛經驗和優秀的教學能力還具備耐心和親切的態度。',
     images: ['/og-image.jpg'],
   },
 
