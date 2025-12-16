@@ -6,8 +6,23 @@ import { ChevronDown, Sparkles } from 'lucide-react'
 
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 
+const HERO_IMAGES = [
+  '/hero-2.jpg',
+  '/hero-4.jpg',
+]
+
 export default function HomePage() {
   const [open, setOpen] = useState<string | null>(null)
+  const [currentHero, setCurrentHero] = useState(0)
+
+  /* ================= Hero 輪播 ================= */
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHero((prev) => (prev + 1) % HERO_IMAGES.length)
+    }, 5000)
+
+    return () => clearInterval(timer)
+  }, [])
 
   /* ================= 全站平滑滾動 ================= */
   useEffect(() => {
