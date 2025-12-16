@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 const INSTAGRAM_LINK = 'https://www.instagram.com/drivemate.tw'
@@ -31,40 +31,6 @@ function scrollToCard(id: string) {
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const [active, setActive] = useState<string | null>(null)
-
-  /* ================= Header Scroll Spy ================= */
-  useEffect(() => {
-    const sections = ['qa', 'payment', 'booking']
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id)
-          }
-        })
-      },
-      {
-        rootMargin: '-30% 0px -50% 0px',
-        threshold: 0,
-      }
-    )
-
-    sections.forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) observer.observe(el)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
-  /* ================= Nav 樣式 ================= */
-  function navClass(id: string) {
-    return active === id
-      ? 'text-black font-semibold'
-      : 'text-black/60 hover:text-black'
-  }
 
   return (
     <>
@@ -72,61 +38,47 @@ export default function Header() {
       <header className="fixed top-0 left-0 z-50 w-full border-b bg-white">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
           {/* Logo */}
-          <a
-            href="/"
-            onClick={(e) => {
-              e.preventDefault()
-              setActive(null)
-              window.location.href = '/'
-            }}
-            className="flex cursor-pointer items-center gap-2"
-          >
-            <Image
-              src="/drivemate-logo.JPG"
-              alt="DriveMate 道路駕駛課程"
-              width={36}
-              height={36}
-              priority
-            />
-            <span className="text-lg font-bold tracking-tight">
-              DriveMate
-            </span>
-          </a>
+<a
+  href="/"
+  onClick={(e) => {
+    e.preventDefault()
+    window.location.href = '/'
+  }}
+  className="flex items-center gap-2 cursor-pointer"
+>
+  <Image
+    src="/drivemate-logo.JPG"
+    alt="DriveMate 道路駕駛課程"
+    width={36}
+    height={36}
+    priority
+  />
+  <span className="text-lg font-bold tracking-tight">
+    DriveMate
+  </span>
+</a>
 
-          {/* Desktop Navigation */}
+
+          {/* Desktop Navigation（維持原本） */}
           <nav
             className="hidden items-center gap-6 text-sm md:flex"
             aria-label="Primary Navigation"
           >
-            <a
-              href="#qa"
-              className={navClass('qa')}
-              onClick={() => setActive('qa')}
-            >
+            <Link href="#info" className="hover:text-black/70">
               常見 Q&A
-            </a>
-
-            <a
-              href="#payment"
-              className={navClass('payment')}
-              onClick={() => setActive('payment')}
-            >
+            </Link>
+            <Link href="#info" className="hover:text-black/70">
               付款方式
-            </a>
-
-            <a
-              href="#booking"
-              className={navClass('booking')}
-              onClick={() => setActive('booking')}
-            >
+            </Link>
+            <Link href="#info" className="hover:text-black/70">
               預約資訊
-            </a>
+            </Link>
 
             <a
               href={INSTAGRAM_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black/60 hover:text-black"
+              className="hover:text-black/70"
             >
               Instagram
             </a>
@@ -174,14 +126,11 @@ export default function Header() {
               </button>
             </div>
 
-            {/* Mobile Navigation */}
+            {/* ⭐ 手機版：精準導向卡片 */}
             <nav className="flex flex-col gap-6 text-base">
               <button
-                className={`text-left ${
-                  active === 'qa' ? 'font-semibold text-black' : 'text-black/70'
-                }`}
+                className="text-left"
                 onClick={() => {
-                  setActive('qa')
                   setOpen(false)
                   window.history.replaceState(null, '', '#qa')
                   setTimeout(() => scrollToCard('info'), 80)
@@ -191,13 +140,8 @@ export default function Header() {
               </button>
 
               <button
-                className={`text-left ${
-                  active === 'payment'
-                    ? 'font-semibold text-black'
-                    : 'text-black/70'
-                }`}
+                className="text-left"
                 onClick={() => {
-                  setActive('payment')
                   setOpen(false)
                   window.history.replaceState(null, '', '#payment')
                   setTimeout(() => scrollToCard('info'), 80)
@@ -207,13 +151,8 @@ export default function Header() {
               </button>
 
               <button
-                className={`text-left ${
-                  active === 'booking'
-                    ? 'font-semibold text-black'
-                    : 'text-black/70'
-                }`}
+                className="text-left"
                 onClick={() => {
-                  setActive('booking')
                   setOpen(false)
                   window.history.replaceState(null, '', '#booking')
                   setTimeout(() => scrollToCard('info'), 80)
