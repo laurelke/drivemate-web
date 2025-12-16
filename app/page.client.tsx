@@ -153,7 +153,7 @@ export default function HomePage() {
   return (
     <>
       {/* ================= Hero（動態輪播） ================= */}
-      <section className="relative h-[72vh] w-full overflow-hidden bg-black">
+      <section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden bg-black">
         {/* 輪播圖片 */}
         <div className="absolute inset-0 mx-auto max-w-[1920px]">
           {HERO_IMAGES.map((src, index) => (
@@ -164,15 +164,19 @@ export default function HomePage() {
               }`}
             >
               <Image
-                src={src}
-                alt="DriveMate 專業道路駕駛課程"
-                fill
-                priority={index === 0}
-                quality={90}
-                sizes="100vw"
-                className="object-cover"
-                style={{ objectPosition: '50% 30%' }}
-              />
+  src={src}
+  alt="DriveMate 專業道路駕駛課程"
+  fill
+  priority={index === 0}
+  quality={90}
+  sizes="(max-width: 768px) 100vw, 1920px"
+  className="
+    object-cover
+    object-center
+    md:[object-position:50%_30%]
+  "
+/>
+
             </div>
           ))}
         </div>
