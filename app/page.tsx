@@ -1,3 +1,23 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '道路駕駛・運動駕駛・賽道課程・教練培訓',
+  description:
+    'DriveMate 駕駛訓練中心提供專業道路駕駛、運動駕駛與賽道課程，從新手上路到教練培訓，一對一實戰教學，讓你安全、自信、真正掌控每一次駕駛。',
+  openGraph: {
+    title: 'DriveMate 駕駛訓練中心｜專業駕駛訓練',
+    description:
+      '專業道路駕駛、運動駕駛與賽道課程，從新手到教練培訓，DriveMate 陪你建立安全與自信的駕駛實力。',
+    url: 'https://drivemate-tw.com',
+    type: 'website',
+  },
+  twitter: {
+    title: 'DriveMate 駕駛訓練中心｜專業駕駛訓練',
+    description:
+      '專業道路駕駛、運動駕駛與賽道課程，從新手到教練培訓，DriveMate 陪你建立安全與自信的駕駛實力。',
+  },
+}
+
 'use client'
 
 import Image from 'next/image'
@@ -215,9 +235,9 @@ export default function HomePage() {
 
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              ['實際道路教學', '真實交通環境訓練，學到每天都用得到的駕駛技巧'],
-              ['專業教練指導', '依學員程度客製課程，循序漸進提升'],
-              ['安心陪駕', '強化路況判斷與心理穩定度，安心上路'],
+              ['實際道路教學', '在真實市區道路、高速與複雜路況中進行駕駛訓練，從變換車道、路口判斷到臨場應變，學會每天實際用得到的安全駕駛技巧，而不只是考照而已。'],
+              ['專業駕駛教練一對一指導', '由經驗豐富的專業駕駛教練依照學員程度量身規劃課程，不論是新手上路、久未開車，或想加強特定路段，皆以循序漸進的方式，建立穩定且正確的駕駛觀念。'],
+              ['安心陪駕，克服上路恐懼', '針對容易緊張、害怕上路的學員，透過陪駕訓練與實戰引導，強化路況判斷與心理穩定度，讓你從「不敢開」到「敢開、會開、開得安心」。'],
             ].map(([t, d]) => (
               <div key={t} className="rounded-2xl border p-6 text-center shadow-sm">
                 <h3 className="mb-2 font-semibold">{t}</h3>
