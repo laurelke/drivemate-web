@@ -13,5 +13,122 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <HomePage />
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'DriveMate 提供哪些駕駛課程？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text:
+            'DriveMate 提供道路駕駛訓練、運動駕駛課程、賽道體驗課程，以及專業駕駛教練培訓，適合從新手到進階學員。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '完全沒有駕駛經驗也可以報名嗎？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text:
+            '可以。DriveMate 提供從零基礎開始的一對一駕駛訓練，依照學員程度客製課程內容，循序建立安全與自信。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '課程是一對一教學嗎？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text:
+            '是的，大多數課程採一對一實戰教學，確保學員能在實際道路與駕駛情境中獲得即時指導與回饋。',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'DriveMate 的課程地點在哪裡？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text:
+            'DriveMate 提供全台到府教學服務。（教練培訓課程除外）',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '如何報名或諮詢課程？',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text:
+            '可透過 DriveMate LINE 官方帳號進行諮詢與報名，將由專人協助你規劃最合適的駕駛課程。',
+        },
+      },
+    ],
+  }
+
+  return (
+    <>
+      {/* ================= FAQ Schema ================= */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* ================= 主首頁內容 ================= */}
+      <HomePage />
+
+      {/* ================= 首頁 FAQ 區塊（實體內容） ================= */}
+      <section className="mx-auto max-w-5xl px-6 py-20">
+        <h2 className="mb-10 text-center text-3xl font-bold">
+          常見問題 FAQ
+        </h2>
+
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-semibold">
+              DriveMate 提供哪些駕駛課程？
+            </h3>
+            <p className="mt-2 text-gray-700">
+              DriveMate 提供道路駕駛訓練、運動駕駛課程、賽道體驗課程，以及專業駕駛教練培訓，適合從新手到進階學員。
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold">
+              完全沒有駕駛經驗也可以報名嗎？
+            </h3>
+            <p className="mt-2 text-gray-700">
+              可以。DriveMate 提供從零基礎開始的一對一駕駛訓練，依照學員程度客製課程內容，循序建立安全與自信。
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold">
+              課程是一對一教學嗎？
+            </h3>
+            <p className="mt-2 text-gray-700">
+              是的，大多數課程採一對一實戰教學，確保學員能在實際道路與駕駛情境中獲得即時指導與回饋。
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold">
+              DriveMate 的課程地點在哪裡？
+            </h3>
+            <p className="mt-2 text-gray-700">
+              DriveMate 提供全台到府教學服務。（教練培訓課程除外）。
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold">
+              如何報名或諮詢課程？
+            </h3>
+            <p className="mt-2 text-gray-700">
+              可透過 DriveMate LINE 官方帳號進行諮詢與報名，將由專人協助你規劃最合適的駕駛課程。
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }
