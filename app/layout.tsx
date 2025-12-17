@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s｜DriveMate 駕駛訓練中心',
   },
   description:
-    'DriveMate 駕駛訓練中心，提供專業駕駛訓練與教學服務。',
+    'DriveMate 駕駛訓練中心，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，打造安全、自信且具實戰力的駕駛能力。',
 
   icons: [
     { rel: 'icon', url: '/favicon.png' },
@@ -43,7 +43,6 @@ export const metadata: Metadata = {
     maximumScale: 1,
   },
 }
-
 
 export default function RootLayout({
   children,
@@ -82,6 +81,49 @@ export default function RootLayout({
       </head>
 
       <body className="bg-white text-neutral-900">
+        {/* ================= Organization / LocalBusiness Schema ================= */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://drivemate-tw.com/#organization',
+                  name: 'DriveMate 駕駛訓練中心',
+                  url: 'https://drivemate-tw.com',
+                  logo: 'https://drivemate-tw.com/favicon.png',
+                  sameAs: [
+                    'https://www.facebook.com/',
+                    'https://www.instagram.com/',
+                  ],
+                },
+                {
+                  '@type': 'DrivingSchool',
+                  '@id': 'https://drivemate-tw.com/#localbusiness',
+                  name: 'DriveMate 駕駛訓練中心',
+                  url: 'https://drivemate-tw.com',
+                  image: 'https://drivemate-tw.com/og-image.jpg',
+                  priceRange: '$$$',
+                  areaServed: 'TW',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressCountry: 'TW',
+                    addressRegion: '台中市',
+                  },
+                  sameAs: [
+                    'https://lin.ee/J22IVRg',
+                  ],
+                  parentOrganization: {
+                    '@id': 'https://drivemate-tw.com/#organization',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+
         <Header />
 
         <main className="pt-16 pb-16">
