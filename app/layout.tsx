@@ -82,47 +82,52 @@ export default function RootLayout({
 
       <body className="bg-white text-neutral-900">
         {/* ================= Organization / LocalBusiness Schema ================= */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@graph': [
-                {
-                  '@type': 'Organization',
-                  '@id': 'https://drivemate-tw.com/#organization',
-                  name: 'DriveMate 駕駛訓練中心',
-                  url: 'https://drivemate-tw.com',
-                  logo: 'https://drivemate-tw.com/favicon.png',
-                  sameAs: [
-                    'https://www.facebook.com/',
-                    'https://www.instagram.com/',
-                  ],
-                },
-                {
-                  '@type': 'DrivingSchool',
-                  '@id': 'https://drivemate-tw.com/#localbusiness',
-                  name: 'DriveMate 駕駛訓練中心',
-                  url: 'https://drivemate-tw.com',
-                  image: 'https://drivemate-tw.com/og-image.jpg',
-                  priceRange: '$$$',
-                  areaServed: 'TW',
-                  address: {
-                    '@type': 'PostalAddress',
-                    addressCountry: 'TW',
-                    addressRegion: '台中市',
-                  },
-                  sameAs: [
-                    'https://lin.ee/J22IVRg',
-                  ],
-                  parentOrganization: {
-                    '@id': 'https://drivemate-tw.com/#organization',
-                  },
-                },
-              ],
-            }),
-          }}
-        />
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': 'https://drivemate-tw.com/#organization',
+          name: 'DriveMate 駕駛訓練中心',
+          url: 'https://drivemate-tw.com/',
+          logo: 'https://drivemate-tw.com/favicon.png',
+          sameAs: [
+            'https://www.facebook.com/',
+            'https://www.instagram.com/',
+            'https://lin.ee/J22IVRg',
+          ],
+        },
+        {
+          '@type': ['LocalBusiness', 'EducationalOrganization'],
+          '@id': 'https://drivemate-tw.com/#localbusiness',
+          name: 'DriveMate 駕駛訓練中心',
+          url: 'https://drivemate-tw.com/',
+          image: 'https://drivemate-tw.com/og-image.jpg',
+          priceRange: '$$$',
+          areaServed: {
+            '@type': 'Country',
+            name: 'TW',
+          },
+          address: {
+            '@type': 'PostalAddress',
+            addressRegion: '台中市',
+            addressCountry: {
+              '@type': 'Country',
+              name: 'TW',
+            },
+          },
+          parentOrganization: {
+            '@id': 'https://drivemate-tw.com/#organization',
+          },
+        },
+      ],
+    }),
+  }}
+/>
+
 
         <Header />
 
