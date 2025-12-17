@@ -258,13 +258,18 @@ export default function HomePage() {
             ← 左右滑動查看更多課程 →
           </p>
 
-          <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible">
+          <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible">
             {courses.map((course) => {
               const isOpen = open === course.key
               return (
                 <div
                   key={course.key}
-                  className="min-w-[280px] rounded-2xl border bg-white p-6 shadow-sm"
+                  className="
+  min-w-[280px]
+  w-full
+  rounded-2xl border bg-white p-6 shadow-sm
+"
+
                 >
                   <div
                     onClick={() => {
