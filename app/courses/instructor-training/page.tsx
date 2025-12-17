@@ -17,37 +17,78 @@ export const metadata: Metadata = {
   },
 }
 
-export default function InstructorTrainingPage() {
-  const courseSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    name: '道路駕駛教練培訓課程',
-    description:
-      '專為培養專業道路駕駛教練所設計的完整培訓課程，涵蓋駕駛技術、教學方法與安全觀念。',
-    provider: {
-      '@type': 'Organization',
-      name: 'DriveMate 駕駛訓練中心',
-      url: 'https://drivemate-tw.com',
-    },
-    educationalCredentialAwarded: 'DriveMate 教練培訓結業證明',
-    hasCourseInstance: {
-      '@type': 'CourseInstance',
-      courseMode: 'Onsite',
-      location: {
-        '@type': 'Place',
-        name: '台中',
-      },
-      duration: 'P3M',
-    },
-  }
+/* ================= Rich Result Schema ================= */
 
+/** Course Schema */
+const courseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: '道路駕駛教練培訓課程',
+  description:
+    '專為培養專業道路駕駛教練所設計的完整培訓課程，涵蓋駕駛技術、教學方法與安全觀念。',
+  provider: {
+    '@type': 'Organization',
+    name: 'DriveMate 駕駛訓練中心',
+    url: 'https://drivemate-tw.com',
+  },
+  educationalCredentialAwarded: 'DriveMate 教練培訓結業證明',
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'Onsite',
+    duration: 'PT3H',
+    location: {
+      '@type': 'Place',
+      name: '全台到府 / 台中為主',
+    },
+  },
+}
+
+/** Breadcrumb Schema */
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: '首頁',
+      item: 'https://drivemate-tw.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: '課程介紹',
+      item: 'https://drivemate-tw.com/courses',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: '教練培訓',
+      item: 'https://drivemate-tw.com/courses/instructor-training',
+    },
+  ],
+}
+
+export default function InstructorTrainingPage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
+      {/* ===== Course Schema ===== */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(courseSchema),
+        }}
       />
 
+      {/* ===== Breadcrumb Schema ===== */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
+      {/* ===== 原本頁面內容（完全保留） ===== */}
       <h1 className="mb-6 text-3xl font-bold">道路駕駛教練培訓課程</h1>
 
       <p className="mb-10 text-lg text-gray-700">
@@ -77,7 +118,7 @@ export default function InstructorTrainingPage() {
       <section className="mb-12">
         <h2 className="mb-4 text-2xl font-semibold">課程資訊</h2>
         <ul className="space-y-2 text-gray-700">
-          <li>📍 上課地點：台中</li>
+          <li>📍 上課地點：台中（可依需求調整）</li>
           <li>🕒 培訓週期：3–6 個月</li>
           <li>👤 教學方式：小班制 / 實地教學</li>
         </ul>
