@@ -265,12 +265,14 @@ export default function HomePage() {
                 <div
                   key={course.key}
                   className="
-  min-w-[280px]
-  w-full
-  rounded-2xl border bg-white p-6 shadow-sm
-"
-
-                >
+    min-w-[280px] w-full
+    rounded-2xl border bg-white p-6
+    shadow-sm
+    transition-transform transition-shadow duration-300 ease-out
+    hover:-translate-y-1
+    hover:shadow-lg
+  "
+>
                   <div
                     onClick={() => {
   setOpen(isOpen ? null : course.key)
