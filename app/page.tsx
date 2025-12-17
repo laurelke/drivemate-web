@@ -68,9 +68,11 @@ export default function Page() {
   return (
     <>
       {/* ================= FAQ Schema ================= */}
-      <script
+     <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
       />
 
       {/* ================= 主首頁內容 ================= */}
