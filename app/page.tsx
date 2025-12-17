@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import HomePage from './page.client'
+import HomePage from '../components/HomeClient'
 
 export const metadata: Metadata = {
   title: 'DriveMate駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
