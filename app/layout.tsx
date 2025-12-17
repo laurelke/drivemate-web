@@ -11,12 +11,10 @@ export const metadata: Metadata = {
   },
   description:
     'DriveMate 駕駛訓練中心，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，打造安全、自信且具實戰力的駕駛能力。',
-
   icons: [
     { rel: 'icon', url: '/favicon.png' },
     { rel: 'apple-touch-icon', url: '/favicon.png' },
   ],
-
   openGraph: {
     siteName: 'DriveMate',
     locale: 'zh_TW',
@@ -31,12 +29,10 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card: 'summary_large_image',
     images: ['/og-image.jpg'],
   },
-
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -63,10 +59,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            // Google Analytics
             gtag('config', 'G-XXXXXXXXXX');
-
-            // Google Ads
             gtag('config', 'AW-17613789230');
 
             window.trackCTAConversion = function () {
@@ -81,59 +74,67 @@ export default function RootLayout({
       </head>
 
       <body className="bg-white text-neutral-900">
-        {/* ================= Organization / LocalBusiness Schema ================= */}
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'Organization',
-          '@id': 'https://drivemate-tw.com/#organization',
-          name: 'DriveMate 駕駛訓練中心',
-          url: 'https://drivemate-tw.com/',
-          logo: 'https://drivemate-tw.com/favicon.png',
-          sameAs: [
-            'https://www.facebook.com/',
-            'https://www.instagram.com/',
-            'https://lin.ee/J22IVRg',
-          ],
-        },
-        {
-          '@type': ['LocalBusiness', 'EducationalOrganization'],
-          '@id': 'https://drivemate-tw.com/#localbusiness',
-          name: 'DriveMate 駕駛訓練中心',
-          url: 'https://drivemate-tw.com/',
-          image: 'https://drivemate-tw.com/og-image.jpg',
-          priceRange: '$$$',
-          areaServed: {
-            '@type': 'Country',
-            name: 'TW',
-          },
-          address: {
-            '@type': 'PostalAddress',
-            addressRegion: '台中市',
-            addressCountry: {
-              '@type': 'Country',
-              name: 'TW',
-            },
-          },
-          parentOrganization: {
-            '@id': 'https://drivemate-tw.com/#organization',
-          },
-        },
-      ],
-    }),
-  }}
-/>
-
+        {/* ================= Organization / EducationalOrganization / LocalBusiness Schema ================= */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://drivemate-tw.com/#organization',
+                  name: 'DriveMate 駕駛訓練中心',
+                  url: 'https://drivemate-tw.com/',
+                  logo: 'https://drivemate-tw.com/favicon.png',
+                  sameAs: [
+                    'https://www.facebook.com/',
+                    'https://www.instagram.com/',
+                    'https://lin.ee/J22IVRg',
+                  ],
+                },
+                {
+                  '@type': 'EducationalOrganization',
+                  '@id': 'https://drivemate-tw.com/#education',
+                  name: 'DriveMate 駕駛訓練中心',
+                  url: 'https://drivemate-tw.com/',
+                  description:
+                    'DriveMate 是專業駕駛訓練與教練培訓機構，提供道路駕駛、運動駕駛、賽道體驗與教練培訓課程。',
+                  parentOrganization: {
+                    '@id': 'https://drivemate-tw.com/#organization',
+                  },
+                },
+                {
+                  '@type': 'LocalBusiness',
+                  '@id': 'https://drivemate-tw.com/#localbusiness',
+                  name: 'DriveMate 駕駛訓練中心',
+                  url: 'https://drivemate-tw.com/',
+                  image: 'https://drivemate-tw.com/og-image.jpg',
+                  priceRange: '$$$',
+                  areaServed: {
+                    '@type': 'Country',
+                    name: 'TW',
+                  },
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressRegion: '台中市',
+                    addressCountry: {
+                      '@type': 'Country',
+                      name: 'TW',
+                    },
+                  },
+                  parentOrganization: {
+                    '@id': 'https://drivemate-tw.com/#organization',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
 
         <Header />
 
-        <main className="pt-16 pb-16">
-          {children}
-        </main>
+        <main className="pt-16 pb-16">{children}</main>
 
         <MobileCTA />
       </body>
