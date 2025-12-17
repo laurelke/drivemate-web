@@ -74,7 +74,7 @@ export default function RootLayout({
       </head>
 
       <body className="bg-white text-neutral-900">
-        {/* ================= Organization / EducationalOrganization / LocalBusiness Schema ================= */}
+        {/* ================= Organization / EducationalOrganization / LocalBusiness ================= */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -127,15 +127,67 @@ export default function RootLayout({
                     '@id': 'https://drivemate-tw.com/#organization',
                   },
                 },
+
+                /* ================= Course Schema ================= */
+                {
+                  '@type': 'Course',
+                  '@id': 'https://drivemate-tw.com/#course-road-driving',
+                  name: '道路駕駛實戰訓練課程',
+                  description:
+                    '專為一般駕駛與新手設計的一對一道路駕駛實戰課程，涵蓋實際道路操作、安全觀念、情境判斷與駕駛自信建立。',
+                  provider: {
+                    '@id': 'https://drivemate-tw.com/#organization',
+                  },
+                  educationalCredentialAwarded:
+                    'DriveMate 道路駕駛訓練結業證明',
+                  courseMode: ['Onsite', 'Practical'],
+                  hasCourseInstance: {
+                    '@type': 'CourseInstance',
+                    courseMode: 'Onsite',
+                    duration: 'P1M',
+                    location: {
+                      '@type': 'Place',
+                      name: '台灣（到府道路教學）',
+                      address: {
+                        '@type': 'PostalAddress',
+                        addressCountry: 'TW',
+                      },
+                    },
+                  },
+                },
+                {
+                  '@type': 'Course',
+                  '@id': 'https://drivemate-tw.com/#course-track-driving',
+                  name: '賽道駕駛體驗與進階操控課程',
+                  description:
+                    '針對已有駕駛基礎者設計的賽道駕駛體驗與進階操控課程，學習車輛極限、操控技巧、煞車與過彎策略。',
+                  provider: {
+                    '@id': 'https://drivemate-tw.com/#organization',
+                  },
+                  educationalCredentialAwarded:
+                    'DriveMate 賽道駕駛訓練證明',
+                  courseMode: ['Onsite', 'Practical'],
+                  hasCourseInstance: {
+                    '@type': 'CourseInstance',
+                    courseMode: 'Onsite',
+                    duration: 'P1D',
+                    location: {
+                      '@type': 'Place',
+                      name: '專業賽車場（依課程安排）',
+                      address: {
+                        '@type': 'PostalAddress',
+                        addressCountry: 'TW',
+                      },
+                    },
+                  },
+                },
               ],
             }),
           }}
         />
 
         <Header />
-
         <main className="pt-16 pb-16">{children}</main>
-
         <MobileCTA />
       </body>
     </html>
