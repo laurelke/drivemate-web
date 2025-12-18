@@ -16,7 +16,7 @@ export default function RoadDrivingPage() {
     className="object-cover"
   />
 
-  <div className="absolute inset-0 bg-black/50" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
   <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-6 pb-24">
     <div className="max-w-2xl text-white">
@@ -171,8 +171,18 @@ export default function RoadDrivingPage() {
           </p>
           <Link
             href="https://lin.ee/J22IVRg"
-            className="inline-block rounded-xl bg-orange-500 px-10 py-4 text-lg font-semibold text-white hover:bg-orange-600"
-          >
+             className="
+    inline-flex items-center justify-center
+    rounded-2xl
+    bg-orange-500
+    px-10 py-4
+    text-lg font-semibold text-white
+    shadow-lg shadow-orange-500/20
+    transition-all duration-300 ease-out
+    hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
+    active:translate-y-0 active:shadow-md
+  "
+>
             立即預約諮詢
           </Link>
         </div>

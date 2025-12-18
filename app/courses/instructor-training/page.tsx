@@ -17,7 +17,7 @@ export default function InstructorTrainingPage() {
   />
 
   {/* 首頁同款遮罩 */}
-  <div className="absolute inset-0 bg-black/50" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
   {/* === 關鍵：首頁 Hero Content 容器 === */}
   <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-6 pb-24">
