@@ -55,8 +55,8 @@ export default function TrackDrivingPage() {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <Link href="#signup" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
-              LINE 報名諮詢
+            <Link href="https://lin.ee/" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
+            立即預約
             </Link>
           </div>
         </div>

@@ -139,7 +139,7 @@ export default function RoadDrivingPage() {
             歡迎透過 LINE 與我們聯絡，安排最適合你的道路駕駛方案與時段。
           </p>
           <Link href="https://lin.ee/" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
-            LINE 諮詢
+            立即預約
           </Link>
         </div>
       </section>
