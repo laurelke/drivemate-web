@@ -138,7 +138,7 @@ export default function RoadDrivingPage() {
           <p className="mb-8 text-neutral-600">
             歡迎透過 LINE 與我們聯絡，安排最適合你的道路駕駛方案與時段。
           </p>
-          <Link href="https://lin.ee/" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
+          <Link href="hhttps://lin.ee/J22IVRg" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
             立即預約
           </Link>
         </div>

@@ -55,7 +55,7 @@ export default function TrackDrivingPage() {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <Link href="https://lin.ee/" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
+            <Link href="https://lin.ee/J22IVRg" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
             立即預約
             </Link>
           </div>
