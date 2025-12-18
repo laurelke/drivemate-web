@@ -31,11 +31,21 @@ export default function TrackDrivingPage() {
 
       <div className="mt-10">
         <Link
-          href="#pricing"
-          className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-10 py-4 text-lg font-semibold hover:bg-orange-600"
-        >
-          查看課程方案
-        </Link>
+  href="#pricing"
+  className="
+    inline-flex items-center justify-center
+    rounded-2xl
+    bg-orange-500
+    px-10 py-4
+    text-lg font-semibold text-white
+    shadow-lg shadow-orange-500/20
+    transition-all duration-300 ease-out
+    hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
+    active:translate-y-0 active:shadow-md
+  "
+>
+  查看課程方案
+</Link>
       </div>
     </div>
   </div>
@@ -107,8 +117,18 @@ export default function TrackDrivingPage() {
           </p>
           <Link
             href="https://lin.ee/J22IVRg"
-            className="inline-block rounded-xl bg-orange-500 px-10 py-4 text-lg font-semibold hover:bg-orange-600"
-          >
+            className="
+    inline-flex items-center justify-center
+    rounded-2xl
+    bg-orange-500
+    px-10 py-4
+    text-lg font-semibold text-white
+    shadow-lg shadow-orange-500/20
+    transition-all duration-300 ease-out
+    hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
+    active:translate-y-0 active:shadow-md
+  "
+>
             立即預約諮詢
           </Link>
         </div>
