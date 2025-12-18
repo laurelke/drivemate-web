@@ -13,9 +13,9 @@ export default function TrackDrivingPage() {
           alt="賽道駕駛體驗課程"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center text-white">
           <h1 className="text-4xl font-bold md:text-5xl">
