@@ -44,7 +44,7 @@ export default function InstructorTrainingPage() {
               <li>• 教學溝通與流程設計</li>
               <li>• 安全控管與心理技巧</li>
             </ul>
-            <Link href="https://lin.ee/" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white block text-center">
+            <Link href="https://lin.ee/J22IVRg" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white block text-center">
               預約培訓諮詢
             </Link>
           </div>
