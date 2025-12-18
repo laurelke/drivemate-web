@@ -6,36 +6,40 @@ import Link from 'next/link'
 export default function TrackDrivingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
-      {/* ================= Hero ================= */}
-      <section className="relative h-[75vh] min-h-[520px]">
-        <Image
-          src="/images/courses/track-driving-hero.jpg"
-          alt="賽道駕駛體驗課程"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+      {/* ================= Hero（與首頁對齊） ================= */}
+<section className="relative h-[75vh] min-h-[520px]">
+  <Image
+    src="/images/courses/track-driving-hero.jpg"
+    alt="賽道駕駛體驗課程"
+    fill
+    priority
+    className="object-cover"
+  />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center text-white">
-          <h1 className="text-4xl font-bold md:text-5xl">
-            賽道駕駛體驗課程
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-neutral-200">
-            在安全可控的賽道環境中，  
-            深入理解操控極限，建立真正的駕駛手感。
-          </p>
+  <div className="absolute inset-0 bg-black/50" />
 
-          <div className="mt-8">
-            <Link
-              href="#pricing"
-              className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white hover:bg-orange-600"
-            >
-              查看課程方案
-            </Link>
-          </div>
-        </div>
-      </section>
+  <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-6 pb-24">
+    <div className="max-w-2xl text-white">
+      <h1 className="text-4xl font-bold md:text-5xl leading-tight">
+        賽道駕駛體驗課程
+      </h1>
+
+      <p className="mt-6 text-lg text-neutral-200">
+        在安全可控的賽道環境中，  
+        深入理解操控極限，建立真正的駕駛手感。
+      </p>
+
+      <div className="mt-10">
+        <Link
+          href="#pricing"
+          className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-10 py-4 text-lg font-semibold hover:bg-orange-600"
+        >
+          查看課程方案
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ================= 為什麼要上賽道 ================= */}
       <section className="mx-auto max-w-6xl px-6 py-20">
