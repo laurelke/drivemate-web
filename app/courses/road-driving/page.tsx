@@ -73,11 +73,7 @@ export default function RoadDrivingPage() {
           <li>• 個人化練習建議方向</li>
         </ul>
 
-        <a
-          href="#signup"
-          className="block rounded-xl bg-neutral-800 py-3 text-center font-semibold text-white"
-        >
-          預約評估
+        <a>
         </a>
       </div>
 
@@ -105,11 +101,7 @@ export default function RoadDrivingPage() {
           <li>• 明確成果檢核與回饋</li>
         </ul>
 
-        <a
-          href="#signup"
-          className="block rounded-xl bg-orange-500 py-3 text-center font-semibold text-white"
-        >
-          諮詢此方案
+        <a>
         </a>
       </div>
 
@@ -127,17 +119,13 @@ export default function RoadDrivingPage() {
         </p>
 
         <ul className="mb-8 space-y-2 text-sm text-neutral-600">
-          <li>• 以實際通勤路線為訓練核心</li>
+          <li>• 以應對所有路型/路線為訓練核心</li>
+          <li>• 21 天密集練習步調</li>
           <li>• 尖峰與高流量路況應對</li>
-          <li>• 停車、路口與突發狀況練習</li>
           <li>• 建立長期穩定駕駛習慣</li>
         </ul>
 
-        <a
-          href="#signup"
-          className="block rounded-xl bg-neutral-800 py-3 text-center font-semibold text-white"
-        >
-          專人諮詢
+        <a>
         </a>
       </div>
     </div>
