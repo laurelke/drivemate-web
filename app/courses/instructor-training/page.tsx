@@ -6,48 +6,104 @@ import Link from 'next/link'
 export default function InstructorTrainingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
-      {/* Hero */}
-      <section className="relative h-[70vh] min-h-[500px]">
-        <Image src="/images/courses/instructor-training-hero.jpg" fill alt="教練培訓課程" priority className="object-cover" />
-        <div className="absolute inset-0 bg-black/60"></div>
+      {/* ================= Hero ================= */}
+      <section className="relative h-[75vh] min-h-[520px]">
+        <Image
+          src="/images/courses/instructor-training-hero.jpg"
+          alt="教練培訓課程"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center text-white">
-          <h1 className="text-4xl font-bold md:text-5xl">道路駕駛教練培訓課程</h1>
+          <h1 className="text-4xl font-bold md:text-5xl">
+            駕駛教練培訓課程
+          </h1>
           <p className="mt-4 max-w-2xl text-lg text-neutral-200">
-            建立完整教學架構、心理溝通與實地演練的專業教練技能。
+            不只是會開車，  
+            而是能「教得好、帶得穩」的專業駕駛教練。
           </p>
-          <Link href="#pricing" className="mt-8 rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
-            了解培訓方案
-          </Link>
+
+          <div className="mt-8">
+            <Link
+              href="#pricing"
+              className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold hover:bg-orange-600"
+            >
+              查看培訓方案
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* 課程亮點 */}
-      <section className="mx-auto max-w-4xl px-6 py-12">
-        <h2 className="mb-6 text-center text-3xl font-bold">課程特色</h2>
-        <ul className="list-disc space-y-3 pl-6 text-neutral-700">
-          <li>從駕駛技術到教學方法完整培訓</li>
-          <li>小班制＋實地教學演練</li>
-          <li>學員溝通與安全控管技巧</li>
-          <li>建立教學流程與課程設計能力</li>
-        </ul>
-      </section>
+      {/* ================= 誰適合這門課 ================= */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="mb-10 text-center text-3xl font-bold">
+          這門課適合誰？
+        </h2>
 
+        <div className="grid gap-8 md:grid-cols-3">
+          {[
+            {
+              title: '現職或準教練',
+              desc: '希望建立系統化教學能力與專業方法論。',
+            },
+            {
+              title: '高階駕駛者',
+              desc: '想將自身經驗轉化為可教學的能力。',
+            },
+            {
+              title: '品牌合作培訓',
+              desc: '企業、車廠、車隊內部培訓需求。',
+            },
+          ].map((item) => (
+            <div key={item.title} className="rounded-2xl bg-white p-6 shadow">
+              <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
+              <p className="text-neutral-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* Training Pricing */}
       <section id="pricing" className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16">
-          <h2 className="mb-8 text-center text-3xl font-bold">培訓費用說明</h2>
+          <h2 className="mb-8 text-center text-3xl font-bold">
+            培訓費用說明
+          </h2>
+
           <div className="rounded-2xl bg-white p-8 shadow">
-            <p className="mb-4 text-neutral-700">課程為長期系統性培訓，費用依培訓內容與時間安排彈性設計。</p>
-            <p className="mb-6 text-3xl font-bold text-neutral-800">NT$128,000</p>
-            <ul className="mb-6 text-neutral-600 space-y-1">
-              <li>• 小班制實務演練</li>
-              <li>• 教學溝通與流程設計</li>
-              <li>• 安全控管與心理技巧</li>
+            <p className="mb-4 text-neutral-700">
+              課程為長期系統性培訓，培訓內容與深度彈性規劃。
+            </p>
+
+            <p className="mb-6 text-3xl font-bold text-neutral-800">
+              NT$128,000
+            </p>
+
+            <ul className="mb-6 space-y-1 text-neutral-600">
+              <li>• 建立教學結構、溝通技巧與基礎帶課能力</li>
+              <li>• 強化課程設計、評估能力與學員管理</li>
             </ul>
-            <Link href="https://lin.ee/J22IVRg" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white block text-center">
-              預約培訓諮詢
-            </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="bg-neutral-900 text-white">
+        <div className="mx-auto max-w-4xl px-6 py-20 text-center">
+          <h2 className="mb-4 text-3xl font-bold">
+            想成為真正專業的駕駛教練？
+          </h2>
+          <p className="mb-8 text-neutral-300">
+            加入 LINE，了解完整培訓流程與合作方式。
+          </p>
+          <Link
+            href="https://lin.ee/J22IVRg"
+            className="inline-block rounded-xl bg-orange-500 px-10 py-4 text-lg font-semibold hover:bg-orange-600"
+          >
+            聯絡我們
+          </Link>
         </div>
       </section>
     </main>
