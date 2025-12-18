@@ -1,140 +1,51 @@
-import { Metadata } from 'next'
+'use client'
 
-export const metadata: Metadata = {
-  title: '駕駛教練培訓課程｜DriveMate 專業道路駕駛教學',
-  description:
-    'DriveMate 教練培訓課程，專為想成為專業駕駛教練的人設計，結合理論、實務與教學方法，建立完整道路駕駛教學能力。',
-  alternates: {
-    canonical: 'https://drivemate-tw.com/courses/instructor-training',
-  },
-  openGraph: {
-    title: '駕駛教練培訓課程｜DriveMate',
-    description:
-      '從實戰駕駛到教學能力養成，DriveMate 教練培訓課程，打造專業道路駕駛教練。',
-    url: 'https://drivemate-tw.com/courses/instructor-training',
-    siteName: 'DriveMate 駕駛訓練中心',
-    type: 'website',
-  },
-}
-
-/* ================= Rich Result Schema ================= */
-
-/** Course Schema */
-const courseSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: '道路駕駛教練培訓課程',
-  description:
-    '專為培養專業道路駕駛教練所設計的完整培訓課程，涵蓋駕駛技術、教學方法與安全觀念。',
-  provider: {
-    '@type': 'Organization',
-    name: 'DriveMate 駕駛訓練中心',
-    url: 'https://drivemate-tw.com',
-  },
-  educationalCredentialAwarded: 'DriveMate 教練培訓結業證明',
-  hasCourseInstance: {
-    '@type': 'CourseInstance',
-    courseMode: 'Onsite',
-    duration: 'PT3H',
-    location: {
-      '@type': 'Place',
-      name: '全台到府 / 台中為主',
-    },
-  },
-}
-
-/** Breadcrumb Schema */
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: '首頁',
-      item: 'https://drivemate-tw.com/',
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: '課程介紹',
-      item: 'https://drivemate-tw.com/courses',
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: '教練培訓',
-      item: 'https://drivemate-tw.com/courses/instructor-training',
-    },
-  ],
-}
+import Link from 'next/link'
 
 export default function InstructorTrainingPage() {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16">
-      {/* ===== Course Schema ===== */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(courseSchema),
-        }}
-      />
-
-      {/* ===== Breadcrumb Schema ===== */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-
-      {/* ===== 原本頁面內容（完全保留） ===== */}
-      <h1 className="mb-6 text-3xl font-bold">道路駕駛教練培訓課程</h1>
-
-      <p className="mb-10 text-lg text-gray-700">
-        本課程專為希望投入專業駕駛教學的人設計，從道路駕駛實力、教學結構、學員溝通到安全控管，
-        建立完整的教練養成體系。
-      </p>
-
-      <section className="mb-12">
-        <h2 className="mb-4 text-2xl font-semibold">課程適合對象</h2>
-        <ul className="list-disc space-y-2 pl-6 text-gray-700">
-          <li>希望成為專業道路駕駛教練者</li>
-          <li>已有駕駛經驗，想轉為教學工作者</li>
-          <li>欲建立系統化駕駛教學能力的從業人員</li>
-        </ul>
+    <main className="min-h-screen bg-neutral-50 text-neutral-800">
+      <section className="bg-neutral-800 text-white">
+        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
+          <h1 className="mb-4 text-4xl font-bold md:text-5xl">道路駕駛教練培訓課程</h1>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-neutral-300">
+            建立專業、系統化的道路駕駛教學能力。
+          </p>
+          <Link href="#signup" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
+            了解培訓內容
+          </Link>
+        </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="mb-4 text-2xl font-semibold">培訓內容重點</h2>
-        <ul className="list-disc space-y-2 pl-6 text-gray-700">
-          <li>道路駕駛安全與進階操作技巧</li>
-          <li>駕駛教學流程與課程設計</li>
-          <li>學員心理與溝通技巧</li>
-          <li>實際教學演練與回饋</li>
-        </ul>
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl bg-white p-6 shadow">
+            <h3 className="mb-3 text-xl font-semibold">適合對象</h3>
+            <p className="text-neutral-600">希望成為專業道路駕駛教練的駕駛者。</p>
+          </div>
+          <div className="rounded-2xl bg-white p-6 shadow">
+            <h3 className="mb-3 text-xl font-semibold">培訓內容</h3>
+            <ul className="space-y-2 text-neutral-600">
+              <li>• 教學流程與課綱設計</li>
+              <li>• 駕駛安全觀念</li>
+              <li>• 學員心理與溝通</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-white p-6 shadow">
+            <h3 className="mb-3 text-xl font-semibold">培訓特色</h3>
+            <p className="text-neutral-600">小班制實務導向，重視實際教學能力。</p>
+          </div>
+        </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="mb-4 text-2xl font-semibold">課程資訊</h2>
-        <ul className="space-y-2 text-gray-700">
-          <li>📍 上課地點：台中（可依需求調整）</li>
-          <li>🕒 培訓週期：3–6 個月</li>
-          <li>👤 教學方式：小班制 / 實地教學</li>
-        </ul>
-      </section>
-
-      <section className="rounded-xl bg-gray-100 p-8">
-        <h2 className="mb-4 text-2xl font-semibold">立即諮詢報名</h2>
-        <p className="mb-6 text-gray-700">
-          若你希望將駕駛技術轉化為專業教學能力，歡迎與我們聯繫了解詳細培訓內容。
-        </p>
-        <a
-          href="https://lin.ee/J22IVRg"
-          className="inline-block rounded-full bg-black px-8 py-3 text-white"
-        >
-          LINE 諮詢
-        </a>
+      <section id="signup" className="bg-neutral-100">
+        <div className="mx-auto max-w-4xl px-6 py-16 text-center">
+          <h2 className="mb-4 text-3xl font-bold">成為值得信賴的駕駛教練</h2>
+          <p className="mb-8 text-neutral-600">歡迎聯絡我們索取完整培訓資訊。</p>
+          <Link href="https://lin.ee/" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
+            LINE 諮詢
+          </Link>
+        </div>
       </section>
     </main>
   )
