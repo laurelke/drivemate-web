@@ -6,36 +6,44 @@ import Link from 'next/link'
 export default function InstructorTrainingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
-      {/* ================= Hero ================= */}
-      <section className="relative h-[75vh] min-h-[520px]">
-        <Image
-          src="/images/courses/instructor-training-hero.jpg"
-          alt="教練培訓課程"
-          fill
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60" />
+      {/* ================= Hero（與首頁 100% 對齊） ================= */}
+<section className="relative h-[75vh] min-h-[520px]">
+  <Image
+    src="/images/courses/instructor-training-hero.jpg"
+    alt="駕駛教練培訓課程"
+    fill
+    priority
+    className="object-cover"
+  />
 
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center text-white">
-          <h1 className="text-4xl font-bold md:text-5xl">
-            駕駛教練培訓課程
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-neutral-200">
-            不只是會開車，  
-            而是能「教得好、帶得穩」的專業駕駛教練。
-          </p>
+  {/* 首頁同款遮罩 */}
+  <div className="absolute inset-0 bg-black/50" />
 
-          <div className="mt-8">
-            <Link
-              href="#pricing"
-              className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold hover:bg-orange-600"
-            >
-              查看培訓方案
-            </Link>
-          </div>
-        </div>
-      </section>
+  {/* === 關鍵：首頁 Hero Content 容器 === */}
+  <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-6 pb-24">
+    {/* === 首頁同款文字寬度 === */}
+    <div className="max-w-2xl text-white">
+      <h1 className="text-4xl font-bold md:text-5xl leading-tight">
+        駕駛教練培訓課程
+      </h1>
+
+      <p className="mt-6 text-lg text-neutral-200">
+        不只是會開車，  
+        而是能「教得好、帶得穩」的專業駕駛教練。
+      </p>
+
+      {/* 首頁同款 CTA 間距 */}
+      <div className="mt-10">
+        <Link
+          href="#pricing"
+          className="inline-flex items-center justify-center rounded-xl bg-orange-500 px-10 py-4 text-lg font-semibold hover:bg-orange-600"
+        >
+          查看培訓方案
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ================= 誰適合這門課 ================= */}
       <section className="mx-auto max-w-6xl px-6 py-20">
