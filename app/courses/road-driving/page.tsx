@@ -6,8 +6,8 @@ import Link from 'next/link'
 export default function RoadDrivingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
-      {/* Hero */}
-      <section className="relative h-[70vh] min-h-[500px]">
+      {/* ================= Hero ================= */}
+      <section className="relative h-[75vh] min-h-[520px]">
         <Image
           src="/images/courses/road-driving-hero.jpg"
           alt="道路駕駛實戰課程"
@@ -15,31 +15,113 @@ export default function RoadDrivingPage() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/60" />
+
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center text-white">
-          <h1 className="text-4xl font-bold md:text-5xl">道路駕駛實戰課程</h1>
+          <h1 className="text-4xl font-bold md:text-5xl">
+            道路駕駛實戰課程
+          </h1>
           <p className="mt-4 max-w-2xl text-lg text-neutral-200">
-  由專業教練一對一陪駕，從基本操作、複雜路況判斷到應變能力，
-  真正讓你上路更安心、自信。
-</p>
-          <Link
-            href="#pricing"
-            className="mt-8 rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white"
-          >
-            查看方案與費用
-          </Link>
+            從評估、矯正到穩定上路，  
+            用最貼近真實生活的方式，建立你的駕駛信心。
+          </p>
+
+          {/* 與首頁一致的 CTA 風格 */}
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Link
+              href="#pricing"
+              className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white hover:bg-orange-600"
+            >
+              查看課程方案
+            </Link>
+            <Link
+              href="#signup"
+              className="rounded-xl border border-white/40 px-8 py-4 text-lg font-semibold text-white hover:bg-white/10"
+            >
+              立即預約諮詢
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* 課程重點 */}
-      <section className="mx-auto max-w-4xl px-6 py-12">
-        <h2 className="mb-6 text-center text-3xl font-bold">你會學到什麼</h2>
-        <ul className="list-disc space-y-3 pl-6 text-neutral-700">
-          <li>基本車輛控制與駕駛信心建立</li>
-          <li>市區道路／高速路況實際演練</li>
-          <li>路口判斷與變換車道技巧</li>
-          <li>倒車、停車與狹窄路段應對</li>
-        </ul>
+      {/* ================= 為什麼需要道路駕駛訓練 ================= */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="mb-10 text-center text-3xl font-bold">
+          為什麼很多人「有駕照，卻不敢上路」？
+        </h2>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {[
+            {
+              title: '缺乏真實路況經驗',
+              desc: '考照練習與實際道路差距極大，一上路就緊張。',
+            },
+            {
+              title: '錯誤習慣未被糾正',
+              desc: '方向盤、煞車、路口判斷的小錯誤，會累積成壓力。',
+            },
+            {
+              title: '心理壓力大於技術問題',
+              desc: '很多時候不是不會開，而是不敢開。',
+            },
+          ].map((item) => (
+            <div key={item.title} className="rounded-2xl bg-white p-6 shadow">
+              <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
+              <p className="text-neutral-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= 成果型方案（你前面已確認） ================= */}
+      <section className="bg-neutral-100">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <h2 className="mb-4 text-center text-3xl font-bold">
+            成果導向的道路駕駛方案
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-neutral-600">
+            不只是陪你練，而是陪你練到「敢自己開」。
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* A */}
+            <div className="rounded-2xl bg-white p-6 shadow">
+              <h3 className="text-xl font-semibold">駕駛能力評估＋關鍵矯正</h3>
+              <p className="mt-1 text-sm text-neutral-500">
+                入門｜快速診斷
+              </p>
+              <p className="mt-4 text-neutral-700">
+                透過實際上路評估，找出影響你駕駛信心的核心問題，
+                並立即進行關鍵矯正。
+              </p>
+            </div>
+
+            {/* B */}
+            <div className="rounded-2xl border-2 border-orange-500 bg-white p-6 shadow-lg">
+              <p className="mb-2 text-sm font-semibold text-orange-600">
+                最多人選擇
+              </p>
+              <h3 className="text-xl font-semibold">
+                14 天獨立上路成果計畫
+              </h3>
+              <p className="mt-4 text-neutral-700">
+                以「能自己上路」為明確目標，
+                14 天內建立穩定的道路駕駛能力。
+              </p>
+            </div>
+
+            {/* C */}
+            <div className="rounded-2xl bg-white p-6 shadow">
+              <h3 className="text-xl font-semibold">
+                21 天通勤駕駛穩定方案
+              </h3>
+              <p className="mt-4 text-neutral-700">
+                直接以你的實際通勤路線為訓練內容，
+                讓開車真正融入生活。
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Pricing */}
@@ -132,14 +214,20 @@ export default function RoadDrivingPage() {
   </div>
 </section>
 
-      {/* Signup */}
-      <section id="signup" className="bg-neutral-100">
-        <div className="mx-auto max-w-4xl px-6 py-16 text-center">
-          <p className="mb-8 text-neutral-600">
-            歡迎透過 LINE 與我們聯絡，安排最適合你的道路駕駛方案與時段。
+     {/* ================= CTA ================= */}
+      <section id="signup" className="bg-neutral-900 text-white">
+        <div className="mx-auto max-w-4xl px-6 py-20 text-center">
+          <h2 className="mb-4 text-3xl font-bold">
+            想知道哪個方案最適合你？
+          </h2>
+          <p className="mb-8 text-neutral-300">
+            加入 LINE，由教練依你的狀況給你最實際的建議。
           </p>
-          <Link href="hhttps://lin.ee/J22IVRg" className="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white">
-            立即預約
+          <Link
+            href="https://lin.ee/J22IVRg"
+            className="inline-block rounded-xl bg-orange-500 px-10 py-4 text-lg font-semibold text-white hover:bg-orange-600"
+          >
+            立即預約諮詢
           </Link>
         </div>
       </section>
