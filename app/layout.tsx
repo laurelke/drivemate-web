@@ -11,10 +11,13 @@ export const metadata: Metadata = {
   },
   description:
     'DriveMate 駕駛訓練中心，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，打造安全、自信且具實戰力的駕駛能力。',
-  icons: [
-    { rel: 'icon', url: '/favicon.png' },
-    { rel: 'apple-touch-icon', url: '/favicon.png' },
-  ],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/favicon.png',
+  },
   openGraph: {
     siteName: 'DriveMate',
     locale: 'zh_TW',
@@ -48,6 +51,11 @@ export default function RootLayout({
   return (
     <html lang="zh-Hant">
       <head>
+        {/* ====== 強制宣告 favicon（給 Google Search / Ads Bot）====== */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+
         {/* ================= Google tag (GA4 + Google Ads 共用) ================= */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
@@ -74,7 +82,7 @@ export default function RootLayout({
       </head>
 
       <body className="bg-white text-neutral-900">
-        {/* ================= Organization / EducationalOrganization / LocalBusiness ================= */}
+        {/* ================= Organization / EducationalOrganization / LocalBusiness / Course ================= */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -86,7 +94,7 @@ export default function RootLayout({
                   '@id': 'https://drivemate-tw.com/#organization',
                   name: 'DriveMate 駕駛訓練中心',
                   url: 'https://drivemate-tw.com/',
-                  logo: 'https://drivemate-tw.com/favicon.png',
+                  logo: 'https://drivemate-tw.com/drivemate-logo.JPG',
                   sameAs: [
                     'https://www.facebook.com/',
                     'https://www.instagram.com/',
@@ -128,7 +136,6 @@ export default function RootLayout({
                   },
                 },
 
-                /* ================= Course Schema ================= */
                 {
                   '@type': 'Course',
                   '@id': 'https://drivemate-tw.com/#course-road-driving',
@@ -138,47 +145,15 @@ export default function RootLayout({
                   provider: {
                     '@id': 'https://drivemate-tw.com/#organization',
                   },
-                  educationalCredentialAwarded:
-                    'DriveMate 道路駕駛訓練結業證明',
-                  courseMode: ['Onsite', 'Practical'],
-                  hasCourseInstance: {
-                    '@type': 'CourseInstance',
-                    courseMode: 'Onsite',
-                    duration: 'P1M',
-                    location: {
-                      '@type': 'Place',
-                      name: '台灣（到府道路教學）',
-                      address: {
-                        '@type': 'PostalAddress',
-                        addressCountry: 'TW',
-                      },
-                    },
-                  },
                 },
                 {
                   '@type': 'Course',
                   '@id': 'https://drivemate-tw.com/#course-track-driving',
                   name: '賽道駕駛體驗與進階操控課程',
                   description:
-                    '針對已有駕駛基礎者設計的賽道駕駛體驗與進階操控課程，學習車輛極限、操控技巧、煞車與過彎策略。',
+                    '針對已有駕駛基礎者設計的賽道駕駛體驗與進階操控課程。',
                   provider: {
                     '@id': 'https://drivemate-tw.com/#organization',
-                  },
-                  educationalCredentialAwarded:
-                    'DriveMate 賽道駕駛訓練證明',
-                  courseMode: ['Onsite', 'Practical'],
-                  hasCourseInstance: {
-                    '@type': 'CourseInstance',
-                    courseMode: 'Onsite',
-                    duration: 'P1D',
-                    location: {
-                      '@type': 'Place',
-                      name: '專業賽車場（依課程安排）',
-                      address: {
-                        '@type': 'PostalAddress',
-                        addressCountry: 'TW',
-                      },
-                    },
                   },
                 },
               ],
