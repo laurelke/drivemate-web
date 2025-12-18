@@ -34,12 +34,6 @@ export default function RoadDrivingPage() {
             >
               查看課程方案
             </Link>
-            <Link
-              href="#signup"
-              className="rounded-xl border border-white/40 px-8 py-4 text-lg font-semibold text-white hover:bg-white/10"
-            >
-              立即預約諮詢
-            </Link>
           </div>
         </div>
       </section>
@@ -70,57 +64,6 @@ export default function RoadDrivingPage() {
               <p className="text-neutral-600">{item.desc}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ================= 成果型方案（你前面已確認） ================= */}
-      <section className="bg-neutral-100">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="mb-4 text-center text-3xl font-bold">
-            成果導向的道路駕駛方案
-          </h2>
-          <p className="mx-auto mb-12 max-w-3xl text-center text-neutral-600">
-            不只是陪你練，而是陪你練到「敢自己開」。
-          </p>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* A */}
-            <div className="rounded-2xl bg-white p-6 shadow">
-              <h3 className="text-xl font-semibold">駕駛能力評估＋關鍵矯正</h3>
-              <p className="mt-1 text-sm text-neutral-500">
-                入門｜快速診斷
-              </p>
-              <p className="mt-4 text-neutral-700">
-                透過實際上路評估，找出影響你駕駛信心的核心問題，
-                並立即進行關鍵矯正。
-              </p>
-            </div>
-
-            {/* B */}
-            <div className="rounded-2xl border-2 border-orange-500 bg-white p-6 shadow-lg">
-              <p className="mb-2 text-sm font-semibold text-orange-600">
-                最多人選擇
-              </p>
-              <h3 className="text-xl font-semibold">
-                14 天獨立上路成果計畫
-              </h3>
-              <p className="mt-4 text-neutral-700">
-                以「能自己上路」為明確目標，
-                14 天內建立穩定的道路駕駛能力。
-              </p>
-            </div>
-
-            {/* C */}
-            <div className="rounded-2xl bg-white p-6 shadow">
-              <h3 className="text-xl font-semibold">
-                21 天通勤駕駛穩定方案
-              </h3>
-              <p className="mt-4 text-neutral-700">
-                直接以你的實際通勤路線為訓練內容，
-                讓開車真正融入生活。
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
