@@ -9,14 +9,14 @@ export default function RoadDrivingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
-<section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden">
+<section className="relative h-[52vh] md:h-[58vh] w-full overflow-hidden">
   <Image
     src="/images/courses/road-driving-hero.jpg"
     alt="道路駕駛實戰課程"
     fill
     priority
     sizes="(max-width: 768px) 100vw, 1920px"
-          className="object-cover object-center md:[object-position:50%_30%]"
+className="object-contain md:object-cover object-center md:[object-position:50%_30%]"
   />
 
   {/* 遮罩 */}
