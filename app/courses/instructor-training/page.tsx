@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { HeroCTA } from '@/components/ui/HeroCTA'
+import BottomCTA from '@/components/BottomCTA'
 import Link from 'next/link'
 
 export default function InstructorTrainingPage() {
@@ -97,32 +98,11 @@ export default function InstructorTrainingPage() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="bg-neutral-900 text-white">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-          <h2 className="mb-4 text-3xl font-bold">
-            想成為真正專業的駕駛教練？
-          </h2>
-          <p className="mb-8 text-neutral-300">
-            加入 LINE，了解完整培訓流程與合作方式。
-          </p>
-          <Link
-            href="https://lin.ee/J22IVRg"
-            className="
-    inline-flex items-center justify-center
-    rounded-2xl
-    bg-orange-500
-    px-10 py-4
-    text-lg font-semibold text-white
-    shadow-lg shadow-orange-500/20
-    transition-all duration-300 ease-out
-    hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
-    active:translate-y-0 active:shadow-md
-  "
->
-            聯絡我們
-          </Link>
-        </div>
-      </section>
-    </main>
-  )
-}
+            <BottomCTA
+              title="不只會開車，你準備好教人開車了嗎？"
+              description="成為教練，靠的不只是技術，而是判斷、引導與系統化教學能力。我們協助你建立完整且可執行的專業教練基礎。"
+              buttonText="諮詢教練培訓計畫"
+            />
+          </main>
+        )
+      }

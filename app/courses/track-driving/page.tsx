@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { HeroCTA } from '@/components/ui/HeroCTA'
+import BottomCTA from '@/components/BottomCTA'
 import Link from 'next/link'
 
 export default function TrackDrivingPage() {
@@ -95,33 +96,12 @@ export default function TrackDrivingPage() {
           </div>
            </section>
 
-      {/* ================= CTA ================= */}
-      <section className="bg-neutral-900 text-white">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-          <h2 className="mb-4 text-3xl font-bold">
-            想體驗真正的駕駛樂趣？
-          </h2>
-          <p className="mb-8 text-neutral-300">
-            加入 LINE，了解最近賽道場次與適合你的方案。
-          </p>
-          <Link
-            href="https://lin.ee/J22IVRg"
-            className="
-    inline-flex items-center justify-center
-    rounded-2xl
-    bg-orange-500
-    px-10 py-4
-    text-lg font-semibold text-white
-    shadow-lg shadow-orange-500/20
-    transition-all duration-300 ease-out
-    hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
-    active:translate-y-0 active:shadow-md
-  "
->
-            立即預約諮詢
-          </Link>
-        </div>
-      </section>
+            {/* ================= CTA ================= */}
+      <BottomCTA
+        title="想真正了解你的操控極限嗎？"
+        description="賽道不是比快，而是學會正確操控。在安全封閉場地中，體驗煞車、過彎與路線選擇，重新理解什麼叫會開車。"
+        buttonText="立即預約賽道駕駛體驗"
+      />
     </main>
   )
 }

@@ -16,13 +16,13 @@ export default function BottomCTA({
   href = 'https://lin.ee/J22IVRg',
 }: BottomCTAProps) {
   return (
-    <section className="bg-neutral-900 text-white">
+    <section className="bg-neutral-950 text-white">
       <div className="mx-auto max-w-4xl px-6 py-24 text-center">
         <h2 className="mb-4 text-3xl font-bold md:text-4xl">
           {title}
         </h2>
 
-        <p className="mb-10 text-neutral-300 leading-relaxed">
+        <p className="mb-10 text-neutral-300">
           {description}
         </p>
 
@@ -32,12 +32,14 @@ export default function BottomCTA({
           className="
             inline-flex items-center justify-center
             rounded-2xl
-            bg-orange-500
-            px-12 py-4
+            bg-gradient-to-b from-neutral-900 to-black
+            px-10 py-4
             text-lg font-semibold text-white
-            shadow-lg shadow-orange-500/20
+            shadow-lg shadow-black/30
+            ring-1 ring-white/10
             transition-all duration-300 ease-out
-            hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
+            hover:-translate-y-1
+            hover:shadow-xl hover:ring-white/20
             active:translate-y-0 active:shadow-md
           "
         >
