@@ -9,7 +9,7 @@ import HeroText from '@/components/HeroText'
 import { HeroCTA } from '@/components/ui/HeroCTA'
 import { LINE_LINK } from '@/lib/constants'
 import Image from 'next/image'
-import Link from 'next/link'   // ⭐⭐⭐ 就是少這行
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ChevronDown, Sparkles } from 'lucide-react'
 
@@ -84,8 +84,6 @@ export default function HomePage() {
       title: '新手上路',
       badge: '最受歡迎',
       summary: '適合剛考到駕照、缺乏實際道路經驗者',
-      detail:
-        '基本控制、市區道路駕駛、各類停車技巧，建立正確車感與駕駛信心。',
       duration: '單堂 180 分鐘',
       highlight: '📍 全台到府服務',
       pricing: [
@@ -99,8 +97,6 @@ export default function HomePage() {
       title: '運動駕駛',
       badge: '技術提升',
       summary: '適合已有駕駛經驗、想提升操控技巧者',
-      detail:
-        '學習掌握車輛荷重轉移、方向盤操作、山路駕駛路線選擇與實戰應用。',
       duration: '單堂 180 分鐘',
       highlight: '📍 全台到府服務',
     },
@@ -109,7 +105,6 @@ export default function HomePage() {
       title: '賽道駕駛',
       badge: '進階體驗',
       summary: '適合熱愛操控與極限體驗的學員',
-      detail: '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
       duration: '單節 30 分鐘',
     },
     {
@@ -117,8 +112,6 @@ export default function HomePage() {
       title: '初階-道路駕駛教練培訓',
       badge: '技能培養',
       summary: '適合想投入駕駛教學、建立專業教練能力者',
-      detail:
-        '培訓內容涵蓋道路駕駛教學流程、課程設計與學員心理引導，透過實際陪同教學與案例解析，建立安全、穩定且可執行的駕駛教學 SOP，協助學員從「不會/不敢開車」進階到「可以獨立上路」。',
       duration: '訓練週期 3-6 個月',
       highlight: '📍 上課地點：台中',
     }
@@ -266,9 +259,10 @@ export default function HomePage() {
       {course.title}
     </h3>
 
-    <span className="mt-2 inline-flex rounded-full bg-black px-3 py-1 text-xs text-white">
-      {course.badge}
-    </span>
+    <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
+  <Sparkles className="h-3 w-3" />
+  {course.badge}
+</span>
 
     <p className="mt-3 text-sm text-gray-600">
       {course.summary}
