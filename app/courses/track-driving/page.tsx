@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { HeroCTA } from '@/components/ui/HeroCTA'
 import Link from 'next/link'
 
 export default function TrackDrivingPage() {
@@ -30,22 +31,10 @@ export default function TrackDrivingPage() {
       </p>
 
       <div className="mt-10">
-        <Link
-  href="#pricing"
-  className="
-    inline-flex items-center justify-center
-    rounded-2xl
-    bg-orange-500
-    px-10 py-4
-    text-lg font-semibold text-white
-    shadow-lg shadow-orange-500/20
-    transition-all duration-300 ease-out
-    hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
-    active:translate-y-0 active:shadow-md
-  "
->
-  查看課程方案
-</Link>
+        {/* ✅ 改用共用 HeroCTA */}
+        <HeroCTA href="#pricing">
+          查看課程方案
+        </HeroCTA>
       </div>
     </div>
   </div>
