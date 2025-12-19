@@ -11,7 +11,7 @@ export default function InstructorTrainingPage() {
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
 <section className="relative h-[75vh] min-h-[520px]">
   <Image
-    src="/images/courses/instructor-training-hero.jpg"
+    src="/images/courses/instructor-training-hero.JPG"
     alt="駕駛教練培訓課程"
     fill
     priority
