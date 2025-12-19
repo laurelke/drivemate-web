@@ -251,60 +251,42 @@ export default function HomePage() {
           <Link
   key={course.key}
   href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
-  className="block group"
+  className="block"
 >
-  <div className="relative flex h-full min-h-[360px] flex-col rounded-2xl border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-    
-    {/* ===== 卡片內容 ===== */}
-    <div className="flex-1">
-      <div
-        className="flex items-center justify-between"
-        onClick={(e) => {
-          e.preventDefault()
-          setOpen(isOpen ? null : course.key)
-        }}
-      >
-        <div>
-          <h3 className="text-xl font-semibold">{course.title}</h3>
-          <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
-            <Sparkles className="h-3 w-3" />
-            {course.badge}
-          </span>
-        </div>
-        <ChevronDown
-          className={`transition ${isOpen ? 'rotate-180' : ''}`}
-        />
-      </div>
+  <div
+    className="
+      flex flex-col
+      min-w-[260px]
+      h-[300px]
+      rounded-2xl border bg-white p-5
+      shadow-sm
+    "
+  >
+    <h3 className="text-lg font-semibold">
+      {course.title}
+    </h3>
 
-      <p className="mt-4 text-gray-600">{course.summary}</p>
+    <span className="mt-2 inline-flex rounded-full bg-black px-3 py-1 text-xs text-white">
+      {course.badge}
+    </span>
 
-      {course.highlight && (
-        <p className="mt-2 text-sm font-medium text-gray-700">
-          {course.highlight}
-        </p>
-      )}
+    <p className="mt-3 text-sm text-gray-600">
+      {course.summary}
+    </p>
 
+    {course.highlight && (
       <p className="mt-2 text-sm text-gray-500">
-        ⏱ {course.duration}
+        {course.highlight}
       </p>
+    )}
 
-      <div
-        className={`transition-all ${
-          isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
-        }`}
-      >
-        <div className="border-t pt-4 space-y-3">
-          <p>{course.detail}</p>
-        </div>
-      </div>
-    </div>
+    <p className="mt-2 text-sm text-gray-500">
+      ⏱ {course.duration}
+    </p>
 
-    {/* ===== Hover CTA ===== */}
-    <div className="pointer-events-none absolute inset-0 flex items-end justify-center rounded-2xl bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-      <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 text-sm font-semibold text-black shadow">
-        查看課程 →
-      </span>
-    </div>
+    <span className="mt-auto text-sm font-medium text-gray-400">
+      查看課程 →
+    </span>
   </div>
 </Link>
         )
