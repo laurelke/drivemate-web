@@ -9,14 +9,14 @@ export default function TrackDrivingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁對齊） ================= */}
-<section className="relative h-[52vh] md:h-[58vh] w-full overflow-hidden">
+<section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
   <Image
     src="/images/courses/track-driving-hero.jpg"
     alt="賽道駕駛體驗課程"
     fill
     priority
           sizes="(max-width: 768px) 100vw, 1920px"
-className="object-contain md:object-cover object-center md:[object-position:50%_30%]"
+className="object-contain md:object-cover object-center md:[object-position:50%_40%]"
   />
 
   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
