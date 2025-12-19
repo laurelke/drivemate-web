@@ -77,33 +77,6 @@ export default function SportDrivingPage() {
         </div>
       </section>
 
-      {/* ================= 課程介紹 ================= */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="mb-10 text-center text-3xl font-bold">
-            課程內容與訓練重點
-          </h2>
-
-          <div className="mx-auto max-w-3xl space-y-6 text-lg text-neutral-700">
-            <p>
-              本課程專為已有駕駛經驗的學員設計，  
-              目標是將模糊的駕駛感覺，轉化為可控制、技巧精準化的技術。
-            </p>
-
-            <p>
-              透過系統性理解車輛荷重轉移、方向盤操作邏輯，
-              並實際應用於山路與初階賽道情境，
-              建立穩定、可預期的操控反應。
-            </p>
-
-            <p>
-              這不是賽道競速訓練，而是一門能直接回到日常駕駛中的
-              「進階駕駛技術課程」。
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ================= Pricing ================= */}
       <section id="pricing" className="bg-neutral-50">
         <div className="mx-auto max-w-6xl px-6 py-20">
@@ -199,7 +172,7 @@ export default function SportDrivingPage() {
       <BottomCTA
         title="想讓駕駛變得更穩，而不是更緊張？"
         description="運動駕駛不是追求速度，而是讓你在任何路況下，都知道自己正在做什麼。讓教練依你的實際狀況，規劃最適合的技術提升方式。"
-        buttonText="立即預約技術評估"
+        buttonText="立即預約運動駕駛課程"
       />
     </main>
   )
