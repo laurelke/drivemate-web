@@ -1,25 +1,28 @@
 'use client'
 
 import Image from 'next/image'
+import { HeroCTA } from '@/components/ui/HeroCTA'
 import Link from 'next/link'
 
 export default function RoadDrivingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
-      {/* ================= Hero（與首頁對齊） ================= */}
-<section className="relative h-[75vh] min-h-[520px]">
+      {/* ================= Hero（與首頁 100% 對齊） ================= */}
+<section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden bg-black">
   <Image
     src="/images/courses/road-driving-hero.jpg"
     alt="道路駕駛實戰課程"
     fill
     priority
-    className="object-cover"
+    className="object-cover object-center md:[object-position:50%_30%]"
   />
 
-  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+  {/* 遮罩 */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
 
-  <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-6 pb-24">
-    <div className="max-w-2xl text-white">
+  {/* 文字內容（完全對齊首頁） */}
+  <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
+    <div className="max-w-xl text-white">
       <h1 className="text-4xl font-bold md:text-5xl leading-tight">
         道路駕駛實戰課程
       </h1>
@@ -30,22 +33,10 @@ export default function RoadDrivingPage() {
       </p>
 
       <div className="mt-10">
-        <Link
-  href="#pricing"
-  className="
-    inline-flex items-center justify-center
-    rounded-2xl
-    bg-orange-500
-    px-10 py-4
-    text-lg font-semibold text-white
-    shadow-lg shadow-orange-500/20
-    transition-all duration-300 ease-out
-    hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
-    active:translate-y-0 active:shadow-md
-  "
->
-  查看課程方案
-</Link>
+        {/* ✅ 改用共用 HeroCTA */}
+        <HeroCTA href="#pricing">
+          查看課程方案
+        </HeroCTA>
       </div>
     </div>
   </div>
