@@ -103,11 +103,6 @@ export default function HomePage() {
         '學習掌握車輛荷重轉移、方向盤操作、山路駕駛路線選擇與實戰應用。',
       duration: '單堂 180 分鐘',
       highlight: '📍 全台到府服務',
-      pricing: [
-        { label: '3 小時', price: '$9,000' },
-        { label: '9 小時', price: '$25,000' },
-        { label: '12 小時', price: '$32,000' },
-      ],
     },
     {
       key: 'track',
@@ -116,10 +111,6 @@ export default function HomePage() {
       summary: '適合熱愛操控與極限體驗的學員',
       detail: '封閉場地練習彎道技巧、制動控制與安全極限判斷。',
       duration: '單節 30 分鐘',
-      pricing: [
-  { label: '2 節', price: '$7,000' },
-  { label: '4 節', price: '$14,000' },
-],
     },
     {
       key: 'training',
@@ -130,9 +121,6 @@ export default function HomePage() {
         '培訓內容涵蓋道路駕駛教學流程、課程設計與學員心理引導，透過實際陪同教學與案例解析，建立安全、穩定且可執行的駕駛教學 SOP，協助學員從「不會/不敢開車」進階到「可以獨立上路」。',
       duration: '訓練週期 3-6 個月',
       highlight: '📍 上課地點：台中',
-      pricing: [
-        { label: '完整教練培訓計畫', price: '$128,000' },
-      ],
     }
   ]
 
@@ -261,68 +249,70 @@ export default function HomePage() {
 
         return (
           <Link
-            key={course.key}
-            href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
-            className="block"
-          >
-            <div className="min-w-[280px] w-full rounded-2xl border bg-white p-6 shadow-sm transition-transform transition-shadow duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
-              <div
-                className="flex items-center justify-between"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setOpen(isOpen ? null : course.key)
-                  window.gtag?.('event', 'course_expand', {
-                    course: course.key,
-                  })
-                }}
-              >
-                <div>
-                  <h3 className="font-semibold text-xl">{course.title}</h3>
-                  <span className="inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
-                    <Sparkles className="h-3 w-3" />
-                    {course.badge}
-                  </span>
-                </div>
-                <ChevronDown
-                  className={`transition ${isOpen ? 'rotate-180' : ''}`}
-                />
-              </div>
+  key={course.key}
+  href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
+  className="block group"
+>
+  <div className="relative flex h-full min-h-[360px] flex-col rounded-2xl border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    
+    {/* ===== 卡片內容 ===== */}
+    <div className="flex-1">
+      <div
+        className="flex items-center justify-between"
+        onClick={(e) => {
+          e.preventDefault()
+          setOpen(isOpen ? null : course.key)
+        }}
+      >
+        <div>
+          <h3 className="text-xl font-semibold">{course.title}</h3>
+          <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
+            <Sparkles className="h-3 w-3" />
+            {course.badge}
+          </span>
+        </div>
+        <ChevronDown
+          className={`transition ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </div>
 
-              <p className="mt-4 text-gray-600">{course.summary}</p>
+      <p className="mt-4 text-gray-600">{course.summary}</p>
 
-              {course.highlight && (
-                <p className="mt-2 text-sm font-medium text-gray-700">
-                  {course.highlight}
-                </p>
-              )}
+      {course.highlight && (
+        <p className="mt-2 text-sm font-medium text-gray-700">
+          {course.highlight}
+        </p>
+      )}
 
-              <p className="mt-2 text-sm text-gray-500">
-                ⏱ {course.duration}
-              </p>
+      <p className="mt-2 text-sm text-gray-500">
+        ⏱ {course.duration}
+      </p>
 
-              <div
-                className={`transition-all ${
-                  isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
-                }`}
-              >
-                <div className="border-t pt-4 space-y-3">
-                  <p>{course.detail}</p>
-                  <ul className="text-sm text-gray-600">
-                    {course.pricing.map((p) => (
-                      <li key={p.label}>
-                        ▸ {p.label}｜{p.price}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Link>
+      <div
+        className={`transition-all ${
+          isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
+        }`}
+      >
+        <div className="border-t pt-4 space-y-3">
+          <p>{course.detail}</p>
+        </div>
+      </div>
+    </div>
+
+    {/* ===== Hover CTA ===== */}
+    <div className="pointer-events-none absolute inset-0 flex items-end justify-center rounded-2xl bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 text-sm font-semibold text-black shadow">
+        查看課程 →
+      </span>
+    </div>
+  </div>
+</Link>
         )
       })}
     </div>
   </div>
 </section>
+
 
       {/* ================= Info ================= */}
       <section
