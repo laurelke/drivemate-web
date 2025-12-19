@@ -150,42 +150,50 @@ export default function SportDrivingPage() {
                   '建立精準且細膩的操控習慣',
                 ],
               },
-            ].map((plan) => (
-              <div
-                key={plan.title}
-                className={`rounded-2xl border bg-white p-6 shadow ${
-                  plan.highlight
-                    ? 'border-neutral-900 shadow-lg'
-                    : ''
-                }`}
-              >
-                {plan.highlight && (
-                  <span className="mb-4 inline-block rounded-full bg-neutral-900 px-4 py-1 text-xs font-semibold text-white">
-                    最多人選擇
-                  </span>
-                )}
+           ].map((plan) => (
+        <div
+          key={plan.title}
+          className={`relative rounded-3xl bg-white p-8 shadow-lg ${
+            plan.highlight
+              ? 'border-2 border-orange-500'
+              : 'border'
+          }`}
+        >
+          {/* 最多人選擇（橘色樣式） */}
+          {plan.highlight && (
+            <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-5 py-1.5 text-sm font-semibold text-white shadow">
+              最多人選擇
+            </span>
+          )}
 
-                <h3 className="mb-1 text-xl font-semibold">
-                  {plan.title}
-                </h3>
-                <p className="mb-4 text-sm text-neutral-500">
-                  {plan.tag}｜{plan.hours}
-                </p>
+          <h3 className="mb-1 mt-4 text-xl font-semibold">
+            {plan.title}
+          </h3>
 
-                <p className="mb-6 text-3xl font-bold">
-                  {plan.price}
-                </p>
+          <p
+            className={`mb-4 text-sm ${
+              plan.highlight
+                ? 'text-orange-600 font-medium'
+                : 'text-neutral-500'
+            }`}
+          >
+            {plan.tag}｜{plan.hours}
+          </p>
 
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  {plan.items.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
+          <p className="mb-6 text-3xl font-bold">
+            {plan.price}
+          </p>
+
+          <ul className="space-y-2 text-sm text-neutral-600">
+            {plan.items.map((item) => (
+              <li key={item}>• {item}</li>
             ))}
-          </div>
+          </ul>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ================= Bottom CTA ================= */}
       <BottomCTA
