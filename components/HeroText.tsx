@@ -22,7 +22,7 @@ export default function HeroText() {
       >
         DriveMate 專注「實戰型駕駛訓練」<br />
         從新手到進階，安全建立駕駛信心<br />
-        台中｜全台 一對一道路駕駛 × 運動駕駛 × 賽道課程 × 教練培訓
+        全台｜一對一道路駕駛 × 運動駕駛 × 賽道課程 × 教練培訓
       </motion.p>
     </>
   )
