@@ -14,7 +14,8 @@ export default function SportDrivingPage() {
           alt="運動駕駛技術提升課程"
           fill
           priority
-          className="object-cover object-center md:[object-position:50%_35%]"
+          sizes="(max-width: 768px) 100vw, 1920px"
+          className="object-cover object-center md:[object-position:50%_30%]"
         />
 
         {/* 遮罩 */}

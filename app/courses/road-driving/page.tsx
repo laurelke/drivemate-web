@@ -15,7 +15,8 @@ export default function RoadDrivingPage() {
     alt="道路駕駛實戰課程"
     fill
     priority
-    className="object-cover object-center md:[object-position:50%_30%]"
+    sizes="(max-width: 768px) 100vw, 1920px"
+          className="object-cover object-center md:[object-position:50%_30%]"
   />
 
   {/* 遮罩 */}

@@ -15,7 +15,8 @@ export default function TrackDrivingPage() {
     alt="賽道駕駛體驗課程"
     fill
     priority
-    className="object-cover"
+          sizes="(max-width: 768px) 100vw, 1920px"
+          className="object-cover object-center md:[object-position:50%_30%]"
   />
 
   <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
