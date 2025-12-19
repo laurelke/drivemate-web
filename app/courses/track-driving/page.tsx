@@ -9,7 +9,7 @@ export default function TrackDrivingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁對齊） ================= */}
-<section className="relative h-[75vh] min-h-[520px]">
+<section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden">
   <Image
     src="/images/courses/track-driving-hero.jpg"
     alt="賽道駕駛體驗課程"

@@ -9,7 +9,7 @@ export default function RoadDrivingPage() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
-<section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden bg-black">
+<section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden">
   <Image
     src="/images/courses/road-driving-hero.jpg"
     alt="道路駕駛實戰課程"
