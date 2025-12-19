@@ -81,7 +81,6 @@ className="object-cover md:object-cover object-center md:[object-position:50%_40
               <p className="text-3xl font-bold">NT$7,000</p>
               <ul className="mt-4 text-neutral-700 space-y-1">
                 <li>• 2 節課程</li>
-                <li>• 基礎線路與煞車練習</li>
               </ul>
             </div>
             <div className="rounded-2xl bg-white p-6 shadow">
@@ -89,7 +88,6 @@ className="object-cover md:object-cover object-center md:[object-position:50%_40
               <p className="text-3xl font-bold">NT$14,000</p>
               <ul className="mt-4 text-neutral-700 space-y-1">
                 <li>• 4 節課程</li>
-                <li>• 煞車控制與賽道線路掌握</li>
               </ul>
             </div>
           </div>
