@@ -173,49 +173,44 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ================= Hero（動態輪播） ================= */}
-      <section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden bg-black">
-        {/* 輪播圖片 */}
-        <div className="absolute inset-0 mx-auto max-w-[1920px]">
-          {HERO_IMAGES.map((src, index) => (
-            <div
-              key={src}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentHero ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <Image
-  src={src}
-  alt="DriveMate 專業道路駕駛課程"
-  fill
-  priority={index === 0}
-  quality={90}
-  sizes="(max-width: 768px) 100vw, 1920px"
-  className="
-    object-cover
-    object-center
-    md:[object-position:50%_30%]
-  "
-/>
+     {/* ================= Hero（動態輪播） ================= */}
+<section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden bg-black">
+  {/* 輪播圖片 */}
+  <div className="absolute inset-0 mx-auto max-w-[1920px]">
+    {HERO_IMAGES.map((src, index) => (
+      <div
+        key={src}
+        className={`absolute inset-0 transition-opacity duration-1000 ${
+          index === currentHero ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
+        <Image
+          src={src}
+          alt="DriveMate 專業道路駕駛課程"
+          fill
+          priority={index === 0}
+          quality={90}
+          sizes="(max-width: 768px) 100vw, 1920px"
+          className="object-cover object-center md:[object-position:50%_30%]"
+        />
+      </div>
+    ))}
+  </div>
 
-            </div>
-          ))}
-        </div>
+  {/* 遮罩 */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
 
-        {/* 遮罩 */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
+  {/* 文字內容 */}
+  <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
+    <div className="max-w-xl text-white">
+      <HeroText />
 
-        {/* 文字內容 */}
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
-  <div className="max-w-xl text-white">
-  <HeroText />
-
-  <HeroCTA href={LINE_LINK} external>
-    立即預約
-  </HeroCTA>
-</div>
-      </section>
-
+      <HeroCTA href={LINE_LINK} external>
+        立即預約
+      </HeroCTA>
+    </div>
+  </div>
+</section>
 
       {/* ================= Why ================= */}
       <section className="bg-white py-20">
