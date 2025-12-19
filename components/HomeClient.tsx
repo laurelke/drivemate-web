@@ -6,6 +6,7 @@ declare global {
   }
 }
 import HeroText from '@/components/HeroText'
+import { HeroCTA } from '@/components/ui/HeroCTA'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ChevronDown, Sparkles } from 'lucide-react'
@@ -208,18 +209,11 @@ export default function HomePage() {
         {/* 文字內容 */}
         <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
   <div className="max-w-xl text-white">
-    <HeroText />
+  <HeroText />
 
-    <a
-      href={LINE_LINK}
-      target="_blank"
-      className="inline-block rounded-full bg-white px-8 py-3
-                 font-medium text-black transition
-                 hover:scale-105 hover:shadow-lg"
-    >
-      立即預約
-    </a>
-  </div>
+  <HeroCTA href={LINE_LINK} external>
+    立即預約
+  </HeroCTA>
 </div>
       </section>
 

@@ -1,0 +1,1 @@
+export const LINE_LINK = 'https://lin.ee/J22IVRg'
