@@ -1,9 +1,9 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { usePathname } from 'next/navigation'
 
 const LINE_LINK = 'https://lin.ee/J22IVRg'
 const INSTAGRAM_LINK = 'https://www.instagram.com/drivemate.tw'
@@ -19,7 +19,7 @@ function scrollToCard(id: string) {
   const el = document.getElementById(id)
   if (!el) return
 
-  const headerOffset = 64 // h-16
+  const headerOffset = 64
   const elementPosition = el.getBoundingClientRect().top
   const offsetPosition =
     elementPosition + window.scrollY - headerOffset
@@ -30,92 +30,87 @@ function scrollToCard(id: string) {
   })
 }
 
-/* ✅ 課程路徑對照表 */
-const COURSE_TITLE_MAP: Record<string, string> = {
-  '/courses/road-driving': '一般道路駕駛課程',
-  '/courses/sport-driving': '運動駕駛技術提升課程',
-  '/courses/track-driving': '賽道駕駛體驗課程',
-  '/courses/instructor-training': '教練培訓課程',
-}
-
 export default function Header() {
-  const [open, setOpen] = useState(false)
   const pathname = usePathname()
-
-  const courseTitle = COURSE_TITLE_MAP[pathname]
-  const isCoursePage = Boolean(courseTitle)
+  const isCoursePage = pathname.startsWith('/courses')
+  const [open, setOpen] = useState(false)
 
   return (
     <>
-      {/* Header */}
       <header className="fixed top-0 left-0 z-50 w-full border-b bg-white">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-          {/* 左側：Logo 或 課程名稱 */}
-          {isCoursePage ? (
-            <Link
-              href={pathname}
-              className="text-lg font-bold tracking-tight hover:opacity-80"
-            >
-              {courseTitle}
-            </Link>
-          ) : (
+          {/* Logo（永遠存在） */}
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:opacity-80"
+          >
+            <Image
+              src="/drivemate-logo.JPG"
+              alt="DriveMate 道路駕駛課程"
+              width={36}
+              height={36}
+              priority
+            />
+            <span className="text-lg font-bold tracking-tight">
+              DriveMate
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav
+            className="hidden items-center gap-6 text-sm md:flex"
+            aria-label="Primary Navigation"
+          >
+            {isCoursePage ? (
+              <>
+                <Link href="/courses/road-driving" className="hover:text-black/70">
+                  一般道路駕駛
+                </Link>
+                <Link href="/courses/sport-driving" className="hover:text-black/70">
+                  運動駕駛
+                </Link>
+                <Link href="/courses/track-driving" className="hover:text-black/70">
+                  賽道駕駛
+                </Link>
+                <Link
+                  href="/courses/instructor-training"
+                  className="hover:text-black/70"
+                >
+                  教練培訓
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link href="#info" className="hover:text-black/70">
+                  常見 Q&A
+                </Link>
+                <Link href="#info" className="hover:text-black/70">
+                  付款方式
+                </Link>
+                <Link href="#info" className="hover:text-black/70">
+                  預約資訊
+                </Link>
+                <a
+                  href={INSTAGRAM_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black/70"
+                >
+                  Instagram
+                </a>
+              </>
+            )}
+
             <a
-              href="/"
-              onClick={(e) => {
-                e.preventDefault()
-                window.location.href = '/'
-              }}
-              className="flex cursor-pointer items-center gap-2"
+              href={LINE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleCTAClick}
+              className="rounded-full bg-black px-4 py-2 text-white transition hover:scale-105"
             >
-              <Image
-                src="/drivemate-logo.JPG"
-                alt="DriveMate 道路駕駛課程"
-                width={36}
-                height={36}
-                priority
-              />
-              <span className="text-lg font-bold tracking-tight">
-                DriveMate
-              </span>
+              立即預約
             </a>
-          )}
-
-          {/* Desktop Navigation（只在非課程頁顯示） */}
-          {!isCoursePage && (
-            <nav
-              className="hidden items-center gap-6 text-sm md:flex"
-              aria-label="Primary Navigation"
-            >
-              <Link href="#info" className="hover:text-black/70">
-                常見 Q&A
-              </Link>
-              <Link href="#info" className="hover:text-black/70">
-                付款方式
-              </Link>
-              <Link href="#info" className="hover:text-black/70">
-                預約資訊
-              </Link>
-
-              <a
-                href={INSTAGRAM_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-black/70"
-              >
-                Instagram
-              </a>
-
-              <a
-                href={LINE_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleCTAClick}
-                className="rounded-full bg-black px-4 py-2 text-white transition hover:scale-105"
-              >
-                立即預約
-              </a>
-            </nav>
-          )}
+          </nav>
 
           {/* Mobile Menu Button（課程頁不顯示） */}
           {!isCoursePage && (
