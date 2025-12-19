@@ -7,11 +7,10 @@ declare global {
 }
 import HeroText from '@/components/HeroText'
 import { HeroCTA } from '@/components/ui/HeroCTA'
+import { LINE_LINK } from '@/lib/constants'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ChevronDown, Sparkles } from 'lucide-react'
-
-const LINE_LINK = 'https://lin.ee/J22IVRg'
 
 const HERO_IMAGES = [
   '/hero-1.jpg',
