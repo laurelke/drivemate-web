@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { HeroCTA } from '@/components/ui/HeroCTA'
+import BottomCTA from '@/components/BottomCTA'
 import Link from 'next/link'
 
 export default function RoadDrivingPage() {
@@ -161,33 +162,12 @@ export default function RoadDrivingPage() {
   </div>
 </section>
 
-     {/* ================= CTA ================= */}
-      <section id="signup" className="bg-neutral-900 text-white">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-          <h2 className="mb-4 text-3xl font-bold">
-            想知道哪個方案最適合你？
-          </h2>
-          <p className="mb-8 text-neutral-300">
-            加入 LINE，由教練依你的狀況給你最實際的建議。
-          </p>
-          <Link
-            href="https://lin.ee/J22IVRg"
-             className="
-    inline-flex items-center justify-center
-    rounded-2xl
-    bg-orange-500
-    px-10 py-4
-    text-lg font-semibold text-white
-    shadow-lg shadow-orange-500/20
-    transition-all duration-300 ease-out
-    hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl
-    active:translate-y-0 active:shadow-md
-  "
->
-            立即預約諮詢
-          </Link>
-        </div>
-      </section>
+           {/* ================= CTA ================= */}
+      <BottomCTA
+        title="想知道你卡住的是技術，還是心理？"
+        description="多數學員不是不會開，而是缺少正確評估與引導。讓教練依你的實際狀況，幫你找出最適合的道路訓練方式。"
+        buttonText="立即預約駕駛評估"
+      />
     </main>
   )
 }
