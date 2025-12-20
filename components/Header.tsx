@@ -139,56 +139,92 @@ export default function Header() {
             <div className="mb-8 flex items-center justify-between">
               <span className="text-lg font-bold">選單</span>
               <button
-                className="text-2xl"
-                onClick={() => setOpen(false)}
-              >
-                ✕
-              </button>
+  type="button"
+  className="text-2xl md:hidden"
+  aria-label="Open menu"
+  aria-expanded={open}
+  onClick={() => setOpen(true)}
+>
+  ☰
+</button>
             </div>
 
             <nav className="flex flex-col gap-6 text-base">
-              <button
-                className="text-left"
-                onClick={() => {
-                  setOpen(false)
-                  window.history.replaceState(null, '', '#qa')
-                  setTimeout(() => scrollToCard('info'), 80)
-                }}
-              >
-                常見 Q&A
-              </button>
+  {isCoursePage ? (
+    <>
+      <Link
+        href="/courses/road-driving"
+        onClick={() => setOpen(false)}
+      >
+        一般道路駕駛
+      </Link>
 
-              <button
-                className="text-left"
-                onClick={() => {
-                  setOpen(false)
-                  window.history.replaceState(null, '', '#payment')
-                  setTimeout(() => scrollToCard('info'), 80)
-                }}
-              >
-                付款方式
-              </button>
+      <Link
+        href="/courses/sport-driving"
+        onClick={() => setOpen(false)}
+      >
+        運動駕駛
+      </Link>
 
-              <button
-                className="text-left"
-                onClick={() => {
-                  setOpen(false)
-                  window.history.replaceState(null, '', '#booking')
-                  setTimeout(() => scrollToCard('info'), 80)
-                }}
-              >
-                預約資訊
-              </button>
+      <Link
+        href="/courses/track-driving"
+        onClick={() => setOpen(false)}
+      >
+        賽道駕駛
+      </Link>
 
-              <a
-                href={INSTAGRAM_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </nav>
+      <Link
+        href="/courses/instructor-training"
+        onClick={() => setOpen(false)}
+      >
+        教練培訓
+      </Link>
+    </>
+  ) : (
+    <>
+      <button
+        className="text-left"
+        onClick={() => {
+          setOpen(false)
+          window.history.replaceState(null, '', '#qa')
+          setTimeout(() => scrollToCard('info'), 80)
+        }}
+      >
+        常見 Q&A
+      </button>
 
+      <button
+        className="text-left"
+        onClick={() => {
+          setOpen(false)
+          window.history.replaceState(null, '', '#payment')
+          setTimeout(() => scrollToCard('info'), 80)
+        }}
+      >
+        付款方式
+      </button>
+
+      <button
+        className="text-left"
+        onClick={() => {
+          setOpen(false)
+          window.history.replaceState(null, '', '#booking')
+          setTimeout(() => scrollToCard('info'), 80)
+        }}
+      >
+        預約資訊
+      </button>
+
+      <a
+        href={INSTAGRAM_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+    </>
+  )}
+</nav>
             <a
               href={LINE_LINK}
               target="_blank"
