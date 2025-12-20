@@ -113,7 +113,6 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button（課程頁不顯示） */}
-          {!isCoursePage && (
             <button
   type="button"
   className="text-2xl md:hidden"
@@ -123,12 +122,11 @@ export default function Header() {
 >
   ☰
 </button>
-          )}
         </div>
       </header>
 
       {/* Mobile Drawer（只在非課程頁） */}
-      {open && open && (
+      {open && (
         <div className="fixed inset-0 z-[999] md:hidden">
           <div
             className="absolute inset-0 bg-black/40"
