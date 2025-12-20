@@ -115,20 +115,20 @@ export default function Header() {
           {/* Mobile Menu Button（課程頁不顯示） */}
           {!isCoursePage && (
             <button
-              type="button"
-              className="text-2xl md:hidden"
-              aria-label="Open menu"
-              aria-expanded={open}
-              onClick={() => setOpen(true)}
-            >
-              ☰
-            </button>
+  type="button"
+  className="text-2xl md:hidden"
+  aria-label="Open menu"
+  aria-expanded={open}
+  onClick={() => setOpen(true)}
+>
+  ☰
+</button>
           )}
         </div>
       </header>
 
       {/* Mobile Drawer（只在非課程頁） */}
-      {!isCoursePage && open && (
+      {open && open && (
         <div className="fixed inset-0 z-[999] md:hidden">
           <div
             className="absolute inset-0 bg-black/40"
@@ -139,13 +139,10 @@ export default function Header() {
             <div className="mb-8 flex items-center justify-between">
               <span className="text-lg font-bold">選單</span>
               <button
-  type="button"
-  className="text-2xl md:hidden"
-  aria-label="Open menu"
-  aria-expanded={open}
-  onClick={() => setOpen(true)}
+  className="text-2xl"
+  onClick={() => setOpen(false)}
 >
-  ☰
+  ✕
 </button>
             </div>
 
