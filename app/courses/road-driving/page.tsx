@@ -36,6 +36,35 @@ export default function RoadDrivingPage() {
           }),
         }}
       />
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: '首頁',
+          item: 'https://drivemate-tw.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: '課程介紹',
+          item: 'https://drivemate-tw.com/courses',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: '道路駕駛實戰課程',
+          item: 'https://drivemate-tw.com/courses/road-driving',
+        },
+      ],
+    }),
+  }}
+/>
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
 <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
