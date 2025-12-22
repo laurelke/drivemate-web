@@ -4,13 +4,18 @@ import Script from 'next/script'
 import Header from '@/components/Header'
 import MobileCTA from '@/components/MobileCTA'
 
+/* ================= 基本 SEO 設定 ================= */
 export const metadata: Metadata = {
+  metadataBase: new URL('https://drivemate-tw.com'),
+
   title: {
-    default: 'DriveMate駕駛訓練中心｜道路駕駛、運動駕駛、賽道課程、教練培訓',
+    default: 'DriveMate 駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
     template: '%s｜DriveMate 駕駛訓練中心',
   },
+
   description:
-    'DriveMate 駕駛訓練中心，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，打造安全、自信且具實戰力的駕駛能力。',
+    'DriveMate 駕駛訓練中心，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，一對一實戰教學，建立安全、自信且穩定的駕駛能力。',
+
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -18,11 +23,12 @@ export const metadata: Metadata = {
     ],
     apple: '/favicon.png',
   },
+
   openGraph: {
-    siteName: 'DriveMate',
-    locale: 'zh_TW',
     type: 'website',
-    url: 'https://drivemate-tw.com',
+    siteName: 'DriveMate 駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
+    locale: 'zh_TW',
+    url: 'https://drivemate-tw.com/',
     images: [
       {
         url: '/og-image.jpg',
@@ -32,15 +38,17 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
     images: ['/og-image.jpg'],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+}
+
+/* ✅ viewport 要獨立 export（Next.js 官方建議） */
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -51,12 +59,12 @@ export default function RootLayout({
   return (
     <html lang="zh-Hant">
       <head>
-        {/* ====== 強制宣告 favicon（給 Google Search / Ads Bot）====== */}
+        {/* ====== favicon（確保 Google / Ads Bot 可抓）====== */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
 
-        {/* ================= Google tag (GA4 + Google Ads 共用) ================= */}
+        {/* ================= Google tag (GA4 + Google Ads) ================= */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
           strategy="afterInteractive"
@@ -82,7 +90,7 @@ export default function RootLayout({
       </head>
 
       <body className="bg-white text-neutral-900">
-        {/* ================= Organization / EducationalOrganization / LocalBusiness / Course ================= */}
+        {/* ================= 組織 Schema（全站共用） ================= */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -96,8 +104,7 @@ export default function RootLayout({
                   url: 'https://drivemate-tw.com/',
                   logo: 'https://drivemate-tw.com/drivemate-logo.JPG',
                   sameAs: [
-                    'https://www.facebook.com/',
-                    'https://www.instagram.com/',
+                    'https://www.instagram.com/drivemate.tw',
                     'https://lin.ee/J22IVRg',
                   ],
                 },
@@ -107,7 +114,7 @@ export default function RootLayout({
                   name: 'DriveMate 駕駛訓練中心',
                   url: 'https://drivemate-tw.com/',
                   description:
-                    'DriveMate 是專業駕駛訓練與教練培訓機構，提供道路駕駛、運動駕駛、賽道體驗與教練培訓課程。',
+                    'DriveMate 提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程。',
                   parentOrganization: {
                     '@id': 'https://drivemate-tw.com/#organization',
                   },
@@ -116,8 +123,8 @@ export default function RootLayout({
                   '@type': 'LocalBusiness',
                   '@id': 'https://drivemate-tw.com/#localbusiness',
                   name: 'DriveMate 駕駛訓練中心',
-                  url: 'https://drivemate-tw.com/',
                   image: 'https://drivemate-tw.com/og-image.jpg',
+                  url: 'https://drivemate-tw.com/',
                   priceRange: '$$$',
                   areaServed: {
                     '@type': 'Country',
@@ -126,33 +133,9 @@ export default function RootLayout({
                   address: {
                     '@type': 'PostalAddress',
                     addressRegion: '台中市',
-                    addressCountry: {
-                      '@type': 'Country',
-                      name: 'TW',
-                    },
+                    addressCountry: 'TW',
                   },
                   parentOrganization: {
-                    '@id': 'https://drivemate-tw.com/#organization',
-                  },
-                },
-
-                {
-                  '@type': 'Course',
-                  '@id': 'https://drivemate-tw.com/#course-road-driving',
-                  name: '道路駕駛實戰訓練課程',
-                  description:
-                    '專為一般駕駛與新手設計的一對一道路駕駛實戰課程，涵蓋實際道路操作、安全觀念、情境判斷與駕駛自信建立。',
-                  provider: {
-                    '@id': 'https://drivemate-tw.com/#organization',
-                  },
-                },
-                {
-                  '@type': 'Course',
-                  '@id': 'https://drivemate-tw.com/#course-track-driving',
-                  name: '賽道駕駛體驗與進階操控課程',
-                  description:
-                    '針對已有駕駛基礎者設計的賽道駕駛體驗與進階操控課程。',
-                  provider: {
                     '@id': 'https://drivemate-tw.com/#organization',
                   },
                 },

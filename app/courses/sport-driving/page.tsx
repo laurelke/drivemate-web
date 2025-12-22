@@ -3,9 +3,38 @@
 import Image from 'next/image'
 import { HeroCTA } from '@/components/ui/HeroCTA'
 import BottomCTA from '@/components/BottomCTA'
+import React from 'react'
 
 export default function SportDrivingPage() {
   return (
+        <React.Fragment>
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      '@id': 'https://drivemate-tw.com/courses/sport-driving#course',
+      name: '運動駕駛操控訓練課程',
+      description:
+        '專為希望提升操控技巧與車輛動態理解的駕駛設計，透過系統化訓練強化油門、煞車、轉向與操控協調。',
+      provider: {
+        '@type': 'Organization',
+        name: 'DriveMate 駕駛訓練中心',
+        url: 'https://drivemate-tw.com/',
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'TW',
+      },
+      availableLanguage: ['zh-TW'],
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'OnSite',
+      },
+    }),
+  }}
+/>
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
 <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
@@ -176,5 +205,6 @@ className="object-cover md:object-cover object-center md:[object-position:50%_60
         buttonText="立即預約運動駕駛課程"
       />
     </main>
+        </React.Fragment>
   )
 }

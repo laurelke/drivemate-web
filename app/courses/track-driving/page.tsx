@@ -3,10 +3,39 @@
 import Image from 'next/image'
 import { HeroCTA } from '@/components/ui/HeroCTA'
 import BottomCTA from '@/components/BottomCTA'
-import Link from 'next/link'
+import React from 'react'
 
 export default function TrackDrivingPage() {
   return (
+            <React.Fragment>
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      '@id': 'https://drivemate-tw.com/courses/track-driving#course',
+      name: '賽道駕駛體驗與進階操控課程',
+      description:
+        '在專業賽道環境中進行的駕駛訓練課程，學習賽道動線、煞車點判斷與高速操控技巧，提升安全與駕馭能力。',
+      provider: {
+        '@type': 'Organization',
+        name: 'DriveMate 駕駛訓練中心',
+        url: 'https://drivemate-tw.com/',
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'TW',
+      },
+      availableLanguage: ['zh-TW'],
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'OnSite',
+      },
+    }),
+  }}
+/>
+
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁對齊） ================= */}
 <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
@@ -102,5 +131,6 @@ className="object-cover md:object-cover object-center md:[object-position:50%_40
         buttonText="立即預約賽道駕駛體驗"
       />
     </main>
+            </React.Fragment>
   )
 }

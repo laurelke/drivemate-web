@@ -3,10 +3,37 @@
 import Image from 'next/image'
 import { HeroCTA } from '@/components/ui/HeroCTA'
 import BottomCTA from '@/components/BottomCTA'
-import Link from 'next/link'
-
+import React from 'react'
 export default function InstructorTrainingPage() {
   return (
+                <React.Fragment>
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      '@id': 'https://drivemate-tw.com/courses/instructor-training#course',
+      name: '駕駛教練培訓與專業認證課程',
+      description:
+        '專為希望成為專業駕駛教練者設計的培訓課程，涵蓋教學技巧、駕駛評估方法、訓練規劃與實務指導能力。',
+      provider: {
+        '@type': 'Organization',
+        name: 'DriveMate 駕駛訓練中心',
+        url: 'https://drivemate-tw.com/',
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'TW',
+      },
+      availableLanguage: ['zh-TW'],
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'OnSite',
+      },
+    }),
+  }}
+/>
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
 <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
@@ -104,5 +131,6 @@ className="object-cover md:object-cover object-center md:[object-position:50%_60
               buttonText="諮詢教練培訓計畫"
             />
           </main>
+          </React.Fragment>
         )
       }
