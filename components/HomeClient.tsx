@@ -331,30 +331,50 @@ export default function HomePage() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section
-        id="contact"
-        className="bg-white py-24 text-center scroll-mt-20"
-      >
-        <h2 className="text-3xl font-bold mb-4">
-          準備好開始你的駕駛旅程了嗎？
-        </h2>
-        <p className="mb-8 text-gray-600">
-          立即預約 DriveMate 駕駛訓練課程，由專業教練陪同，安心累積實際駕駛經驗。
-        </p>
-        <a
-          href={LINE_LINK}
-  target="_blank"
-  onClick={() => {
-    window.gtag?.('event', 'hero_cta_click', {
-      event_category: 'engagement',
-      event_label: 'hero_line'
-    })
-    window.trackCTAConversion?.()
-  }}
-        >
-          DriveMate 官方 LINE
-        </a>
-      </section>
+<section
+  id="contact"
+  className="bg-white py-24 text-center scroll-mt-20"
+>
+  <h2 className="mb-4 text-3xl font-bold">
+    準備好開始你的駕駛旅程了嗎？
+  </h2>
+
+  <p className="mx-auto mb-10 max-w-2xl text-gray-600">
+    立即預約 DriveMate 駕駛訓練課程，由專業教練陪同，安心累積實際駕駛經驗。
+  </p>
+
+  <div className="flex justify-center">
+    <a
+      href={LINE_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => {
+        window.gtag?.('event', 'hero_cta_click', {
+          event_category: 'engagement',
+          event_label: 'hero_line',
+        })
+        window.trackCTAConversion?.()
+      }}
+      className="
+        inline-flex items-center justify-center
+        rounded-full
+        bg-black
+        px-8 py-3
+        text-sm font-semibold
+        text-white
+        shadow-md
+        md:animation-breathe
+        transition-all duration-200
+        hover:bg-neutral-800
+        hover:shadow-xl
+        active:scale-95
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30
+      "
+    >
+      DriveMate 官方 LINE
+    </a>
+  </div>
+</section>
     </>
   )
 }
