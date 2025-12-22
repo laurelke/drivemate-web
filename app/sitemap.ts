@@ -8,14 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return seoRoutes.map((route) => ({
     url: `${baseUrl}${route.path}`,
     lastModified,
-    changeFrequency: route.changeFrequency as
-      | 'always'
-      | 'hourly'
-      | 'daily'
-      | 'weekly'
-      | 'monthly'
-      | 'yearly'
-      | 'never',
+    changeFrequency: route.changeFrequency as MetadataRoute.Sitemap[number]['changeFrequency'],
     priority: route.priority,
   }))
 }
