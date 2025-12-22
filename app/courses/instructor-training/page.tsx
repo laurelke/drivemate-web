@@ -64,6 +64,58 @@ export default function InstructorTrainingPage() {
     })
   }}
 />
+{/* ================= FAQ Schema（Instructor Training） ================= */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "〖教練培訓課程〗適合什麼樣的人？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "本課程適合有駕駛經驗，並希望成為專業駕駛教練或提升教學能力的人士參加。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一定要有教學經驗才能報名嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定。課程會從教學邏輯、學員心理與實際示範技巧開始，協助學員建立完整的教學能力。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "〖教練培訓課程〗會學到哪些內容？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "包含教學結構設計、駕駛示範技巧、學員評估方式與安全控管，讓你具備實際教學所需的專業能力。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "完成課程後可以成為正式教練嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "完成課程後可具備教練所需的核心能力，實際資格與執業方式仍需依相關規範與個人發展方向而定。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "這門課程偏重理論還是實作？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "課程以實務導向為主，搭配必要理論說明，確保學員能實際應用於教學與指導情境中。"
+          }
+        }
+      ]
+    })
+  }}
+/>
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
 <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">

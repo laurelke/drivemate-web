@@ -65,6 +65,58 @@ export default function SportDrivingPage() {
     })
   }}
 />
+{/* ================= FAQ Schema（Sport Driving） ================= */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Sport Driving 課程適合一般駕駛嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "適合。本課程並非競速課程，而是針對一般駕駛在日常道路中，強化操控穩定性、煞車控制與轉向判斷，提升整體行車安全。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "需要有賽車或進階駕駛經驗才能參加嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。課程會依學員程度調整訓練內容，從正確操控姿勢、視線運用到車輛反應理解，循序建立駕駛技巧。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sport Driving 課程會在哪裡進行？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "課程會依訓練項目安排於合適的道路或封閉場地進行，重點放在安全前提下的實際操控體驗。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "這門課程可以改善開車緊張或不穩定的問題嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。透過系統化操控訓練與教練即時回饋，幫助學員建立對車輛的信任感，減少緊張並提升駕駛穩定度。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "〖運動駕駛課程〗和〖一般道路駕駛課程〗有什麼不同？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "〖運動駕駛課程〗更著重於操控細節與駕駛技術提升，而非僅是上路適應，適合希望精進駕駛技巧的學員。"
+          }
+        }
+      ]
+    })
+  }}
+/>
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
 <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">

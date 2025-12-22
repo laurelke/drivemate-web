@@ -66,6 +66,58 @@ export default function RoadDrivingPage() {
     })
   }}
 />
+{/* ================= FAQ Schema ================= */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "沒有駕駛經驗也可以報名道路駕駛實戰課程嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。本課程專為新手與缺乏實際道路經驗的駕駛設計，教練會依照你的程度，從基礎操作到實際上路，循序建立駕駛信心。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "已經有駕照但很久沒開車，適合這門課程嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "非常適合。許多學員都是因為長時間未駕駛而缺乏信心，本課程會針對你的駕駛習慣進行評估與矯正，幫助你重新適應真實路況。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "道路駕駛訓練會在哪些路況進行？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "訓練會依學員需求安排，包含市區道路、路口判斷、變換車道、停車技巧及實際生活常見路線，讓學習內容貼近日常駕駛情境。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "課程是一對一教學嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的，所有道路駕駛實戰課程皆為一對一教學，由專業教練全程陪同，確保學習安全與成效。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "完成課程後真的可以自己上路嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "課程設計以「能獨立上路」為目標，透過系統化訓練與實際路況演練，幫助學員建立穩定駕駛能力與心理信心。實際成果會依個人學習狀況而有所不同。"
+          }
+        }
+      ]
+    })
+  }}
+/>
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁 100% 對齊） ================= */}
 <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">

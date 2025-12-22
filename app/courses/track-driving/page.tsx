@@ -65,6 +65,58 @@ export default function TrackDrivingPage() {
     })
   }}
 />
+{/* ================= FAQ Schema（Track Driving） ================= */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "〖賽道駕駛課程〗一定要有賽道經驗嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。本課程會從基礎賽道規則、行車路線與安全說明開始，讓初次接觸賽道的學員也能安心體驗。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "賽道駕駛會不會很危險？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "課程於封閉賽道進行，並由專業教練全程指導與控管節奏，相較一般道路更能在安全環境下理解車輛反應。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "〖賽道駕駛課程〗可以學到什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "你將學習正確賽道行車線、煞車點判斷、轉向時機與車輛動態理解，提升對車輛極限的掌握能力。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一般道路駕駛參加賽道課程有幫助嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "非常有幫助。賽道訓練能讓駕駛在安全環境中理解車輛反應，回到日常道路時反而更穩定、更從容。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "課程是單人還是團體進行？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "課程會依當日安排採小組或一對一指導，確保每位學員都能獲得充分的教練回饋與練習時間。"
+          }
+        }
+      ]
+    })
+  }}
+/>
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* ================= Hero（與首頁對齊） ================= */}
 <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
