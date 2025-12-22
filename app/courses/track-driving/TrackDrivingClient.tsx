@@ -50,35 +50,6 @@ export default function TrackDrivingClient() {
           在沒有干擾的環境中修正錯誤操控習慣。
         </p>
       </section>
-
-      {/* ================= 適合誰 ================= */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="mb-10 text-3xl font-bold text-center">
-            這門賽道駕駛課程，適合誰？
-          </h2>
-
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border p-6">
-              <h3 className="mb-4 text-xl font-semibold">適合你，如果你：</h3>
-              <ul className="space-y-2 text-neutral-600">
-                <li>• 想真正理解車輛極限</li>
-                <li>• 希望提升彎道與高速穩定性</li>
-                <li>• 願意接受專業指導</li>
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border p-6 bg-neutral-50">
-              <h3 className="mb-4 text-xl font-semibold">不適合你，如果你：</h3>
-              <ul className="space-y-2 text-neutral-600">
-                <li>• 只想刷圈速</li>
-                <li>• 把賽道當成飆車場</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ================= 課程內容 ================= */}
       <section className="mx-auto max-w-6xl px-6 py-20">
         <h2 className="mb-10 text-3xl font-bold text-center">
