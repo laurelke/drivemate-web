@@ -24,11 +24,11 @@ export default function TrackDrivingClient() {
         <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
           <div className="max-w-xl text-white">
             <h1 className="text-4xl font-bold md:text-5xl leading-tight">
-              真正把車開好，不只是開得快
+              賽道駕駛訓練課程
             </h1>
 
             <p className="mt-6 text-lg text-neutral-200">
-              賽道不是飆速場，而是最安全、最有效率的駕駛訓練環境。
+              賽道不是飆速場，而是最安全、最有效率的駕駛訓練環境。<br />
               在可控條件下，學會操控、理解車輛極限。
             </p>
 
