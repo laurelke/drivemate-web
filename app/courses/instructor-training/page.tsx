@@ -34,33 +34,34 @@ export default function InstructorTrainingPage() {
     }),
   }}
 />
+{/* ================= Breadcrumb Schema ================= */}
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
     __html: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          '@type': 'ListItem',
-          position: 1,
-          name: '首頁',
-          item: 'https://drivemate-tw.com/',
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://drivemate-tw.com/"
         },
         {
-          '@type': 'ListItem',
-          position: 2,
-          name: '課程介紹',
-          item: 'https://drivemate-tw.com/courses',
+          "@type": "ListItem",
+          "position": 2,
+          "name": "課程介紹",
+          "item": "https://drivemate-tw.com/courses"
         },
         {
-          '@type': 'ListItem',
-          position: 3,
-          name: '駕駛教練培訓課程',
-          item: 'https://drivemate-tw.com/courses/instructor-training',
-        },
-      ],
-    }),
+          "@type": "ListItem",
+          "position": 3,
+          "name": "教練培訓課程",
+          "item": "https://drivemate-tw.com/courses/instructor-training"
+        }
+      ]
+    })
   }}
 />
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
