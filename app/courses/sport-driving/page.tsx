@@ -75,7 +75,7 @@ export default function SportDrivingPage() {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Sport Driving 課程適合一般駕駛嗎？",
+          "name": "〖運動駕駛課程〗適合一般駕駛嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "適合。本課程並非競速課程，而是針對一般駕駛在日常道路中，強化操控穩定性、煞車控制與轉向判斷，提升整體行車安全。"
@@ -91,7 +91,7 @@ export default function SportDrivingPage() {
         },
         {
           "@type": "Question",
-          "name": "Sport Driving 課程會在哪裡進行？",
+          "name": "〖運動駕駛課程〗會在哪裡進行？",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "課程會依訓練項目安排於合適的道路或封閉場地進行，重點放在安全前提下的實際操控體驗。"
