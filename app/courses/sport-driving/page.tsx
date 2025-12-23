@@ -9,7 +9,7 @@ export const Metadata = {
   },
 }
 
-export default function Page() {
+export default function SportDrivingPage() {
   return (
     <>
       {/* ================= Course Schema ================= */}
