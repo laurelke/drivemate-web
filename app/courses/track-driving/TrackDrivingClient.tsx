@@ -74,7 +74,7 @@ export default function TrackDrivingClient() {
       {/* ================= Pricing ================= */}
       <section id="pricing" className="bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <h2 className="mb-10 text-center text-3xl font-bold">課程方案</h2>
+          <h2 className="mb-10 text-center text-3xl font-bold">賽道駕駛課程方案與費用</h2>
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl bg-white p-6 shadow">
