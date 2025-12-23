@@ -1,7 +1,6 @@
-import type { Metadata } from 'next'
 import SportDrivingClient from './SportDrivingClient'
 
-export const metadata: Metadata = {
+export const Metadata = {
   title: '運動駕駛訓練課程｜進階操控與駕駛技巧提升',
   description:
     'DriveMate 運動駕駛訓練課程，適合已有基礎的駕駛者，透過系統化操控訓練，提升油門、煞車與轉向協調，建立穩定且可重複的駕駛技巧，而非單純追求速度。',
@@ -112,7 +111,6 @@ export default function Page() {
           }),
         }}
       />
-
       <SportDrivingClient />
     </>
   )

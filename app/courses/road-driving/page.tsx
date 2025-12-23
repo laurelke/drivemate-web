@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import RoadDrivingClient from './RoadDrivingClient'
 
 export const metadata = {
