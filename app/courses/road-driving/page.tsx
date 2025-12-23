@@ -5,6 +5,14 @@ import { HeroCTA } from '@/components/ui/HeroCTA'
 import BottomCTA from '@/components/BottomCTA'
 import React from 'react'
 
+export const metadata = {
+  title: '道路駕駛實戰課程｜新手、缺乏道路駕駛經驗，安心上路訓練',
+  description:
+    'DriveMate 道路駕駛實戰課程，專為新手與不敢上路的駕駛設計，一對一教練陪同，從實際路況評估、操作矯正到穩定上路，協助你建立真正的駕駛信心。',
+  alternates: {
+    canonical: 'https://drivemate-tw.com/courses/road-driving',
+  },
+}
 export default function RoadDrivingPage() {
   return (
     <React.Fragment>

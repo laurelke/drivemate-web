@@ -1,7 +1,7 @@
 import TrackDrivingClient from './TrackDrivingClient'
 
 export const metadata = {
-  title: '賽道駕駛訓練｜真正理解車輛操控與極限',
+  title: '賽道駕駛訓練課程｜真正理解車輛操控與極限',
   description:
     'DriveMate 賽道駕駛訓練課程，透過專業教練一對一指導，在安全賽道環境中學習車輛操控、彎道節奏與駕駛極限，建立真正的駕駛信心。',
   alternates: {
