@@ -85,12 +85,11 @@ export default function Page() {
   '@id': 'https://drivemate-tw.com/#organization',
   name: 'DriveMate 駕駛訓練中心',
   url: 'https://drivemate-tw.com/',
-  logo: 'https://drivemate-tw.com/images/favicon.png',
+  logo: 'https://drivemate-tw.com/images/drivemate-logo.JPG',
   description:
     'DriveMate 駕駛訓練中心專注於考照後的實際駕駛訓練，提供道路駕駛、運動駕駛、賽道課程與教練培訓，一對一實戰教學，協助駕駛建立安全、自信與穩定的駕駛能力。',
   sameAs: [
-    'https://www.facebook.com/DriveMateTW',
-    'https://www.instagram.com/drivemate_tw',
+    'https://www.instagram.com/drivemate.tw',
   ],
   areaServed: {
     '@type': 'Country',
