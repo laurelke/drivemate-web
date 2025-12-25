@@ -162,7 +162,7 @@ export default function HomePage() {
   return (
     <>
      {/* ================= Hero（動態輪播） ================= */}
-<section className="relative h-[75vh] md:h-[85vh] w-full overflow-hidden bg-black">
+<section className="relative h-[75vh] md:h-[85vh] w-full overflow-hidden bg-neutral-800">
   {/* 輪播圖片 */}
   <div className="absolute inset-0 mx-auto max-w-[1920px]">
     {HERO_IMAGES.map((src, index) => (
@@ -186,7 +186,7 @@ export default function HomePage() {
   </div>
 
   {/* 遮罩 */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/20" />
+  <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/70 via-neutral-800/40 to-transparent" />
 
   {/* 文字內容 */}
   <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
@@ -201,7 +201,7 @@ export default function HomePage() {
 </section>
 
       {/* ================= Why ================= */}
-      <section className="bg-neutral-950 py-24 text-white">
+      <section className="bg-neutral-100 py-24 text-white">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
             為什麼選擇 DriveMate 駕駛訓練中心？
@@ -231,7 +231,7 @@ export default function HomePage() {
       {/* ================= Courses ================= */}
 <section
   id="courses"
-  className="bg-neutral-900 py-24 text-white scroll-mt-20"
+  className="bg-neutral-800 py-24 text-white scroll-mt-20"
 >
   <div className="mx-auto max-w-6xl px-6">
     <h2 className="mb-12 text-center text-3xl font-bold">
@@ -303,7 +303,7 @@ export default function HomePage() {
 
 
       {/* ================= Info ================= */}
-      <section id="info" className="bg-neutral-950 py-24 text-white scroll-mt-20">
+      <section id="info" className="bg-neutral-100 py-20 text-white scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
             ← 左右滑動查看更多資訊 →
@@ -315,7 +315,7 @@ export default function HomePage() {
               return (
                 <div
                   key={item.key}
-                  className="min-w-[280px] rounded-2xl border border-white/10 bg-neutral-900 p-6">
+                  className="min-w-[280px] rounded-2xl border border-white/10 bg-neutral-50 p-6">
                   <div
                     onClick={() => setOpen(isOpen ? null : item.key)}
                     className="flex cursor-pointer justify-between"
@@ -329,7 +329,7 @@ export default function HomePage() {
                       isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
                     }`}
                   >
-                    <div className="border-t border-white/10 pt-4 text-sm text-neutral-400">{item.content}</div>
+                    <div className="border-t border-white/10 pt-4 text-sm text-neutral-900">{item.content}</div>
                   </div>
                 </div>
               )
