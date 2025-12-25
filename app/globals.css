@@ -152,13 +152,18 @@
 }
 
 @layer base {
+  html {
+    font-family: 'Porsche Next TT', 'Noto Sans TC', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: inherit;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-  @apply bg-background text-foreground;
-  font-family: var(--font-sans);
-}
 }
 /* ===== Hero 動畫（DriveMate）===== */
 @keyframes heroZoom {
@@ -203,4 +208,9 @@
 .animate-hero-cta {
   animation: heroCTA 0.9s ease-out forwards;
   animation-delay: 0.4s;
+}
+@media (max-width: 768px) {
+  html {
+    font-family: 'Porsche Next TT', 'Noto Sans TC', system-ui, sans-serif;
+  }
 }
