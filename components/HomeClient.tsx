@@ -279,7 +279,7 @@ export default function HomePage() {
     </p>
 
     <span className="mt-auto text-sm font-medium text-gray-400">
-      查看課程 →
+      查看更多課程內容 →
     </span>
   </div>
 </Link>
