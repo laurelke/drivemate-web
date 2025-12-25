@@ -162,7 +162,7 @@ export default function HomePage() {
   return (
     <>
      {/* ================= Hero（動態輪播） ================= */}
-<section className="relative h-[60vh] md:h-[72vh] w-full overflow-hidden bg-black">
+<section className="relative h-[75vh] md:h-[85vh] w-full overflow-hidden bg-black">
   {/* 輪播圖片 */}
   <div className="absolute inset-0 mx-auto max-w-[1920px]">
     {HERO_IMAGES.map((src, index) => (
@@ -186,11 +186,11 @@ export default function HomePage() {
   </div>
 
   {/* 遮罩 */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/20" />
 
   {/* 文字內容 */}
   <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
-    <div className="max-w-xl text-white">
+    <div className="max-w-2xl text-white">
       <HeroText />
 
       <HeroCTA href={LINE_LINK} external>
@@ -201,7 +201,7 @@ export default function HomePage() {
 </section>
 
       {/* ================= Why ================= */}
-      <section className="bg-white py-20">
+      <section className="bg-neutral-950 py-24 text-white">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
             為什麼選擇 DriveMate 駕駛訓練中心？
@@ -213,9 +213,15 @@ export default function HomePage() {
               ['專業駕駛教練一對一指導', '由經驗豐富的專業駕駛教練依照學員程度量身規劃課程，不論是新手上路、久未開車，或想加強特定路段，皆以循序漸進的方式，建立穩定且正確的駕駛觀念。'],
               ['安心陪駕，克服上路恐懼', '針對容易緊張、害怕上路的學員，透過陪駕訓練與實戰引導，強化路況判斷與心理穩定度，讓你從「不敢開」到「敢開、會開、開得安心」。'],
             ].map(([t, d]) => (
-              <div key={t} className="rounded-2xl border p-6 text-center shadow-sm">
-                <h3 className="mb-2 font-semibold">{t}</h3>
-                <p className="text-gray-600">{d}</p>
+              <div key={t} className="
+  rounded-2xl
+  border border-white/10
+  bg-neutral-900
+  p-8
+  text-left
+">
+                <h3 className="mb-3 text-lg font-semibold text-white">{t}</h3>
+<p className="text-sm leading-relaxed text-neutral-400">{d}</p>
               </div>
             ))}
           </div>
@@ -225,7 +231,7 @@ export default function HomePage() {
       {/* ================= Courses ================= */}
 <section
   id="courses"
-  className="bg-gray-50 py-20 scroll-mt-20"
+  className="bg-neutral-900 py-24 text-white scroll-mt-20"
 >
   <div className="mx-auto max-w-6xl px-6">
     <h2 className="mb-12 text-center text-3xl font-bold">
@@ -246,41 +252,47 @@ export default function HomePage() {
   href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
   className="block"
 >
-  <div
-    className="
-      flex flex-col
-      min-w-[260px]
-      h-[300px]
-      rounded-2xl border bg-white p-5
-      shadow-sm
-    "
-  >
+  <div className="
+  group
+  flex flex-col
+  min-w-[280px]
+  h-[320px]
+  rounded-2xl
+  border border-white/10
+  bg-neutral-950
+  p-6
+  transition
+  hover:-translate-y-1
+  hover:border-red-600/60
+">
     <h3 className="text-lg font-semibold">
       {course.title}
     </h3>
 
-    <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
+    <span className="
+  mt-3 inline-flex items-center gap-1
+  rounded-full
+  bg-red-600/10
+  px-3 py-1
+  text-xs
+  text-red-500
+">
   <Sparkles className="h-3 w-3" />
   {course.badge}
 </span>
 
-    <p className="mt-3 text-sm text-gray-600">
-      {course.summary}
-    </p>
-
+    <p className="mt-3 text-sm text-neutral-400">{course.summary}</p>
     {course.highlight && (
       <p className="mt-2 text-sm text-gray-500">
         {course.highlight}
       </p>
     )}
 
-    <p className="mt-2 text-sm text-gray-500">
-      ⏱ {course.duration}
-    </p>
+    <p className="mt-2 text-sm text-neutral-500">⏱ {course.duration}</p>
 
-    <span className="mt-auto text-sm font-medium text-gray-400">
-      查看更多課程內容 →
-    </span>
+    <span className="mt-auto text-sm font-medium text-red-500">
+  查看課程 →
+</span>
   </div>
 </Link>
         )
@@ -291,10 +303,7 @@ export default function HomePage() {
 
 
       {/* ================= Info ================= */}
-      <section
-        id="info"
-        className="bg-white py-20 scroll-mt-20"
-      >
+      <section id="info" className="bg-neutral-950 py-24 text-white scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
             ← 左右滑動查看更多資訊 →
@@ -306,8 +315,7 @@ export default function HomePage() {
               return (
                 <div
                   key={item.key}
-                  className="min-w-[280px] rounded-2xl border p-6 shadow-sm"
-                >
+                  className="min-w-[280px] rounded-2xl border border-white/10 bg-neutral-900 p-6">
                   <div
                     onClick={() => setOpen(isOpen ? null : item.key)}
                     className="flex cursor-pointer justify-between"
@@ -321,7 +329,7 @@ export default function HomePage() {
                       isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
                     }`}
                   >
-                    <div className="border-t pt-4">{item.content}</div>
+                    <div className="border-t border-white/10 pt-4 text-sm text-neutral-400">{item.content}</div>
                   </div>
                 </div>
               )
@@ -331,10 +339,7 @@ export default function HomePage() {
       </section>
 
       {/* ================= CTA ================= */}
-<section
-  id="contact"
-  className="bg-white py-24 text-center scroll-mt-20"
->
+<section id="contact" className="bg-neutral-900 py-32 text-center text-white">
   <h2 className="mb-4 text-3xl font-bold">
     準備好開始你的駕駛旅程了嗎？
   </h2>
@@ -356,20 +361,18 @@ export default function HomePage() {
         window.trackCTAConversion?.()
       }}
       className="
-        inline-flex items-center justify-center
-        rounded-full
-        bg-black
-        px-8 py-3
-        text-sm font-semibold
-        text-white
-        shadow-md
-        md:animation-breathe
-        transition-all duration-200
-        hover:bg-neutral-800
-        hover:shadow-xl
-        active:scale-95
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30
-      "
+  inline-flex items-center justify-center
+  rounded-full
+  bg-red-600
+  px-10 py-4
+  text-sm font-semibold
+  text-white
+  shadow-lg
+  transition
+  hover:bg-red-500
+  hover:shadow-red-600/30
+  active:scale-95
+"
     >
       DriveMate 官方 LINE
     </a>
