@@ -187,6 +187,36 @@ export default function HomePage() {
 
   {/* 遮罩 */}
   <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
+  {/* 科技線條背景 */}
+<div
+  aria-hidden
+  className="
+    pointer-events-none
+    absolute inset-0
+    opacity-[0.06]
+    bg-[linear-gradient(
+      120deg,
+      rgba(255,255,255,0.6)_1px,
+      transparent_1px
+    )]
+    bg-[length:90px_90px]
+  "
+/>
+{/* 光暈效果 */}
+<div
+  aria-hidden
+  className="
+    pointer-events-none
+    absolute -top-40 -right-40
+    h-[600px] w-[600px]
+    rounded-full
+    bg-gradient-to-br
+    from-white/20
+    via-white/5
+    to-transparent
+    blur-3xl
+  "
+/>
 
   {/* 文字內容 */}
   <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
@@ -201,8 +231,23 @@ export default function HomePage() {
 </section>
 
       {/* ================= Why ================= */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="relative bg-white py-20">
+        {/* 背景細線條 */}
+<div
+  aria-hidden
+  className="
+    pointer-events-none
+    absolute inset-0
+    opacity-[0.04]
+    bg-[linear-gradient(
+      to_right,
+      rgba(0,0,0,0.6)_1px,
+      transparent_1px
+    )]
+    bg-[length:64px_64px]
+  "
+/>
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
             為什麼選擇 DriveMate 駕駛訓練中心？
           </h2>
@@ -224,10 +269,26 @@ export default function HomePage() {
 
       {/* ================= Courses ================= */}
 <section
+
   id="courses"
-  className="bg-gray-50 py-20 scroll-mt-20"
+  className="relative bg-gray-50 py-20 scroll-mt-20"
 >
-  <div className="mx-auto max-w-6xl px-6">
+  {/* 背景斜線 */}
+<div
+  aria-hidden
+  className="
+    pointer-events-none
+    absolute inset-0
+    opacity-[0.035]
+    bg-[linear-gradient(
+      135deg,
+      rgba(0,0,0,0.6)_1px,
+      transparent_1px
+    )]
+    bg-[length:80px_80px]
+  "
+/>
+  <div className="relative z-10 mx-auto max-w-6xl px-6">
     <h2 className="mb-12 text-center text-3xl font-bold">
       駕駛訓練課程介紹（新手・運動・賽道）
     </h2>
@@ -293,9 +354,23 @@ export default function HomePage() {
       {/* ================= Info ================= */}
       <section
         id="info"
-        className="bg-white py-20 scroll-mt-20"
-      >
-        <div className="mx-auto max-w-6xl px-6">
+        className="relative bg-white py-20 scroll-mt-20">
+        {/* 背景斜線 */}
+<div
+  aria-hidden
+  className="
+    pointer-events-none
+    absolute inset-0
+    opacity-[0.035]
+    bg-[linear-gradient(
+      135deg,
+      rgba(0,0,0,0.6)_1px,
+      transparent_1px
+    )]
+    bg-[length:80px_80px]
+  "
+/>
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
           <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
             ← 左右滑動查看更多資訊 →
           </p>
