@@ -1,12 +1,9 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-
 /* ===== Fonts ===== */
 
 /* Porsche Next TT - Latin / Numbers */
 @font-face {
   font-family: 'Porsche Next TT';
-  src: url('/fonts/porsche-next-tt-regular.woff2') format('woff2');
+  src: url('/fonts/PorscheNextTT-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -14,7 +11,7 @@
 
 @font-face {
   font-family: 'Porsche Next TT';
-  src: url('/fonts/porsche-next-tt-bold.woff2') format('woff2');
+  src: url('/fonts/PorscheNextTT-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -23,7 +20,7 @@
 /* Noto Sans TC - Chinese */
 @font-face {
   font-family: 'Noto Sans TC';
-  src: url('/fonts/noto-sans-tc-regular.woff2') format('woff2');
+  src: url('/fonts/NotoSansTC-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -31,11 +28,14 @@
 
 @font-face {
   font-family: 'Noto Sans TC';
-  src: url('/fonts/noto-sans-tc-bold.woff2') format('woff2');
+  src: url('/fonts/NotoSansTC-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
+
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -43,7 +43,6 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: 'Porsche Next TT', 'Noto Sans TC', system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -208,9 +207,4 @@
 .animate-hero-cta {
   animation: heroCTA 0.9s ease-out forwards;
   animation-delay: 0.4s;
-}
-@media (max-width: 768px) {
-  html {
-    font-family: 'Porsche Next TT', 'Noto Sans TC', system-ui, sans-serif;
-  }
 }
