@@ -7,8 +7,8 @@ interface BottomCTAProps {
   description: string
   buttonText: string
   href?: string
-  bgImage?: string // ✅ 新增（可選背景）
-  bgPosition?: string
+  bgImage?: string
+  bgPosition?: string // ← 新增
 }
 
 export default function BottomCTA({
@@ -17,42 +17,36 @@ export default function BottomCTA({
   buttonText,
   href = 'https://lin.ee/J22IVRg',
   bgImage,
+  bgPosition = 'center', // ← 預設值
 }: BottomCTAProps) {
   return (
-    <section
-      className={`
-        relative overflow-hidden
-        text-white
-        ${bgImage
-          ? ''
-          : 'bg-gradient-to-b from-neutral-900 via-neutral-800 to-neutral-900'}
-      `}
-      style={
-        bgImage
-          ? {
-              backgroundImage: `url(${bgImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }
-          : undefined
-      }
-    >
-      {/* 背景遮罩（只有有 bgImage 才出現） */}
+    <section className="relative overflow-hidden text-white">
+      {/* 背景圖片 */}
       {bgImage && (
-        <div className="absolute inset-0 bg-black/55" />
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            backgroundPosition: bgPosition,
+          }}
+        />
       )}
 
-      {/* 微光背景層（保留你的質感，但降低存在感） */}
+      {/* 遮罩 */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* 微光 */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
       </div>
 
+      {/* 內容 */}
       <div className="relative mx-auto max-w-4xl px-6 py-24 text-center">
         <h2 className="mb-4 text-3xl font-bold md:text-4xl">
           {title}
         </h2>
 
-        <p className="mx-auto mb-10 max-w-2xl text-white/80">
+        <p className="mx-auto mb-10 max-w-2xl text-neutral-300">
           {description}
         </p>
 
