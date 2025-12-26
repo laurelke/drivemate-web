@@ -299,6 +299,7 @@ export default function HomePage() {
         <span
   className="
     inline-flex
+    self-start
     items-center
     gap-1
     rounded-full
