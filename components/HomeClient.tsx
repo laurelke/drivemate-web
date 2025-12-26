@@ -256,20 +256,42 @@ export default function HomePage() {
 >
   <div
   className="
-  group relative
-  rounded-2xl bg-white p-6
-  transition-all duration-300 ease-out
+    group relative
+    flex flex-col
+    min-w-[260px]
+    h-[300px]
+    rounded-2xl
+    bg-white
+    p-6
 
-  shadow-[0_8px_30px_rgba(0,0,0,0.06)]
-  hover:-translate-y-[3px]
-  hover:shadow-[0_20px_45px_rgba(0,0,0,0.12)]
-    hover:bg-neutral-50">
-     {/* 光澤層 */}
-  <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0
-    transition-opacity duration-300
-    group-hover:opacity-100
-    bg-gradient-to-br from-white/40 via-white/5 to-transparent
-  " />
+    transition-all duration-300 ease-out
+    shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+
+    /* 桌機 hover：浮起 */
+    md:hover:-translate-y-[3px]
+    md:hover:shadow-[0_20px_45px_rgba(0,0,0,0.12)]
+    md:hover:bg-neutral-50
+
+    /* 行動版 touch：被壓下 */
+    active:scale-[0.98]
+    active:translate-y-0
+    active:shadow-[0_6px_16px_rgba(0,0,0,0.12)]
+
+    touch-manipulation
+  "
+>
+  {/* 行動版按壓暗化層 */}
+  <div
+    className="
+      pointer-events-none
+      absolute inset-0
+      rounded-2xl
+      bg-black/5
+      opacity-0
+      transition-opacity duration-150
+      active:opacity-100
+    "
+  />
     <h3
   className="
     text-lg font-semibold
