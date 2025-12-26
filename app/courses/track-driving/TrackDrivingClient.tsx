@@ -110,7 +110,7 @@ export default function TrackDrivingClient() {
         description="賽道駕駛是一場駕駛能力的校正過程。讓專業教練在安全環境中，帶你建立真正的操控與信心。"
         buttonText="立即預約賽道駕駛訓練"
         bgImage="/images/cta/track-driving.jpg"
-        bgPosition="center bottom"
+        bgPosition="center 65%"
       />
     </main>
   )
