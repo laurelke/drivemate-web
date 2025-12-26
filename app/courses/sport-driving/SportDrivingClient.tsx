@@ -136,6 +136,7 @@ export default function SportDrivingClient() {
         title="想讓駕駛變得更穩，而不是更緊張？"
         description="運動駕駛不是追求速度，而是讓你在任何路況下，都知道自己正在做什麼。"
         buttonText="立即預約運動駕駛課程"
+        bgImage="/images/cta/sport-driving.jpg"
       />
     </main>
   )

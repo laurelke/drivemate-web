@@ -164,7 +164,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
         title="想知道你卡住的是技術，還是心理？"
         description="多數學員不是不會開，而是缺少正確評估與引導。讓教練依你的實際狀況，幫你找出最適合的道路訓練方式。"
         buttonText="立即預約駕駛評估"
-        bgImage="/cta-bg.jpg"
+        bgImage="/images/cta/road-driving.jpg"
       />
     </main>
   )
