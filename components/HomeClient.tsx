@@ -214,13 +214,16 @@ export default function HomePage() {
               ['安心陪駕，克服上路恐懼', '針對容易緊張、害怕上路的學員，透過陪駕訓練與實戰引導，強化路況判斷與心理穩定度，讓你從「不敢開」到「敢開、會開、開得安心」。'],
             ].map(([t, d]) => (
               <div key={t} className="
-  group relative
-  rounded-2xl bg-white p-6
-  transition-all duration-300 ease-out
+  group
+  rounded-2xl
+  bg-white
+  p-8
+  text-center
 
-  shadow-[0_8px_30px_rgba(0,0,0,0.06)]
-  hover:-translate-y-[3px]
-  hover:shadow-[0_20px_45px_rgba(0,0,0,0.12)]
+  transition-all duration-300 ease-out
+  shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+  hover:-translate-y-1
+  hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
 ">
                 <h3 className="mb-3 text-lg font-semibold transition-transform group-hover:-translate-y-0.5">
   {t}
@@ -246,124 +249,87 @@ export default function HomePage() {
       ← 左右滑動查看更多課程 →
     </p>
 
-    <div className="relative md:static overflow-hidden">
-      {/* 卡片滑動容器 */}
-      <div className="flex gap-6 overflow-x-auto pb-4 pr-10 md:grid md:grid-cols-4 md:overflow-visible md:pr-0">
-        {courses.map((course) => {
-          return (
-            <Link
-              key={course.key}
-              href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
-              className="group block"
-            >
-              <div
-                className="
-                  relative
-                  flex flex-col
-                  min-w-[260px]
-                  h-[300px]
-                  rounded-2xl
-                  bg-white
-                  p-6
+    <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible">
+      {courses.map((course) => {
+        return (
+          <Link
+  key={course.key}
+  href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
+  className="block"
+>
+  <div
+  className="
+    relative group
+    flex flex-col
+    min-w-[260px]
+    h-[300px]
+    rounded-2xl
+    bg-white
+    p-6
 
-                  transition-all duration-300 ease-out
-                  shadow-[0_8px_30px_rgba(0,0,0,0.06)]
-                  group-hover:-translate-y-1
-                  group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
-                  group-hover:bg-neutral-50
+    transition-all duration-300 ease-out
+    shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+    hover:-translate-y-1
+    hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
 
-                  active:scale-[0.985]
-                "
-              >
-                {/* 上方線條（hover 指示） */}
-                <div
-                  className="
-                    absolute inset-x-0 top-0
-                    h-[2px]
-                    bg-black/0
-                    transition-all
-                    group-hover:bg-black
-                    z-20
-                  "
-                />
+    hover:bg-neutral-50
+  "
+>
+    <div className="absolute inset-x-0 top-0 h-[2px] bg-black/0 group-hover:bg-black transition-all" />
+    <h3 className="text-lg font-semibold">
+      {course.title}
+    </h3>
 
-                {/* 行動版 touch feedback 暗化層 */}
-                <div
-                  className="
-                    pointer-events-none
-                    absolute inset-0
-                    rounded-2xl
-                    bg-black/5
-                    opacity-0
-                    transition-opacity duration-150
-                    active:opacity-100
-                    z-10
-                  "
-                />
+    <span
+  className="
+    mt-2 inline-flex items-center gap-1
+    rounded-full
+    bg-black/90
+    px-3 py-1
+    text-xs text-white
+    transition-transform duration-300
+    group-hover:scale-105
+  "
+>
+  <Sparkles className="h-3 w-3" />
+  {course.badge}
+</span>
 
-                {/* 內容層 */}
-                <div className="relative z-20 flex flex-col h-full">
-                  <h3 className="text-lg font-semibold">
-                    {course.title}
-                  </h3>
+    <p className="mt-3 text-sm text-gray-600">
+      {course.summary}
+    </p>
 
-                  <span
-                    className="
-                      mt-2 inline-flex items-center gap-1
-                      rounded-full
-                      bg-black/90
-                      px-3 py-1
-                      text-xs text-white
-                      transition-transform duration-300
-                      group-hover:scale-105
-                    "
-                  >
-                    <Sparkles className="h-3 w-3" />
-                    {course.badge}
-                  </span>
+    {course.highlight && (
+      <p className="mt-2 text-sm text-gray-500">
+        {course.highlight}
+      </p>
+    )}
 
-                  <p className="mt-3 text-sm text-gray-600">
-                    {course.summary}
-                  </p>
+    <p className="mt-2 text-sm text-gray-500">
+      ⏱ {course.duration}
+    </p>
 
-                  {course.highlight && (
-                    <p className="mt-2 text-sm text-gray-500">
-                      {course.highlight}
-                    </p>
-                  )}
-
-                  <p className="mt-2 text-sm text-gray-500">
-                    ⏱ {course.duration}
-                  </p>
-
-                  <span
-                    className="
-                      mt-auto
-                      text-sm
-                      font-medium
-                      text-gray-400
-                      transition-all
-                      group-hover:text-black
-                      group-hover:translate-x-1
-                    "
-                  >
-                    查看更多課程內容 →
-                  </span>
-                </div>
-              </div>
-            </Link>
-          )
-        })}
-      </div>
-
-      {/* 左側漸層（提示可滑） */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-gray-50 to-transparent md:hidden" />
-
-      {/* 右側漸層（提示可滑） */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-gray-50 to-transparent md:hidden" />
+    <span
+  className="
+    mt-auto
+    text-sm
+    font-medium
+    text-gray-400
+    transition-all
+    group-hover:text-black
+    group-hover:translate-x-1
+  "
+>
+  查看更多課程內容 →
+</span>
+  </div>
+</Link>
+        )
+      })}
     </div>
   </div>
 </section>
+
 
       {/* ================= Info ================= */}
       <section
