@@ -213,9 +213,22 @@ export default function HomePage() {
               ['專業駕駛教練一對一指導', '由經驗豐富的專業駕駛教練依照學員程度量身規劃課程，不論是新手上路、久未開車，或想加強特定路段，皆以循序漸進的方式，建立穩定且正確的駕駛觀念。'],
               ['安心陪駕，克服上路恐懼', '針對容易緊張、害怕上路的學員，透過陪駕訓練與實戰引導，強化路況判斷與心理穩定度，讓你從「不敢開」到「敢開、會開、開得安心」。'],
             ].map(([t, d]) => (
-              <div key={t} className="rounded-2xl border p-6 text-center shadow-sm">
-                <h3 className="mb-2 font-semibold">{t}</h3>
-                <p className="text-gray-600">{d}</p>
+              <div key={t} className="
+  group
+  rounded-2xl
+  bg-white
+  p-8
+  text-center
+
+  transition-all duration-300 ease-out
+  shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+  hover:-translate-y-1
+  hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+">
+                <h3 className="mb-3 text-lg font-semibold transition-transform group-hover:-translate-y-0.5">
+  {t}
+</h3>
+                <p className="text-gray-500 leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
@@ -238,8 +251,6 @@ export default function HomePage() {
 
     <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible">
       {courses.map((course) => {
-        const isOpen = open === course.key
-
         return (
           <Link
   key={course.key}
@@ -247,19 +258,39 @@ export default function HomePage() {
   className="block"
 >
   <div
-    className="
-      flex flex-col
-      min-w-[260px]
-      h-[300px]
-      rounded-2xl border bg-white p-5
-      shadow-sm
-    "
-  >
+  className="
+    relative group
+    flex flex-col
+    min-w-[260px]
+    h-[300px]
+    rounded-2xl
+    bg-white
+    p-6
+
+    transition-all duration-300 ease-out
+    shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+    hover:-translate-y-1
+    hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+
+    hover:bg-neutral-50
+  "
+>
+    <div className="absolute inset-x-0 top-0 h-[2px] bg-black/0 group-hover:bg-black transition-all" />
     <h3 className="text-lg font-semibold">
       {course.title}
     </h3>
 
-    <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-black px-3 py-1 text-xs text-white">
+    <span
+  className="
+    mt-2 inline-flex items-center gap-1
+    rounded-full
+    bg-black/90
+    px-3 py-1
+    text-xs text-white
+    transition-transform duration-300
+    group-hover:scale-105
+  "
+>
   <Sparkles className="h-3 w-3" />
   {course.badge}
 </span>
@@ -278,9 +309,19 @@ export default function HomePage() {
       ⏱ {course.duration}
     </p>
 
-    <span className="mt-auto text-sm font-medium text-gray-400">
-      查看更多課程內容 →
-    </span>
+    <span
+  className="
+    mt-auto
+    text-sm
+    font-medium
+    text-gray-400
+    transition-all
+    group-hover:text-black
+    group-hover:translate-x-1
+  "
+>
+  查看更多課程內容 →
+</span>
   </div>
 </Link>
         )
