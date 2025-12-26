@@ -109,28 +109,44 @@ export default function SportDrivingClient() {
                   '建立精準且細膩的操控習慣',
                 ],
               },
-            ].map((plan) => (
-              <div
-                key={plan.title}
-                className={`rounded-3xl bg-white p-8 shadow-lg ${
-                  plan.highlight ? 'border-2 border-orange-500' : 'border'
-                }`}
-              >
-                <h3 className="text-xl font-semibold">{plan.title}</h3>
-                <p className="text-sm text-neutral-500">
-                  {plan.hours}
-                </p>
-                <p className="my-4 text-3xl font-bold">{plan.price}</p>
-                <ul className="space-y-2 text-sm text-neutral-600">
-                  {plan.items.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
+             ].map((plan) => (
+        <div
+          key={plan.title}
+          className={`relative rounded-3xl bg-white p-8 shadow-lg ${
+            plan.highlight
+              ? 'border-2 border-orange-500'
+              : 'border border-neutral-200'
+          }`}
+        >
+          {/* 最多人選擇 */}
+          {plan.highlight && (
+            <span
+              className="
+                absolute -top-3 left-1/2 -translate-x-1/2
+                rounded-full bg-orange-500 px-4 py-1
+                text-xs font-semibold text-white
+                shadow
+              "
+            >
+              最多人選擇
+            </span>
+          )}
+
+          <h3 className="text-xl font-semibold">{plan.title}</h3>
+          <p className="text-sm text-neutral-500">{plan.hours}</p>
+
+          <p className="my-4 text-3xl font-bold">{plan.price}</p>
+
+          <ul className="space-y-2 text-sm text-neutral-600">
+            {plan.items.map((item) => (
+              <li key={item}>• {item}</li>
             ))}
-          </div>
+          </ul>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       <BottomCTA
         title="想讓駕駛變得更穩，而不是更緊張？"
