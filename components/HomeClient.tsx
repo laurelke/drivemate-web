@@ -361,9 +361,10 @@ export default function HomePage() {
               hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
 
               active:scale-[0.985]
+              md:active:scale-100
             "
           >
-            {/* Header（可點擊區） */}
+            {/* Header（點擊區） */}
             <button
               type="button"
               onClick={() => setOpen(isOpen ? null : item.key)}
@@ -375,7 +376,9 @@ export default function HomePage() {
 
                 transition-colors duration-200
                 hover:text-black
+
                 active:bg-neutral-50
+                md:active:bg-transparent
               "
             >
               <h3
