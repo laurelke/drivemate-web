@@ -235,12 +235,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Courses */}
+      {/* ================= Courses ================= */}
 <section
   id="courses"
   className="bg-gray-50 py-20 scroll-mt-20"
 >
-  <div className="mx-auto max-w-6xl px-6"></div>
+  <div className="mx-auto max-w-6xl px-6">
     <h2 className="mb-12 text-center text-3xl font-bold">
       駕駛訓練課程介紹（新手・運動・賽道）
     </h2>
@@ -249,32 +249,32 @@ export default function HomePage() {
       ← 左右滑動查看更多課程 →
     </p>
 
-   <div className="relative md:static overflow-hidden">
-  {/* 卡片滑動容器 */}
-  <div className="flex gap-6 overflow-x-auto pb-4 pr-10 md:grid md:grid-cols-4 md:overflow-visible md:pr-0">
-    {courses.map((course) => {
+    <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible">
+      {courses.map((course) => {
         return (
           <Link
   key={course.key}
   href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
-  className="group block"
+  className="block"
 >
   <div
-    className="
-      relative
-      flex flex-col
-      min-w-[260px]
-      h-[300px]
-      rounded-2xl
-      bg-white
-      p-6
-      transition-all duration-300 ease-out
-      shadow-[0_8px_30px_rgba(0,0,0,0.06)]
-      group-hover:-translate-y-1
-      group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
-      group-hover:bg-neutral-50
-    "
-  >
+  className="
+    relative group
+    flex flex-col
+    min-w-[260px]
+    h-[300px]
+    rounded-2xl
+    bg-white
+    p-6
+
+    transition-all duration-300 ease-out
+    shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+    hover:-translate-y-1
+    hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+
+    hover:bg-neutral-50
+  "
+>
     <div className="absolute inset-x-0 top-0 h-[2px] bg-black/0 group-hover:bg-black transition-all" />
     <h3 className="text-lg font-semibold">
       {course.title}
@@ -327,12 +327,7 @@ export default function HomePage() {
         )
       })}
     </div>
-     {/* 左側漸層（提示可滑） */}
-  <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-gray-50 to-transparent md:hidden" />
-
-  {/* 右側漸層（提示可滑） */}
-  <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-gray-50 to-transparent md:hidden" />
-</div>
+  </div>
 </section>
 
 
@@ -367,15 +362,16 @@ export default function HomePage() {
                 >
                  <div
   onClick={() => setOpen(isOpen ? null : item.key)}
-  className="cursor-pointer"
+  className="
+    flex cursor-pointer items-center justify-between
+    transition-colors
+    hover:text-black
+  "
 >
                     <h3 className="font-semibold">{item.title}</h3>
-                    <ChevronDown
-    className={`transition-transform duration-300 ${
-      isOpen ? 'rotate-180' : ''
-    }`}
-  />
-</div>
+                    <ChevronDown className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                  </div>
+
                   <div
                     className={`transition-all ${
                       isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
