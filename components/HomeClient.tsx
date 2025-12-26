@@ -347,14 +347,29 @@ export default function HomePage() {
               return (
                 <div
                   key={item.key}
-                  className="min-w-[280px] rounded-2xl border p-6 shadow-sm"
+                 className="
+  group
+  min-w-[280px]
+  rounded-2xl
+  bg-white
+  p-8
+
+  transition-all duration-300 ease-out
+  shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+  hover:-translate-y-1
+  hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+"
                 >
-                  <div
-                    onClick={() => setOpen(isOpen ? null : item.key)}
-                    className="flex cursor-pointer justify-between"
-                  >
+                 <div
+  onClick={() => setOpen(isOpen ? null : item.key)}
+  className="
+    flex cursor-pointer items-center justify-between
+    transition-colors
+    hover:text-black
+  "
+>
                     <h3 className="font-semibold">{item.title}</h3>
-                    <ChevronDown className={`transition ${isOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                   </div>
 
                   <div
