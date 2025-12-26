@@ -8,6 +8,7 @@ interface BottomCTAProps {
   buttonText: string
   href?: string
   bgImage?: string // ✅ 新增（可選背景）
+  bgPosition?: string
 }
 
 export default function BottomCTA({
