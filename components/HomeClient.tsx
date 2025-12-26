@@ -251,81 +251,96 @@ export default function HomePage() {
 
     <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible">
       {courses.map((course) => {
-        return (
-          <Link
-  key={course.key}
-  href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
-  className="block"
->
-  <div
-  className="
-    relative group
-    flex flex-col
-    min-w-[260px]
-    h-[300px]
-    rounded-2xl
-    bg-white
-    p-6
+  return (
+    <Link
+      key={course.key}
+      href={COURSE_LINK_MAP[course.key as keyof typeof COURSE_LINK_MAP]}
+      className="group block"
+    >
+      <div
+        className="
+          relative
+          flex flex-col
+          min-w-[260px]
+          h-[300px]
+          rounded-2xl
+          bg-white
+          p-6
 
-    transition-all duration-300 ease-out
-    shadow-[0_8px_30px_rgba(0,0,0,0.06)]
-    hover:-translate-y-1
-    hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+          transition-all duration-300 ease-out
+          shadow-[0_8px_30px_rgba(0,0,0,0.06)]
 
-    hover:bg-neutral-50
-  "
->
-    <div className="absolute inset-x-0 top-0 h-[2px] bg-black/0 group-hover:bg-black transition-all" />
-    <h3 className="text-lg font-semibold">
-      {course.title}
-    </h3>
+          /* ===== Desktop Hover ===== */
+          md:hover:-translate-y-1
+          md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+          md:hover:bg-neutral-50
 
-    <span
-  className="
-    mt-2 inline-flex items-center gap-1
-    rounded-full
-    bg-black/90
-    px-3 py-1
-    text-xs text-white
-    transition-transform duration-300
-    group-hover:scale-105
-  "
->
-  <Sparkles className="h-3 w-3" />
-  {course.badge}
-</span>
+          /* ===== Mobile Active (與 Info 一致) ===== */
+          active:scale-[0.985]
+          active:bg-neutral-50
+          md:active:scale-100
+        "
+      >
+        {/* 上方線條（只吃 hover，不吃 active） */}
+        <div
+          className="
+            pointer-events-none
+            absolute inset-x-0 top-0 h-[2px]
+            bg-black/0
+            transition-colors duration-300
+            md:group-hover:bg-black
+          "
+        />
 
-    <p className="mt-3 text-sm text-gray-600">
-      {course.summary}
-    </p>
+        <h3 className="text-lg font-semibold">
+          {course.title}
+        </h3>
 
-    {course.highlight && (
-      <p className="mt-2 text-sm text-gray-500">
-        {course.highlight}
-      </p>
-    )}
+        <span
+          className="
+            mt-2 inline-flex items-center gap-1
+            rounded-full
+            bg-black/90
+            px-3 py-1
+            text-xs text-white
+            transition-transform duration-300
+            md:group-hover:scale-105
+          "
+        >
+          <Sparkles className="h-3 w-3" />
+          {course.badge}
+        </span>
 
-    <p className="mt-2 text-sm text-gray-500">
-      ⏱ {course.duration}
-    </p>
+        <p className="mt-3 text-sm text-gray-600">
+          {course.summary}
+        </p>
 
-    <span
-  className="
-    mt-auto
-    text-sm
-    font-medium
-    text-gray-400
-    transition-all
-    group-hover:text-black
-    group-hover:translate-x-1
-  "
->
-  查看更多課程內容 →
-</span>
-  </div>
-</Link>
-        )
-      })}
+        {course.highlight && (
+          <p className="mt-2 text-sm text-gray-500">
+            {course.highlight}
+          </p>
+        )}
+
+        <p className="mt-2 text-sm text-gray-500">
+          ⏱ {course.duration}
+        </p>
+
+        <span
+          className="
+            mt-auto
+            text-sm font-medium
+            text-gray-400
+            transition-all
+            md:group-hover:text-black
+            md:group-hover:translate-x-1
+          "
+        >
+          查看更多課程內容 →
+        </span>
+      </div>
+    </Link>
+  )
+})}
     </div>
   </div>
 </section>
