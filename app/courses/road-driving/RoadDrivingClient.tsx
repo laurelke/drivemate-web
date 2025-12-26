@@ -126,7 +126,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
 
         <ul className="mb-8 space-y-2 text-sm text-neutral-600">
           <li>• 系統化道路駕駛訓練</li>
-          <li>• 14 天循序練習節奏</li>
+          <li>• 14 天循序練習節奏(4 堂課程)</li>
           <li>• 多元實際道路情境演練</li>
           <li>• 明確成果檢核與回饋</li>
         </ul>
@@ -150,7 +150,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
 
         <ul className="mb-8 space-y-2 text-sm text-neutral-600">
           <li>• 以應對所有路型/路線為訓練核心</li>
-          <li>• 21 天密集練習步調</li>
+          <li>• 21 天密集練習步調(8 堂課程)</li>
           <li>• 尖峰與高流量路況應對</li>
           <li>• 建立長期穩定駕駛習慣</li>
         </ul>
