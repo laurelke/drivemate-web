@@ -332,59 +332,86 @@ export default function HomePage() {
 
 
       {/* ================= Info ================= */}
-      <section
-        id="info"
-        className="bg-white py-20 scroll-mt-20"
-      >
-        <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
-            ← 左右滑動查看更多資訊 →
-          </p>
-
-          <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
-            {infoCards.map((item) => {
-              const isOpen = open === item.key
-              return (
-                <div
-                  key={item.key}
-                 className="
-  group
-  min-w-[280px]
-  rounded-2xl
-  bg-white
-  p-8
-
-  transition-all duration-300 ease-out
-  shadow-[0_10px_30px_rgba(0,0,0,0.06)]
-  hover:-translate-y-1
-  hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
-"
-                >
-                 <div
-  onClick={() => setOpen(isOpen ? null : item.key)}
-  className="
-    flex cursor-pointer items-center justify-between
-    transition-colors
-    hover:text-black
-  "
+<section
+  id="info"
+  className="bg-white py-20 scroll-mt-20"
 >
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <ChevronDown className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-                  </div>
+  <div className="mx-auto max-w-6xl px-6">
+    <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
+      ← 左右滑動查看更多資訊 →
+    </p>
 
-                  <div
-                    className={`transition-all ${
-                      isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'
-                    }`}
-                  >
-                    <div className="border-t pt-4">{item.content}</div>
-                  </div>
-                </div>
-              )
-            })}
+    <div className="flex gap-6 overflow-x-auto md:grid md:grid-cols-3">
+      {infoCards.map((item) => {
+        const isOpen = open === item.key
+
+        return (
+          <div
+            key={item.key}
+            className="
+              group
+              min-w-[280px]
+              rounded-2xl
+              bg-white
+              p-6 md:p-8
+
+              transition-all duration-300 ease-out
+              shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+              hover:-translate-y-1
+              hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+
+              active:scale-[0.985]
+            "
+          >
+            {/* Header（可點擊區） */}
+            <button
+              type="button"
+              onClick={() => setOpen(isOpen ? null : item.key)}
+              className="
+                flex w-full items-center justify-between
+                rounded-xl
+                px-2 py-3
+                text-left
+
+                transition-colors duration-200
+                hover:text-black
+                active:bg-neutral-50
+              "
+            >
+              <h3
+                className={`font-semibold transition-colors ${
+                  isOpen ? 'text-black' : 'text-gray-700'
+                }`}
+              >
+                {item.title}
+              </h3>
+
+              <ChevronDown
+                className={`
+                  h-5 w-5 shrink-0
+                  transition-transform duration-300
+                  ${isOpen ? 'rotate-180 text-black' : 'text-gray-400'}
+                `}
+              />
+            </button>
+
+            {/* Content */}
+            <div
+              className={`
+                transition-all duration-300 ease-out
+                ${isOpen ? 'max-h-96 mt-4' : 'max-h-0 overflow-hidden'}
+              `}
+            >
+              <div className="border-t pt-4 text-sm text-gray-600">
+                {item.content}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        )
+      })}
+    </div>
+  </div>
+</section>
 
       {/* ================= CTA ================= */}
 <section
