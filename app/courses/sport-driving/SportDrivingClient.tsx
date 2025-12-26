@@ -120,18 +120,16 @@ export default function SportDrivingClient() {
         >
           {/* 最多人選擇 */}
           {plan.highlight && (
-           <span
-  className="
-    absolute -top-3 left-1/2 -translate-x-1/2
-    rounded-full
-    bg-gradient-to-r from-neutral-800 to-neutral-700
-    px-4 py-1
-    text-xs font-medium text-white
-    shadow
-  "
->
-  最多人選擇
-</span>
+            <span
+              className="
+                absolute -top-3 left-1/2 -translate-x-1/2
+                rounded-full bg-orange-500 px-4 py-1
+                text-xs font-semibold text-white
+                shadow
+              "
+            >
+              最多人選擇
+            </span>
           )}
 
           <h3 className="text-xl font-semibold">{plan.title}</h3>

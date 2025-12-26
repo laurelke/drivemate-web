@@ -109,18 +109,9 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
 
       {/* B - 主推 */}
       <div className="relative rounded-2xl border-2 border-orange-500 bg-white p-6 shadow-lg">
-        <span
-  className="
-    absolute -top-3 left-1/2 -translate-x-1/2
-    rounded-full
-    bg-neutral-900/90
-    px-4 py-1
-    text-xs font-medium tracking-wide text-white
-    shadow-md backdrop-blur
-  "
->
-  最多人選擇
-</span>
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-4 py-1 text-xs font-semibold text-white">
+          最多人選擇
+        </span>
 
         <h3 className="mb-1 text-xl font-semibold">
           14 天獨立上路成果計畫
