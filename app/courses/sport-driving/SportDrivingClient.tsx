@@ -61,9 +61,9 @@ export default function SportDrivingClient() {
               desc: '讓每一個操作都有邏輯，而不是靠直覺硬撐。',
             },
           ].map((item) => (
-            <div key={item.title} className="rounded-2xl bg-white p-6 shadow">
+            <div key={item.title} className="rounded-2xl bg-white p-7 md:p-6 shadow text-center">
               <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
-              <p className="text-neutral-600">{item.desc}</p>
+              <p className="mx-auto max-w-[16rem] text-neutral-600">{item.desc}</p>
             </div>
           ))}
         </div>

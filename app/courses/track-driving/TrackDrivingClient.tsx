@@ -64,7 +64,7 @@ export default function TrackDrivingClient() {
             '車輛動態與抓地力理解',
             '即時修正錯誤操控',
           ].map((item) => (
-            <div key={item} className="rounded-2xl bg-white p-6 shadow">
+            <div key={item} className="rounded-2xl bg-white p-7 md:p-6 shadow text-center">
               <p className="font-medium">{item}</p>
             </div>
           ))}

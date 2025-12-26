@@ -64,9 +64,9 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
               desc: '很多時候不是不會開，而是不敢開。',
             },
           ].map((item) => (
-            <div key={item.title} className="rounded-2xl bg-white p-6 shadow">
+            <div key={item.title} className="rounded-2xl bg-white p-7 md:p-6 shadow text-center">
               <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
-              <p className="text-neutral-600">{item.desc}</p>
+              <p className="mx-auto max-w-[16rem] text-neutral-600">{item.desc}</p>
             </div>
           ))}
         </div>
