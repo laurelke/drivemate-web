@@ -214,16 +214,13 @@ export default function HomePage() {
               ['安心陪駕，克服上路恐懼', '針對容易緊張、害怕上路的學員，透過陪駕訓練與實戰引導，強化路況判斷與心理穩定度，讓你從「不敢開」到「敢開、會開、開得安心」。'],
             ].map(([t, d]) => (
               <div key={t} className="
-  group
-  rounded-2xl
-  bg-white
-  p-8
-  text-center
-
+  group relative
+  rounded-2xl bg-white p-6
   transition-all duration-300 ease-out
-  shadow-[0_10px_30px_rgba(0,0,0,0.06)]
-  hover:-translate-y-1
-  hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
+
+  shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+  hover:-translate-y-[3px]
+  hover:shadow-[0_20px_45px_rgba(0,0,0,0.12)]
 ">
                 <h3 className="mb-3 text-lg font-semibold transition-transform group-hover:-translate-y-0.5">
   {t}
@@ -259,36 +256,37 @@ export default function HomePage() {
 >
   <div
   className="
-    relative group
-    flex flex-col
-    min-w-[260px]
-    h-[300px]
-    rounded-2xl
-    bg-white
-    p-6
+  group relative
+  rounded-2xl bg-white p-6
+  transition-all duration-300 ease-out
 
-    transition-all duration-300 ease-out
-    shadow-[0_8px_30px_rgba(0,0,0,0.06)]
-    hover:-translate-y-1
-    hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)]
-
-    hover:bg-neutral-50
+  shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+  hover:-translate-y-[3px]
+  hover:shadow-[0_20px_45px_rgba(0,0,0,0.12)]
+    hover:bg-neutral-50">
+     {/* 光澤層 */}
+  <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0
+    transition-opacity duration-300
+    group-hover:opacity-100
+    bg-gradient-to-br from-white/40 via-white/5 to-transparent
+  " />
+    <h3
+  className="
+    text-lg font-semibold
+    transition-transform duration-300
+    group-hover:-translate-y-0.5
   "
 >
-    <div className="absolute inset-x-0 top-0 h-[2px] bg-black/0 group-hover:bg-black transition-all" />
-    <h3 className="text-lg font-semibold">
-      {course.title}
-    </h3>
+  {course.title}
+</h3>
 
     <span
   className="
     mt-2 inline-flex items-center gap-1
-    rounded-full
-    bg-black/90
-    px-3 py-1
-    text-xs text-white
-    transition-transform duration-300
-    group-hover:scale-105
+    rounded-full bg-black/90
+    px-3 py-1 text-xs text-white
+    transition-all duration-300
+    group-hover:scale-[1.03]
   "
 >
   <Sparkles className="h-3 w-3" />
