@@ -211,7 +211,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_60
               title="不只會開車，你準備好教人開車了嗎？"
               description="成為教練，靠的不只是技術，而是判斷、引導與系統化教學能力。我們協助你建立完整且可執行的專業教練基礎。"
               buttonText="諮詢教練培訓計畫"
-               bgImage="/images/cta/track-driving.jpg"
+               bgImage="/images/cta/instructor-training.jpg"
             />
           </main>
           </React.Fragment>
