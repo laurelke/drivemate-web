@@ -432,49 +432,72 @@ export default function HomePage() {
   </div>
 </section>
 
-      {/* ================= CTA ================= */}
+      {/* ================= CTA (Image Background) ================= */}
 <section
   id="contact"
-  className="bg-white py-24 text-center scroll-mt-20"
+  className="
+    relative
+    isolate
+    overflow-hidden
+    py-28
+    text-center
+    scroll-mt-20
+  "
 >
-  <h2 className="mb-4 text-3xl font-bold">
-    準備好開始你的駕駛旅程了嗎？
-  </h2>
+  {/* 背景圖片 */}
+  <Image
+    src="/cta-bg.jpg"
+    alt="DriveMate 駕駛訓練"
+    fill
+    priority={false}
+    sizes="100vw"
+    className="object-cover object-center"
+  />
 
-  <p className="mx-auto mb-10 max-w-2xl text-gray-600">
-    立即預約 DriveMate 駕駛訓練課程，由專業教練陪同，安心累積實際駕駛經驗。
-  </p>
+  {/* 黑色遮罩（確保文字可讀） */}
+  <div className="absolute inset-0 bg-black/55" />
 
-  <div className="flex justify-center">
-    <a
-      href={LINE_LINK}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => {
-        window.gtag?.('event', 'hero_cta_click', {
-          event_category: 'engagement',
-          event_label: 'hero_line',
-        })
-        window.trackCTAConversion?.()
-      }}
-      className="
-        inline-flex items-center justify-center
-        rounded-full
-        bg-black
-        px-8 py-3
-        text-sm font-semibold
-        text-white
-        shadow-md
-        md:animation-breathe
-        transition-all duration-200
-        hover:bg-neutral-800
-        hover:shadow-xl
-        active:scale-95
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30
-      "
-    >
-      DriveMate 官方 LINE
-    </a>
+  {/* 內容 */}
+  <div className="relative z-10 mx-auto max-w-3xl px-6 text-white">
+    <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+      準備好開始你的駕駛旅程了嗎？
+    </h2>
+
+    <p className="mx-auto mb-10 max-w-2xl text-white/85">
+      立即預約 DriveMate 駕駛訓練課程，由專業教練陪同，
+      安心累積實際駕駛經驗。
+    </p>
+
+    <div className="flex justify-center">
+      <a
+        href={LINE_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => {
+          window.gtag?.('event', 'hero_cta_click', {
+            event_category: 'engagement',
+            event_label: 'cta_image',
+          })
+          window.trackCTAConversion?.()
+        }}
+        className="
+          inline-flex items-center justify-center
+          rounded-full
+          bg-white
+          px-8 py-3
+          text-sm font-semibold
+          text-black
+          shadow-lg
+          transition-all duration-200
+          hover:bg-neutral-100
+          hover:shadow-xl
+          active:scale-95
+          focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40
+        "
+      >
+        DriveMate 官方 LINE
+      </a>
+    </div>
   </div>
 </section>
     </>
