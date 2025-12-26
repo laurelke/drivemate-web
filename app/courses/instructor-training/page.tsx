@@ -175,9 +175,9 @@ className="object-cover md:object-cover object-center md:[object-position:50%_60
               desc: '企業、車廠、車隊內部培訓需求。',
             },
           ].map((item) => (
-            <div key={item.title} className="rounded-2xl bg-white p-6 shadow">
+            <div key={item.title} className="rounded-2xl bg-white p-7 md:p-6 shadow text-center">
               <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
-              <p className="text-neutral-600">{item.desc}</p>
+              <p className="mx-auto max-w-[16rem] text-neutral-600">{item.desc}</p>
             </div>
           ))}
         </div>
