@@ -297,20 +297,20 @@ export default function HomePage() {
         </h3>
 
         <span
-          className="
-            mt-2 inline-flex items-center gap-1
-            rounded-full
-            bg-black/90
-            px-3 py-1
-            text-xs text-white
-            transition-transform duration-300
-            md:group-hover:scale-105
-          "
-        >
-          <Sparkles className="h-3 w-3" />
-          {course.badge}
-        </span>
-
+  className="
+    inline-flex
+    items-center
+    gap-1
+    rounded-full
+    bg-black
+    px-3 py-1
+    text-xs
+    text-white
+  "
+>
+  <Sparkles className="h-3 w-3" />
+  {course.badge}
+</span>
         <p className="mt-3 text-sm text-gray-600">
           {course.summary}
         </p>
