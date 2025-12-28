@@ -33,31 +33,40 @@ export default function Footer() {
               聯絡我們
             </p>
             <ul className="space-y-2 text-sm text-neutral-600">
-              <li>
-                <a
-                  href="mailto:drivemate.tw@gmail.com"
-                  className="hover:text-neutral-900"
-                >
-                  drivemate.tw@gmail.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+886906896750"
-                  className="hover:text-neutral-900"
-                >
-                  0906-896-750
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+886960840750"
-                  className="hover:text-neutral-900"
-                >
-                  0960-840-750
-                </a>
-              </li>
-            </ul>
+  {/* Email */}
+  <li>
+    <a
+      href="mailto:drivemate.tw@gmail.com"
+      aria-label="寄信給 DriveMate 駕駛訓練中心"
+      className="transition hover:text-neutral-900"
+    >
+      drivemate.tw@gmail.com
+    </a>
+  </li>
+
+  {/* Phone 1 */}
+  <li>
+    <a
+      href="tel:+886906896750"
+      aria-label="致電 DriveMate 駕駛訓練中心 0906-896-750"
+      className="transition hover:text-neutral-900"
+    >
+      0906-896-750
+    </a>
+  </li>
+
+  {/* Phone 2 */}
+  <li>
+    <a
+      href="tel:+886960840750"
+      aria-label="致電 DriveMate 駕駛訓練中心 0960-840-750"
+      className="transition hover:text-neutral-900"
+    >
+      0960-840-750
+    </a>
+  </li>
+</ul>
+
           </div>
 
           {/* ================= Social ================= */}
