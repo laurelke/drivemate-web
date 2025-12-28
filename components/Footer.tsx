@@ -34,48 +34,48 @@ export default function Footer() {
           </div>
 
           {/* ================= Contact ================= */}
-          <div>
-            <p className="mb-3 text-sm font-semibold text-neutral-900">
-              聯絡我們
-            </p>
-            <ul className="space-y-3 text-sm text-neutral-600">
-  {/* Email */}
-  <li>
-    <a
-      href="mailto:drivemate.tw@gmail.com"
-      aria-label="寄信給 DriveMate 駕駛訓練中心"
-      className="flex items-center gap-2 transition hover:text-neutral-900"
-    >
-      <Mail className="h-4 w-4 text-neutral-400" />
-      <span>drivemate.tw@gmail.com</span>
-    </a>
-  </li>
+<div className="text-center md:text-left">
+  <p className="mb-3 text-sm font-semibold text-neutral-900">
+    聯絡我們
+  </p>
 
-  {/* Phone 1 */}
-  <li>
-    <a
-      href="tel:+886906896750"
-      aria-label="致電 DriveMate 駕駛訓練中心 0906-896-750"
-      className="flex items-center gap-2 transition hover:text-neutral-900"
-    >
-      <Phone className="h-4 w-4 text-neutral-400" />
-      <span>0906-896-750</span>
-    </a>
-  </li>
+  <ul className="space-y-2 text-sm text-neutral-600">
+    {/* Email */}
+    <li>
+      <a
+        href="mailto:drivemate.tw@gmail.com"
+        className="flex items-center justify-center gap-2 transition hover:text-neutral-900 md:justify-start"
+      >
+        <Mail className="h-4 w-4 text-neutral-400" />
+        <span>drivemate.tw@gmail.com</span>
+      </a>
+    </li>
 
-  {/* Phone 2 */}
-  <li>
-    <a
-      href="tel:+886960840750"
-      aria-label="致電 DriveMate 駕駛訓練中心 0960-840-750"
-      className="flex items-center gap-2 transition hover:text-neutral-900"
-    >
-      <Phone className="h-4 w-4 text-neutral-400" />
-      <span>0960-840-750</span>
-    </a>
-  </li>
-</ul>
-          </div>
+    {/* Phone 1 */}
+    <li>
+      <a
+        href="tel:+886906896750"
+        className="flex items-center justify-center gap-2 transition hover:text-neutral-900 md:justify-start"
+        aria-label="致電 DriveMate 0906-896-750"
+      >
+        <Phone className="h-4 w-4 text-neutral-400" />
+        <span>0906-896-750</span>
+      </a>
+    </li>
+
+    {/* Phone 2 */}
+    <li>
+      <a
+        href="tel:+886960840750"
+        className="flex items-center justify-center gap-2 transition hover:text-neutral-900 md:justify-start"
+        aria-label="致電 DriveMate 0960-840-750"
+      >
+        <Phone className="h-4 w-4 text-neutral-400" />
+        <span>0960-840-750</span>
+      </a>
+    </li>
+  </ul>
+</div>
 
           {/* ================= Social ================= */}
           <div>
