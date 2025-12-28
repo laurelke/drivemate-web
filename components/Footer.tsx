@@ -7,7 +7,13 @@ export default function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-neutral-50">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div
+          className="
+            grid gap-8
+            text-center
+            md:grid-cols-3 md:text-left
+          "
+        >
           {/* ================= Brand ================= */}
           <div>
             <p className="text-lg font-semibold text-neutral-900">
@@ -40,19 +46,32 @@ export default function Footer() {
                   href="tel:+886906896750"
                   className="hover:text-neutral-900"
                 >
-                  +886 906896750
+                  0906-896-750
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+886960840750"
+                  className="hover:text-neutral-900"
+                >
+                  0960-840-750
                 </a>
               </li>
             </ul>
           </div>
 
-           {/* ================= Social ================= */}
+          {/* ================= Social ================= */}
           <div>
-            <p className="mb-3 text-sm font-semibold text-neutral-900">
+            <p className="mb-4 text-sm font-semibold text-neutral-900">
               關注我們
             </p>
 
-            <div className="flex items-center gap-4">
+            <div
+              className="
+                flex justify-center gap-5
+                md:justify-start
+              "
+            >
               {[
                 {
                   href: 'https://www.instagram.com/drivemate.tw',
