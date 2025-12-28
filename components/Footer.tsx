@@ -1,7 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { Instagram, MessageCircle, AtSign } from 'lucide-react'
+import {
+  Instagram,
+  MessageCircle,
+  AtSign,
+  Mail,
+  Phone,
+} from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -32,15 +38,16 @@ export default function Footer() {
             <p className="mb-3 text-sm font-semibold text-neutral-900">
               聯絡我們
             </p>
-            <ul className="space-y-2 text-sm text-neutral-600">
+            <ul className="space-y-3 text-sm text-neutral-600">
   {/* Email */}
   <li>
     <a
       href="mailto:drivemate.tw@gmail.com"
       aria-label="寄信給 DriveMate 駕駛訓練中心"
-      className="transition hover:text-neutral-900"
+      className="flex items-center gap-2 transition hover:text-neutral-900"
     >
-      drivemate.tw@gmail.com
+      <Mail className="h-4 w-4 text-neutral-400" />
+      <span>drivemate.tw@gmail.com</span>
     </a>
   </li>
 
@@ -49,9 +56,10 @@ export default function Footer() {
     <a
       href="tel:+886906896750"
       aria-label="致電 DriveMate 駕駛訓練中心 0906-896-750"
-      className="transition hover:text-neutral-900"
+      className="flex items-center gap-2 transition hover:text-neutral-900"
     >
-      0906-896-750
+      <Phone className="h-4 w-4 text-neutral-400" />
+      <span>0906-896-750</span>
     </a>
   </li>
 
@@ -60,13 +68,13 @@ export default function Footer() {
     <a
       href="tel:+886960840750"
       aria-label="致電 DriveMate 駕駛訓練中心 0960-840-750"
-      className="transition hover:text-neutral-900"
+      className="flex items-center gap-2 transition hover:text-neutral-900"
     >
-      0960-840-750
+      <Phone className="h-4 w-4 text-neutral-400" />
+      <span>0960-840-750</span>
     </a>
   </li>
 </ul>
-
           </div>
 
           {/* ================= Social ================= */}
