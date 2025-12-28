@@ -46,42 +46,51 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ================= Social ================= */}
+           {/* ================= Social ================= */}
           <div>
             <p className="mb-3 text-sm font-semibold text-neutral-900">
               關注我們
             </p>
 
             <div className="flex items-center gap-4">
-              {/* Instagram */}
-              <Link
-                href="https://www.instagram.com/drivemate.tw"
-                target="_blank"
-                aria-label="DriveMate Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 text-neutral-700 transition hover:bg-neutral-900 hover:text-white"
-              >
-                <Instagram size={18} />
-              </Link>
+              {[
+                {
+                  href: 'https://www.instagram.com/drivemate.tw',
+                  label: 'Instagram',
+                  Icon: Instagram,
+                },
+                {
+                  href: 'https://lin.ee/J22IVRg',
+                  label: 'LINE',
+                  Icon: MessageCircle,
+                },
+                {
+                  href: 'https://www.threads.net/@drivemate.tw',
+                  label: 'Threads',
+                  Icon: AtSign,
+                },
+              ].map(({ href, label, Icon }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  aria-label={`DriveMate ${label}`}
+                  className="
+                    inline-flex items-center justify-center
+                    h-12 w-12 md:h-10 md:w-10
+                    rounded-full
+                    border border-neutral-300
+                    text-neutral-700
 
-              {/* LINE */}
-              <Link
-                href="https://lin.ee/J22IVRg"
-                target="_blank"
-                aria-label="DriveMate LINE"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 text-neutral-700 transition hover:bg-neutral-900 hover:text-white"
-              >
-                <MessageCircle size={18} />
-              </Link>
+                    transition-all duration-200 ease-out
+                    hover:bg-neutral-900 hover:text-white
 
-              {/* Threads */}
-              <Link
-                href="https://www.threads.net/@drivemate.tw"
-                target="_blank"
-                aria-label="DriveMate Threads"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 text-neutral-700 transition hover:bg-neutral-900 hover:text-white"
-              >
-                <AtSign size={18} />
-              </Link>
+                    active:scale-95 active:bg-neutral-800
+                  "
+                >
+                  <Icon className="h-5 w-5 md:h-4 md:w-4" />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
