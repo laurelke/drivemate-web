@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import Header from '@/components/Header'
 import MobileCTA from '@/components/MobileCTA'
+import Footer from '@/components/Footer'
 
 /* ================= 基本 SEO 設定 ================= */
 export const metadata: Metadata = {
@@ -146,6 +147,7 @@ export default function RootLayout({
 
         <Header />
         <main className="pt-16 pb-16">{children}</main>
+        <Footer />
         <MobileCTA />
       </body>
     </html>
