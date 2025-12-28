@@ -5,8 +5,9 @@ import { Instagram, MessageCircle, AtSign } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-200 bg-neutral-50">
+    <footer className="border-t border-neutral-200 bg-neutral-50 relative">
       <div className="mx-auto max-w-6xl px-6 py-12">
+        {/* ================= Grid 內容 ================= */}
         <div
           className="
             grid gap-8
@@ -31,7 +32,6 @@ export default function Footer() {
             <p className="mb-3 text-sm font-semibold text-neutral-900">
               聯絡我們
             </p>
-
             <ul className="space-y-2 text-sm text-neutral-600">
               <li>
                 <a
@@ -66,12 +66,8 @@ export default function Footer() {
               關注我們
             </p>
 
-            <div
-              className="
-                flex justify-center gap-5
-                md:justify-start
-              "
-            >
+            {/* 行動版置中 + 桌機靠左 */}
+            <div className="flex justify-center gap-5 md:justify-start">
               {[
                 {
                   href: 'https://www.instagram.com/drivemate.tw',
@@ -93,6 +89,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={`DriveMate ${label}`}
                   className="
                     inline-flex items-center justify-center
@@ -100,10 +97,8 @@ export default function Footer() {
                     rounded-full
                     border border-neutral-300
                     text-neutral-700
-
                     transition-all duration-200 ease-out
                     hover:bg-neutral-900 hover:text-white
-
                     active:scale-95 active:bg-neutral-800
                   "
                 >
@@ -116,9 +111,29 @@ export default function Footer() {
 
         {/* ================= Bottom ================= */}
         <div className="mt-10 border-t border-neutral-200 pt-6 text-center text-xs text-neutral-500">
-          © {new Date().getFullYear()} DriveMate. All rights reserved.
+        © {new Date().getFullYear()} DriveMate 駕駛訓練中心
+        <span className="mx-2">｜</span>
+        專注道路駕駛、運動駕駛與賽道體驗
         </div>
       </div>
+
+      {/* ================= sameAs JSON-LD Schema ================= */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'DriveMate 駕駛訓練中心',
+            url: 'https://drivemate-tw.com/',
+            sameAs: [
+              'https://www.instagram.com/drivemate.tw',
+              'https://lin.ee/J22IVRg',
+              'https://www.threads.net/@drivemate.tw',
+            ],
+          }),
+        }}
+      />
     </footer>
   )
 }

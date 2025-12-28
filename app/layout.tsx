@@ -107,6 +107,7 @@ export default function RootLayout({
                   sameAs: [
                     'https://www.instagram.com/drivemate.tw',
                     'https://lin.ee/J22IVRg',
+                    'https://www.threads.net/@drivemate.tw'
                   ],
                 },
                 {
@@ -127,6 +128,11 @@ export default function RootLayout({
                   image: 'https://drivemate-tw.com/og-image.jpg',
                   url: 'https://drivemate-tw.com/',
                   priceRange: '$$$',
+                  sameAs: [
+                    'https://www.instagram.com/drivemate.tw',
+                    'https://lin.ee/J22IVRg',
+                    'https://www.threads.net/@drivemate.tw'
+                  ],
                   areaServed: {
                     '@type': 'Country',
                     name: 'TW',
