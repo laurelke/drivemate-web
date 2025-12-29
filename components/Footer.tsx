@@ -34,8 +34,8 @@ export default function Footer() {
           </div>
 
           {/* ================= Contact ================= */}
-<div className="text-center md:text-left">
-  <p className="mb-3 text-sm font-semibold text-neutral-900">
+<div className="text-center md:text-left space-y-4 mt-8">
+  <p className="text-sm font-bold text-neutral-900 tracking-wide">
     聯絡我們
   </p>
 
@@ -126,12 +126,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ================= Bottom ================= */}
-        <div className="mt-10 border-t border-neutral-200 pt-6 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} DriveMate 駕駛訓練中心
-        <span className="mx-2">｜</span>
-        專注道路駕駛、運動駕駛與賽道體驗
-        </div>
+        {/* ================= Footer Bottom ================= */}
+<div className="border-t border-neutral-200 mt-8 pt-4 text-center text-xs text-neutral-500">
+  © {new Date().getFullYear()} DriveMate 駕駛訓練中心 ｜
+  專注道路駕駛、運動駕駛與賽道體驗
+</div>
       </div>
 
       {/* ================= sameAs JSON-LD Schema ================= */}
