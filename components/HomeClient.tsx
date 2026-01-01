@@ -132,15 +132,25 @@ export default function HomePage() {
       ),
     },
     {
-      key: 'payment',
-      title: '付款方式',
-      content: (
-        <div className="space-y-2 text-sm text-gray-600">
-          <p>付款方式透過官方LINE以獲取完整資訊。
-          </p>
-        </div>
-      ),
-    },
+  key: 'payment',
+  title: '付款方式',
+  content: (
+    <div className="space-y-3 text-sm text-gray-600 leading-relaxed">
+      <p>
+        本課程採用 <span className="font-medium text-gray-800">綠界科技（ECPay）</span>
+        安全金流系統，提供多元且便利的付款方式，讓你安心完成預約。
+      </p>
+
+      <ul className="list-disc pl-5 space-y-1">
+        <li>匯款</li>
+        <li>信用卡付款（支援國內外主要信用卡）</li>
+        <li>Apple Pay 行動支付</li>
+        <li>ATM 轉帳／虛擬帳號</li>
+        <li>超商代碼／超商條碼繳費</li>
+      </ul>
+    </div>
+  ),
+},
     {
       key: 'booking',
       title: '預約資訊',
