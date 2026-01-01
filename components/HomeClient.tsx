@@ -137,7 +137,7 @@ export default function HomePage() {
   content: (
     <div className="space-y-3 text-sm text-gray-600 leading-relaxed">
       <p>
-        本課程採用 <span className="font-medium text-gray-800">綠界科技（ECPay）</span>
+        本課程採用 <span className="font-medium text-gray-800">綠界科技ECPay</span>
         安全金流系統，提供多元且便利的付款方式，讓你安心完成預約。
       </p>
 
