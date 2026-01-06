@@ -44,7 +44,7 @@ export default function Page() {
     name: BRAND_NAME,
     alternateName: BRAND_ALT_NAMES,
     url: SITE_URL,
-    logo: `${SITE_URL}images/drivemate-logo.JPG`,
+    logo: `${SITE_URL}images/drivemate-logo.png`,
     description:
       'DriveMate 駕駛訓練中心專注於考照後的實際駕駛訓練，提供道路駕駛、運動駕駛、賽道課程與教練培訓，一對一實戰教學，協助駕駛建立安全、自信與穩定的駕駛能力。',
     sameAs: [
