@@ -49,7 +49,8 @@ export default function Page() {
       'DriveMate 駕駛訓練中心專注於考照後的實際駕駛訓練，提供道路駕駛、運動駕駛、賽道課程與教練培訓，一對一實戰教學，協助駕駛建立安全、自信與穩定的駕駛能力。',
     sameAs: [
       'https://www.instagram.com/drivemate.tw',
-      // 有的話可加上 Threads / Facebook / YouTube / LINE 官方公開頁
+      'https://lin.ee/J22IVRg',
+      'https://www.threads.net/@drivemate.tw'
     ],
     areaServed: {
       '@type': 'Country',

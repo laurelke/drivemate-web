@@ -103,7 +103,7 @@ export default function RootLayout({
                   '@id': 'https://drivemate-tw.com/#organization',
                   name: 'DriveMate 駕駛訓練中心',
                   url: 'https://drivemate-tw.com/',
-                  logo: 'https://drivemate-tw.com/drivemate-logo.JPG',
+                  logo: 'https://drivemate-tw.com/images/drivemate-logo.png',
                   sameAs: [
                     'https://www.instagram.com/drivemate.tw',
                     'https://lin.ee/J22IVRg',
@@ -125,7 +125,7 @@ export default function RootLayout({
                   '@type': 'LocalBusiness',
                   '@id': 'https://drivemate-tw.com/#localbusiness',
                   name: 'DriveMate 駕駛訓練中心',
-                  image: 'https://drivemate-tw.com/og-image.jpg',
+                  image: 'https://drivemate-tw.com/images/drivemate-logo.png',
                   url: 'https://drivemate-tw.com/',
                   priceRange: '$$$',
                   sameAs: [
