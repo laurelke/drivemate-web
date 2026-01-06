@@ -45,7 +45,7 @@ export default function Header() {
             className="flex items-center gap-2 hover:opacity-80"
           >
             <Image
-              src="/drivemate-logo.JPG"
+              src="/drivemate-logo.png"
               alt="DriveMate 道路駕駛課程"
               width={36}
               height={36}
