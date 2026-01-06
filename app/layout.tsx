@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: 'https://drivemate-tw.com/',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/drivemate-logo.png',
         width: 1200,
         height: 630,
         alt: 'DriveMate 駕駛訓練中心',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-image.jpg'],
+    images: ['/images/drivemate-logo.png'],
   },
 }
 
