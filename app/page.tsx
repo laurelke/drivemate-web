@@ -1,24 +1,71 @@
 import type { Metadata } from 'next'
 import HomePage from '../components/HomeClient'
 
+const SITE_URL = 'https://drivemate-tw.com/'
+const BRAND_NAME = 'DriveMate 駕駛訓練中心'
+const BRAND_ALT_NAMES = ['DriveMate', 'DriveMate 駕駛訓練中心']
+
 export const metadata: Metadata = {
-  title: 'DriveMate 駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
+  title: `${BRAND_NAME}｜道路駕駛・運動駕駛・賽道課程・教練培訓`,
   description:
     'DriveMate 駕駛訓練中心提供專業道路駕駛、運動駕駛與賽道課程，從新手上路到教練培訓，一對一實戰教學，讓你安全、自信、真正掌控每一次駕駛。',
   alternates: {
-    canonical: 'https://drivemate-tw.com/',
+    canonical: SITE_URL,
   },
   openGraph: {
-    title: 'DriveMate 駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
+    title: `${BRAND_NAME}｜道路駕駛・運動駕駛・賽道課程・教練培訓`,
     description:
       '專業道路駕駛、運動駕駛與賽道課程，從新手到教練培訓，DriveMate 陪你建立安全與自信的駕駛實力。',
-    url: 'https://drivemate-tw.com/',
-    siteName: 'DriveMate 駕駛訓練中心',
+    url: SITE_URL,
+    siteName: BRAND_NAME,
     type: 'website',
   },
 }
 
 export default function Page() {
+  // ===== WebSite Schema（站點名稱最關鍵）=====
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}#website`,
+    url: SITE_URL,
+    name: BRAND_NAME,
+    alternateName: BRAND_ALT_NAMES,
+    publisher: { '@id': `${SITE_URL}#organization` },
+    inLanguage: 'zh-TW',
+  }
+
+  // ===== Organization Schema（品牌實體）=====
+  // 若你有實體地址/電話/營業時間，建議改成 LocalBusiness 並補齊欄位（會更強）
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}#organization`,
+    name: BRAND_NAME,
+    alternateName: BRAND_ALT_NAMES,
+    url: SITE_URL,
+    logo: `${SITE_URL}images/drivemate-logo.JPG`,
+    description:
+      'DriveMate 駕駛訓練中心專注於考照後的實際駕駛訓練，提供道路駕駛、運動駕駛、賽道課程與教練培訓，一對一實戰教學，協助駕駛建立安全、自信與穩定的駕駛能力。',
+    sameAs: [
+      'https://www.instagram.com/drivemate.tw',
+      // 有的話可加上 Threads / Facebook / YouTube / LINE 官方公開頁
+    ],
+    areaServed: {
+      '@type': 'Country',
+      name: 'Taiwan',
+    },
+    availableLanguage: ['zh-TW'],
+    knowsAbout: [
+      '道路駕駛訓練',
+      '運動駕駛',
+      '賽道駕駛',
+      '駕駛技巧訓練',
+      '駕駛教練培訓',
+    ],
+  }
+
+  // ===== FAQ Schema（首頁專用）=====
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -29,7 +76,7 @@ export default function Page() {
         acceptedAnswer: {
           '@type': 'Answer',
           text:
-            '不是。DriveMate 駕駛訓練中心》專注於考照後的實際駕駛訓練，協助已經會開車、但在道路、操控或心理層面仍感到不安的駕駛，建立真正能獨立上路的能力。',
+            '不是。DriveMate 駕駛訓練中心專注於考照後的實際駕駛訓練，協助已經會開車、但在道路、操控或心理層面仍感到不安的駕駛，建立真正能獨立上路的能力。',
         },
       },
       {
@@ -38,7 +85,7 @@ export default function Page() {
         acceptedAnswer: {
           '@type': 'Answer',
           text:
-            '許多駕駛在考照後仍缺乏真實路況與正確引導的經驗，而DriveMate 駕駛訓練中心》的課程正是為了解決有駕照卻不敢開或開得不穩定的狀況。',
+            '許多駕駛在考照後仍缺乏真實路況與正確引導的經驗，而 DriveMate 駕駛訓練中心的課程正是為了解決有駕照卻不敢開、或開得不穩定的狀況。',
         },
       },
       {
@@ -47,7 +94,7 @@ export default function Page() {
         acceptedAnswer: {
           '@type': 'Answer',
           text:
-            '適合。訓練會從實際程度開始評估，不論是剛拿到駕照、長時間未駕駛，或對特定路況感到焦慮，都能依個人狀況調整學習節奏。',
+            '適合。訓練會先從實際程度開始評估，不論是剛拿到駕照、長時間未駕駛，或對特定路況感到焦慮，都能依個人狀況調整學習節奏。',
         },
       },
       {
@@ -56,7 +103,7 @@ export default function Page() {
         acceptedAnswer: {
           '@type': 'Answer',
           text:
-            '自行練習容易重複錯誤卻不自知，透過專業教練即時觀察與引導，能更有效修正操作並理解車輛反應。',
+            '自行練習容易重複錯誤卻不自知；透過專業教練即時觀察與引導，能更有效修正操作並理解車輛反應。',
         },
       },
       {
@@ -79,50 +126,21 @@ export default function Page() {
       },
     ],
   }
-  const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': 'https://drivemate-tw.com/#organization',
-  name: 'DriveMate 駕駛訓練中心',
-  url: 'https://drivemate-tw.com/',
-  logo: 'https://drivemate-tw.com/images/drivemate-logo.JPG',
-  description:
-    'DriveMate 駕駛訓練中心專注於考照後的實際駕駛訓練，提供道路駕駛、運動駕駛、賽道課程與教練培訓，一對一實戰教學，協助駕駛建立安全、自信與穩定的駕駛能力。',
-  sameAs: [
-    'https://www.instagram.com/drivemate.tw',
-  ],
-  areaServed: {
-    '@type': 'Country',
-    name: 'TW',
-  },
-  availableLanguage: ['zh-TW'],
-  knowsAbout: [
-    '道路駕駛訓練',
-    '運動駕駛',
-    '賽道駕駛',
-    '駕駛技巧訓練',
-    '駕駛教練培訓',
-  ],
-}
+
+  // 統一輸出（避免 script 順序/重複）
+  const structuredData = [organizationSchema, websiteSchema, faqSchema]
 
   return (
     <>
-    {/* ===== Organization Schema（品牌權威） ===== */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify(organizationSchema),
-    }}
-  />
-      {/* ================= FAQ Schema（首頁專用） ================= */}
+      {/* ===== 結構化資料（Organization + WebSite + FAQ）===== */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(structuredData),
         }}
       />
 
-      {/* ================= 主首頁內容 ================= */}
+      {/* ===== 主首頁內容 ===== */}
       <HomePage />
     </>
   )
