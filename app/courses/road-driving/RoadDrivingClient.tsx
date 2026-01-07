@@ -83,6 +83,28 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
     </p>
 
     <div className="grid gap-8 md:grid-cols-3">
+      <div className="rounded-2xl border bg-white p-6 shadow">
+        <h3 className="mb-1 text-xl font-semibold">
+          小資專案
+        </h3>
+        <p className="mb-4 text-sm text-neutral-500">
+          基礎｜快速上手
+        </p>
+
+        <p className="mb-6 text-3xl font-bold text-neutral-800">
+          NT$3,000
+        </p>
+
+        <ul className="mb-8 space-y-2 text-sm text-neutral-600">
+          <li>• 教練車實際上路(免自備車輛)</li>
+          <li>• 一堂課(2 小時)</li>
+          <li>• 課程內容：基礎車輛控制、停車、一般市區道路(不含高快速道路、山路)</li>
+          <li>• 上課地點：台中地區指定路段練習</li>
+          <li>• 接送地點：台中捷運北屯總站</li>
+        </ul>
+        <a>
+        </a>
+      </div>
       {/* A */}
       <div className="rounded-2xl border bg-white p-6 shadow">
         <h3 className="mb-1 text-xl font-semibold">
@@ -102,7 +124,6 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
           <li>• 即時矯正關鍵錯誤操作</li>
           <li>• 個人化練習建議方向</li>
         </ul>
-
         <a>
         </a>
       </div>
