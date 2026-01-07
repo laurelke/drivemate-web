@@ -48,8 +48,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
         <h2 className="mb-10 text-center text-3xl font-bold">
           為什麼很多人「有駕照，卻不敢上路」？
         </h2>
-
-        <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-3">
           {[
             {
               title: '缺乏真實路況經驗',
@@ -82,7 +81,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
       依你的駕駛狀況與目標，選擇最適合的成果型訓練方案。
     </p>
 
-    <div className="grid gap-8 md:grid-cols-3">
+    <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
       <div className="rounded-2xl border bg-white p-6 shadow">
         <h3 className="mb-1 text-xl font-semibold">
           小資專案
