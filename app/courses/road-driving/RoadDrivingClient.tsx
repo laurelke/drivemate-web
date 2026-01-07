@@ -83,7 +83,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
 
     <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
       <div className="rounded-2xl border bg-white p-6 shadow">
-        <h3 className="mb-1 min-h-[2.25rem] text-xl font-semibold leading-tight line-clamp-1">
+        <h3 className="mb-1 text-xl font-semibold">
           小資專案
         </h3>
         <p className="mb-4 text-sm text-neutral-500">
@@ -106,17 +106,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
       </div>
       {/* A */}
       <div className="rounded-2xl border bg-white p-6 shadow">
-        <h3 className="
-    mb-1
-    block
-    h-[2.75rem]
-    overflow-hidden
-    whitespace-nowrap
-    text-ellipsis
-    text-xl
-    font-semibold
-    leading-[2.75rem]
-  ">
+        <h3 className="mb-1 text-xl font-semibold">
           駕駛能力評估＋關鍵矯正
         </h3>
         <p className="mb-4 text-sm text-neutral-500">
@@ -144,7 +134,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
           最多人選擇
         </span>
 
-        <h3 className="mb-1 min-h-[2.25rem] text-xl font-semibold leading-tight tracking-tight line-clamp-1">
+        <h3 className="mb-1 text-xl font-semibold">
           14 天獨立上路成果計畫
         </h3>
         <p className="mb-4 text-sm text-orange-600">
@@ -169,7 +159,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
 
       {/* C */}
       <div className="rounded-2xl border bg-white p-6 shadow">
-        <h3 className="mb-1 min-h-[2.25rem] text-xl font-semibold leading-tight line-clamp-1">
+        <h3 className="mb-1 text-xl font-semibold">
           21 天通勤駕駛穩定方案
         </h3>
         <p className="mb-4 text-sm text-neutral-500">
