@@ -106,7 +106,17 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
       </div>
       {/* A */}
       <div className="rounded-2xl border bg-white p-6 shadow">
-        <h3 className="mb-1 min-h-[2.5rem] text-xl font-semibold leading-snug line-clamp-1">
+        <h3 className="
+    mb-1
+    block
+    h-[2.75rem]
+    overflow-hidden
+    whitespace-nowrap
+    text-ellipsis
+    text-xl
+    font-semibold
+    leading-[2.75rem]
+  ">
           駕駛能力評估＋關鍵矯正
         </h3>
         <p className="mb-4 text-sm text-neutral-500">
