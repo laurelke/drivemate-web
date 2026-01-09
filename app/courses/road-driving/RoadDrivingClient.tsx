@@ -122,7 +122,9 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
           <li>• 駕駛習慣與路況判斷評估</li>
           <li>• 即時矯正關鍵錯誤操作</li>
           <li>• 個人化練習建議方向</li>
+          <li>• 使用自家車/加購教練車</li>
           <li>• 📍全台到府服務</li>
+          <li>• 可補差價升級 14 天獨立上路成果計畫/21 天通勤駕駛穩定方案</li>
         </ul>
         <a>
         </a>
@@ -150,7 +152,9 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
           <li>• 14 天循序練習節奏(4 堂課程)</li>
           <li>• 多元實際道路情境演練</li>
           <li>• 明確成果檢核與回饋</li>
+          <li>• 使用自家車/加購教練車</li>
           <li>• 📍全台到府服務</li>
+          <li>• 可補差價升級 21 天通勤駕駛穩定方案</li>
         </ul>
 
         <a>
@@ -175,6 +179,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
           <li>• 21 天密集練習步調(8 堂課程)</li>
           <li>• 尖峰與高流量路況應對</li>
           <li>• 建立長期穩定駕駛習慣</li>
+          <li>• 使用自家車/加購教練車</li>
           <li>• 📍全台到府服務</li>
         </ul>
       </div>
