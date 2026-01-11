@@ -252,7 +252,8 @@ export default function HomePage() {
 >
   <div className="mx-auto max-w-6xl px-6">
     <h2 className="mb-12 text-center text-3xl font-bold">
-      駕駛訓練課程介紹（新手・運動・賽道）
+      駕駛訓練課程介紹<br />
+      （新手・運動・賽道）
     </h2>
 
     <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
