@@ -214,7 +214,8 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
-            為什麼選擇 DriveMate 駕駛訓練中心？
+            為什麼選擇<br />
+            DriveMate 駕駛訓練中心？
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -471,7 +472,7 @@ export default function HomePage() {
   {/* 內容 */}
   <div className="relative z-10 mx-auto max-w-3xl px-6 text-white">
     <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-      準備好開始你的駕駛旅程了嗎？
+      準備好開始駕駛旅程了嗎？
     </h2>
 
     <p className="mx-auto mb-10 max-w-2xl text-white/85">

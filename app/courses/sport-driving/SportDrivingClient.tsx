@@ -43,7 +43,8 @@ export default function SportDrivingClient() {
       {/* ================= 為什麼要學 ================= */}
       <section className="mx-auto max-w-6xl px-6 py-20">
         <h2 className="mb-10 text-center text-3xl font-bold">
-          為什麼已經會開車，還需要學運動駕駛？
+          為什麼已經會開車<br />
+          還需要學運動駕駛？
         </h2>
 
         <div className="grid gap-8 md:grid-cols-3">

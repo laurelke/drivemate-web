@@ -46,7 +46,8 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
       {/* ================= 為什麼需要道路駕駛訓練 ================= */}
       <section className="mx-auto max-w-6xl px-6 py-20">
         <h2 className="mb-10 text-center text-3xl font-bold">
-          為什麼很多人「有駕照，卻不敢上路」？
+          為什麼很多人<br />
+          「有駕照，卻不敢上路」？
         </h2>
         <div className="grid gap-8 md:grid-cols-3">
           {[
