@@ -139,8 +139,8 @@ className="object-cover md:object-cover object-center md:[object-position:50%_60
       </h1>
 
       <p className="mt-6 text-lg text-neutral-200">
-        不只是會開車，  
-        而是能「教得好、帶得穩」的專業駕駛教練。
+        不只是會開車，而是能<br />
+        「教得好、帶得穩」的專業駕駛教練。
       </p>
 
       {/* 首頁同款 CTA 間距 */}
@@ -208,7 +208,8 @@ className="object-cover md:object-cover object-center md:[object-position:50%_60
 
       {/* ================= CTA ================= */}
             <BottomCTA
-              title="不只會開車，你準備好教人開車了嗎？"
+              title="不只會開車<br />
+              你準備好教人開車了嗎？"
               description="成為教練，靠的不只是技術，而是判斷、引導與系統化教學能力。我們協助你建立完整且可執行的專業教練基礎。"
               buttonText="諮詢教練培訓計畫"
                bgImage="/images/cta/instructor-training.jpg"
