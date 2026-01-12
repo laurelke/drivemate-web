@@ -67,7 +67,7 @@ export default function RootLayout({
 
         {/* ================= Google tag (GA4 + Google Ads) ================= */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-QQBBR4WZEW"
           strategy="afterInteractive"
         />
         <Script id="google-tag" strategy="afterInteractive">
@@ -76,7 +76,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-XXXXXXXXXX');
+            gtag('config', 'G-QQBBR4WZEW');
             gtag('config', 'AW-17613789230');
 
             window.trackCTAConversion = function () {
