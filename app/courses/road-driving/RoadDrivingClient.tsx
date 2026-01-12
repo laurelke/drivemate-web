@@ -82,7 +82,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
       依你的駕駛狀況與目標，選擇最適合的成果型訓練方案。
     </p>
 
-    <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-2">
       <div className="rounded-2xl border bg-white p-6 shadow">
         <h3 className="mb-1 text-xl font-semibold">
           小資專案
