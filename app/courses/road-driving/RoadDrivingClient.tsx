@@ -79,7 +79,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
       道路駕駛課程方案與費用
     </h2>
     <p className="mx-auto mb-12 max-w-3xl text-center text-neutral-600">
-      包含「小資專案」學習駕照陪練，以及成果導向型的客製化一對一道路駕駛訓練方案。。
+      包含「小資專案」學習駕照陪練，以及成果導向型的客製化一對一道路駕駛訓練方案。
     </p>
 
     <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-2">
