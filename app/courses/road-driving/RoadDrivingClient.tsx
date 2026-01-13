@@ -88,7 +88,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
           小資專案
         </h3>
         <p className="mb-4 text-sm text-neutral-500">
-          基礎｜快速上手
+          學習駕照陪練｜基礎上路實戰
         </p>
 
         <p className="mb-6 text-3xl font-bold text-neutral-800">
@@ -98,8 +98,9 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
         <ul className="mb-8 space-y-2 text-sm text-neutral-600">
           <li>• 教練車實際上路(免自備車輛)</li>
           <li>• 一堂課(2 小時)</li>
-          <li>• 課程內容：基礎車輛控制、停車、一般市區道路(不含高快速道路、山路)</li>
-          <li>• 上課地點：台中地區指定路段練習</li>
+          <li>• 適合持學習駕照／準備考照後實際上路練習</li>
+          <li>• 課程內容：基礎車輛控制、停車、路口基本判斷、一般市區道路行駛(不含高快速道路、山路)</li>
+          <li>• 上課地點：搭配學習駕照指定路線/台中地區指定路段練習</li>
           <li>• 接送地點：台中捷運北屯總站</li>
         </ul>
         <a>
