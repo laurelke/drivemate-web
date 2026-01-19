@@ -71,35 +71,49 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Script id="google-tag" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag; // ⭐⭐⭐ 關鍵：掛到 window ⭐⭐⭐
+{`
+  /* ================= 基礎 gtag 初始化 ================= */
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag; // 關鍵：掛到 window，供 React / CTA 使用
 
-    gtag('js', new Date());
-    gtag('config', 'G-QQBBR4WZEW');
-    gtag('config', 'AW-17613789230');
+  gtag('js', new Date());
 
-    window.trackCTAConversion = function () {
+  /* ===== GA4 ===== */
+  gtag('config', 'G-QQBBR4WZEW', {
+    send_page_view: true
+  });
+
+  /* ===== Google Ads 基礎設定（不送轉換） ===== */
+  gtag('config', 'AW-17613789230');
+
+  /* ================= ① CTA「轉換」事件（唯一 conversion） ================= */
+  window.trackCTAConversion = function () {
+    if (typeof window.gtag === 'function') {
       window.gtag('event', 'conversion', {
         send_to: 'AW-17613789230/CTA_CLICK'
       });
-      console.log('[CTA conversion fired]');
-    };
-    window.addEventListener('load', function () {
-    if (window.location.href.includes("drivemate-tw.com")) {
-        gtag('event', 'conversion', {'send_to': 'AW-17613789230/JDLCCIfclugbEK6w9M5B'});
+      console.log('[Ads Conversion] CTA_CLICK fired');
     }
-});
+  };
 
-window.addEventListener("load", function (event) {
-        document.querySelectorAll("a[href*='lin.ee']").forEach(function (e) {
-            e.addEventListener('click', function () {
-             gtag('event', 'conversion', {'send_to': 'AW-17613789230/BYcnCO7AlOgbEK6w9M5B'});
-            });
-        });
+  /* ================= ② 全站點擊追蹤（GA4 only，不是轉換） ================= */
+  document.addEventListener('click', function (e) {
+    const el = e.target.closest('a, button');
+    if (!el) return;
+
+    const label =
+      el.innerText?.trim().slice(0, 50) ||
+      el.getAttribute('href') ||
+      'unknown';
+
+    window.gtag('event', 'site_click', {
+      event_category: 'engagement',
+      event_label: label,
+      page_location: window.location.href
     });
-  `}
+  });
+`}
 </Script>
       </head>
 
