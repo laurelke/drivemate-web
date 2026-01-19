@@ -12,8 +12,7 @@ export function HeroCTA({
   children,
   external = false,
 }: HeroCTAProps) {
-  const base =
-    `
+  const base = `
     inline-flex items-center justify-center
     rounded-full
     px-8 py-3
@@ -24,19 +23,29 @@ export function HeroCTA({
     hover:shadow-lg
   `
 
-  const style =
-    `
+  const style = `
     border border-white/40
     bg-white/10
     text-white
     hover:bg-white hover:text-black
   `
 
+  /** CTA 點擊追蹤（Google Ads Conversion） */
+  const handleClick = () => {
+    if (typeof window !== 'undefined') {
+      window.trackCTAConversion?.()
+      // debug 用，可留可刪
+      // console.log('[CTA] HeroCTA conversion fired')
+    }
+  }
+
   if (external) {
     return (
       <a
         href={href}
         target="_blank"
+        rel="noopener noreferrer"
+        onClick={handleClick}
         className={base + style}
       >
         {children}
@@ -45,7 +54,11 @@ export function HeroCTA({
   }
 
   return (
-    <Link href={href} className={base + style}>
+    <Link
+      href={href}
+      onClick={handleClick}
+      className={base + style}
+    >
       {children}
     </Link>
   )

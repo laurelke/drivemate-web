@@ -102,14 +102,16 @@ export default function Header() {
             )}
 
             <a
-              href={LINE_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleCTAClick}
-              className="rounded-full bg-black px-4 py-2 text-white transition hover:scale-105"
-            >
-              立即預約
-            </a>
+  href="https://lin.ee/J22IVRg"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => {
+    window.trackCTAConversion?.()
+  }}
+  className="rounded-full bg-black px-4 py-2 text-white"
+>
+  立即預約
+</a>
           </nav>
 
           {/* Mobile Menu Button（課程頁不顯示） */}

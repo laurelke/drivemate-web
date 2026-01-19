@@ -71,23 +71,23 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Script id="google-tag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag; // ⭐⭐⭐ 關鍵：掛到 window ⭐⭐⭐
 
-            gtag('config', 'G-QQBBR4WZEW');
-            gtag('config', 'AW-17613789230');
+    gtag('js', new Date());
+    gtag('config', 'G-QQBBR4WZEW');
+    gtag('config', 'AW-17613789230');
 
-            window.trackCTAConversion = function () {
-              if (typeof window.gtag === 'function') {
-                window.gtag('event', 'conversion', {
-                  send_to: 'AW-17613789230/CTA_CLICK'
-                });
-              }
-            };
-          `}
-        </Script>
+    window.trackCTAConversion = function () {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17613789230/CTA_CLICK'
+      });
+      console.log('[CTA conversion fired]');
+    };
+  `}
+</Script>
       </head>
 
       <body className="bg-white text-neutral-900">
