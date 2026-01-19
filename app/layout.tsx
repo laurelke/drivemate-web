@@ -86,6 +86,19 @@ export default function RootLayout({
       });
       console.log('[CTA conversion fired]');
     };
+    window.addEventListener('load', function () {
+    if (window.location.href.includes("drivemate-tw.com")) {
+        gtag('event', 'conversion', {'send_to': 'AW-17613789230/JDLCCIfclugbEK6w9M5B'});
+    }
+});
+
+window.addEventListener("load", function (event) {
+        document.querySelectorAll("a[href*='lin.ee']").forEach(function (e) {
+            e.addEventListener('click', function () {
+             gtag('event', 'conversion', {'send_to': 'AW-17613789230/BYcnCO7AlOgbEK6w9M5B'});
+            });
+        });
+    });
   `}
 </Script>
       </head>
