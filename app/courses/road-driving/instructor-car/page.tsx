@@ -43,6 +43,7 @@ export default function InstructorCarPage() {
           適合作為道路駕駛訓練的學習工具。
         </p>
         <ul className="list-disc pl-6 space-y-2">
+          <li>尚未持有自用車輛</li>
           <li>由教練熟悉並長期使用的教學車輛</li>
           <li>不需擔心個人車輛刮傷或耗損</li>
           <li>學習過程更容易聚焦在駕駛技巧與判斷</li>
@@ -102,8 +103,8 @@ export default function InstructorCarPage() {
               </tr>
               <tr>
                 <td className="p-3 border">適合對象</td>
-                <td className="p-3 border">新手、久未開車者</td>
-                <td className="p-3 border">已有上路經驗者</td>
+                <td className="p-3 border">新手、未持有自用車者</td>
+                <td className="p-3 border">已有上路經驗、需熟悉自用車者</td>
               </tr>
             </tbody>
           </table>
