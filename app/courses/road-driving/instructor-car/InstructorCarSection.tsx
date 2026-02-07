@@ -2,7 +2,21 @@
 
 import { motion } from 'framer-motion'
 
-export default function InstructorCarSection() {
+type InstructorCarSectionProps = {
+  title: string
+  subtitle?: string
+  price?: string
+  image: string
+  imageAlt: string
+}
+
+export default function InstructorCarSection({
+  title,
+  subtitle,
+  price,
+  image,
+  imageAlt,
+}: InstructorCarSectionProps) {
   return (
     <motion.section
       className="space-y-6"
@@ -11,15 +25,21 @@ export default function InstructorCarSection() {
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <h2 className="text-2xl font-semibold text-center">
-        「道路駕駛」教練車款
-      </h2>
+      <h2 className="text-2xl font-semibold text-center">{title}</h2>
+
+      {subtitle && (
+        <p className="text-center text-neutral-600">{subtitle}</p>
+      )}
+
+      {price && (
+        <p className="text-center text-lg font-medium">{price}</p>
+      )}
 
       <div className="rounded-xl border bg-white p-6">
         <div className="flex h-[360px] items-center justify-center overflow-hidden">
           <motion.img
-            src="/images/instructor-car-1.png"
-            alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
+            src={image}
+            alt={imageAlt}
             className="
               mx-auto
               w-full

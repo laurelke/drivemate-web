@@ -81,7 +81,7 @@ export default function InstructorCarAddOnPage() {
       {/* ================= 教練車款（動畫在 Client Component） ================= */}
       <InstructorCarSection
   title="「道路駕駛」教練車加購方案"
-  subtitle="彎道操作・動態控制・操駕體驗"
+  subtitle="奠定基礎・獨立、穩定上路"
   price=""
   image="/images/instructor-car-1.png"
   imageAlt="DriveMate 道路駕駛課程使用之教練車款（示意）"
@@ -91,7 +91,7 @@ export default function InstructorCarAddOnPage() {
 <InstructorCarSection
   title="「運動駕駛」教練車加購方案"
   subtitle="彎道操作・動態控制・操駕體驗"
-  price="單堂加購 NT$1,000"
+  price="單堂加購 NT$25,000"
   image="/images/instructor-car-sport.png"
   imageAlt="DriveMate 運動駕駛課程使用之教練車款（示意）"
 />
@@ -100,11 +100,10 @@ export default function InstructorCarAddOnPage() {
 <InstructorCarSection
   title="「賽道駕駛」教練車加購方案"
   subtitle="賽道體驗・制動點與路線學習"
-  price="單堂加購 NT$1,000"
+  price="單堂加購 NT$30,000"
   image="/images/instructor-car-track.png"
   imageAlt="DriveMate 賽道駕駛課程使用之教練車款（示意）"
 />
-
 
       {/* ================= CTA ================= */}
       <section className="text-center pt-6">
