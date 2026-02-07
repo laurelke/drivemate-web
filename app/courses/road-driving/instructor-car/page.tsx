@@ -38,7 +38,7 @@ export default function InstructorCarAddOnPage() {
   </div>
 
   {/* 14 天方案 */}
-  <div className="rounded-2xl border bg-white p-6 shadow-sm ring-1 ring-black flex flex-col items-center justify-center text-center">
+  <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
     <h2 className="mb-1 text-xl font-semibold">
       14 天獨立上路成果計畫
     </h2>
