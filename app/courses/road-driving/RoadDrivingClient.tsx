@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { HeroCTA } from '@/components/ui/HeroCTA'
 import BottomCTA from '@/components/BottomCTA'
+import Link from 'next/link'
 
 export default function RoadDrivingClient() {
   return (
@@ -120,7 +121,15 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
         </p>
 
         <ul className="mb-8 space-y-2 text-sm text-neutral-600">
-          <li>• 🚗 使用自家車/加購教練車</li>
+          <li>
+  🚗 使用自家車｜
+  <Link
+    href="https://drivemate-tw.com/courses/road-driving/instructor-car"
+    className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
+  >
+    加購教練車
+  </Link>
+</li>
           <li>• 一對一教練陪同上路</li>
           <li>• 駕駛習慣與路況判斷評估</li>
           <li>• 即時矯正關鍵錯誤操作</li>
@@ -150,7 +159,15 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
         </p>
 
         <ul className="mb-8 space-y-2 text-sm text-neutral-600">
-          <li>• 🚗 使用自家車/加購教練車</li>
+          <li>
+  🚗 使用自家車｜
+  <Link
+    href="https://drivemate-tw.com/courses/road-driving/instructor-car"
+    className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
+  >
+    加購教練車
+  </Link>
+</li>
           <li>• 系統化道路駕駛訓練</li>
           <li>• 14 天循序練習節奏(4 堂課程)</li>
           <li>• 多元實際道路情境演練</li>
@@ -177,7 +194,15 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
         </p>
 
         <ul className="mb-8 space-y-2 text-sm text-neutral-600">
-          <li>• 🚗 使用自家車/加購教練車</li>
+          <li>
+  🚗 使用自家車｜
+  <Link
+    href="https://drivemate-tw.com/courses/road-driving/instructor-car"
+    className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
+  >
+    加購教練車
+  </Link>
+</li>
           <li>• 以應對所有路型/路線為訓練核心</li>
           <li>• 21 天密集練習步調(8 堂課程)</li>
           <li>• 尖峰與高流量路況應對</li>
