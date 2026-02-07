@@ -35,12 +35,6 @@ export default function InstructorCarAddOnPage() {
             <span className="text-3xl font-bold">NT$1,000</span>
             <span className="text-sm text-neutral-500 ml-1">／堂</span>
           </div>
-
-          <ul className="text-sm text-neutral-600 space-y-2 mb-6">
-            <li>• 教練車使用</li>
-            <li>• 搭配道路駕駛課程</li>
-            <li>• 適合初次嘗試或單次加購</li>
-          </ul>
         </div>
 
         {/* 14 天方案 */}
@@ -60,12 +54,6 @@ export default function InstructorCarAddOnPage() {
           <p className="text-sm text-neutral-500 mb-6">
             買三堂送一堂，等於 4 堂教練車練習
           </p>
-
-          <ul className="text-sm text-neutral-600 space-y-2 mb-6">
-            <li>• 連續練習，培養道路熟悉感</li>
-            <li>• 適合新手或久未開車者</li>
-            <li>• 目標：能安心獨立上路</li>
-          </ul>
         </div>
 
         {/* 21 天方案 */}
@@ -85,12 +73,6 @@ export default function InstructorCarAddOnPage() {
           <p className="text-sm text-neutral-500 mb-6">
             買五堂送三堂，等於 8 堂教練車練習
           </p>
-
-          <ul className="text-sm text-neutral-600 space-y-2 mb-6">
-            <li>• 適合實際通勤／固定路線需求</li>
-            <li>• 強化路口、車流與節奏掌握</li>
-            <li>• 目標：駕駛狀態穩定、不緊張</li>
-          </ul>
         </div>
       </section>
 
@@ -107,7 +89,7 @@ export default function InstructorCarAddOnPage() {
         src="/images/instructor-car-1.png"
         alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
         className="
-          mx-auto
+          mx-full
           w-full
           max-w-[800px]       /* 手機最大寬度 */
           sm:max-w-[640px]    /* 平板 */
