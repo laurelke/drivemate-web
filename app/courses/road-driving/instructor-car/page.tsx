@@ -27,7 +27,7 @@ export default function InstructorCarAddOnPage() {
         {/* 單堂 */}
         <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
           <h2 className="mb-1 text-xl font-semibold">
-            駕駛能力評估＋關鍵矯正
+            能力評估＋關鍵矯正
           </h2>
           <p className="mb-4 text-sm text-neutral-500">
             彈性選擇｜適合短期體驗
@@ -79,7 +79,32 @@ export default function InstructorCarAddOnPage() {
       </section>
 
       {/* ================= 教練車款（動畫在 Client Component） ================= */}
-      <InstructorCarSection />
+      <InstructorCarSection
+  title="「道路駕駛」教練車加購方案"
+  subtitle="彎道操作・動態控制・操駕體驗"
+  price=""
+  image="/images/instructor-car-1.png"
+  imageAlt="DriveMate 道路駕駛課程使用之教練車款（示意）"
+/>
+
+      {/* ================= 運動駕駛 教練車 ================= */}
+<InstructorCarSection
+  title="「運動駕駛」教練車加購方案"
+  subtitle="彎道操作・動態控制・操駕體驗"
+  price="單堂加購 NT$1,000"
+  image="/images/instructor-car-sport.png"
+  imageAlt="DriveMate 運動駕駛課程使用之教練車款（示意）"
+/>
+
+{/* ================= 賽道駕駛 教練車 ================= */}
+<InstructorCarSection
+  title="「賽道駕駛」教練車加購方案"
+  subtitle="賽道體驗・制動點與路線學習"
+  price="單堂加購 NT$1,000"
+  image="/images/instructor-car-track.png"
+  imageAlt="DriveMate 賽道駕駛課程使用之教練車款（示意）"
+/>
+
 
       {/* ================= CTA ================= */}
       <section className="text-center pt-6">
