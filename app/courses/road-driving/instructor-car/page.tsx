@@ -1,5 +1,5 @@
 export const metadata = {
-  title: '教練車加購方案優惠｜道路駕駛課程',
+  title: '教練車加購方案｜道路駕駛課程',
   description:
     'DriveMate 教練車加購方案說明，提供單堂加購與多堂成果型方案，協助新手與久未開車的學員穩定建立道路駕駛信心。',
   alternates: {
