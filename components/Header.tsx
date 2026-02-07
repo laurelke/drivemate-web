@@ -176,6 +176,13 @@ export default function Header() {
       >
         教練培訓
       </Link>
+
+      <Link
+        href="/courses/road-driving/instructor-car"
+        onClick={() => setOpen(false)}
+      >
+        加購教練車
+      </Link>
     </>
   ) : (
     <>
