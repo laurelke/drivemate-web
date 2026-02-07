@@ -72,11 +72,11 @@ export default function Header() {
                 <Link href="/courses/track-driving" className="hover:text-black/70">
                   賽道駕駛
                 </Link>
-                <Link
-                  href="/courses/instructor-training"
-                  className="hover:text-black/70"
-                >
+                <Link href="/courses/instructor-training" className="hover:text-black/70">
                   教練培訓
+                </Link>
+                <Link href="/courses/road-driving/instructor-car" className="hover:text-black/70">
+                  加購教練車
                 </Link>
               </>
             ) : (
