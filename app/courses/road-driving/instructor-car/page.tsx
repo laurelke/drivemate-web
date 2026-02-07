@@ -13,7 +13,7 @@ export default function InstructorCarAddOnPage() {
       {/* ================= 標題 ================= */}
       <section className="text-center space-y-4">
         <h1 className="text-3xl font-bold tracking-tight">
-          教練車加購方案優惠
+          「道路駕駛」教練車加購方案
         </h1>
         <p className="text-lg text-neutral-600">
           依你的練習目標，選擇最適合的教練車方案
@@ -105,17 +105,8 @@ export default function InstructorCarAddOnPage() {
           <div className="aspect-[4/3] overflow-hidden rounded-xl border bg-neutral-100">
             {/* 換成你的實際圖片 */}
             <img
-              src="/images/instructor-car-1.jpg"
+              src="/images/instructor-car-1.png"
               alt="DriveMate 教練車款"
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          {/* 圖片 2 */}
-          <div className="aspect-[4/3] overflow-hidden rounded-xl border bg-neutral-100">
-            <img
-              src="/images/instructor-car-2.jpg"
-              alt="DriveMate 教練車內裝"
               className="h-full w-full object-cover"
             />
           </div>
