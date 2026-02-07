@@ -52,11 +52,13 @@ export default function InstructorCarAddOnPage() {
             熱門方案｜建立基本上路能力
           </p>
 
-          <div className="mb-2">
-            <span className="text-3xl font-bold">買三堂送一堂</span>
+          <div className="mb-6">
+            <span className="text-3xl font-bold">NT$3,000</span>
+            <span className="text-sm text-neutral-500 ml-1">／ 4 堂</span>
           </div>
+          
           <p className="text-sm text-neutral-500 mb-6">
-            等於 4 堂教練車練習
+            買三堂送一堂，等於 4 堂教練車練習
           </p>
 
           <ul className="text-sm text-neutral-600 space-y-2 mb-6">
@@ -75,11 +77,13 @@ export default function InstructorCarAddOnPage() {
             進階成果型方案
           </p>
 
-          <div className="mb-2">
-            <span className="text-3xl font-bold">買五堂送三堂</span>
+          <div className="mb-6">
+            <span className="text-3xl font-bold">NT$5,000</span>
+            <span className="text-sm text-neutral-500 ml-1">／ 8 堂</span>
           </div>
+          
           <p className="text-sm text-neutral-500 mb-6">
-            等於 8 堂教練車練習
+            買五堂送三堂，等於 8 堂教練車練習
           </p>
 
           <ul className="text-sm text-neutral-600 space-y-2 mb-6">
@@ -93,7 +97,7 @@ export default function InstructorCarAddOnPage() {
       {/* ================= 教練車款 ================= */}
       <section className="space-y-6">
         <h2 className="text-2xl font-semibold text-center">
-          教練車款
+          「道路駕駛」教練車款
         </h2>
 
         <div className="grid gap-6 sm:grid-cols-2">
