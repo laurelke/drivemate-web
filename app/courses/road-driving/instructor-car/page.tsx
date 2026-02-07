@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import InstructorCarSection from './InstructorCarSection'
 
 export const metadata = {
   title: '教練車加購方案｜道路駕駛課程',
@@ -18,104 +18,68 @@ export default function InstructorCarAddOnPage() {
           「道路駕駛」教練車加購方案
         </h1>
         <p className="text-lg text-neutral-600">
-          依你的練習目標，選擇最適合的教練車方案
+          依您的練習目標，選擇最適合的教練車方案
         </p>
       </section>
 
       {/* ================= 價格方案 ================= */}
-<section className="grid gap-6 md:grid-cols-3 items-stretch">
-  {/* 單堂 */}
-  <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
-    <h2 className="mb-1 text-xl font-semibold">
-      駕駛能力評估＋關鍵矯正
-    </h2>
-    <p className="mb-4 text-sm text-neutral-500">
-      彈性選擇｜適合短期體驗
-    </p>
+      <section className="grid gap-6 md:grid-cols-3 items-stretch">
+        {/* 單堂 */}
+        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
+          <h2 className="mb-1 text-xl font-semibold">
+            駕駛能力評估＋關鍵矯正
+          </h2>
+          <p className="mb-4 text-sm text-neutral-500">
+            彈性選擇｜適合短期體驗
+          </p>
 
-    <div className="mb-6">
-      <span className="text-3xl font-bold">NT$1,000</span>
-      <span className="ml-1 text-sm text-neutral-500">／堂</span>
-    </div>
-  </div>
+          <div className="mb-6">
+            <span className="text-3xl font-bold">NT$1,000</span>
+            <span className="ml-1 text-sm text-neutral-500">／堂</span>
+          </div>
+        </div>
 
-  {/* 14 天方案 */}
-  <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
-    <h2 className="mb-1 text-xl font-semibold">
-      14 天獨立上路成果計畫
-    </h2>
-    <p className="mb-4 text-sm text-neutral-500">
-      熱門方案｜建立基本上路能力
-    </p>
+        {/* 14 天方案 */}
+        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
+          <h2 className="mb-1 text-xl font-semibold">
+            14 天獨立上路成果計畫
+          </h2>
+          <p className="mb-4 text-sm text-neutral-500">
+            熱門方案｜建立基本上路能力
+          </p>
 
-    <div className="mb-4">
-      <span className="text-3xl font-bold">NT$3,000</span>
-      <span className="ml-1 text-sm text-neutral-500">／ 4 堂</span>
-    </div>
+          <div className="mb-4">
+            <span className="text-3xl font-bold">NT$3,000</span>
+            <span className="ml-1 text-sm text-neutral-500">／ 4 堂</span>
+          </div>
 
-    <p className="text-sm text-neutral-500">
-      買 3 堂送 1 堂（共 4 堂教練車練習）
-    </p>
-  </div>
+          <p className="text-sm text-neutral-500">
+            買 3 堂送 1 堂（共 4 堂教練車練習）
+          </p>
+        </div>
 
-  {/* 21 天方案 */}
-  <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
-    <h2 className="mb-1 text-xl font-semibold">
-      21 天通勤駕駛穩定方案
-    </h2>
-    <p className="mb-4 text-sm text-neutral-500">
-      進階成果型方案
-    </p>
+        {/* 21 天方案 */}
+        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
+          <h2 className="mb-1 text-xl font-semibold">
+            21 天通勤駕駛穩定方案
+          </h2>
+          <p className="mb-4 text-sm text-neutral-500">
+            進階成果型方案
+          </p>
 
-    <div className="mb-4">
-      <span className="text-3xl font-bold">NT$5,000</span>
-      <span className="ml-1 text-sm text-neutral-500">／ 8 堂</span>
-    </div>
+          <div className="mb-4">
+            <span className="text-3xl font-bold">NT$5,000</span>
+            <span className="ml-1 text-sm text-neutral-500">／ 8 堂</span>
+          </div>
 
-    <p className="text-sm text-neutral-500">
-      買 5 堂送 3 堂（共 8 堂教練車練習）
-    </p>
-  </div>
-</section>
+          <p className="text-sm text-neutral-500">
+            買 5 堂送 3 堂（共 8 堂教練車練習）
+          </p>
+        </div>
+      </section>
 
-      {/* ================= 教練車款 ================= */}
-<motion.section
-  className="space-y-6"
-  initial={{ opacity: 0, y: 32 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, margin: '-80px' }}
-  transition={{ duration: 0.6, ease: 'easeOut' }}
->
-  <h2 className="text-2xl font-semibold text-center">
-    「道路駕駛」教練車款
-  </h2>
-
-  <div className="rounded-xl border bg-white p-6">
-    {/* 固定卡片高度 */}
-    <div className="flex h-[360px] items-center justify-center overflow-hidden">
-      <motion.img
-        src="/images/instructor-car-1.png"
-        alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
-        className="
-          mx-auto
-          w-full
-          max-w-[600px]
-          sm:max-w-[640px]
-          lg:max-w-[820px]
-          object-contain
-        "
-        initial={{ scale: 0.96 }}
-        whileInView={{ scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-      />
-    </div>
-
-    <p className="mt-4 text-center text-sm text-neutral-500">
-      實際上課使用之教練車款（示意）
-    </p>
-  </div>
-</motion.section>
+      {/* ================= 教練車款（動畫在 Client Component） ================= */}
+      <InstructorCarSection />
 
       {/* ================= CTA ================= */}
       <section className="text-center pt-6">
