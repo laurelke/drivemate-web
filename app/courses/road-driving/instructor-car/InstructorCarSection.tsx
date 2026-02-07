@@ -12,7 +12,6 @@ type InstructorCarSectionProps = {
 
 export default function InstructorCarSection({
   title,
-  subtitle,
   price,
   image,
   imageAlt,
@@ -26,10 +25,6 @@ export default function InstructorCarSection({
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <h2 className="text-2xl font-semibold text-center">{title}</h2>
-
-      {subtitle && (
-        <p className="text-center text-neutral-600">{subtitle}</p>
-      )}
 
       {price && (
         <p className="text-center text-lg font-medium">{price}</p>
