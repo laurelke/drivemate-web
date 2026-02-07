@@ -95,24 +95,32 @@ export default function InstructorCarAddOnPage() {
       </section>
 
       {/* ================= 教練車款 ================= */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-center">
-          「道路駕駛」教練車款
-        </h2>
+<section className="space-y-6">
+  <h2 className="text-2xl font-semibold text-center">
+    「道路駕駛」教練車款
+  </h2>
 
-        <div className="rounded-xl border bg-white p-6">
-  <div className="flex h-[460px] items-center justify-center">
-    <img
-      src="/images/instructor-car-1.png"
-      alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
-      className="mx-auto max-h-[480px] w-auto object-contain"
-    />
+  <div className="rounded-xl border bg-white p-6">
+    {/* 固定卡片高度，不動 */}
+    <div className="flex h-[460px] items-center justify-center overflow-hidden">
+      <img
+        src="/images/instructor-car-1.png"
+        alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
+        className="
+          mx-auto
+          w-full
+          max-w-[520px]       /* 手機最大寬度 */
+          sm:max-w-[640px]    /* 平板 */
+          lg:max-w-[720px]    /* 桌機 */
+          object-contain
+        "
+      />
+    </div>
+
+    <p className="mt-4 text-center text-sm text-neutral-500">
+      實際上課使用之教練車款（示意）
+    </p>
   </div>
-
-  <p className="mt-4 text-center text-sm text-neutral-500">
-    實際上課使用之教練車款（示意）
-  </p>
-</div>
 </section>
 
       {/* ================= CTA ================= */}
