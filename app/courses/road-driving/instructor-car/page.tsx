@@ -109,9 +109,9 @@ export default function InstructorCarAddOnPage() {
         className="
           mx-auto
           w-full
-          max-w-[600px]       /* 手機最大寬度 */
+          max-w-[800px]       /* 手機最大寬度 */
           sm:max-w-[640px]    /* 平板 */
-          lg:max-w-[820px]    /* 桌機 */
+          lg:max-w-[1020px]    /* 桌機 */
           object-contain
         "
       />
