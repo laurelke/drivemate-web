@@ -100,18 +100,16 @@ export default function InstructorCarAddOnPage() {
           「道路駕駛」教練車款
         </h2>
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          {/* 圖片 1 */}
-          <div className="aspect-[4/3] overflow-hidden rounded-xl border bg-neutral-100">
-            {/* 換成你的實際圖片 */}
-            <img
-              src="/images/instructor-car-1.png"
-              alt="DriveMate 教練車款"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
+        <div className="mx-auto max-w-3xl">
+    <div className="aspect-[4/3] overflow-hidden rounded-xl border bg-neutral-100">
+      <img
+        src="/images/instructor-car-1.png"
+        alt="DriveMate 教練車款"
+        className="h-full w-full object-cover"
+      />
+    </div>
+  </div>
+</section>
 
       {/* ================= CTA ================= */}
       <section className="text-center pt-6">
