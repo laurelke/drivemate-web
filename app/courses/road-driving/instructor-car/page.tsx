@@ -21,60 +21,60 @@ export default function InstructorCarAddOnPage() {
       </section>
 
       {/* ================= 價格方案 ================= */}
-      <section className="grid gap-6 md:grid-cols-3">
-        {/* 單堂 */}
-        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col">
-          <h2 className="text-xl font-semibold mb-1">
-            單堂教練車加購
-          </h2>
-          <p className="text-sm text-neutral-500 mb-4">
-            彈性選擇｜適合短期體驗
-          </p>
+<section className="grid gap-6 md:grid-cols-3 items-stretch">
+  {/* 單堂 */}
+  <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
+    <h2 className="mb-1 text-xl font-semibold">
+      單堂教練車加購
+    </h2>
+    <p className="mb-4 text-sm text-neutral-500">
+      彈性選擇｜適合短期體驗
+    </p>
 
-          <div className="mb-6">
-            <span className="text-3xl font-bold">NT$1,000</span>
-            <span className="text-sm text-neutral-500 ml-1">／堂</span>
-          </div>
-        </div>
+    <div className="mb-6">
+      <span className="text-3xl font-bold">NT$1,000</span>
+      <span className="ml-1 text-sm text-neutral-500">／堂</span>
+    </div>
+  </div>
 
-        {/* 14 天方案 */}
-        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col ring-1 ring-black">
-          <h2 className="text-xl font-semibold mb-1">
-            14 天獨立上路成果計畫
-          </h2>
-          <p className="text-sm text-neutral-500 mb-4">
-            熱門方案｜建立基本上路能力
-          </p>
+  {/* 14 天方案 */}
+  <div className="rounded-2xl border bg-white p-6 shadow-sm ring-1 ring-black flex flex-col items-center justify-center text-center">
+    <h2 className="mb-1 text-xl font-semibold">
+      14 天獨立上路成果計畫
+    </h2>
+    <p className="mb-4 text-sm text-neutral-500">
+      熱門方案｜建立基本上路能力
+    </p>
 
-          <div className="mb-6">
-            <span className="text-3xl font-bold">NT$3,000</span>
-            <span className="text-sm text-neutral-500 ml-1">／ 4 堂</span>
-          </div>
-          
-          <p className="text-sm text-neutral-500 mb-6">
-            買三堂送一堂，等於 4 堂教練車練習
-          </p>
-        </div>
+    <div className="mb-4">
+      <span className="text-3xl font-bold">NT$3,000</span>
+      <span className="ml-1 text-sm text-neutral-500">／ 4 堂</span>
+    </div>
 
-        {/* 21 天方案 */}
-        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col">
-          <h2 className="text-xl font-semibold mb-1">
-            21 天通勤駕駛穩定方案
-          </h2>
-          <p className="text-sm text-neutral-500 mb-4">
-            進階成果型方案
-          </p>
+    <p className="text-sm text-neutral-500">
+      買 3 堂送 1 堂（共 4 堂教練車練習）
+    </p>
+  </div>
 
-          <div className="mb-6">
-            <span className="text-3xl font-bold">NT$5,000</span>
-            <span className="text-sm text-neutral-500 ml-1">／ 8 堂</span>
-          </div>
-          
-          <p className="text-sm text-neutral-500 mb-6">
-            買五堂送三堂，等於 8 堂教練車練習
-          </p>
-        </div>
-      </section>
+  {/* 21 天方案 */}
+  <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
+    <h2 className="mb-1 text-xl font-semibold">
+      21 天通勤駕駛穩定方案
+    </h2>
+    <p className="mb-4 text-sm text-neutral-500">
+      進階成果型方案
+    </p>
+
+    <div className="mb-4">
+      <span className="text-3xl font-bold">NT$5,000</span>
+      <span className="ml-1 text-sm text-neutral-500">／ 8 堂</span>
+    </div>
+
+    <p className="text-sm text-neutral-500">
+      買 5 堂送 3 堂（共 8 堂教練車練習）
+    </p>
+  </div>
+</section>
 
       {/* ================= 教練車款 ================= */}
 <section className="space-y-6">
@@ -83,18 +83,19 @@ export default function InstructorCarAddOnPage() {
   </h2>
 
   <div className="rounded-xl border bg-white p-6">
-    {/* 固定卡片高度，不動 */}
+    {/* 卡片高度固定 */}
     <div className="flex h-[360px] items-center justify-center overflow-hidden">
       <img
         src="/images/instructor-car-1.png"
         alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
         className="
-          mx-full
+          mx-auto
           w-full
-          max-w-[800px]       /* 手機最大寬度 */
-          sm:max-w-[640px]    /* 平板 */
-          lg:max-w-[1020px]    /* 桌機 */
+          max-w-[680px]        /* 手機 */
+          sm:max-w-[760px]     /* 平板 */
+          lg:max-w-[900px]     /* 桌機 */
           object-contain
+          scale-125            /* 🔥 關鍵：實際放大 */
         "
       />
     </div>
