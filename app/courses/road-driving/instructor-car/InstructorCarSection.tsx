@@ -38,10 +38,9 @@ export default function InstructorCarSection({
             className="
               mx-auto
               h-auto
-              w-full
+              w-auto
               max-w-[720px]
-              max-h-[300px]
-              sm:max-w-[640px]
+              max-h-[360px]
               sm:max-h-[360px]
               lg:max-w-[820px]
               object-contain
