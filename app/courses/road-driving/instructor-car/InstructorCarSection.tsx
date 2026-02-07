@@ -37,10 +37,12 @@ export default function InstructorCarSection({
             alt={imageAlt}
             className="
               mx-auto
-              h-[300px] 
+              h-auto
               w-full
               max-w-[720px]
+              max-h-[300px]
               sm:max-w-[640px]
+              sm:max-h-[360px]
               lg:max-w-[820px]
               object-contain
             "
