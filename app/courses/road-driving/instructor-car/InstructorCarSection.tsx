@@ -49,10 +49,6 @@ export default function InstructorCarSection({
             transition={{ duration: 0.6, ease: 'easeOut' }}
           />
         </div>
-
-        <p className="mt-4 text-center text-sm text-neutral-500">
-          實際上課使用之教練車款（示意）
-        </p>
       </div>
     </motion.section>
   )
