@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 export const metadata = {
   title: '教練車加購方案｜道路駕駛課程',
   description:
@@ -25,7 +27,7 @@ export default function InstructorCarAddOnPage() {
   {/* 單堂 */}
   <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
     <h2 className="mb-1 text-xl font-semibold">
-      單堂教練車加購
+      駕駛能力評估＋關鍵矯正
     </h2>
     <p className="mb-4 text-sm text-neutral-500">
       彈性選擇｜適合短期體驗
@@ -77,26 +79,35 @@ export default function InstructorCarAddOnPage() {
 </section>
 
       {/* ================= 教練車款 ================= */}
-<section className="space-y-6">
+<motion.section
+  className="space-y-6"
+  initial={{ opacity: 0, y: 32 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: '-80px' }}
+  transition={{ duration: 0.6, ease: 'easeOut' }}
+>
   <h2 className="text-2xl font-semibold text-center">
     「道路駕駛」教練車款
   </h2>
 
   <div className="rounded-xl border bg-white p-6">
-    {/* 卡片高度固定 */}
+    {/* 固定卡片高度 */}
     <div className="flex h-[360px] items-center justify-center overflow-hidden">
-      <img
+      <motion.img
         src="/images/instructor-car-1.png"
         alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
         className="
           mx-auto
           w-full
-          max-w-[680px]        /* 手機 */
-          sm:max-w-[760px]     /* 平板 */
-          lg:max-w-[900px]     /* 桌機 */
+          max-w-[600px]
+          sm:max-w-[640px]
+          lg:max-w-[820px]
           object-contain
-          scale-125            /* 🔥 關鍵：實際放大 */
         "
+        initial={{ scale: 0.96 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
       />
     </div>
 
@@ -104,7 +115,7 @@ export default function InstructorCarAddOnPage() {
       實際上課使用之教練車款（示意）
     </p>
   </div>
-</section>
+</motion.section>
 
       {/* ================= CTA ================= */}
       <section className="text-center pt-6">
