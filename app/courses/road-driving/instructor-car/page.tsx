@@ -105,7 +105,7 @@ export default function InstructorCarAddOnPage() {
     <img
       src="/images/instructor-car-1.png"
       alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
-      className="max-h-full w-auto object-contain"
+      className="mx-auto max-h-[480px] w-auto object-contain"
     />
   </div>
 
