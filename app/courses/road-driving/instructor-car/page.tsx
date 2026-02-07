@@ -109,10 +109,10 @@ export default function InstructorCarAddOnPage() {
       {/* ================= CTA ================= */}
       <section className="text-center pt-6">
         <a
-          href="/courses/road-driving"
+          href="https://drivemate-tw.com"
           className="inline-block rounded-md bg-black px-8 py-3 text-white text-base font-medium hover:bg-gray-800 transition"
         >
-          返回道路駕駛課程介紹
+          返回首頁
         </a>
       </section>
     </main>
