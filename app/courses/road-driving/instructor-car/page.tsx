@@ -100,18 +100,19 @@ export default function InstructorCarAddOnPage() {
           「道路駕駛」教練車款
         </h2>
 
-        <div className="mx-auto max-w-2xl">
-    <div className="flex h-[460px] items-center justify-center">
-       <img
-        src="/images/instructor-car.png"
-        alt="DriveMate 道路駕駛實際上課使用教練車款"
-        className="max-h-full w-auto object-contain"
-       />
-      <p className="mt-4 text-center text-sm text-neutral-500">
-        實際上課使用之教練車款（示意）
-      </p>
-    </div>
+        <div className="rounded-xl border bg-white p-6">
+  <div className="flex h-[460px] items-center justify-center">
+    <img
+      src="/images/instructor-car-1.png"
+      alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
+      className="max-h-full w-auto object-contain"
+    />
   </div>
+
+  <p className="mt-4 text-center text-sm text-neutral-500">
+    實際上課使用之教練車款（示意）
+  </p>
+</div>
 </section>
 
       {/* ================= CTA ================= */}
