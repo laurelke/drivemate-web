@@ -102,7 +102,7 @@ export default function InstructorCarAddOnPage() {
 
   <div className="rounded-xl border bg-white p-6">
     {/* 固定卡片高度，不動 */}
-    <div className="flex h-[460px] items-center justify-center overflow-hidden">
+    <div className="flex h-[360px] items-center justify-center overflow-hidden">
       <img
         src="/images/instructor-car-1.png"
         alt="DriveMate 道路駕駛實際上課使用之教練車款（示意）"
