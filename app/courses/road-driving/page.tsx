@@ -20,7 +20,7 @@ export default function Page() {
       "@type": "Course",
       "@id": "https://drivemate-tw.com/courses/road-driving#course",
       "name": "道路駕駛實戰課程",
-      "description": "專為新手、學習駕照與缺乏實際道路經驗的駕駛設計，一對一教練陪同，從評估、矯正到穩定上路。",
+      "description": "專為新手與缺乏實際道路經驗的駕駛設計，一對一教練陪同，從評估、矯正到穩定上路。",
       "provider": {
         "@type": "Organization",
         "name": "DriveMate 駕駛訓練中心",
@@ -41,8 +41,8 @@ export default function Page() {
         "itemListElement": [
           {
             "@type": "Offer",
-            "name": "小資專案｜學習駕照陪練",
-            "description": "適合持學習駕照或剛起步的新手，由教練車一對一陪同進行實際道路練習。",
+            "name": "小資專案｜奠定基礎培訓",
+            "description": "適合剛起步的新手，由教練車一對一陪同進行實際道路練習。",
             "price": "3000",
             "priceCurrency": "TWD",
             "availability": "https://schema.org/InStock",
@@ -119,18 +119,10 @@ export default function Page() {
         },
         {
           "@type": "Question",
-          "name": "持學習駕照可以參加道路駕駛陪練嗎？",
+          "name": "小資專案培訓需要自備車輛嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以。DriveMate 提供學習駕照陪練課程，由教練車一對一陪同，搭配指定路線在合法、安全的前提下進行實際道路練習，適合準備考照或剛考取駕照前的學員。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "學習駕照陪練需要自備車輛嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "不需要。學習駕照陪練課程使用教練車進行，學員無需自備車輛，即可進行實際上路練習。"
+            "text": "不需要。培訓課程使用教練車進行，學員無需自備車輛，即可進行實際上路練習。"
           }
         },
         {
