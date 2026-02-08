@@ -112,13 +112,13 @@ export default function InstructorCarAddOnPage() {
   title="「賽道駕駛」教練車加購方案"
   price="單堂加購 NT$30,000"
   image="/images/instructor-car-track.png"
-  imageAlt="DriveMate 賽道駕駛課程使用之教練車款（718 Cayman GT4）"
-  carName="718 Cayman GT4"
-  tags={['燃油', '後輪驅動', '自動排檔']}
+  imageAlt="DriveMate 賽道駕駛課程使用之教練車款（Porsche Cayman GT4）"
+  carName="Porsche Cayman GT4"
+  tags={['燃油', '後輪驅動', 'PDK 自手排']}
   stats={[
-    { value: '4.0 s', label: '0 - 100 km/h 加速' },
-    { value: '400 PS', label: '動力' },
-    { value: '288 km/h', label: '極速' },
+    { value: '3.9 s', label: '0 - 100 km/h 加速' },
+    { value: '420 PS', label: '動力' },
+    { value: '304 km/h', label: '極速' },
   ]}
 />
 
