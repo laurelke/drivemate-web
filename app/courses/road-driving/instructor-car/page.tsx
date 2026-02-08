@@ -13,16 +13,15 @@ export default function InstructorCarAddOnPage() {
   return (
      <>
       {/* ================= Hero（全寬） ================= */}
-      <section className="relative w-full">
-        <div className="relative h-[420px] md:h-[520px]">
+      <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
           <img
             src="/images/hero-instructor-car.png"
             alt="DriveMate 教練車"
-            className="h-full w-full object-cover"
+            sizes="(max-width: 768px) 100vw, 1920px"
+            className="object-cover md:object-cover object-center md:[object-position:50%_30%]"
           />
           {/* 遮罩 */}
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
 
         {/* Hero 文字 */}
         <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
@@ -122,7 +121,7 @@ export default function InstructorCarAddOnPage() {
       {/* ================= 運動駕駛 教練車 ================= */}
 <InstructorCarSection
   title="「運動駕駛」教練車加購方案"
-  price="單堂加購 NT$5,000"
+  price="單堂 / 3 小時 加購 NT$5,000"
   image="/images/instructor-car-sport.png"
   imageAlt="DriveMate 運動駕駛課程使用之教練車款（Mazda MX-5）"
   carName="Mazda MX-5"
@@ -138,7 +137,7 @@ export default function InstructorCarAddOnPage() {
 {/* ================= 賽道駕駛 教練車 ================= */}
 <InstructorCarSection
   title="「賽道駕駛」教練車加購方案"
-  price="單堂加購 NT$30,000"
+  price="單堂 /4節 加購 NT$30,000"
   image="/images/instructor-car-track.png"
   imageAlt="DriveMate 賽道駕駛課程使用之教練車款（Porsche Cayman GT4）"
   carName="Porsche Cayman GT4"
