@@ -90,6 +90,7 @@ export default function InstructorCarAddOnPage() {
     { value: '106 PS', label: '動力' },
     { value: '170 km/h', label: '極速' },
   ]}
+  disclaimer="實際車輛配備與規格依當日安排之車款為準。"
 />
 
       {/* ================= 運動駕駛 教練車 ================= */}
@@ -105,6 +106,7 @@ export default function InstructorCarAddOnPage() {
     { value: '184 PS', label: '動力' },
     { value: '220 km/h', label: '極速' },
   ]}
+  disclaimer="實際車輛配備與規格依當日安排之車款為準。"
 />
 
 {/* ================= 賽道駕駛 教練車 ================= */}
