@@ -29,7 +29,7 @@ export default function InstructorCarSection({
         {title}
       </h2>
 
-      {/* ===== 價格（保留 page.tsx 傳入的 price） ===== */}
+      {/* ===== 價格 ===== */}
       {price && (
         <p className="text-center text-lg font-medium">
           {price}
@@ -58,9 +58,49 @@ export default function InstructorCarSection({
           />
         </div>
 
-        {/* 車輛規格預留區 */}
-        <div className="mt-6 border-t pt-6 text-center text-sm text-neutral-400">
-          車輛規格資訊將於此顯示
+        {/* ===== Porsche 風格：4 欄規格 ===== */}
+        <div className="mt-6 border-t pt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 text-center">
+            {/* 車輛名稱 */}
+            <div>
+              <p className="text-sm text-neutral-500">
+                車輛名稱
+              </p>
+              <p className="mt-1 text-base font-medium">
+                —
+              </p>
+            </div>
+
+            {/* 變速系統 */}
+            <div>
+              <p className="text-sm text-neutral-500">
+                變速系統
+              </p>
+              <p className="mt-1 text-base font-medium">
+                —
+              </p>
+            </div>
+
+            {/* 驅動方式 */}
+            <div>
+              <p className="text-sm text-neutral-500">
+                驅動方式
+              </p>
+              <p className="mt-1 text-base font-medium">
+                —
+              </p>
+            </div>
+
+            {/* 座位數 */}
+            <div>
+              <p className="text-sm text-neutral-500">
+                座位數
+              </p>
+              <p className="mt-1 text-base font-medium">
+                —
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </motion.section>
