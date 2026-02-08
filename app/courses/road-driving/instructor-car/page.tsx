@@ -12,28 +12,16 @@ export const metadata = {
 export default function InstructorCarAddOnPage() {
   return (
      <>
-      {/* ================= Hero（全寬） ================= */}
-      <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
+       {/* ================= Hero（全寬） ================= */}
+      <section className="relative w-full">
+        <div className="relative h-[420px] md:h-[520px]">
           <img
-            src="/images/hero-instructor-car.png"
-            alt="DriveMate 教練車"
-            sizes="(max-width: 768px) 100vw, 1920px"
-            className="object-cover md:object-cover object-center md:[object-position:50%_30%]"
+            src="/images/hero-instructor-car.jpg"
+            alt="DriveMate 教練車道路駕駛實際練習畫面"
+            className="h-full w-full object-cover"
           />
           {/* 遮罩 */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
-
-        {/* Hero 文字 */}
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
-          <div className="max-w-xl text-white">
-            <h1 className="text-4xl font-bold md:text-5xl leading-tight">
-              教練車加購方案
-            </h1>
-            <p className="mt-6 text-lg text-neutral-200">
-              依您的練習目標，選擇最適合的教練車，
-              從道路駕駛到賽道體驗，建立真正的駕駛信心。
-            </p>
-          </div>
+          <div className="absolute inset-0 bg-black/40" />
         </div>
       </section>
     <main className="mx-auto max-w-4xl px-6 py-14 space-y-16">
