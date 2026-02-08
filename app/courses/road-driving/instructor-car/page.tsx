@@ -11,34 +11,33 @@ export const metadata = {
 
 export default function InstructorCarAddOnPage() {
   return (
+     <>
+      {/* ================= Hero（全寬） ================= */}
+      <section className="relative w-full">
+        <div className="relative h-[420px] md:h-[520px]">
+          <img
+            src="/images/hero-instructor-car.jpg"
+            alt="DriveMate 教練車道路駕駛實際練習畫面"
+            className="h-full w-full object-cover"
+          />
+          {/* 遮罩 */}
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        {/* Hero 文字 */}
+        <div className="absolute inset-0 flex items-center">
+          <div className="mx-auto max-w-6xl px-6 text-white">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+              教練車加購方案
+            </h1>
+            <p className="mt-4 max-w-2xl text-base md:text-lg text-white/90">
+              依您的練習目標，選擇最適合的教練車，
+              從道路駕駛到賽道體驗，建立真正的駕駛信心。
+            </p>
+          </div>
+        </div>
+      </section>
     <main className="mx-auto max-w-4xl px-6 py-14 space-y-16">
-      {/* ================= Hero Image ================= */}
-<section className="relative -mx-6 mb-16">
-  {/* 背景圖片 */}
-  <div className="relative h-[360px] md:h-[440px]">
-    <img
-      src="/images/hero-instructor-car.png"
-      alt="DriveMate 教練車"
-      className="h-full w-full object-cover"
-    />
-    {/* 黑色遮罩 */}
-    <div className="absolute inset-0 bg-black/40" />
-  </div>
-
-  {/* Hero 文字 */}
-  <div className="absolute inset-0 flex items-center">
-    <div className="mx-auto max-w-4xl px-6 text-white">
-      <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-        教練車加購方案
-      </h1>
-      <p className="mt-4 max-w-xl text-base md:text-lg text-white/90">
-        依您的練習目標，選擇最適合的教練車，
-        從道路駕駛到賽道體驗，建立真正的駕駛信心。
-      </p>
-    </div>
-  </div>
-</section>
-
       {/* ================= 標題 ================= */}
       <section className="text-center space-y-4">
         <h1 className="text-3xl font-bold tracking-tight">
@@ -162,5 +161,6 @@ export default function InstructorCarAddOnPage() {
         </a>
       </section>
     </main>
+  </>
   )
 }
