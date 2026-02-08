@@ -99,7 +99,7 @@ export default function InstructorCarAddOnPage() {
   image="/images/instructor-car-sport.png"
   imageAlt="DriveMate 運動駕駛課程使用之教練車款（Mazda MX-5）"
   carName="Mazda MX-5"
-  tags={['燃油', '後輪驅動', '自動排檔']}
+  tags={['燃油', '後輪驅動', '自動/手動排檔']}
   stats={[
     { value: '6.5 s', label: '0 - 100 km/h 加速' },
     { value: '184 PS', label: '動力' },
