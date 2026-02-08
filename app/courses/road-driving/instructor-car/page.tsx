@@ -81,9 +81,14 @@ export default function InstructorCarAddOnPage() {
       {/* ================= 教練車款（動畫在 Client Component） ================= */}
       <InstructorCarSection
   title="「道路駕駛」教練車加購方案"
-  price=""
   image="/images/instructor-car-1.png"
-  imageAlt="DriveMate 道路駕駛課程使用之教練車款（示意）"
+  imageAlt="DriveMate 道路駕駛課程使用之教練車款（Toyota）"
+  specs={[
+    { label: '車輛名稱', value: 'Toyota Vios' },
+    { label: '變速系統', value: 'CVT 自排' },
+    { label: '驅動方式', value: '前輪驅動' },
+    { label: '座位數', value: '5 人座' },
+  ]}
 />
 
       {/* ================= 運動駕駛 教練車 ================= */}
@@ -91,7 +96,13 @@ export default function InstructorCarAddOnPage() {
   title="「運動駕駛」教練車加購方案"
   price="單堂加購 NT$5,000"
   image="/images/instructor-car-sport.png"
-  imageAlt="DriveMate 運動駕駛課程使用之教練車款（示意）"
+  imageAlt="DriveMate 運動駕駛課程使用之教練車款（Mazda）"
+  specs={[
+    { label: '車輛名稱', value: 'Mazda 3' },
+    { label: '變速系統', value: '6 速自排' },
+    { label: '驅動方式', value: '前輪驅動' },
+    { label: '座位數', value: '5 人座' },
+  ]}
 />
 
 {/* ================= 賽道駕駛 教練車 ================= */}
@@ -99,7 +110,13 @@ export default function InstructorCarAddOnPage() {
   title="「賽道駕駛」教練車加購方案"
   price="單堂加購 NT$30,000"
   image="/images/instructor-car-track.png"
-  imageAlt="DriveMate 賽道駕駛課程使用之教練車款（示意）"
+  imageAlt="DriveMate 賽道駕駛課程使用之教練車款"
+  specs={[
+    { label: '車輛名稱', value: 'Porsche GT4' },
+    { label: '變速系統', value: 'PDK 雙離合' },
+    { label: '驅動方式', value: '後輪驅動' },
+    { label: '座位數', value: '2 人座' },
+  ]}
 />
 
       {/* ================= CTA ================= */}
