@@ -14,11 +14,11 @@ export default function InstructorCarAddOnPage() {
      <>
        {/* ================= Hero（全寬） ================= */}
       <section className="relative w-full">
-        <div className="relative h-[640px] md:h-[520px]">
+        <div className="relative h-[640px] md:h-[72vh]">
           <img
             src="/images/hero-instructor-car.png"
             alt="DriveMate hero-instructor-car"
-            className="h-full w-full object-cover"/>
+            className="h-full w-full object-cover object-[50%_60%]"/>
         <div className="absolute inset-0 bg-black/40" />
       </div>
       </section>
