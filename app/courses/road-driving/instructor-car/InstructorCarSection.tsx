@@ -18,20 +18,28 @@ export default function InstructorCarSection({
 }: InstructorCarSectionProps) {
   return (
     <motion.section
-      className="space-y-6"
+      className="space-y-4"
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <h2 className="text-2xl font-semibold text-center">{title}</h2>
+      {/* ===== 標題 ===== */}
+      <h2 className="text-2xl font-semibold text-center">
+        {title}
+      </h2>
 
+      {/* ===== 價格（保留 page.tsx 傳入的 price） ===== */}
       {price && (
-        <p className="text-center text-lg font-medium">{price}</p>
+        <p className="text-center text-lg font-medium">
+          {price}
+        </p>
       )}
 
-      <div className="rounded-xl border bg-white p-6">
-        <div className="flex h-[360px] items-center justify-center overflow-hidden">
+      {/* ===== 車輛卡片 ===== */}
+      <div className="rounded-2xl border bg-white p-6 md:p-8">
+        {/* 車輛圖片 */}
+        <div className="flex h-[280px] items-center justify-center overflow-hidden">
           <motion.img
             src={image}
             alt={imageAlt}
@@ -40,9 +48,7 @@ export default function InstructorCarSection({
               h-auto
               w-full
               max-w-[720px]
-              max-h-[360px]
-              sm:max-h-[360px]
-              lg:max-w-[820px]
+              max-h-[280px]
               object-contain
             "
             initial={{ scale: 0.96 }}
@@ -50,6 +56,11 @@ export default function InstructorCarSection({
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           />
+        </div>
+
+        {/* 車輛規格預留區 */}
+        <div className="mt-6 border-t pt-6 text-center text-sm text-neutral-400">
+          車輛規格資訊將於此顯示
         </div>
       </div>
     </motion.section>
