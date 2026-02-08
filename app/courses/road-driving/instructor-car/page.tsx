@@ -21,7 +21,7 @@ export default function InstructorCarAddOnPage() {
             className="
             h-full w-full 
             object-cover
-            object-[50%_70%]"/>
+            object-[80%_60%]"/>
         <div className="absolute inset-0 bg-black/40" />
       </div>
       </section>
