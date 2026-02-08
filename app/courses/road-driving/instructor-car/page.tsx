@@ -16,8 +16,8 @@ export default function InstructorCarAddOnPage() {
       <section className="relative w-full">
         <div className="relative h-[420px] md:h-[520px]">
           <img
-            src="/images/hero-instructor-car.jpg"
-            alt="DriveMate 教練車道路駕駛實際練習畫面"
+            src="/images/hero-instructor-car.png"
+            alt="DriveMate hero-instructor-car"
             className="h-full w-full object-cover"
           />
           {/* 遮罩 */}
