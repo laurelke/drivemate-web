@@ -2,22 +2,18 @@
 
 import { motion } from 'framer-motion'
 
-type Tag = string
-
-type StatItem = {
-  value: string
-  label: string
-}
-
 type InstructorCarSectionProps = {
   title: string
   price?: string
   image: string
   imageAlt: string
-
   carName: string
-  tags: Tag[]
-  stats: StatItem[]
+  tags: string[]
+  stats: {
+    value: string
+    label: string
+  }[]
+  disclaimer?: string
 }
 
 export default function InstructorCarSection({
@@ -28,6 +24,7 @@ export default function InstructorCarSection({
   carName,
   tags,
   stats,
+  disclaimer,
 }: InstructorCarSectionProps) {
   return (
     <motion.section
@@ -49,9 +46,9 @@ export default function InstructorCarSection({
         </p>
       )}
 
-      {/* ===== Porsche 車輛卡片 ===== */}
+      {/* 車輛卡片 */}
       <div className="rounded-2xl border bg-white overflow-hidden">
-        {/* 車輛圖片 */}
+        {/* 圖片 */}
         <div className="flex h-[300px] items-center justify-center bg-neutral-50">
           <motion.img
             src={image}
@@ -71,7 +68,7 @@ export default function InstructorCarSection({
           />
         </div>
 
-        {/* 內容區 */}
+        {/* 內容 */}
         <div className="p-6 md:p-8 space-y-6">
           {/* 車名 */}
           <h3 className="text-2xl font-semibold">
@@ -83,21 +80,14 @@ export default function InstructorCarSection({
             {tags.map((tag, i) => (
               <span
                 key={i}
-                className="
-                  rounded-md
-                  bg-neutral-100
-                  px-3
-                  py-1
-                  text-sm
-                  text-neutral-700
-                "
+                className="rounded-md bg-neutral-100 px-3 py-1 text-sm text-neutral-700"
               >
                 {tag}
               </span>
             ))}
           </div>
 
-          {/* 數據規格 */}
+          {/* 數據 */}
           <div className="space-y-5">
             {stats.map((stat, i) => (
               <div key={i}>
@@ -110,6 +100,13 @@ export default function InstructorCarSection({
               </div>
             ))}
           </div>
+
+          {/* 小專業提醒 */}
+          {disclaimer && (
+            <p className="pt-4 text-xs text-neutral-400 border-t">
+              {disclaimer}
+            </p>
+          )}
         </div>
       </div>
     </motion.section>

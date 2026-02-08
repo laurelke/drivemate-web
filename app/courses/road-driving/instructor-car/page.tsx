@@ -114,12 +114,13 @@ export default function InstructorCarAddOnPage() {
   image="/images/instructor-car-track.png"
   imageAlt="DriveMate 賽道駕駛課程使用之教練車款（Porsche Cayman GT4）"
   carName="Porsche Cayman GT4"
-  tags={['燃油', '後輪驅動', 'PDK 自手排']}
+  tags={['燃油', '後輪驅動', 'PDK 雙離合']}
   stats={[
     { value: '3.9 s', label: '0 - 100 km/h 加速' },
     { value: '420 PS', label: '動力' },
     { value: '304 km/h', label: '極速' },
   ]}
+  disclaimer="實際車輛配備與規格依當日安排之車款為準。"
 />
 
       {/* ================= CTA ================= */}
