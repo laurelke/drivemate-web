@@ -16,8 +16,8 @@ export default function InstructorCarAddOnPage() {
       <section className="relative w-full">
         <div className="relative h-[420px] md:h-[520px]">
           <img
-            src="/images/hero-instructor-car.jpg"
-            alt="DriveMate 教練車道路駕駛實際練習畫面"
+            src="/images/hero-instructor-car.png"
+            alt="DriveMate 教練車"
             className="h-full w-full object-cover"
           />
           {/* 遮罩 */}
@@ -25,12 +25,12 @@ export default function InstructorCarAddOnPage() {
         </div>
 
         {/* Hero 文字 */}
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-6xl px-6 text-white">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+        <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
+          <div className="max-w-xl text-white">
+            <h1 className="text-4xl font-bold md:text-5xl leading-tight">
               教練車加購方案
             </h1>
-            <p className="mt-4 max-w-2xl text-base md:text-lg text-white/90">
+            <p className="mt-6 text-lg text-neutral-200">
               依您的練習目標，選擇最適合的教練車，
               從道路駕駛到賽道體驗，建立真正的駕駛信心。
             </p>
