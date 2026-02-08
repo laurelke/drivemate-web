@@ -82,12 +82,13 @@ export default function InstructorCarAddOnPage() {
       <InstructorCarSection
   title="「道路駕駛」教練車加購方案"
   image="/images/instructor-car-1.png"
-  imageAlt="DriveMate 道路駕駛課程使用之教練車款（Toyota）"
-  specs={[
-    { label: '車輛名稱', value: 'Toyota Vios' },
-    { label: '變速系統', value: 'CVT 自排' },
-    { label: '驅動方式', value: '前輪驅動' },
-    { label: '座位數', value: '5 人座' },
+  imageAlt="DriveMate 道路駕駛課程使用之教練車款（Toyota Vios）"
+  carName="Toyota Vios"
+  tags={['燃油', '前輪驅動', '自動排檔']}
+  stats={[
+    { value: '11.4 s', label: '0 - 100 km/h 加速' },
+    { value: '106 PS', label: '動力' },
+    { value: '170 km/h', label: '極速' },
   ]}
 />
 
@@ -96,12 +97,13 @@ export default function InstructorCarAddOnPage() {
   title="「運動駕駛」教練車加購方案"
   price="單堂加購 NT$5,000"
   image="/images/instructor-car-sport.png"
-  imageAlt="DriveMate 運動駕駛課程使用之教練車款（Mazda）"
-  specs={[
-    { label: '車輛名稱', value: 'Mazda 3' },
-    { label: '變速系統', value: '6 速自排' },
-    { label: '驅動方式', value: '前輪驅動' },
-    { label: '座位數', value: '5 人座' },
+  imageAlt="DriveMate 運動駕駛課程使用之教練車款（Mazda MX-5）"
+  carName="Mazda MX-5"
+  tags={['燃油', '後輪驅動', '自動排檔']}
+  stats={[
+    { value: '6.5 s', label: '0 - 100 km/h 加速' },
+    { value: '184 PS', label: '動力' },
+    { value: '220 km/h', label: '極速' },
   ]}
 />
 
@@ -110,12 +112,13 @@ export default function InstructorCarAddOnPage() {
   title="「賽道駕駛」教練車加購方案"
   price="單堂加購 NT$30,000"
   image="/images/instructor-car-track.png"
-  imageAlt="DriveMate 賽道駕駛課程使用之教練車款"
-  specs={[
-    { label: '車輛名稱', value: 'Porsche GT4' },
-    { label: '變速系統', value: 'PDK 雙離合' },
-    { label: '驅動方式', value: '後輪驅動' },
-    { label: '座位數', value: '2 人座' },
+  imageAlt="DriveMate 賽道駕駛課程使用之教練車款（718 Cayman GT4）"
+  carName="718 Cayman GT4"
+  tags={['燃油', '後輪驅動', '自動排檔']}
+  stats={[
+    { value: '4.0 s', label: '0 - 100 km/h 加速' },
+    { value: '400 PS', label: '動力' },
+    { value: '288 km/h', label: '極速' },
   ]}
 />
 

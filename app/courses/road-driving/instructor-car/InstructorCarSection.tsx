@@ -2,9 +2,11 @@
 
 import { motion } from 'framer-motion'
 
-type SpecItem = {
-  label: string
+type Tag = string
+
+type StatItem = {
   value: string
+  label: string
 }
 
 type InstructorCarSectionProps = {
@@ -12,7 +14,10 @@ type InstructorCarSectionProps = {
   price?: string
   image: string
   imageAlt: string
-  specs: SpecItem[]
+
+  carName: string
+  tags: Tag[]
+  stats: StatItem[]
 }
 
 export default function InstructorCarSection({
@@ -20,7 +25,9 @@ export default function InstructorCarSection({
   price,
   image,
   imageAlt,
-  specs,
+  carName,
+  tags,
+  stats,
 }: InstructorCarSectionProps) {
   return (
     <motion.section
@@ -30,7 +37,7 @@ export default function InstructorCarSection({
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      {/* 標題 */}
+      {/* 方案標題 */}
       <h2 className="text-2xl font-semibold text-center">
         {title}
       </h2>
@@ -42,10 +49,10 @@ export default function InstructorCarSection({
         </p>
       )}
 
-      {/* 車輛卡片 */}
-      <div className="rounded-2xl border bg-white p-6 md:p-8">
-        {/* 圖片 */}
-        <div className="flex h-[280px] items-center justify-center overflow-hidden">
+      {/* ===== Porsche 車輛卡片 ===== */}
+      <div className="rounded-2xl border bg-white overflow-hidden">
+        {/* 車輛圖片 */}
+        <div className="flex h-[300px] items-center justify-center bg-neutral-50">
           <motion.img
             src={image}
             alt={imageAlt}
@@ -53,8 +60,8 @@ export default function InstructorCarSection({
               mx-auto
               h-auto
               w-full
-              max-w-[720px]
-              max-h-[280px]
+              max-w-[760px]
+              max-h-[300px]
               object-contain
             "
             initial={{ scale: 0.96 }}
@@ -64,16 +71,41 @@ export default function InstructorCarSection({
           />
         </div>
 
-        {/* Porsche 風格 4 欄規格 */}
-        <div className="mt-6 border-t pt-6">
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 text-center">
-            {specs.map((spec, index) => (
-              <div key={index}>
-                <p className="text-sm text-neutral-500">
-                  {spec.label}
+        {/* 內容區 */}
+        <div className="p-6 md:p-8 space-y-6">
+          {/* 車名 */}
+          <h3 className="text-2xl font-semibold">
+            {carName}
+          </h3>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag, i) => (
+              <span
+                key={i}
+                className="
+                  rounded-md
+                  bg-neutral-100
+                  px-3
+                  py-1
+                  text-sm
+                  text-neutral-700
+                "
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* 數據規格 */}
+          <div className="space-y-5">
+            {stats.map((stat, i) => (
+              <div key={i}>
+                <p className="text-2xl font-semibold">
+                  {stat.value}
                 </p>
-                <p className="mt-1 text-base font-medium">
-                  {spec.value}
+                <p className="text-sm text-neutral-500">
+                  {stat.label}
                 </p>
               </div>
             ))}
