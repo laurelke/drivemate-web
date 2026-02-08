@@ -18,7 +18,7 @@ export default function InstructorCarAddOnPage() {
           <img
             src="/images/hero-instructor-car.png"
             alt="DriveMate hero-instructor-car"
-            className="h-full w-full object-cover"/>
+            className="h-full w-full object-cover object-[60%_40%]"/>
         <div className="absolute inset-0 bg-black/40" />
       </div>
       </section>
