@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-  xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="https://www.w3.org/1999/xhtml"
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
+
   <!-- 首頁 -->
   <url>
     <loc>https://drivemate-tw.com/</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,7 +15,7 @@
   <!-- 課程總覽 -->
   <url>
     <loc>https://drivemate-tw.com/courses</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -22,15 +23,23 @@
   <!-- 道路駕駛課程 -->
   <url>
     <loc>https://drivemate-tw.com/courses/road-driving</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- 教練車加購方案（新增） -->
+  <url>
+    <loc>https://drivemate-tw.com/courses/road-driving/instructor-car</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- 運動駕駛課程 -->
   <url>
     <loc>https://drivemate-tw.com/courses/sport-driving</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -38,7 +47,7 @@
   <!-- 賽道駕駛課程 -->
   <url>
     <loc>https://drivemate-tw.com/courses/track-driving</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -46,16 +55,17 @@
   <!-- 教練培訓課程 -->
   <url>
     <loc>https://drivemate-tw.com/courses/instructor-training</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- 聯絡 / 預約（如有） -->
+  <!-- 聯絡 / 預約 -->
   <url>
     <loc>https://drivemate-tw.com/contact</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-02-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+
 </urlset>
