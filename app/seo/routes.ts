@@ -5,9 +5,19 @@ export const seoRoutes = [
     priority: 1,
   },
   {
+    path: '/courses',
+    changeFrequency: 'monthly',
+    priority: 0.9,
+  },
+  {
     path: '/courses/road-driving',
     changeFrequency: 'monthly',
     priority: 0.9,
+  },
+  {
+  path: '/courses/road-driving/instructor-car',
+  changeFrequency: 'monthly',
+  priority: 0.8,
   },
   {
     path: '/courses/sport-driving',
