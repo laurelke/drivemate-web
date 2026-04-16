@@ -89,13 +89,15 @@ export default function RootLayout({
 
   /* ================= ① CTA「轉換」事件（唯一 conversion） ================= */
   window.trackCTAConversion = function () {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-17613789230/CTA_CLICK'
-      });
-      console.log('[Ads Conversion] CTA_CLICK fired');
-    }
-  };
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-17613789230/GT-NMCJ7CM8'
+    });
+    console.log('[Ads Conversion] CTA fired');
+  } else {
+    console.warn('gtag not loaded');
+  }
+};
 
   /* ================= ② 全站點擊追蹤（GA4 only，不是轉換） ================= */
   document.addEventListener('click', function (e) {

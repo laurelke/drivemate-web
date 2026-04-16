@@ -101,7 +101,7 @@ export default function Page() {
     })
   }}
 />
-{/* ================= FAQ Schema（Road Driving + 學習駕照陪練） ================= */}
+{/* ================= FAQ Schema ================= */}
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
