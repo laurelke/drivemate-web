@@ -23,7 +23,7 @@ export default function Page() {
       "description": "專為新手與缺乏實際道路經驗的駕駛設計，一對一教練陪同，從評估、矯正到穩定上路。",
       "provider": {
         "@type": "Organization",
-        "name": "DriveMate 駕駛訓練中心",
+        "name": "DriveMate駕駛訓練中心",
         "url": "https://drivemate-tw.com/"
       },
       "areaServed": {

@@ -35,8 +35,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
   </h1>
 
       <p className="mt-6 text-lg text-neutral-200">
-        道路駕駛課程專為新手與不敢上路者設計，一對一教練陪同，<br />
-        從市區道路到停車實戰訓練。
+        道路駕駛課程專為新手與不敢上路者設計，一對一教練陪同，從市區道路到停車實戰訓練。
       </p>
 
       <div className="mt-10">
@@ -50,7 +49,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
     href="/road-driving-course"
     className="underline underline-offset-4 hover:text-white"
   >
-    了解道路駕駛課程是什麼 →
+    進一步了解道路駕駛課程 →
   </Link>
 </div>
     </div>

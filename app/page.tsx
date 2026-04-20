@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import HomePage from '../components/HomeClient'
 
 const SITE_URL = 'https://drivemate-tw.com/'
-const BRAND_NAME = 'DriveMate 駕駛訓練中心'
-const BRAND_ALT_NAMES = ['DriveMate', 'DriveMate 駕駛訓練中心']
+const BRAND_NAME = 'DriveMate駕駛訓練中心'
+const BRAND_ALT_NAMES = ['DriveMate', 'DriveMate駕駛訓練中心']
 
 export const metadata: Metadata = {
   title: `${BRAND_NAME}｜道路駕駛・運動駕駛・賽道課程・教練培訓`,
   description:
-    'DriveMate 駕駛訓練中心提供專業道路駕駛、運動駕駛與賽道課程，從新手上路到教練培訓，一對一實戰教學，讓你安全、自信、真正掌控每一次駕駛。',
+    'DriveMate駕駛訓練中心提供專業道路駕駛、運動駕駛與賽道課程，從新手上路到教練培訓，一對一實戰教學，讓你安全、自信、真正掌控每一次駕駛。',
   alternates: {
     canonical: SITE_URL,
   },
@@ -46,7 +46,7 @@ export default function Page() {
     url: SITE_URL,
     logo: `${SITE_URL}images/drivemate-logo.png`,
     description:
-      'DriveMate 駕駛訓練中心專注於考照後的實際駕駛訓練，提供道路駕駛、運動駕駛、賽道課程與教練培訓，一對一實戰教學，協助駕駛建立安全、自信與穩定的駕駛能力。',
+      'DriveMate駕駛訓練中心專注於考照後的實際駕駛訓練，提供道路駕駛、運動駕駛、賽道課程與教練培訓，一對一實戰教學，協助駕駛建立安全、自信與穩定的駕駛能力。',
     sameAs: [
       'https://www.instagram.com/drivemate.tw',
       'https://lin.ee/J22IVRg',
@@ -73,11 +73,11 @@ export default function Page() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: '《DriveMate 駕駛訓練中心》是一般駕訓班嗎？',
+        name: '《DriveMate駕駛訓練中心》是一般駕訓班嗎？',
         acceptedAnswer: {
           '@type': 'Answer',
           text:
-            '不是。DriveMate 駕駛訓練中心專注於考照後的實際駕駛訓練，協助已經會開車、但在道路、操控或心理層面仍感到不安的駕駛，建立真正能獨立上路的能力。',
+            '不是。DriveMate駕駛訓練中心專注於考照後的實際駕駛訓練，協助已經會開車、但在道路、操控或心理層面仍感到不安的駕駛，建立真正能獨立上路的能力。',
         },
       },
       {
@@ -86,7 +86,7 @@ export default function Page() {
         acceptedAnswer: {
           '@type': 'Answer',
           text:
-            '許多駕駛在考照後仍缺乏真實路況與正確引導的經驗，而 DriveMate 駕駛訓練中心的課程正是為了解決有駕照卻不敢開、或開得不穩定的狀況。',
+            '許多駕駛在考照後仍缺乏真實路況與正確引導的經驗，而 DriveMate駕駛訓練中心的課程正是為了解決有駕照卻不敢開、或開得不穩定的狀況。',
         },
       },
       {

@@ -46,7 +46,7 @@ export default function Header() {
           >
             <Image
               src="/images/drivemate-logo.png"
-              alt="DriveMate 道路駕駛課程"
+              alt="DriveMate道路駕駛課程"
               width={36}
               height={36}
               priority

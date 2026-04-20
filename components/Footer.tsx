@@ -37,7 +37,7 @@ export default function Footer() {
           {/* ================= Brand ================= */}
           <div className="space-y-2">
             <p className="text-lg font-semibold text-neutral-900">
-              DriveMate 駕駛訓練中心
+              DriveMate駕駛訓練中心
             </p>
             <p className="text-sm leading-relaxed text-neutral-600">
               專注於道路駕駛、運動駕駛與賽道體驗，
@@ -140,7 +140,7 @@ export default function Footer() {
 
         {/* ================= Footer Bottom ================= */}
         <div className="mt-10 border-t border-neutral-200 pt-6 text-center text-xs text-neutral-500">
-          © {new Date().getFullYear()} DriveMate 駕駛訓練中心 ｜ 以實戰與信心為核心的駕駛訓練
+          © {new Date().getFullYear()} DriveMate駕駛訓練中心 ｜ 以實戰與信心為核心的駕駛訓練
         </div>
       </div>
 
@@ -151,7 +151,7 @@ export default function Footer() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'DriveMate 駕駛訓練中心',
+            name: 'DriveMate駕駛訓練中心',
             url: 'https://drivemate-tw.com/',
             sameAs: [
               'https://www.instagram.com/drivemate.tw',

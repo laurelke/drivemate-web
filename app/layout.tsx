@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
   title: {
     default: 'DriveMate 駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
-    template: '%s｜DriveMate 駕駛訓練中心',
+    template: '%s｜DriveMate駕駛訓練中心',
   },
 
   description:
-    'DriveMate 駕駛訓練中心，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，一對一實戰教學，建立安全、自信且穩定的駕駛能力。',
+    'DriveMate駕駛訓練中心，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，一對一實戰教學，建立安全、自信且穩定的駕駛能力。',
 
   icons: {
     icon: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: 'website',
-    siteName: 'DriveMate 駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
+    siteName: 'DriveMate駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
     locale: 'zh_TW',
     url: 'https://drivemate-tw.com/',
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: '/images/drivemate-logo.png',
         width: 1200,
         height: 630,
-        alt: 'DriveMate 駕駛訓練中心',
+        alt: 'DriveMate駕駛訓練中心',
       },
     ],
   },
@@ -153,7 +153,7 @@ export default function RootLayout({
                 {
                   '@type': 'LocalBusiness',
                   '@id': 'https://drivemate-tw.com/#localbusiness',
-                  name: 'DriveMate 駕駛訓練中心',
+                  name: 'DriveMate駕駛訓練中心',
                   image: 'https://drivemate-tw.com/images/drivemate-logo.png',
                   url: 'https://drivemate-tw.com/',
                   priceRange: '$$$',
