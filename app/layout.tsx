@@ -5,17 +5,20 @@ import Header from '@/components/Header'
 import MobileCTA from '@/components/MobileCTA'
 import Footer from '@/components/Footer'
 
-/* ================= 基本 SEO 設定 ================= */
 export const metadata: Metadata = {
   metadataBase: new URL('https://drivemate-tw.com'),
 
   title: {
-    default: 'DriveMate 駕駛課程｜道路駕駛・運動駕駛・賽道課程・教練培訓',
+    default: 'DriveMate駕駛課程｜道路駕駛訓練・新手上路教學・教練培訓',
     template: '%s｜DriveMate駕駛課程',
   },
 
   description:
-    'DriveMate駕駛課程，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，一對一實戰教學，建立安全、自信且穩定的駕駛能力。',
+    'DriveMate駕駛課程提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程，以一對一實戰教學協助學員建立安全、自信且穩定的駕駛能力。',
+
+  alternates: {
+    canonical: 'https://drivemate-tw.com/',
+  },
 
   icons: {
     icon: [
@@ -27,26 +30,43 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: 'website',
-    siteName: 'DriveMate駕駛課程｜道路駕駛・運動駕駛・賽道課程・教練培訓',
+    siteName: 'DriveMate駕駛課程',
     locale: 'zh_TW',
     url: 'https://drivemate-tw.com/',
+    title: 'DriveMate駕駛課程｜道路駕駛訓練・新手上路教學・教練培訓',
+    description:
+      '提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
     images: [
       {
         url: '/images/drivemate-logo.png',
         width: 1200,
         height: 630,
-        alt: 'DriveMate駕駛訓練中心',
+        alt: 'DriveMate駕駛課程',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
+    title: 'DriveMate駕駛課程｜道路駕駛訓練・新手上路教學・教練培訓',
+    description:
+      '提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
     images: ['/images/drivemate-logo.png'],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
 }
 
-/* ✅ viewport 要獨立 export（Next.js 官方建議） */
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -57,126 +77,213 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://drivemate-tw.com/#website',
+    name: 'DriveMate 駕駛課程',
+    url: 'https://drivemate-tw.com/',
+    inLanguage: 'zh-TW',
+    description:
+      'DriveMate提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
+    publisher: {
+      '@id': 'https://drivemate-tw.com/#organization',
+    },
+  }
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://drivemate-tw.com/#organization',
+    name: 'DriveMate駕駛課程',
+    alternateName: 'DriveMate駕駛訓練中心',
+    url: 'https://drivemate-tw.com/',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://drivemate-tw.com/images/drivemate-logo.png',
+    },
+    sameAs: [
+      'https://www.instagram.com/drivemate.tw',
+      'https://lin.ee/J22IVRg',
+      'https://www.threads.net/@drivemate.tw',
+    ],
+    description:
+      'DriveMate提供道路駕駛課程、新手上路教學、運動駕駛、賽道體驗與教練培訓課程。',
+    knowsAbout: [
+      '道路駕駛課程',
+      '道路駕駛訓練',
+      '新手上路訓練',
+      '駕駛技巧教學',
+      '停車技巧教學',
+      '市區道路駕駛訓練',
+      '一對一駕駛教學',
+      '教練培訓課程',
+      '運動駕駛課程',
+      '賽道體驗課程',
+    ],
+  }
+
+  const educationalOrganizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    '@id': 'https://drivemate-tw.com/#education',
+    name: 'DriveMate駕駛課程',
+    alternateName: 'DriveMate駕駛訓練中心',
+    url: 'https://drivemate-tw.com/',
+    parentOrganization: {
+      '@id': 'https://drivemate-tw.com/#organization',
+    },
+    description:
+      'DriveMate是提供道路駕駛課程、新手上路教學、駕駛技巧訓練、運動駕駛與教練培訓的教育型機構，以一對一實戰課程協助學員建立穩定上路能力。',
+    slogan: '建立安全、自信且穩定的駕駛能力',
+    areaServed: {
+      '@type': 'Country',
+      name: 'TW',
+    },
+    availableLanguage: ['zh-TW'],
+    knowsAbout: [
+      '道路駕駛教學',
+      '道路駕駛課程',
+      '新手上路教學',
+      '駕照後上路練習',
+      '停車技巧訓練',
+      '市區道路駕駛訓練',
+      '駕駛能力評估',
+      '教練培訓',
+      '運動駕駛',
+    ],
+    keywords:
+      '道路駕駛課程, 道路駕駛教學, 新手上路訓練, 駕駛訓練, 停車技巧, 台中駕駛課程',
+    subjectOf: [
+      {
+        '@type': 'WebPage',
+        '@id': 'https://drivemate-tw.com/courses/road-driving',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://drivemate-tw.com/road-driving-course',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://drivemate-tw.com/afraid-of-driving',
+      },
+    ],
+  }
+
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': 'https://drivemate-tw.com/#localbusiness',
+    name: 'DriveMate 駕駛課程',
+    alternateName: 'DriveMate 駕駛訓練中心',
+    image: 'https://drivemate-tw.com/images/drivemate-logo.png',
+    url: 'https://drivemate-tw.com/',
+    parentOrganization: {
+      '@id': 'https://drivemate-tw.com/#organization',
+    },
+    description:
+      '提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
+    areaServed: {
+      '@type': 'Country',
+      name: 'TW',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: '台中市',
+      addressCountry: 'TW',
+    },
+    priceRange: '$$$',
+    sameAs: [
+      'https://www.instagram.com/drivemate.tw',
+      'https://lin.ee/J22IVRg',
+      'https://www.threads.net/@drivemate.tw',
+    ],
+    knowsAbout: [
+      '道路駕駛課程',
+      '新手上路訓練',
+      '一對一駕駛教學',
+      '駕駛技巧訓練',
+    ],
+  }
+
   return (
     <html lang="zh-Hant">
       <head>
-        {/* ====== favicon（確保 Google / Ads Bot 可抓）====== */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
 
-        {/* ================= Google tag (GA4 + Google Ads) ================= */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-QQBBR4WZEW"
           strategy="afterInteractive"
         />
         <Script id="google-tag" strategy="afterInteractive">
-{`
-  /* ================= 基礎 gtag 初始化 ================= */
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag; // 關鍵：掛到 window，供 React / CTA 使用
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
 
-  gtag('js', new Date());
+            gtag('js', new Date());
 
-  /* ===== GA4 ===== */
-  gtag('config', 'G-QQBBR4WZEW', {
-    send_page_view: true
-  });
+            gtag('config', 'G-QQBBR4WZEW', {
+              send_page_view: true
+            });
 
-  /* ===== Google Ads 基礎設定（不送轉換） ===== */
-  gtag('config', 'AW-17613789230');
+            gtag('config', 'AW-17613789230');
 
-  /* ================= ① CTA「轉換」事件（唯一 conversion） ================= */
-  window.trackCTAConversion = function () {
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-17613789230/GT-NMCJ7CM8'
-    });
-    console.log('[Ads Conversion] CTA fired');
-  } else {
-    console.warn('gtag not loaded');
-  }
-};
+            window.trackCTAConversion = function () {
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'conversion', {
+                  send_to: 'AW-17613789230/GT-NMCJ7CM8'
+                });
+                console.log('[Ads Conversion] CTA fired');
+              } else {
+                console.warn('gtag not loaded');
+              }
+            };
 
-  /* ================= ② 全站點擊追蹤（GA4 only，不是轉換） ================= */
-  document.addEventListener('click', function (e) {
-    const el = e.target.closest('a, button');
-    if (!el) return;
+            document.addEventListener('click', function (e) {
+              const el = e.target.closest('a, button');
+              if (!el) return;
 
-    const label =
-      el.innerText?.trim().slice(0, 50) ||
-      el.getAttribute('href') ||
-      'unknown';
+              const label =
+                el.innerText?.trim().slice(0, 50) ||
+                el.getAttribute('href') ||
+                'unknown';
 
-    window.gtag('event', 'site_click', {
-      event_category: 'engagement',
-      event_label: label,
-      page_location: window.location.href
-    });
-  });
-`}
-</Script>
+              window.gtag('event', 'site_click', {
+                event_category: 'engagement',
+                event_label: label,
+                page_location: window.location.href
+              });
+            });
+          `}
+        </Script>
       </head>
 
       <body className="bg-white text-neutral-900">
-        {/* ================= 組織 Schema（全站共用） ================= */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@graph': [
-                {
-                  '@type': 'Organization',
-                  '@id': 'https://drivemate-tw.com/#organization',
-                  name: 'DriveMate 駕駛訓練中心',
-                  url: 'https://drivemate-tw.com/',
-                  logo: 'https://drivemate-tw.com/images/drivemate-logo.png',
-                  sameAs: [
-                    'https://www.instagram.com/drivemate.tw',
-                    'https://lin.ee/J22IVRg',
-                    'https://www.threads.net/@drivemate.tw'
-                  ],
-                },
-                {
-                  '@type': 'EducationalOrganization',
-                  '@id': 'https://drivemate-tw.com/#education',
-                  name: 'DriveMate 駕駛訓練中心',
-                  url: 'https://drivemate-tw.com/',
-                  description:
-                    'DriveMate 提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程。',
-                  parentOrganization: {
-                    '@id': 'https://drivemate-tw.com/#organization',
-                  },
-                },
-                {
-                  '@type': 'LocalBusiness',
-                  '@id': 'https://drivemate-tw.com/#localbusiness',
-                  name: 'DriveMate駕駛訓練中心',
-                  image: 'https://drivemate-tw.com/images/drivemate-logo.png',
-                  url: 'https://drivemate-tw.com/',
-                  priceRange: '$$$',
-                  sameAs: [
-                    'https://www.instagram.com/drivemate.tw',
-                    'https://lin.ee/J22IVRg',
-                    'https://www.threads.net/@drivemate.tw'
-                  ],
-                  areaServed: {
-                    '@type': 'Country',
-                    name: 'TW',
-                  },
-                  address: {
-                    '@type': 'PostalAddress',
-                    addressRegion: '台中市',
-                    addressCountry: 'TW',
-                  },
-                  parentOrganization: {
-                    '@id': 'https://drivemate-tw.com/#organization',
-                  },
-                },
-              ],
-            }),
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(educationalOrganizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
           }}
         />
 
