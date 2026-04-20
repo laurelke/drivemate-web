@@ -17,26 +17,26 @@ export default function MobileCTA() {
     <div className="fixed bottom-0 left-0 z-50 w-full md:hidden">
       <a
   href="https://lin.ee/J22IVRg"
-  target="_blank"
   onClick={(e) => {
-    if (typeof window !== 'undefined') {
-      if ((window as any).gtag) {
-        (window as any).gtag('event', 'conversion', {
-          send_to: 'AW-17613789230/GT-NMCJ7CM8',
-        });
-        console.log('[Ads Conversion] CTA fired');
-      } else {
-        console.warn('gtag not ready');
-      }
+    e.preventDefault();
+
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'AW-17613789230/GT-NMCJ7CM8',
+        event_callback: () => {
+          window.open('https://lin.ee/J22IVRg', '_blank');
+        },
+      });
+
+      console.log('[Ads Conversion] CTA fired');
+    } else {
+      window.open('https://lin.ee/J22IVRg', '_blank');
     }
 
-    // 👉 延遲一點點，確保 request 送出
+    // fallback（避免 callback 沒觸發）
     setTimeout(() => {
       window.open('https://lin.ee/J22IVRg', '_blank');
-    }, 300);
-
-    // 👉 阻止預設行為（避免搶跑）
-    e.preventDefault();
+    }, 700);
   }}
   className="block bg-black py-4 text-center text-lg font-semibold text-white"
 >
