@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { HeroCTA } from '@/components/ui/HeroCTA'
 
 export const metadata = {
   title: '道路駕駛課程是什麼？給新手與不敢上路者的完整說明',
@@ -248,8 +247,19 @@ export default function Page() {
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-              <HeroCTA href="/courses/road-driving">查看完整課程頁</HeroCTA>
-              <HeroCTA href="#faq">先看常見問題</HeroCTA>
+            <Link
+                href="/courses/road-driving"
+                className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
+            >
+                查看完整課程頁
+            </Link>
+
+            <Link
+                href="#faq"
+                className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-100"
+            >
+                先看常見問題
+            </Link>
             </div>
           </div>
         </section>
