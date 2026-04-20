@@ -18,8 +18,25 @@ export default function MobileCTA() {
       <a
   href="https://lin.ee/J22IVRg"
   target="_blank"
-  onClick={() => {
-    window.trackCTAConversion?.()
+  onClick={(e) => {
+    if (typeof window !== 'undefined') {
+      if ((window as any).gtag) {
+        (window as any).gtag('event', 'conversion', {
+          send_to: 'AW-17613789230/GT-NMCJ7CM8',
+        });
+        console.log('[Ads Conversion] CTA fired');
+      } else {
+        console.warn('gtag not ready');
+      }
+    }
+
+    // 👉 延遲一點點，確保 request 送出
+    setTimeout(() => {
+      window.open('https://lin.ee/J22IVRg', '_blank');
+    }, 300);
+
+    // 👉 阻止預設行為（避免搶跑）
+    e.preventDefault();
   }}
   className="block bg-black py-4 text-center text-lg font-semibold text-white"
 >
