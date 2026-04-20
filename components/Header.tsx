@@ -64,7 +64,7 @@ export default function Header() {
             {isCoursePage ? (
               <>
                 <Link href="/courses/road-driving" className="hover:text-black/70">
-                  一般道路駕駛
+                  道路駕駛
                 </Link>
                 <Link href="/courses/sport-driving" className="hover:text-black/70">
                   運動駕駛
@@ -156,7 +156,7 @@ export default function Header() {
         href="/courses/road-driving"
         onClick={() => setOpen(false)}
       >
-        一般道路駕駛
+        道路駕駛
       </Link>
 
       <Link
