@@ -132,12 +132,7 @@ export default function RoadDrivingClient() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <HeroCTA href="#pricing">查看課程方案</HeroCTA>
-              <Link
-                href="#faq"
-                className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                先看常見問題
-              </Link>
+              <HeroCTA href="#faq">先看常見問題</HeroCTA>
             </div>
           </div>
         </div>
@@ -155,20 +150,48 @@ export default function RoadDrivingClient() {
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {[
-              '剛拿到駕照，但還不敢獨自開車上路',
-              '長時間沒有開車，駕駛感覺明顯變生疏',
-              '會基本操作，但在市區、路口或停車時容易慌張',
-              '想練通勤路線、接送路線或固定生活動線',
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-200"
-              >
-                <p className="text-base leading-7 text-neutral-700">{item}</p>
-              </div>
-            ))}
-          </div>
+  {[
+    '剛拿到駕照，但還不敢獨自開車上路',
+    '長時間沒有開車，駕駛感覺明顯變生疏',
+    '會基本操作，但在市區、路口或停車時容易慌張',
+    '想練通勤路線、接送路線或固定生活動線',
+  ].map((item) => (
+    <div
+      key={item}
+      className="
+        group
+        rounded-2xl
+        bg-white
+        p-8
+        min-h-[120px]
+
+        flex items-center justify-center
+        text-center
+
+        ring-1 ring-neutral-200
+        shadow-sm
+
+        transition-all duration-300 ease-out
+
+        hover:-translate-y-1
+        hover:shadow-lg
+        hover:ring-neutral-300
+        hover:bg-neutral-50
+      "
+    >
+      <p className="
+        text-base md:text-lg
+        leading-7
+        text-neutral-700
+
+        transition-colors duration-300
+        group-hover:text-neutral-900
+      ">
+        {item}
+      </p>
+    </div>
+  ))}
+</div>
         </div>
       </section>
 
