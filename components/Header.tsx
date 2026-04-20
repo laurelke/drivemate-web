@@ -85,7 +85,7 @@ export default function Header() {
                   課程介紹
                 </Link>
                 <Link href="/road-driving-course" className="hover:text-black/70">
-                  常見 Q&A
+                  課程 Q&A
                 </Link>
                 <Link href="#info" className="hover:text-black/70">
                   付款方式
@@ -206,7 +206,7 @@ export default function Header() {
     window.location.href = '/road-driving-course'
   }}
 >
-  常見 Q&A
+  課程 Q&A
 </button>
 
       <button
