@@ -81,7 +81,10 @@ export default function Header() {
               </>
             ) : (
               <>
-                <Link href="#info" className="hover:text-black/70">
+                <Link href="/courses/road-driving" className="hover:text-black/70">
+                  課程介紹
+                </Link>
+                <Link href="/road-driving-course" className="hover:text-black/70">
                   常見 Q&A
                 </Link>
                 <Link href="#info" className="hover:text-black/70">
