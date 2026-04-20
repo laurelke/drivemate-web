@@ -10,7 +10,7 @@ const pricingPlans = [
     name: '小資專案',
     subtitle: '基礎上路實戰',
     price: 'NT$3,000',
-    description: '適合剛拿駕照、想先建立基本道路駕駛能力的新手。',
+    description: '適合剛拿到駕照、想先建立基本道路駕駛能力的新手。',
     items: [
       '教練車實際上路，免自備車輛',
       '一堂課 2 小時',
@@ -71,6 +71,13 @@ const pricingPlans = [
   },
 ]
 
+const suitableFor = [
+  '剛拿到駕照，但還不敢獨自開車上路',
+  '長時間沒有開車，駕駛感覺明顯變生疏',
+  '會基本操作，但在市區、路口或停車時容易慌張',
+  '想練通勤路線、接送路線或固定生活動線',
+]
+
 const faqs = [
   {
     q: '道路駕駛課程是什麼？',
@@ -98,10 +105,54 @@ const faqs = [
   },
 ]
 
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  light = false,
+}: {
+  eyebrow?: string
+  title: string
+  description?: string
+  light?: boolean
+}) {
+  return (
+    <div className="mx-auto max-w-3xl text-center">
+      {eyebrow ? (
+        <p
+          className={`mb-3 text-xs font-semibold uppercase tracking-[0.24em] ${
+            light ? 'text-white/60' : 'text-neutral-400'
+          }`}
+        >
+          {eyebrow}
+        </p>
+      ) : null}
+
+      <h2
+        className={`text-3xl font-bold leading-tight md:text-4xl ${
+          light ? 'text-white' : 'text-neutral-900'
+        }`}
+      >
+        {title}
+      </h2>
+
+      {description ? (
+        <p
+          className={`mt-5 text-lg leading-8 ${
+            light ? 'text-white/75' : 'text-neutral-600'
+          }`}
+        >
+          {description}
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
 export default function RoadDrivingClient() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
-      <section className="relative h-[56vh] w-full overflow-hidden md:h-[76vh]">
+      <section className="relative h-[62vh] w-full overflow-hidden md:h-[84vh]">
         <Image
           src="/images/courses/road-driving-hero.jpg"
           alt="道路駕駛課程實戰訓練，一對一教練陪同上路"
@@ -110,23 +161,22 @@ export default function RoadDrivingClient() {
           sizes="(max-width: 768px) 100vw, 1920px"
           className="object-cover object-center md:[object-position:50%_30%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
-          <div className="max-w-2xl text-white">
-            <p className="mb-4 text-sm font-medium tracking-[0.18em] text-white/80 uppercase">
+          <div className="max-w-3xl text-white">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.24em] text-white/75">
               Road Driving Course
             </p>
 
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
+            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
               道路駕駛課程是什麼？
-              <br className="hidden md:block" />
+              <br />
               給新手與不敢上路者的實戰訓練
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-neutral-200 md:text-lg">
-              DriveMate
-              道路駕駛課程專為剛拿駕照、久未開車、缺乏道路駕駛經驗與不敢獨立上路者設計，
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
+              DriveMate 道路駕駛課程專為剛拿駕照、久未開車、缺乏道路駕駛經驗與不敢獨立上路者設計，
               透過一對一教練陪同與真實路況訓練，幫助你建立安全、穩定且可落地的駕駛能力。
             </p>
 
@@ -138,71 +188,34 @@ export default function RoadDrivingClient() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">
-            道路駕駛課程適合哪些人？
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-neutral-600">
-            如果你已經有駕照，卻仍不敢上路，或是一遇到車流、路口、停車就容易緊張，
-            那麼道路駕駛課程通常會比單純重複場地練習更有效。這類課程的目標不是讓你更會考試，
-            而是讓你更能應付真實道路。
-          </p>
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <SectionHeading
+          eyebrow="Who is this for"
+          title="道路駕駛課程適合哪些人？"
+          description="如果你已經有駕照，卻仍不敢上路，或是一遇到車流、路口、停車就容易緊張，那麼道路駕駛課程通常會比單純重複場地練習更有效。這類課程的目標不是讓你更會考試，而是讓你更能應付真實道路。"
+        />
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-  {[
-    '剛拿到駕照，但還不敢獨自開車上路',
-    '長時間沒有開車，駕駛感覺明顯變生疏',
-    '會基本操作，但在市區、路口或停車時容易慌張',
-    '想練通勤路線、接送路線或固定生活動線',
-  ].map((item) => (
-    <div
-      key={item}
-      className="
-        group
-        rounded-2xl
-        bg-white
-        p-8
-        min-h-[120px]
-
-        flex items-center justify-center
-        text-center
-
-        ring-1 ring-neutral-200
-        shadow-sm
-
-        transition-all duration-300 ease-out
-
-        hover:-translate-y-1
-        hover:shadow-lg
-        hover:ring-neutral-300
-        hover:bg-neutral-50
-      "
-    >
-      <p className="
-        text-base md:text-lg
-        leading-7
-        text-neutral-700
-
-        transition-colors duration-300
-        group-hover:text-neutral-900
-      ">
-        {item}
-      </p>
-    </div>
-  ))}
-</div>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {suitableFor.map((item) => (
+            <div
+              key={item}
+              className="group flex min-h-[130px] items-center justify-center rounded-3xl bg-white p-8 text-center shadow-sm ring-1 ring-neutral-200 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-neutral-50 hover:shadow-lg hover:ring-neutral-300"
+            >
+              <p className="text-base leading-8 text-neutral-700 transition-colors duration-300 group-hover:text-neutral-900 md:text-lg">
+                {item}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-center text-3xl font-bold text-neutral-900 md:text-4xl">
-            為什麼很多人有駕照，卻不敢上路？
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-lg leading-8 text-neutral-600">
-            多數人的問題不是完全不會開車，而是缺少在真實道路中被正確引導與修正的機會。
-          </p>
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <SectionHeading
+            eyebrow="Why people get stuck"
+            title="為什麼很多人有駕照，卻不敢上路？"
+            description="多數人的問題不是完全不會開車，而是缺少在真實道路中被正確引導與修正的機會。"
+          />
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
@@ -221,27 +234,32 @@ export default function RoadDrivingClient() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl bg-neutral-50 p-7 text-center shadow-sm ring-1 ring-neutral-200"
+                className="rounded-3xl bg-neutral-50 p-8 text-center shadow-sm ring-1 ring-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                <h3 className="mb-3 text-xl font-semibold text-neutral-900">
+                <h3 className="text-xl font-semibold text-neutral-900">
                   {item.title}
                 </h3>
-                <p className="text-neutral-600">{item.desc}</p>
+                <p className="mt-4 leading-7 text-neutral-600">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-start">
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h2 className="text-3xl font-bold text-neutral-900 md:text-4xl">
-              道路駕駛課程內容有哪些？
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-neutral-600">
-              課程會依學員狀況客製安排，但大多會圍繞以下幾個核心能力展開，目的是讓你從「知道怎麼開」走到「能穩定上路」。
-            </p>
+            <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-none">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-neutral-400">
+                Course content
+              </p>
+              <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">
+                道路駕駛課程內容有哪些？
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-neutral-600">
+                課程會依學員狀況客製安排，但大多會圍繞以下幾個核心能力展開，目的是讓你從「知道怎麼開」走到「能穩定上路」。
+              </p>
+            </div>
 
             <div className="mt-10 space-y-6">
               {[
@@ -264,7 +282,7 @@ export default function RoadDrivingClient() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-200"
+                  className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                 >
                   <h3 className="text-xl font-semibold text-neutral-900">
                     {item.title}
@@ -275,17 +293,21 @@ export default function RoadDrivingClient() {
             </div>
           </div>
 
-          <aside className="rounded-3xl bg-neutral-900 p-8 text-white shadow-lg">
+          <aside className="h-fit rounded-[2rem] bg-neutral-900 p-8 text-white shadow-xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/45">
+              Summary
+            </p>
             <h3 className="text-2xl font-bold">這頁重點整理</h3>
-            <ul className="mt-6 space-y-4 text-sm leading-7 text-neutral-200">
+
+            <ul className="mt-6 space-y-4 text-sm leading-7 text-white/80">
               <li>• 道路駕駛課程重點在真實道路實戰，而不是只做場地練習。</li>
               <li>• 適合新手、久未開車、會開但不敢上路的人。</li>
               <li>• 常見內容包含市區道路、路口判斷、停車與客製化路線。</li>
               <li>• 可先從單堂體驗或評估方案開始，再依需求升級。</li>
             </ul>
 
-            <div className="mt-8 rounded-2xl bg-white/10 p-5">
-              <p className="text-sm leading-7 text-neutral-100">
+            <div className="mt-8 rounded-2xl bg-white/10 p-5 ring-1 ring-white/10">
+              <p className="text-sm leading-7 text-white/80">
                 想知道你現在卡住的是技術、判斷，還是心理壓力？
                 可以先從評估型方案開始，教練會依你的實際狀況給出最適合的訓練方向。
               </p>
@@ -295,27 +317,25 @@ export default function RoadDrivingClient() {
       </section>
 
       <section id="pricing" className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <h2 className="text-center text-3xl font-bold text-neutral-900 md:text-4xl">
-            道路駕駛課程方案與費用
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-lg leading-8 text-neutral-600">
-            道路駕駛課程費用會依訓練深度、堂數與是否客製化而不同。你可以先從基礎方案開始，
-            再依實際狀況升級為成果導向或長期穩定訓練方案。
-          </p>
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <SectionHeading
+            eyebrow="Plans & pricing"
+            title="道路駕駛課程方案與費用"
+            description="道路駕駛課程費用會依訓練深度、堂數與是否客製化而不同。你可以先從基礎方案開始，再依實際狀況升級為成果導向或長期穩定訓練方案。"
+          />
 
           <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
             {pricingPlans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-3xl p-7 shadow-sm ring-1 ${
+                className={`relative rounded-[2rem] p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
                   plan.featured
-                    ? 'border-2 border-orange-500 bg-white shadow-lg ring-orange-200'
-                    : 'bg-white ring-neutral-200'
+                    ? 'border-2 border-orange-500 bg-white ring-1 ring-orange-200'
+                    : 'bg-white ring-1 ring-neutral-200'
                 }`}
               >
                 {plan.featured ? (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-4 py-1 text-xs font-semibold text-white">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-4 py-1 text-xs font-semibold text-white shadow-sm">
                     最多人選擇
                   </span>
                 ) : null}
@@ -343,7 +363,7 @@ export default function RoadDrivingClient() {
                 <ul className="mt-6 space-y-3 text-sm leading-7 text-neutral-700">
                   {plan.items.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <span className="mt-[7px] h-2 w-2 shrink-0 rounded-full bg-orange-500" />
+                      <span className="mt-[9px] h-2 w-2 shrink-0 rounded-full bg-orange-500" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -354,7 +374,7 @@ export default function RoadDrivingClient() {
                     需要教練車？
                     <Link
                       href="/courses/road-driving/instructor-car"
-                      className="ml-2 text-orange-600 underline underline-offset-4 hover:text-orange-700"
+                      className="ml-2 text-orange-600 underline underline-offset-4 transition hover:text-orange-700"
                     >
                       查看教練車加購方案
                     </Link>
@@ -366,14 +386,17 @@ export default function RoadDrivingClient() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <div className="grid gap-8 rounded-3xl bg-neutral-900 px-6 py-10 text-white md:grid-cols-3 md:px-10">
-          <div>
-            <h2 className="text-2xl font-bold">如何選擇適合自己的道路駕駛課程？</h2>
-          </div>
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="rounded-[2rem] bg-neutral-900 px-8 py-10 text-white shadow-xl md:px-12 md:py-12">
+          <SectionHeading
+            eyebrow="How to choose"
+            title="如何選擇適合自己的道路駕駛課程？"
+            description=""
+            light
+          />
 
-          <div className="md:col-span-2">
-            <ul className="space-y-4 text-sm leading-7 text-neutral-200 md:text-base">
+          <div className="mx-auto mt-8 max-w-4xl">
+            <ul className="space-y-4 text-base leading-8 text-white/80">
               <li>• 如果你幾乎沒有道路經驗，建議先從基礎方案或評估課開始。</li>
               <li>• 如果你會開但常在特定情境失誤，評估＋矯正方案通常最有效率。</li>
               <li>• 如果你的目標是短時間內獨立上路，可選擇 14 天成果計畫。</li>
@@ -384,22 +407,21 @@ export default function RoadDrivingClient() {
       </section>
 
       <section id="faq" className="bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <h2 className="text-center text-3xl font-bold text-neutral-900 md:text-4xl">
-            道路駕駛課程常見問題
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-lg leading-8 text-neutral-600">
-            以下整理學員最常問的問題，包含適合對象、課程內容、費用與使用車輛方式。
-          </p>
+        <div className="mx-auto max-w-5xl px-6 py-20 md:py-24">
+          <SectionHeading
+            eyebrow="FAQ"
+            title="道路駕駛課程常見問題"
+            description="以下整理學員最常問的問題，包含適合對象、課程內容、費用與使用車輛方式。"
+          />
 
           <div className="mt-12 space-y-4">
             {faqs.map((faq) => (
               <details
                 key={faq.q}
-                className="group rounded-2xl bg-neutral-50 p-6 ring-1 ring-neutral-200"
+                className="group rounded-3xl bg-neutral-50 p-6 shadow-sm ring-1 ring-neutral-200 transition-all duration-300 hover:bg-white hover:shadow-md"
               >
                 <summary className="cursor-pointer list-none pr-8 text-lg font-semibold text-neutral-900 marker:hidden">
-                  <span>{faq.q}</span>
+                  {faq.q}
                 </summary>
                 <p className="mt-4 leading-8 text-neutral-600">{faq.a}</p>
               </details>
@@ -408,9 +430,12 @@ export default function RoadDrivingClient() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <div className="rounded-3xl bg-orange-50 p-8 ring-1 ring-orange-100 md:p-10">
-          <h2 className="text-3xl font-bold text-neutral-900">
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="rounded-[2rem] bg-orange-50 p-8 shadow-sm ring-1 ring-orange-100 md:p-12">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-orange-500">
+            Final takeaway
+          </p>
+          <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">
             道路駕駛課程的核心目標，不只是把車開出去
           </h2>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-neutral-700">
