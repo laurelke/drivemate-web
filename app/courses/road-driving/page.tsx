@@ -1,217 +1,166 @@
-import type { Metadata } from 'next'
 import RoadDrivingClient from './RoadDrivingClient'
 
-export const metadata: Metadata = {
-  title: '道路駕駛課程是什麼？費用、內容、適合對象完整解析',
+export const metadata = {
+  title: '道路駕駛實戰課程｜新手、缺乏道路駕駛經驗，安心上路訓練',
   description:
-    '想找道路駕駛課程？本頁整理道路駕駛課程內容、費用、適合對象與常見問題，並提供一對一實戰訓練方案，協助新手與久未開車者建立安全上路信心。',
+    'DriveMate 道路駕駛實戰課程，專為新手與不敢上路的駕駛設計，一對一教練陪同，從實際路況評估、操作矯正到穩定上路，協助你建立真正的駕駛信心。',
   alternates: {
     canonical: 'https://drivemate-tw.com/courses/road-driving',
   },
-  openGraph: {
-    title: '道路駕駛課程是什麼？費用、內容、適合對象完整解析',
-    description:
-      '整理道路駕駛課程內容、費用、適合對象與常見問題，協助新手與不敢上路者建立真正的駕駛能力。',
-    url: 'https://drivemate-tw.com/courses/road-driving',
-    siteName: 'DriveMate 駕駛訓練中心',
-    locale: 'zh_TW',
-    type: 'article',
-    images: [
-      {
-        url: 'https://drivemate-tw.com/images/drivemate-road-driving-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'DriveMate 道路駕駛課程',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '道路駕駛課程是什麼？費用、內容、適合對象完整解析',
-    description:
-      '整理道路駕駛課程內容、費用、適合對象與常見問題，協助新手與不敢上路者建立真正的駕駛能力。',
-    images: ['https://drivemate-tw.com/images/drivemate-road-driving-og.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
-  },
 }
-
 export default function Page() {
-  const pageUrl = 'https://drivemate-tw.com/courses/road-driving'
-
-  const webPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': `${pageUrl}#webpage`,
-    url: pageUrl,
-    name: '道路駕駛課程是什麼？費用、內容、適合對象完整解析',
-    description:
-      '整理道路駕駛課程內容、費用、適合對象與常見問題，並提供一對一實戰訓練方案。',
-    inLanguage: 'zh-TW',
-    isPartOf: {
-      '@id': 'https://drivemate-tw.com/#website',
-    },
-    about: {
-      '@type': 'Thing',
-      name: '道路駕駛課程',
-    },
-    breadcrumb: {
-      '@id': `${pageUrl}#breadcrumb`,
-    },
-  }
-
-  const courseSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    '@id': `${pageUrl}#course`,
-    name: '道路駕駛實戰課程',
-    description:
-      '專為新手、久未開車與缺乏道路駕駛經驗者設計的一對一實戰訓練，內容涵蓋市區道路、停車、車道判斷與實際路況應對。',
-    provider: {
-      '@type': 'Organization',
-      name: 'DriveMate 駕駛訓練中心',
-      url: 'https://drivemate-tw.com/',
-    },
-    areaServed: {
-      '@type': 'Country',
-      name: 'TW',
-    },
-    availableLanguage: ['zh-TW'],
-    hasCourseInstance: {
-      '@type': 'CourseInstance',
-      courseMode: 'OnSite',
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: '道路駕駛訓練方案',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          name: '小資專案｜奠定基礎培訓',
-          description:
-            '適合剛起步的新手，由教練車一對一陪同進行實際道路練習。',
-          price: '3000',
-          priceCurrency: 'TWD',
-          availability: 'https://schema.org/InStock',
-          url: pageUrl,
-        },
-        {
-          '@type': 'Offer',
-          name: '14 天獨立上路成果計畫',
-          description:
-            '系統化道路駕駛訓練，協助學員在 14 天內建立安全獨立上路能力。',
-          price: '16990',
-          priceCurrency: 'TWD',
-          availability: 'https://schema.org/InStock',
-          url: pageUrl,
-        },
-        {
-          '@type': 'Offer',
-          name: '21 天通勤駕駛穩定方案',
-          description:
-            '針對日常通勤與高流量路況，建立穩定駕駛習慣與路況應對能力。',
-          price: '35000',
-          priceCurrency: 'TWD',
-          availability: 'https://schema.org/InStock',
-          url: pageUrl,
-        },
-      ],
-    },
-  }
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    '@id': `${pageUrl}#breadcrumb`,
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: '首頁',
-        item: 'https://drivemate-tw.com/',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: '課程介紹',
-        item: 'https://drivemate-tw.com/courses',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: '道路駕駛課程',
-        item: pageUrl,
-      },
-    ],
-  }
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: '道路駕駛課程是什麼？',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '道路駕駛課程是在真實道路環境中，由教練陪同進行的一對一駕駛訓練，重點在建立實際上路能力與駕駛信心。',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '沒有駕駛經驗也可以報名嗎？',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '可以，課程可依學員程度安排，從基礎操作、道路判斷到實際上路循序建立能力。',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '道路駕駛課程適合哪些人？',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '適合剛拿駕照、不敢上路、久未開車、想加強通勤或停車能力的學員。',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '道路駕駛課程費用多少？',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: '本頁提供不同訓練方案，費用依訓練時數、目標與客製化內容而異。',
-        },
-      },
-    ],
-  }
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
+      {/* ⭐ Course + Offer Schema（道路駕駛＋學習駕照陪練） */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "@id": "https://drivemate-tw.com/courses/road-driving#course",
+      "name": "道路駕駛實戰課程",
+      "description": "專為新手與缺乏實際道路經驗的駕駛設計，一對一教練陪同，從評估、矯正到穩定上路。",
+      "provider": {
+        "@type": "Organization",
+        "name": "DriveMate 駕駛訓練中心",
+        "url": "https://drivemate-tw.com/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "TW"
+      },
+      "availableLanguage": ["zh-TW"],
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "OnSite"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "道路駕駛訓練方案",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "小資專案｜奠定基礎培訓",
+            "description": "適合剛起步的新手，由教練車一對一陪同進行實際道路練習。",
+            "price": "3000",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://drivemate-tw.com/courses/road-driving"
+          },
+          {
+            "@type": "Offer",
+            "name": "14 天獨立上路成果計畫",
+            "description": "系統化道路駕駛訓練，協助學員在 14 天內建立能獨立、安全上路的駕駛能力。",
+            "price": "16990",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://drivemate-tw.com/courses/road-driving"
+          },
+          {
+            "@type": "Offer",
+            "name": "21 天通勤駕駛穩定方案",
+            "description": "針對日常通勤與高流量路況，建立長期穩定的駕駛習慣與應對能力。",
+            "price": "35000",
+            "priceCurrency": "TWD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://drivemate-tw.com/courses/road-driving"
+          }
+        ]
+      }
+    })
+  }}
+/>
+{/* ================= Breadcrumb Schema ================= */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://drivemate-tw.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "課程介紹",
+          "item": "https://drivemate-tw.com/courses"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "道路駕駛課程",
+          "item": "https://drivemate-tw.com/courses/road-driving"
+        }
+      ]
+    })
+  }}
+/>
+{/* ================= FAQ Schema ================= */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "沒有駕駛經驗也可以報名道路駕駛實戰課程嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。本課程專為新手與缺乏實際道路經驗的駕駛設計，教練會依照你的程度，從基礎操作到實際上路，循序建立駕駛信心。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "小資專案培訓需要自備車輛嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。培訓課程使用教練車進行，學員無需自備車輛，即可進行實際上路練習。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "已經有駕照但很久沒開車，適合這門課程嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "非常適合。許多學員因長時間未駕駛而缺乏信心，本課程會針對你的駕駛習慣與實際狀況進行評估與矯正，幫助你重新適應真實路況。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "道路駕駛訓練會在哪些路況進行？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "客製化訓練會依學員程度與需求安排，包含市區道路、路口判斷、變換車道、停車技巧及實際生活常見路線。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "課程是一對一教學嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的，所有道路駕駛與學習駕照陪練課程皆為一對一教學，由專業教練全程陪同，確保學習安全與實際成效。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "完成課程後真的可以自己上路嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "課程以能安全、獨立上路為目標，透過系統化訓練與實際路況演練，協助學員建立穩定的駕駛能力與心理信心。實際成果會依個人狀況而有所不同。"
+          }
+        }
+      ]
+    })
+  }}
+/>
       <RoadDrivingClient />
     </>
   )
