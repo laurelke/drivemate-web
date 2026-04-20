@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import HomePage from '../components/HomeClient'
 
 const SITE_URL = 'https://drivemate-tw.com/'
-const BRAND_NAME = 'DriveMate駕駛訓練中心'
-const BRAND_ALT_NAMES = ['DriveMate', 'DriveMate駕駛訓練中心']
+const BRAND_NAME = 'DriveMate駕駛課程'
+const BRAND_ALT_NAMES = ['DriveMate', 'DriveMate駕駛課程']
 
 export const metadata: Metadata = {
   title: `${BRAND_NAME}｜道路駕駛・運動駕駛・賽道課程・教練培訓`,

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://drivemate-tw.com'),
 
   title: {
-    default: 'DriveMate 駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
-    template: '%s｜DriveMate駕駛訓練中心',
+    default: 'DriveMate 駕駛課程｜道路駕駛・運動駕駛・賽道課程・教練培訓',
+    template: '%s｜DriveMate駕駛課程',
   },
 
   description:
-    'DriveMate駕駛訓練中心，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，一對一實戰教學，建立安全、自信且穩定的駕駛能力。',
+    'DriveMate駕駛課程，提供專業道路駕駛、運動駕駛、賽道體驗與教練培訓課程，一對一實戰教學，建立安全、自信且穩定的駕駛能力。',
 
   icons: {
     icon: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: 'website',
-    siteName: 'DriveMate駕駛訓練中心｜道路駕駛・運動駕駛・賽道課程・教練培訓',
+    siteName: 'DriveMate駕駛課程｜道路駕駛・運動駕駛・賽道課程・教練培訓',
     locale: 'zh_TW',
     url: 'https://drivemate-tw.com/',
     images: [
