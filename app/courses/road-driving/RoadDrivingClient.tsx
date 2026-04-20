@@ -12,7 +12,7 @@ export default function RoadDrivingClient() {
     <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
   <Image
     src="/images/courses/road-driving-hero.jpg"
-    alt="道路駕駛實戰課程"
+    alt="道路駕駛課程"
     fill
     priority
     sizes="(max-width: 768px) 100vw, 1920px"
@@ -31,7 +31,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
   </p>
 
   <h1 className="text-4xl font-bold md:text-5xl leading-tight">
-    道路駕駛實戰課程
+    道路駕駛課程
   </h1>
 
       <p className="mt-6 text-lg text-neutral-200">
@@ -108,8 +108,6 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
     包含「小資專案」奠定基礎培訓，以及成果導向型的客製化一對一道路駕駛訓練方案。
   </p>
 </div>
-      包含「小資專案」奠定基礎培訓，以及成果導向型的客製化一對一道路駕駛訓練方案。
-
     <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-2">
       <div className="rounded-2xl border bg-white p-6 shadow">
         <h3 className="mb-1 text-xl font-semibold">
@@ -196,7 +194,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
   </Link>
 </li>
           <li>• 系統化道路駕駛訓練</li>
-          <li>• 14 天循序練習節奏(4 堂課程)</li>
+          <li>• 14 天循序練習節奏，共 4 堂課程</li>
           <li>• 多元實際道路情境演練</li>
           <li>• 明確成果檢核與回饋</li>
           <li>• 📍全台到府服務</li>
@@ -231,7 +229,7 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
   </Link>
 </li>
           <li>• 以應對所有路型/路線為訓練核心</li>
-          <li>• 21 天密集練習步調(8 堂課程)</li>
+          <li>• 21 天密集練習步調，共 8 堂課程</li>
           <li>• 尖峰與高流量路況應對</li>
           <li>• 建立長期穩定駕駛習慣</li>
           <li>• 📍全台到府服務</li>

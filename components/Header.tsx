@@ -189,16 +189,25 @@ export default function Header() {
     </>
   ) : (
     <>
+    <button
+  className="text-left"
+  onClick={() => {
+    setOpen(false)
+    window.location.href = '/courses/road-driving'
+  }}
+>
+  課程介紹
+</button>
+
       <button
-        className="text-left"
-        onClick={() => {
-          setOpen(false)
-          window.history.replaceState(null, '', '#qa')
-          setTimeout(() => scrollToCard('info'), 80)
-        }}
-      >
-        常見 Q&A
-      </button>
+  className="text-left"
+  onClick={() => {
+    setOpen(false)
+    window.location.href = '/road-driving-course'
+  }}
+>
+  常見 Q&A
+</button>
 
       <button
         className="text-left"
