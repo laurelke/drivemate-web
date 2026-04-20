@@ -25,9 +25,14 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
   {/* 文字內容（完全對齊首頁） */}
   <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
     <div className="max-w-xl text-white">
-      <h1 className="text-4xl font-bold md:text-5xl leading-tight">
-        道路駕駛實戰課程
-      </h1>
+  {/* ⭐ 新增小標題 */}
+  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/60">
+    Road Driving Course
+  </p>
+
+  <h1 className="text-4xl font-bold md:text-5xl leading-tight">
+    道路駕駛實戰課程
+  </h1>
 
       <p className="mt-6 text-lg text-neutral-200">
         從評估、矯正到穩定上路，  
@@ -54,10 +59,16 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
 
       {/* ================= 為什麼需要道路駕駛訓練 ================= */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="mb-10 text-center text-3xl font-bold">
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-neutral-400">
+          Why people struggle
+          </p>
+
+          <h2 className="text-3xl font-bold md:text-4xl">
           為什麼很多人<br />
           「有駕照，卻不敢上路」？
-        </h2>
+          </h2>
+        </div>
         <div className="grid gap-8 md:grid-cols-3">
           {[
             {
@@ -84,12 +95,20 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
       {/* Pricing */}
 <section id="pricing" className="bg-white">
   <div className="mx-auto max-w-6xl px-6 py-16">
-    <h2 className="mb-4 text-center text-3xl font-bold">
-      道路駕駛課程方案與費用
-    </h2>
-    <p className="mx-auto mb-12 max-w-3xl text-center text-neutral-600">
+    <div className="mb-12 text-center">
+  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-neutral-400">
+    Pricing
+  </p>
+
+  <h2 className="text-3xl font-bold md:text-4xl">
+    道路駕駛課程方案與費用
+  </h2>
+
+  <p className="mx-auto mt-4 max-w-3xl text-neutral-600">
+    包含「小資專案」奠定基礎培訓，以及成果導向型的客製化一對一道路駕駛訓練方案。
+  </p>
+</div>
       包含「小資專案」奠定基礎培訓，以及成果導向型的客製化一對一道路駕駛訓練方案。
-    </p>
 
     <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-2">
       <div className="rounded-2xl border bg-white p-6 shadow">
