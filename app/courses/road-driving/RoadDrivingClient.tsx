@@ -40,6 +40,14 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
           查看課程方案
         </HeroCTA>
       </div>
+      <div className="mt-6 text-sm text-white/70">
+  <Link
+    href="/road-driving-course"
+    className="underline underline-offset-4 hover:text-white"
+  >
+    了解道路駕駛課程是什麼 →
+  </Link>
+</div>
     </div>
   </div>
 </section>

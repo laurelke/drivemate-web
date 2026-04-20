@@ -1,9 +1,9 @@
 import RoadDrivingClient from './RoadDrivingClient'
 
 export const metadata = {
-  title: '道路駕駛實戰課程｜新手、缺乏道路駕駛經驗，安心上路訓練',
+  title: '道路駕駛課程介紹｜新手、缺乏道路駕駛經驗，安心上路訓練',
   description:
-    'DriveMate 道路駕駛實戰課程，專為新手與不敢上路的駕駛設計，一對一教練陪同，從實際路況評估、操作矯正到穩定上路，協助你建立真正的駕駛信心。',
+    'DriveMate 道路駕駛課程，專為新手與不敢上路的駕駛設計，一對一教練陪同，從實際路況評估、操作矯正到穩定上路，協助你建立真正的駕駛信心。',
   alternates: {
     canonical: 'https://drivemate-tw.com/courses/road-driving',
   },
@@ -19,7 +19,7 @@ export default function Page() {
       "@context": "https://schema.org",
       "@type": "Course",
       "@id": "https://drivemate-tw.com/courses/road-driving#course",
-      "name": "道路駕駛實戰課程",
+      "name": "道路駕駛課程",
       "description": "專為新手與缺乏實際道路經驗的駕駛設計，一對一教練陪同，從評估、矯正到穩定上路。",
       "provider": {
         "@type": "Organization",
