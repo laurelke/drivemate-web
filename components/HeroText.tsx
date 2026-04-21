@@ -20,7 +20,7 @@ export default function HeroText() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        從新手到進階，安全建立駕駛信心<br />
+        從道路駕駛到進階課程，安全建立駕駛信心<br />
         全台到府服務｜一對一道路駕駛課程
       </motion.p>
     </>

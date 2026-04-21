@@ -81,7 +81,7 @@ export default function HomePage() {
   const courses = [
     {
       key: 'beginner',
-      title: '新手上路',
+      title: '道路駕駛課程',
       badge: '最受歡迎',
       summary: '適合剛考到駕照、缺乏實際道路經驗者',
       duration: '單堂 180 分鐘',
@@ -94,7 +94,7 @@ export default function HomePage() {
     },
     {
       key: 'advanced',
-      title: '運動駕駛',
+      title: '運動駕駛課程',
       badge: '技術提升',
       summary: '適合已有駕駛經驗、想提升操控技巧者',
       duration: '單堂 180 分鐘',
@@ -102,7 +102,7 @@ export default function HomePage() {
     },
     {
       key: 'track',
-      title: '賽道駕駛',
+      title: '賽道駕駛課程',
       badge: '進階體驗',
       summary: '適合熱愛操控與極限體驗的學員',
       duration: '單節 30 分鐘',
@@ -162,7 +162,7 @@ export default function HomePage() {
             <li>14:00 – 17:00</li>
             <li>19:00 – 22:00</li>
           </ul>
-          <p>單次課程為 3 小時 (小資專案、賽道駕駛除外)</p>
+          <p>單堂課程為 3 小時 (小資專案、賽道駕駛除外)</p>
           <p>教練將依學員狀況設定 2–3 個課綱，協助改善駕駛問題。</p>
         </div>
       ),
@@ -215,13 +215,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-12 text-center text-3xl font-bold">
             為什麼選擇<br />
-            DriveMate 駕駛訓練中心？
+            DriveMate駕駛訓練中心？
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              ['實際道路教學', '在真實市區道路、高速與複雜路況中進行駕駛訓練，從變換車道、路口判斷到臨場應變，學會每天實際用得到的安全駕駛技巧，而不只是考照而已。'],
-              ['專業駕駛教練一對一指導', '由經驗豐富的專業駕駛教練依照學員程度量身規劃課程，不論是新手上路、久未開車，或想加強特定路段，皆以循序漸進的方式，建立穩定且正確的駕駛觀念。'],
+              ['實際道路教學', '在真實市區道路、高速與複雜路況中進行道路駕駛訓練，從變換車道、路口判斷到臨場應變，學會每天實際用得到的安全駕駛技巧。'],
+              ['專業駕駛教練一對一指導', '由經驗豐富的專業駕駛教練團隊依照學員程度量身規劃課程，不論是新手上路、久未開車，或想加強特定路段，皆以循序漸進的方式，建立穩定且正確的駕駛觀念。'],
               ['安心陪駕，克服上路恐懼', '針對容易緊張、害怕上路的學員，透過陪駕訓練與實戰引導，強化路況判斷與心理穩定度，讓你從「不敢開」到「敢開、會開、開得安心」。'],
             ].map(([t, d]) => (
               <div key={t} className="
@@ -254,7 +254,7 @@ export default function HomePage() {
   <div className="mx-auto max-w-6xl px-6">
     <h2 className="mb-12 text-center text-3xl font-bold">
       駕駛訓練課程介紹<br />
-      （新手・運動・賽道）
+      （道路駕駛・運動駕駛・賽道駕駛）
     </h2>
 
     <p className="mb-6 text-center text-sm text-gray-400 md:hidden animate-bounce">
@@ -459,7 +459,7 @@ export default function HomePage() {
   {/* 背景圖片 */}
   <Image
     src="/cta-bg.jpg"
-    alt="DriveMate 駕駛訓練"
+    alt="DriveMate駕駛訓練課程"
     fill
     priority={false}
     sizes="100vw"
@@ -476,7 +476,7 @@ export default function HomePage() {
     </h2>
 
     <p className="mx-auto mb-10 max-w-2xl text-white/85">
-      立即預約 DriveMate 駕駛訓練課程，由專業教練陪同，
+      立即預約 DriveMate駕駛訓練課程，由專業教練陪同，
       安心累積實際駕駛經驗。
     </p>
 

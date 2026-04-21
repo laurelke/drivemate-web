@@ -174,8 +174,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': 'https://drivemate-tw.com/#localbusiness',
-    name: 'DriveMate 駕駛課程',
-    alternateName: 'DriveMate 駕駛訓練中心',
+    name: 'DriveMate駕駛課程',
+    alternateName: 'DriveMate駕駛訓練中心',
     image: 'https://drivemate-tw.com/images/drivemate-logo.png',
     url: 'https://drivemate-tw.com/',
     parentOrganization: {
