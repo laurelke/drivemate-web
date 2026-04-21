@@ -1,248 +1,449 @@
 'use client'
 
 import Image from 'next/image'
-import { HeroCTA } from '@/components/ui/HeroCTA'
-import BottomCTA from '@/components/BottomCTA'
 import Link from 'next/link'
+import BottomCTA from '@/components/BottomCTA'
+
+const pricingPlans = [
+  {
+    name: '小資專案',
+    subtitle: '基礎上路實戰',
+    price: 'NT$3,000',
+    description: '適合剛拿到駕照、想先建立基本道路駕駛能力的新手。',
+    items: [
+      '教練車實際上路，免自備車輛',
+      '一堂課 2 小時',
+      '適合考到駕照但還不敢自己開車',
+      '內容包含基礎車輛控制、停車、路口基本判斷、市區道路行駛',
+      '不含高快速道路與山路',
+      '上課地點為台中地區指定路段',
+      '接送地點為台中捷運北屯總站',
+    ],
+    featured: false,
+  },
+  {
+    name: '駕駛能力評估＋關鍵矯正',
+    subtitle: '入門｜快速診斷型',
+    price: 'NT$4,990',
+    description: '適合已有駕照、會開但不穩，想先找出核心問題的人。',
+    items: [
+      '使用自家車，可加購教練車',
+      '一對一教練陪同上路',
+      '駕駛習慣與路況判斷評估',
+      '即時矯正關鍵錯誤操作',
+      '提供個人化練習方向',
+      '全台到府服務',
+      '可補差價升級其他成果導向方案',
+    ],
+    featured: false,
+  },
+  {
+    name: '14 天獨立上路成果計畫',
+    subtitle: '進階｜成果導向',
+    price: 'NT$16,990',
+    description: '適合想在短時間內建立獨立、安全上路能力的學員。',
+    items: [
+      '使用自家車，可加購教練車',
+      '系統化道路駕駛訓練',
+      '14 天循序練習節奏，共 4 堂課',
+      '多元實際道路情境演練',
+      '明確成果檢核與教練回饋',
+      '全台到府服務',
+      '可補差價升級 21 天通勤駕駛穩定方案',
+    ],
+    featured: true,
+  },
+  {
+    name: '21 天通勤駕駛穩定方案',
+    subtitle: '高階｜生活整合型',
+    price: 'NT$35,000',
+    description: '適合需要面對日常通勤、尖峰車流與複雜路況的人。',
+    items: [
+      '使用自家車，可加購教練車',
+      '以各類路型與實際路線為訓練核心',
+      '21 天密集練習步調，共 8 堂課',
+      '尖峰與高流量路況應對',
+      '建立長期穩定駕駛習慣',
+      '全台到府服務',
+    ],
+    featured: false,
+  },
+]
+
+const suitableFor = [
+  '剛拿到駕照，還不敢獨自開車上路',
+  '長時間沒有開車，駕駛感覺明顯變生疏',
+  '會基本操作，但在市區、路口或停車時容易慌張',
+  '想練通勤路線、接送路線或固定生活動線',
+]
+
+const faqs = [
+  {
+    q: '道路駕駛課程是什麼？',
+    a: '道路駕駛課程是在真實道路環境中，由教練一對一陪同進行的實戰駕駛訓練。和只在場地內練習不同，重點是幫助學員建立真正能上路的判斷、操作與信心。',
+  },
+  {
+    q: '沒有駕駛經驗也可以報名嗎？',
+    a: '可以。若你剛拿到駕照、缺乏實際道路經驗，教練會依你的程度安排內容，從基礎操作、道路判斷到實際上路循序建立能力。',
+  },
+  {
+    q: '已經有駕照但很久沒開車，適合這門課嗎？',
+    a: '非常適合。很多學員的問題不是不會開，而是久未駕駛後缺乏信心。本課程會協助你重新建立對車輛、路況與自身判斷的掌握。',
+  },
+  {
+    q: '道路駕駛課程費用怎麼算？',
+    a: '費用會依訓練堂數而不同。您可以先從單堂或評估方案開始確保本中心的教練教學風格符合您的期待，再依狀況升級為成果導向課程。',
+  },
+  {
+    q: '課程會練到哪些內容？',
+    a: '常見內容包含基礎車輛控制、市區道路、路口判斷、車道變換、停車技巧，以及實際生活中各類型路線。',
+  },
+  {
+    q: '一定要自備車輛嗎？',
+    a: '不一定。小資方案可直接使用教練車，客製化課程需另外加購教練車，若想熟悉自己的車輛，也可使用自家車上課。',
+  },
+]
+
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  light = false,
+}: {
+  eyebrow?: string
+  title: string
+  description?: string
+  light?: boolean
+}) {
+  return (
+    <div className="mx-auto max-w-3xl text-center">
+      {eyebrow ? (
+        <p
+          className={`mb-3 text-xs font-semibold uppercase tracking-[0.24em] ${
+            light ? 'text-white/60' : 'text-neutral-400'
+          }`}
+        >
+          {eyebrow}
+        </p>
+      ) : null}
+
+      <h2
+        className={`text-3xl font-bold leading-tight md:text-4xl ${
+          light ? 'text-white' : 'text-neutral-900'
+        }`}
+      >
+        {title}
+      </h2>
+
+      {description ? (
+        <p
+          className={`mt-5 text-lg leading-8 ${
+            light ? 'text-white/75' : 'text-neutral-600'
+          }`}
+        >
+          {description}
+        </p>
+      ) : null}
+    </div>
+  )
+}
 
 export default function RoadDrivingClient() {
   return (
     <main className="min-h-screen bg-neutral-50 text-neutral-800">
-      {/* ================= Hero（與首頁 100% 對齊） ================= */}
-    <section className="relative h-[50vh] md:h-[72vh] w-full overflow-hidden">
-  <Image
-    src="/images/courses/road-driving-hero.jpg"
-    alt="道路駕駛課程"
-    fill
-    priority
-    sizes="(max-width: 768px) 100vw, 1920px"
-className="object-cover md:object-cover object-center md:[object-position:50%_30%]"
-  />
+      <section className="relative h-[62vh] w-full overflow-hidden md:h-[84vh]">
+        <Image
+          src="/images/courses/road-driving-hero.jpg"
+          alt="道路駕駛課程實戰訓練，一對一教練陪同上路"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 1920px"
+          className="object-cover object-center md:[object-position:50%_30%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
 
-  {/* 遮罩 */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
+        <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
+          <div className="max-w-3xl text-white">
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.24em] text-white/75">
+              Road Driving Course
+            </p>
 
-  {/* 文字內容（完全對齊首頁） */}
-  <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
-    <div className="max-w-xl text-white">
-  {/* ⭐ 新增小標題 */}
-  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/60">
-    Road Driving Course
-  </p>
+            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
+              道路駕駛課程
+            </h1>
 
-  <h1 className="text-4xl font-bold md:text-5xl leading-tight">
-    道路駕駛課程
-  </h1>
-
-      <p className="mt-6 text-lg text-neutral-200">
-        道路駕駛課程專為新手與不敢上路者設計，一對一教練陪同，從市區道路到停車實戰訓練。
-      </p>
-
-      <div className="mt-10">
-        {/* ✅ 改用共用 HeroCTA */}
-        <HeroCTA href="#pricing">
-          查看課程方案
-        </HeroCTA>
-      </div>
-      <div className="mt-6 text-sm text-white/70">
-  <Link
-    href="/road-driving-course"
-    className="underline underline-offset-4 hover:text-white"
-  >
-    進一步了解道路駕駛課程 →
-  </Link>
-</div>
-    </div>
-  </div>
-</section>
-
-      {/* ================= 為什麼需要道路駕駛訓練 ================= */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="mb-12 text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-neutral-400">
-          Why people struggle
-          </p>
-
-          <h2 className="text-3xl font-bold md:text-4xl">
-          為什麼很多人<br />
-          「有駕照，卻不敢上路」？
-          </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
+              DriveMate道路駕駛課程專為剛拿駕照、久未開車、缺乏道路駕駛經驗與不敢獨立上路者設計，
+              透過一對一教練陪同與真實路況訓練，幫助你建立安全、穩定的駕駛能力。
+            </p>
+          </div>
         </div>
-        <div className="grid gap-8 md:grid-cols-3">
-          {[
-            {
-              title: '缺乏實際道路駕駛經驗',
-              desc: '多數人考照通過後發現實際道路狀況與想像中差距極大，導致一上路就緊張。',
-            },
-            {
-              title: '錯誤習慣未被糾正',
-              desc: '一個良好的駕駛狀態是由許多正確的駕駛習慣去築構成型，一但駕駛人在方向盤、煞車、路口判斷出現小錯誤，會逐漸累積成壓力。',
-            },
-            {
-              title: '心理壓力大於技術問題',
-              desc: '很多駕駛人有時候不是不會開，而是因為種種因素進而導致不敢開，每個人受影響的因素不盡相同。',
-            },
-          ].map((item) => (
-            <div key={item.title} className="rounded-2xl bg-white p-7 md:p-6 shadow text-center">
-              <h3 className="mb-2 text-xl font-semibold">{item.title}</h3>
-              <p className="mx-auto max-w-[16rem] text-neutral-600">{item.desc}</p>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <SectionHeading
+          eyebrow="Who is this for"
+          title="道路駕駛課程適合哪些人？"
+          description="如果你已經有駕照，卻仍不敢上路，或是一遇到車流、路口、停車就容易緊張，那麼道路駕駛課程會比單純重複場地練習更有效。"
+        />
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {suitableFor.map((item) => (
+            <div
+              key={item}
+              className="group flex min-h-[130px] items-center justify-center rounded-3xl bg-white p-8 text-center shadow-sm ring-1 ring-neutral-200 transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-neutral-50 hover:shadow-lg hover:ring-neutral-300"
+            >
+              <p className="text-base leading-8 text-neutral-700 transition-colors duration-300 group-hover:text-neutral-900 md:text-lg">
+                {item}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Pricing */}
-<section id="pricing" className="bg-white">
-  <div className="mx-auto max-w-6xl px-6 py-16">
-    <div className="mb-12 text-center">
-  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-neutral-400">
-    Pricing
-  </p>
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <SectionHeading
+            eyebrow="Why people get stuck"
+            title="為什麼很多人有駕照，卻不敢上路？"
+            description="多數人的問題不是完全不會開車，而是缺少在實際道路駕駛中被正確引導與修正的機會。"
+          />
 
-  <h2 className="text-3xl font-bold md:text-4xl">
-    道路駕駛課程方案與費用
-  </h2>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                title: '缺乏實際道路駕駛經驗',
+                desc: '多數人考照通過後發現實際道路狀況與想像中差距極大，導致一上路就緊張。',
+              },
+              {
+                title: '錯誤習慣沒有被即時修正',
+                desc: '一個良好的駕駛狀態是由許多正確的駕駛習慣去築構成型，一但駕駛人在方向盤、煞車、路口判斷出現小錯誤，會逐漸累積成壓力。',
+              },
+              {
+                title: '心理壓力大於技術問題',
+                desc: '很多駕駛人有時候不是不會開，而是因為種種因素進而導致不敢開，每個人受影響的因素不盡相同。',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-3xl bg-neutral-50 p-8 text-center shadow-sm ring-1 ring-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              >
+                <h3 className="text-xl font-semibold text-neutral-900">
+                  {item.title}
+                </h3>
+                <p className="mt-4 leading-7 text-neutral-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-  <p className="mx-auto mt-4 max-w-3xl text-neutral-600">
-    包含「小資專案」奠定基礎培訓，以及成果導向型的客製化一對一道路駕駛訓練方案。
-  </p>
-</div>
-    <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-2">
-      <div className="rounded-2xl border bg-white p-6 shadow">
-        <h3 className="mb-1 text-xl font-semibold">
-          小資專案
-        </h3>
-        <p className="mb-4 text-sm text-neutral-500">
-          基礎上路實戰
-        </p>
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-none">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-neutral-400">
+                Course content
+              </p>
+              <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">
+                道路駕駛課程內容有哪些？
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-neutral-600">
+                課程會依學員狀況客製安排，會圍繞以下幾個核心能力展開，目的是讓你從「不知道怎麼開」走到「能穩定行駛」。
+              </p>
+            </div>
 
-        <p className="mb-6 text-3xl font-bold text-neutral-800">
-          NT$3,000
-        </p>
+            <div className="mt-10 space-y-6">
+              {[
+                {
+                  title: '基礎車輛控制與視線建立',
+                  desc: '包含坐姿、方向盤操作、油門與煞車控制、視線與後照鏡使用習慣。',
+                },
+                {
+                  title: '市區道路與路口判斷',
+                  desc: '練習常見市區路況、轉彎、變換車道、路口判斷與車流互動。',
+                },
+                {
+                  title: '停車與倒車技巧',
+                  desc: '依實際需求安排路邊停車、倒車入庫與停車場進出。',
+                },
+                {
+                  title: '客製化路線實戰',
+                  desc: '可依需求安排市區道路、高快速公路、山路的實際練習。',
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                >
+                  <h3 className="text-xl font-semibold text-neutral-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 leading-7 text-neutral-600">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <ul className="mb-8 space-y-2 text-sm text-neutral-600">
-          <li>• 教練車實際上路(免自備車輛)</li>
-          <li>• 一堂課(2 小時)</li>
-          <li>• 適合考到駕照但不敢自己開</li>
-          <li>• 課程內容：基礎車輛控制、停車、路口基本判斷、一般市區道路行駛(不含高快速道路、山路)</li>
-          <li>• 上課地點：台中地區指定路段練習</li>
-          <li>• 接送地點：台中捷運北屯總站</li>
-        </ul>
-        <a>
-        </a>
-      </div>
-      {/* A */}
-      <div className="rounded-2xl border bg-white p-6 shadow">
-        <h3 className="mb-1 text-xl font-semibold">
-          駕駛能力評估＋關鍵矯正
-        </h3>
-        <p className="mb-4 text-sm text-neutral-500">
-          入門｜快速診斷型
-        </p>
+          <aside className="h-fit rounded-[2rem] bg-neutral-900 p-8 text-white shadow-xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/45">
+              Summary
+            </p>
+            <h3 className="text-2xl font-bold">本頁重點整理</h3>
 
-        <p className="mb-6 text-3xl font-bold text-neutral-800">
-          NT$4,990
-        </p>
+            <ul className="mt-6 space-y-4 text-sm leading-7 text-white/80">
+              <li>• 道路駕駛課程重點在真實道路實戰，而不是只做場地練習。</li>
+              <li>• 適合新手、久未開車、會開但不敢上路的人。</li>
+              <li>• 常見內容包含市區道路、路口判斷、停車與客製化路線。</li>
+              <li>• 可先從單堂體驗或評估方案開始，再依需求升級。</li>
+            </ul>
 
-        <ul className="mb-8 space-y-2 text-sm text-neutral-600">
-          <li>
-  🚗 使用自家車｜
-  <Link
-    href="https://drivemate-tw.com/courses/road-driving/instructor-car"
-    className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
-  >
-    加購教練車
-  </Link>
-</li>
-          <li>• 一對一教練陪同上路</li>
-          <li>• 駕駛習慣與路況判斷評估</li>
-          <li>• 即時矯正關鍵錯誤操作</li>
-          <li>• 個人化練習建議方向</li>
-          <li>• 📍全台到府服務</li>
-          <li>• 可補差價升級 14 天獨立上路成果計畫/21 天通勤駕駛穩定方案</li>
-        </ul>
-        <a>
-        </a>
-      </div>
+            <div className="mt-8 rounded-2xl bg-white/10 p-5 ring-1 ring-white/10">
+              <p className="text-sm leading-7 text-white/80">
+                想知道你現在卡住的是技術、判斷，還是心理壓力？
+                可以先從評估型方案開始，教練會依你的實際狀況給出最適合的訓練方向。
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
 
-      {/* B - 主推 */}
-      <div className="relative rounded-2xl border-2 border-orange-500 bg-white p-6 shadow-lg">
-        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-4 py-1 text-xs font-semibold text-white">
-          最多人選擇
-        </span>
+      <section id="pricing" className="bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+          <SectionHeading
+            eyebrow="Plans & pricing"
+            title="道路駕駛課程方案與費用"
+            description="道路駕駛課程費用會依訓練深度、堂數與是否客製化而不同。你可以先從基礎方案開始，再依實際狀況升級為成果導向或長期穩定訓練方案。"
+          />
 
-        <h3 className="mb-1 text-xl font-semibold">
-          14 天獨立上路成果計畫
-        </h3>
-        <p className="mb-4 text-sm text-orange-600">
-          進階｜成果導向
-        </p>
+          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
+            {pricingPlans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative rounded-[2rem] p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                  plan.featured
+                    ? 'border-2 border-orange-500 bg-white ring-1 ring-orange-200'
+                    : 'bg-white ring-1 ring-neutral-200'
+                }`}
+              >
+                {plan.featured ? (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-4 py-1 text-xs font-semibold text-white shadow-sm">
+                    最多人選擇
+                  </span>
+                ) : null}
 
-        <p className="mb-6 text-3xl font-bold text-neutral-800">
-          NT$16,990
-        </p>
+                <p
+                  className={`text-sm font-medium ${
+                    plan.featured ? 'text-orange-600' : 'text-neutral-500'
+                  }`}
+                >
+                  {plan.subtitle}
+                </p>
 
-        <ul className="mb-8 space-y-2 text-sm text-neutral-600">
-          <li>
-  🚗 使用自家車｜
-  <Link
-    href="https://drivemate-tw.com/courses/road-driving/instructor-car"
-    className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
-  >
-    加購教練車
-  </Link>
-</li>
-          <li>• 系統化道路駕駛訓練</li>
-          <li>• 14 天循序練習節奏，共 4 堂課程</li>
-          <li>• 多元實際道路情境演練</li>
-          <li>• 明確成果檢核與回饋</li>
-          <li>• 📍全台到府服務</li>
-          <li>• 可補差價升級 21 天通勤駕駛穩定方案</li>
-        </ul>
+                <h3 className="mt-2 text-2xl font-bold text-neutral-900">
+                  {plan.name}
+                </h3>
 
-        <a>
-        </a>
-      </div>
+                <p className="mt-4 text-3xl font-bold text-neutral-900">
+                  {plan.price}
+                </p>
 
-      {/* C */}
-      <div className="rounded-2xl border bg-white p-6 shadow">
-        <h3 className="mb-1 text-xl font-semibold">
-          21 天通勤駕駛穩定方案
-        </h3>
-        <p className="mb-4 text-sm text-neutral-500">
-          高階｜生活整合型
-        </p>
+                <p className="mt-4 leading-7 text-neutral-600">
+                  {plan.description}
+                </p>
 
-        <p className="mb-6 text-3xl font-bold text-neutral-800">
-          NT$35,000
-        </p>
+                <ul className="mt-6 space-y-3 text-sm leading-7 text-neutral-700">
+                  {plan.items.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-[9px] h-2 w-2 shrink-0 rounded-full bg-orange-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-        <ul className="mb-8 space-y-2 text-sm text-neutral-600">
-          <li>
-  🚗 使用自家車｜
-  <Link
-    href="https://drivemate-tw.com/courses/road-driving/instructor-car"
-    className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
-  >
-    加購教練車
-  </Link>
-</li>
-          <li>• 以應對所有路型/路線為訓練核心</li>
-          <li>• 21 天密集練習步調，共 8 堂課程</li>
-          <li>• 尖峰與高流量路況應對</li>
-          <li>• 建立長期穩定駕駛習慣</li>
-          <li>• 📍全台到府服務</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+                {plan.name !== '小資專案' ? (
+                  <div className="mt-6 text-sm text-neutral-600">
+                    需要教練車？
+                    <Link
+                      href="/courses/road-driving/instructor-car"
+                      className="ml-2 text-orange-600 underline underline-offset-4 transition hover:text-orange-700"
+                    >
+                      查看教練車加購方案
+                    </Link>
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-           {/* ================= CTA ================= */}
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="rounded-[2rem] bg-neutral-900 px-8 py-10 text-white shadow-xl md:px-12 md:py-12">
+          <SectionHeading
+            eyebrow="How to choose"
+            title="如何選擇適合自己的道路駕駛課程？"
+            description=""
+            light
+          />
+
+          <div className="mx-auto mt-8 max-w-4xl">
+            <ul className="space-y-4 text-base leading-8 text-white/80">
+              <li>• 如果你幾乎沒有道路駕駛經驗，建議先從基礎方案或評估課開始。</li>
+              <li>• 如果你會開但常在特定情境失誤，評估＋矯正方案通常最有效率。</li>
+              <li>• 如果你的目標是短時間內吸收大量駕駛技巧、知識，並能積極自主練習，可選擇 14 天成果計畫。</li>
+              <li>• 如果你需要更全面且完整的課程學習曲線，並希望能即時調整駕駛狀態與問題，21 天穩定方案會更適合。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-20 md:py-24">
+          <SectionHeading
+            eyebrow="FAQ"
+            title="道路駕駛課程常見問題"
+            description="以下整理學員最常問的問題，包含適合對象、課程內容、費用與使用車輛方式。"
+          />
+
+          <div className="mt-12 space-y-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-3xl bg-neutral-50 p-6 shadow-sm ring-1 ring-neutral-200 transition-all duration-300 hover:bg-white hover:shadow-md"
+              >
+                <summary className="cursor-pointer list-none pr-8 text-lg font-semibold text-neutral-900 marker:hidden">
+                  {faq.q}
+                </summary>
+                <p className="mt-4 leading-8 text-neutral-600">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="rounded-[2rem] bg-orange-50 p-8 shadow-sm ring-1 ring-orange-100 md:p-12">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-orange-500">
+            Final takeaway
+          </p>
+          <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">
+            DriveMate道路駕駛課程的核心目標與其他駕駛教學品牌有什麼不同？
+          </h2>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-neutral-700">
+            DriveMate駕駛訓練中心是來自賽道教練團所組成的教學團隊，比起速成班讓您快速的上路，DriveMate的課程內容更著重的是駕駛技巧的長期培養，因為我們相信更好更穩定的駕駛基礎才能幫助您更好的應對以及反應各式各樣的路面狀況。<br />
+            這樣做有什麼好處？車輛可以開的更穩定、良好的基礎也更能提升您在駕駛上的信心，因為你會知道自己的開車技巧有一定的水準。<br />
+            為什麼我們的課程最長要設計4-8堂課程呢？因為我們看重的是長期的駕駛習慣以及技巧的培養。
+            汽車駕駛技巧的熟成會需要一點時間，短則一個月長則半年且每個人的學習能力有高有低，學員也不是記憶吐司講給你聽你就馬上就會，且多數人腦袋聽得懂身體卻記不住，而且駕駛技巧在成形的過程難免會帶一點自己的想法或者壞習慣進去，這部分也需要定期的去做檢核且修正自身因為懶惰而養成的車輛操控習慣。<br />
+            速成班真的有速成班的好 便宜且快速，但上完就沒了，更細緻的長期技巧養成陪跑才是我們的運營方針以及教學宗旨。
+          </p>
+        </div>
+      </section>
+
       <BottomCTA
         title="想知道你卡住的是技術，還是心理？"
         description="多數學員不是不會開，而是缺少正確評估與引導。讓教練依你的實際狀況，幫你找出最適合的道路訓練方式。"
-        buttonText="立即預約駕駛評估"
+        buttonText="立即預約道路駕駛課程"
         bgImage="/images/cta/road-driving.jpg"
       />
     </main>
