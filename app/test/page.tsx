@@ -72,7 +72,7 @@ const pricingPlans = [
 ]
 
 const suitableFor = [
-  '剛拿到駕照，但還不敢獨自開車上路',
+  '剛拿到駕照，還不敢獨自開車上路',
   '長時間沒有開車，駕駛感覺明顯變生疏',
   '會基本操作，但在市區、路口或停車時容易慌張',
   '想練通勤路線、接送路線或固定生活動線',
@@ -93,15 +93,15 @@ const faqs = [
   },
   {
     q: '道路駕駛課程費用怎麼算？',
-    a: '費用會依訓練堂數、目標與是否客製化而不同。你可以先從單堂或評估方案開始，再依狀況升級為成果導向課程。',
+    a: '費用會依訓練堂數而不同。您可以先從單堂或評估方案開始確保本中心的教練教學風格符合您的期待，再依狀況升級為成果導向課程。',
   },
   {
     q: '課程會練到哪些內容？',
-    a: '常見內容包含基礎車輛控制、市區道路、路口判斷、車道變換、停車技巧，以及實際生活中常用的通勤路線。',
+    a: '常見內容包含基礎車輛控制、市區道路、路口判斷、車道變換、停車技巧，以及實際生活中各類型路線。',
   },
   {
     q: '一定要自備車輛嗎？',
-    a: '不一定。部分方案可直接使用教練車，若你想熟悉自己的車輛，也可使用自家車上課。',
+    a: '不一定。小資方案可直接使用教練車，客製化課程需另外加購教練車，若想熟悉自己的車輛，也可使用自家車上課。',
   },
 ]
 
@@ -170,20 +170,13 @@ export default function RoadDrivingClient() {
             </p>
 
             <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-              給新手與不敢上路者的實戰訓練
-              <br />
-              給新手與不敢上路者的實戰訓練
+              道路駕駛課程
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
               DriveMate 道路駕駛課程專為剛拿駕照、久未開車、缺乏道路駕駛經驗與不敢獨立上路者設計，
               透過一對一教練陪同與真實路況訓練，幫助你建立安全、穩定且可落地的駕駛能力。
             </p>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <HeroCTA href="#pricing">查看課程方案</HeroCTA>
-              <HeroCTA href="#faq">先看常見問題</HeroCTA>
-            </div>
           </div>
         </div>
       </section>
@@ -192,7 +185,7 @@ export default function RoadDrivingClient() {
         <SectionHeading
           eyebrow="Who is this for"
           title="道路駕駛課程適合哪些人？"
-          description="如果你已經有駕照，卻仍不敢上路，或是一遇到車流、路口、停車就容易緊張，那麼道路駕駛課程通常會比單純重複場地練習更有效。這類課程的目標不是讓你更會考試，而是讓你更能應付真實道路。"
+          description="如果你已經有駕照，卻仍不敢上路，或是一遇到車流、路口、停車就容易緊張，那麼道路駕駛課程會比單純重複場地練習更有效。"
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -214,22 +207,22 @@ export default function RoadDrivingClient() {
           <SectionHeading
             eyebrow="Why people get stuck"
             title="為什麼很多人有駕照，卻不敢上路？"
-            description="多數人的問題不是完全不會開車，而是缺少在真實道路中被正確引導與修正的機會。"
+            description="多數人的問題不是完全不會開車，而是缺少在實際道路駕駛中被正確引導與修正的機會。"
           />
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               {
-                title: '缺乏真實路況經驗',
-                desc: '考照訓練與實際道路差距很大，一進入車流、路口與停車場就容易緊張。',
+                title: '缺乏實際道路駕駛經驗',
+                desc: '多數人考照通過後發現實際道路狀況與想像中差距極大，導致一上路就緊張。',
               },
               {
                 title: '錯誤習慣沒有被即時修正',
-                desc: '方向盤控制、煞車時機、視線配置與車道判斷，只要有小錯誤就會讓壓力持續累積。',
+                desc: '一個良好的駕駛狀態是由許多正確的駕駛習慣去築構成型，一但駕駛人在方向盤、煞車、路口判斷出現小錯誤，會逐漸累積成壓力。',
               },
               {
                 title: '心理壓力大於技術問題',
-                desc: '很多學員其實會開，但因為缺乏信心與安全感，始終不敢獨立上路。',
+                desc: '很多駕駛人有時候不是不會開，而是因為種種因素進而導致不敢開，每個人受影響的因素不盡相同。',
               },
             ].map((item) => (
               <div
@@ -257,7 +250,7 @@ export default function RoadDrivingClient() {
                 道路駕駛課程內容有哪些？
               </h2>
               <p className="mt-5 text-lg leading-8 text-neutral-600">
-                課程會依學員狀況客製安排，但大多會圍繞以下幾個核心能力展開，目的是讓你從「知道怎麼開」走到「能穩定上路」。
+                課程會依學員狀況客製安排，會圍繞以下幾個核心能力展開，目的是讓你從「不知道怎麼開」走到「能穩定行駛」。
               </p>
             </div>
 
@@ -276,8 +269,8 @@ export default function RoadDrivingClient() {
                   desc: '依實際需求安排路邊停車、倒車入庫與停車場進出。',
                 },
                 {
-                  title: '生活化路線實戰',
-                  desc: '可依需求安排通勤、接送、特定生活圈或常用路線的實際練習。',
+                  title: '客製化路線實戰',
+                  desc: '可依需求安排市區道路、高快速公路、山路的實際練習。',
                 },
               ].map((item) => (
                 <div
@@ -297,7 +290,7 @@ export default function RoadDrivingClient() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/45">
               Summary
             </p>
-            <h3 className="text-2xl font-bold">這頁重點整理</h3>
+            <h3 className="text-2xl font-bold">本頁重點整理</h3>
 
             <ul className="mt-6 space-y-4 text-sm leading-7 text-white/80">
               <li>• 道路駕駛課程重點在真實道路實戰，而不是只做場地練習。</li>
@@ -397,10 +390,10 @@ export default function RoadDrivingClient() {
 
           <div className="mx-auto mt-8 max-w-4xl">
             <ul className="space-y-4 text-base leading-8 text-white/80">
-              <li>• 如果你幾乎沒有道路經驗，建議先從基礎方案或評估課開始。</li>
+              <li>• 如果你幾乎沒有道路駕駛經驗，建議先從基礎方案或評估課開始。</li>
               <li>• 如果你會開但常在特定情境失誤，評估＋矯正方案通常最有效率。</li>
-              <li>• 如果你的目標是短時間內獨立上路，可選擇 14 天成果計畫。</li>
-              <li>• 如果你需要面對固定通勤、尖峰車流或複雜生活動線，21 天穩定方案會更適合。</li>
+              <li>• 如果你的目標是短時間內吸收大量駕駛技巧、知識，並能積極自主練習，可選擇 14 天成果計畫。</li>
+              <li>• 如果你需要更全面且完整的課程學習曲線，並希望能即時調整駕駛狀態與問題，21 天穩定方案會更適合。</li>
             </ul>
           </div>
         </div>
@@ -436,11 +429,13 @@ export default function RoadDrivingClient() {
             Final takeaway
           </p>
           <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">
-            道路駕駛課程的核心目標，不只是把車開出去
+            DriveMate道路駕駛課程的核心目標與其他駕駛教學品牌有什麼不同？
           </h2>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-neutral-700">
-            真正重要的是，當你面對真實道路、車流與生活情境時，能不能維持穩定判斷與安全操作。
-            如果你想從「不敢上路」走到「可以自己上路」，道路駕駛課程會比單純反覆考照式練習更貼近真實需求。
+            DriveMate駕駛訓練中心是來自賽道教練團所組成的教學團隊，比起速成班讓您快速的上路，DriveMate的課程內容更著重的是駕駛技巧的長期培養，因為我們相信更好更穩定的駕駛基礎才能幫助您更好的應對以及反應各式各樣的路面狀況。<br />
+            這樣做有什麼好處？車輛可以開的更穩定、良好的基礎也更能提升您在駕駛上的信心，因為你會知道自己的開車技巧有一定的水準。<br />
+            為什麼我們的課程最長要設計4-8堂課程呢？因為我們看重的是長期的駕駛習慣以及技巧的培養。
+            汽車駕駛技巧的熟成會需要一點時間，短則一個月長則半年且每個人的學習能力有高有低，學員也不是記憶吐司講給你聽你就馬上就會，且多數人腦袋聽得懂身體卻記不住，而且駕駛技巧在成形的過程難免會帶一點自己的想法或者壞習慣進去，這部分也需要定期的去做檢核且修正自身因為懶惰而養成的車輛操控習慣。
           </p>
         </div>
       </section>
