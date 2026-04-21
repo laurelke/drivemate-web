@@ -422,23 +422,55 @@ export default function RoadDrivingClient() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <div className="rounded-[2rem] bg-orange-50 p-8 shadow-sm ring-1 ring-orange-100 md:p-12">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-orange-500">
-            Final takeaway
-          </p>
-          <h2 className="text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">
-            DriveMate道路駕駛課程的核心目標與其他駕駛教學品牌有什麼不同？
-          </h2>
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-neutral-700">
-            DriveMate駕駛訓練中心是來自賽道教練團所組成的教學團隊，比起速成班讓您快速的上路，DriveMate的課程內容更著重的是駕駛技巧的長期培養，因為我們相信更好更穩定的駕駛基礎才能幫助您更好的應對以及反應各式各樣的路面狀況。<br />
-            這樣做有什麼好處？車輛可以開的更穩定、良好的基礎也更能提升您在駕駛上的信心，因為你會知道自己的開車技巧有一定的水準。<br />
-            為什麼我們的課程最長要設計4-8堂課程呢？因為我們看重的是長期的駕駛習慣以及技巧的培養。
-            汽車駕駛技巧的熟成會需要一點時間，短則一個月長則半年且每個人的學習能力有高有低，學員也不是記憶吐司講給你聽你就馬上就會，且多數人腦袋聽得懂身體卻記不住，而且駕駛技巧在成形的過程難免會帶一點自己的想法或者壞習慣進去，這部分也需要定期的去做檢核且修正自身因為懶惰而養成的車輛操控習慣。<br />
-            速成班真的有速成班的好 便宜且快速，但上完就沒了，更細緻的長期技巧養成陪跑才是我們的運營方針以及教學宗旨。
-          </p>
-        </div>
-      </section>
+      <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+  <div className="rounded-[2rem] bg-orange-50 p-8 shadow-sm ring-1 ring-orange-100 md:p-14">
+    
+    {/* 小標 */}
+    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-orange-500">
+      Final takeaway
+    </p>
+
+    {/* 標題 */}
+    <h2 className="max-w-4xl text-3xl font-bold leading-tight text-neutral-900 md:text-4xl">
+      DriveMate道路駕駛課程的核心目標與其他駕駛教學品牌有什麼不同？
+    </h2>
+
+    {/* 內容（重點優化） */}
+    <div className="mt-8 space-y-6 text-lg leading-8 text-neutral-700">
+      
+      <p>
+        DriveMate駕駛訓練中心是來自賽道教練團所組成的教學團隊。
+        比起速成班讓您快速上路，我們更重視的是駕駛技巧的長期培養。
+        因為我們相信，穩定且扎實的駕駛基礎，才能幫助您在各種真實路況中做出正確判斷與反應。
+      </p>
+
+      <p>
+        這樣做的好處是什麼？當你的基礎穩定後，車輛自然會開得更順，
+        同時也能大幅提升駕駛時的信心。因為你知道自己的操作是有掌握的，
+        而不是憑感覺或運氣在開車。
+      </p>
+
+      <p>
+        為什麼課程會設計成4到8堂？因為駕駛技巧並不是短時間可以內化的能力。
+        有些人可能一個月就能建立基本穩定度，有些人則需要更長時間，
+        而且大多數人都是「聽得懂，但身體還不會」。
+      </p>
+
+      <p>
+        在學習過程中，也很容易帶入原本的壞習慣或錯誤操作，
+        這些都需要透過反覆練習與教練即時修正，才能真正建立正確的駕駛模式。
+      </p>
+
+      <p>
+        速成班的確有它的優點：便宜、快速、短時間見效。
+        但問題是結束後就沒有後續支撐。
+        而DriveMate更在意的是「長期穩定的駕駛能力」，
+        透過陪伴式訓練，讓你真正能夠在日常生活中安全上路。
+      </p>
+
+    </div>
+  </div>
+</section>
 
       <BottomCTA
         title="想知道你卡住的是技術，還是心理？"
