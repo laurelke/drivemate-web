@@ -71,16 +71,16 @@ className="object-cover md:object-cover object-center md:[object-position:50%_30
         <div className="grid gap-8 md:grid-cols-3">
           {[
             {
-              title: '缺乏真實路況經驗',
-              desc: '考照練習與實際道路差距極大，一上路就緊張。',
+              title: '缺乏實際道路駕駛經驗',
+              desc: '多數人考照通過後發現實際道路狀況與想像中差距極大，導致一上路就緊張。',
             },
             {
               title: '錯誤習慣未被糾正',
-              desc: '方向盤、煞車、路口判斷的小錯誤，會累積成壓力。',
+              desc: '一個良好的駕駛狀態是由許多正確的駕駛習慣去築構成型，一但駕駛人在方向盤、煞車、路口判斷出現小錯誤，會逐漸累積成壓力。',
             },
             {
               title: '心理壓力大於技術問題',
-              desc: '很多時候不是不會開，而是不敢開。',
+              desc: '很多駕駛人有時候不是不會開，而是因為種種因素進而導致不敢開，每個人受影響的因素不盡相同。',
             },
           ].map((item) => (
             <div key={item.title} className="rounded-2xl bg-white p-7 md:p-6 shadow text-center">
