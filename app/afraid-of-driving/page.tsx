@@ -1,16 +1,29 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
-  title: '不敢開車怎麼辦？給有駕照卻不敢上路者的完整建議',
+export const metadata: Metadata = {
+  title: '不敢開車怎麼辦？有駕照卻不敢上路的完整改善方法',
   description:
-    '有駕照卻不敢開車上路怎麼辦？整理常見原因、改善方法、適合的練習方式與常見問題，幫助你從害怕上路走向穩定駕駛。',
+    '有駕照卻不敢開車上路怎麼辦？整理不敢開車的常見原因、改善方法、適合的練習方式與常見問題，幫助你從害怕上路走向穩定駕駛。',
+  keywords: [
+    '不敢開車怎麼辦',
+    '有駕照不敢開車',
+    '不敢上路怎麼辦',
+    '新手開車很緊張',
+    '開車害怕怎麼辦',
+    '道路駕駛訓練',
+    '道路駕駛課程',
+    '駕照後不敢開車',
+    '一對一駕駛教學',
+    '台中道路駕駛課程',
+  ],
   alternates: {
     canonical: 'https://drivemate-tw.com/afraid-of-driving',
   },
   openGraph: {
-    title: '不敢開車怎麼辦？給有駕照卻不敢上路者的完整建議',
+    title: '不敢開車怎麼辦？有駕照卻不敢上路的完整改善方法',
     description:
-      '有駕照卻不敢開車上路怎麼辦？整理常見原因、改善方法、適合的練習方式與常見問題，幫助你從害怕上路走向穩定駕駛。',
+      '有駕照卻不敢開車上路怎麼辦？整理不敢開車的常見原因、改善方法、適合的練習方式與常見問題，幫助你從害怕上路走向穩定駕駛。',
     url: 'https://drivemate-tw.com/afraid-of-driving',
     siteName: 'DriveMate駕駛訓練中心',
     locale: 'zh_TW',
@@ -26,9 +39,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '不敢開車怎麼辦？給有駕照卻不敢上路者的完整建議',
+    title: '不敢開車怎麼辦？有駕照卻不敢上路的完整改善方法',
     description:
-      '有駕照卻不敢開車上路怎麼辦？整理常見原因、改善方法、適合的練習方式與常見問題，幫助你從害怕上路走向穩定駕駛。',
+      '整理不敢開車的常見原因、改善方法、適合的練習方式與常見問題，幫助你從害怕上路走向穩定駕駛。',
     images: ['https://drivemate-tw.com/images/courses/road-driving-hero.jpg'],
   },
 }
@@ -51,7 +64,7 @@ const reasons = [
 const methods = [
   {
     title: '先接受「害怕很正常」',
-    desc: '有駕照卻不敢上路並不罕見。對很多人來說，問題不是能力太差，而是缺乏從考照轉到真實道路的過渡訓練。',
+    desc: '有駕照卻不敢上路並不罕見。對很多人來說，問題不是能力太差，而是缺乏在實際道路行駛的過渡訓練。',
   },
   {
     title: '不要一開始就逼自己面對最難路況',
@@ -94,6 +107,14 @@ const faqs = [
   {
     q: '我適合上道路駕駛課程嗎？',
     a: '如果你有駕照、基本上知道怎麼開，但不敢獨立上路、對市區或停車感到緊張，通常就很適合透過道路駕駛訓練補足差距。',
+  },
+  {
+    q: '不敢開車怎麼辦最快？',
+    a: '最快的方法通常不是硬逼自己一次面對最難路況，而是先找出卡點，再透過有順序的練習慢慢建立穩定感。若有教練陪同，通常會比自己摸索更有效率。',
+  },
+  {
+    q: '新手開車很緊張怎麼辦？',
+    a: '新手開車很緊張很常見。建議先從簡單路段、低車流時段開始，優先建立視線、節奏與停車能力，再逐步增加難度。',
   },
 ]
 
@@ -149,9 +170,9 @@ export default function Page() {
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: '不敢開車怎麼辦？給有駕照卻不敢上路者的完整建議',
+    name: '不敢開車怎麼辦？有駕照卻不敢上路的完整改善方法',
     description:
-      '有駕照卻不敢開車上路怎麼辦？整理常見原因、改善方法、適合的練習方式與常見問題。',
+      '有駕照卻不敢開車上路怎麼辦？整理不敢開車的常見原因、改善方法、適合的練習方式與常見問題。',
     inLanguage: 'zh-TW',
     breadcrumb: {
       '@id': `${pageUrl}#breadcrumb`,
@@ -165,6 +186,10 @@ export default function Page() {
       '@id': 'https://drivemate-tw.com/#website',
       name: 'DriveMate駕駛訓練中心',
       url: 'https://drivemate-tw.com/',
+    },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: 'https://drivemate-tw.com/images/courses/road-driving-hero.jpg',
     },
   }
 
@@ -226,12 +251,12 @@ export default function Page() {
             <h1 className="mt-4 text-4xl font-bold leading-tight text-neutral-900 md:text-6xl">
               不敢開車怎麼辦？
               <br />
-              給有駕照卻不敢上路者的完整建議
+              給有駕照卻不敢上路者的完整改善方法
             </h1>
 
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-neutral-600 md:text-xl">
               如果你已經有駕照，卻仍然不敢獨自上路，你並不是少數。
-              很多人真正卡住的，不是完全不會開車，而是缺乏在真實道路中建立穩定感與信心的過程。
+              很多人真正卡住的，不是完全不會開車，而是缺乏在實際道路中建立穩定感與信心的過程。
             </p>
 
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
@@ -255,14 +280,14 @@ export default function Page() {
           <SectionHeading
             eyebrow="Quick answer"
             title="不敢開車，通常不是你不適合開車"
-            description="多數人害怕上路，不是因為完全沒有能力，而是還沒有建立真實道路中的判斷節奏。只要練習方式正確，很多人都能從緊張、逃避，慢慢走到能穩定上路。"
+            description="多數人害怕上路，不是因為完全沒有能力，而是還沒有建立實際道路中的行駛經驗。只要練習方式正確，很多人都能從緊張、逃避，慢慢走到能穩定上路。"
           />
 
           <div className="mx-auto mt-12 max-w-4xl rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-neutral-200 md:p-10">
             <p className="text-lg leading-8 text-neutral-700">
               如果你目前的狀況是「有駕照、知道基本操作、但一想到要開車就會緊張」，
               那麼最重要的不是逼自己硬撐，而是找出你真正卡住的地方：
-              是缺乏路況經驗、害怕犯錯、停車不穩，還是只要旁邊車多就會慌。
+              是缺乏路況經驗、害怕犯錯、停車不穩，還是只要旁邊車一多就會慌。
             </p>
           </div>
         </section>
@@ -272,7 +297,7 @@ export default function Page() {
             <SectionHeading
               eyebrow="Why this happens"
               title="為什麼很多人有駕照，卻還是不敢開車？"
-              description="考照和真實道路是兩回事。很多人的焦慮不是來自沒有駕照，而是來自對真實上路環境的不熟悉。"
+              description="考照和實際道路是兩回事。很多人的焦慮都是來自對真實道路環境的不熟悉。"
             />
 
             <div className="mt-12 grid gap-8 md:grid-cols-3">
@@ -325,7 +350,7 @@ export default function Page() {
                     你是不是也有這些狀況？
                   </h2>
                   <p className="mt-5 text-lg leading-8 text-neutral-600">
-                    如果你符合以下其中幾項，通常代表你需要的不是再背一次規則，而是更貼近真實道路的練習與引導。
+                    如果你符合以下其中幾項，通常代表你需要的不是再背一次規則，而是在真實道路上更多的練習與引導。
                   </p>
                 </div>
 
@@ -359,7 +384,7 @@ export default function Page() {
                 <div className="mt-8 rounded-2xl bg-white/10 p-5 ring-1 ring-white/10">
                   <p className="text-sm leading-7 text-white/80">
                     如果你卡住的不是「不會發動車子」，而是「不敢面對真實道路」，
-                    那你需要的通常不是重新考照，而是更貼近生活的道路駕駛訓練。
+                    那你需要的是更貼近生活的實際道路駕駛訓練。
                   </p>
                 </div>
               </aside>

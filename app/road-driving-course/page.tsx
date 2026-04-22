@@ -2,18 +2,30 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: '道路駕駛課程是什麼？新手上路、駕照不敢開完整說明',
+  title: '道路駕駛課程是什麼？新手上路、有駕照不敢開完整說明',
   description:
-    '整理道路駕駛課程是什麼、適合哪些人、會練哪些內容、如何選擇適合自己的訓練方式，幫助剛拿駕照、久未開車與不敢上路者建立穩定駕駛能力。',
+    '道路駕駛課程是專為剛拿駕照、久未開車、有駕照卻不敢上路者設計的一對一實戰駕駛訓練。整理道路駕駛課程是什麼、適合哪些人、會練哪些內容、費用與如何選擇方案。',
+  keywords: [
+    '道路駕駛課程',
+    '道路駕駛訓練',
+    '道路駕駛課程是什麼',
+    '新手上路課程',
+    '有駕照不敢開',
+    '不敢開車上路',
+    '道路駕駛推薦',
+    '道路駕駛費用',
+    '一對一駕駛教學',
+    '台中道路駕駛課程',
+  ],
   alternates: {
     canonical: 'https://drivemate-tw.com/road-driving-course',
   },
   openGraph: {
-    title: '道路駕駛課程是什麼？新手上路、駕照不敢開完整說明',
+    title: '道路駕駛課程是什麼？新手上路、有駕照不敢開完整說明',
     description:
-      '整理道路駕駛課程是什麼、適合哪些人、會練哪些內容、如何選擇適合自己的訓練方式，幫助剛拿駕照、久未開車與不敢上路者建立穩定駕駛能力。',
+      '道路駕駛課程是專為剛拿駕照、久未開車、有駕照卻不敢上路者設計的一對一實戰駕駛訓練。整理道路駕駛課程是什麼、適合哪些人、會練哪些內容、費用與如何選擇方案。',
     url: 'https://drivemate-tw.com/road-driving-course',
-    siteName: 'DriveMate道路駕駛課程',
+    siteName: 'DriveMate駕駛訓練中心',
     locale: 'zh_TW',
     type: 'article',
     images: [
@@ -29,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '道路駕駛課程是什麼？新手上路、有駕照不敢開完整說明',
     description:
-      '整理道路駕駛課程是什麼、適合哪些人、會練哪些內容、如何選擇適合自己的訓練方式。',
+      '整理道路駕駛課程是什麼、適合哪些人、會練哪些內容、費用與如何選擇適合自己的訓練方式。',
     images: ['https://drivemate-tw.com/images/courses/road-driving-hero.jpg'],
   },
 }
@@ -71,7 +83,7 @@ const courseContents = [
   },
   {
     title: '客製化路線實戰',
-    desc: '可依需求安排市區道路、高快速公路、山路，或通勤與接送等生活路線的實際練習。',
+    desc: '可依需求安排市區道路、高快速公路、山路，或通勤等生活路線的實際練習。',
   },
 ]
 
@@ -92,6 +104,10 @@ const faqs = [
     a: '特別適合剛拿駕照、久未開車、缺乏實際道路經驗，或有駕照卻不敢獨立上路的人。',
   },
   {
+    q: '有駕照但不敢開車怎麼辦？',
+    a: '多數情況不是完全不會開，而是缺乏在真實道路中建立穩定感的機會。透過一對一道路駕駛訓練，通常會比單純自己硬撐上路更有效，也更安全。',
+  },
+  {
     q: '道路駕駛課程會練哪些內容？',
     a: '常見內容包含基礎車輛控制、市區道路、路口判斷、車道變換、停車技巧，以及生活中的各類型路線。',
   },
@@ -102,6 +118,10 @@ const faqs = [
   {
     q: '已經有駕照但很久沒開車，適合這門課嗎？',
     a: '非常適合。很多學員的問題不是不會開，而是久未駕駛後缺乏信心。本課程會協助你重新建立對車輛、路況與自身判斷的掌握。',
+  },
+  {
+    q: '道路駕駛課程費用怎麼看？',
+    a: '道路駕駛課程費用通常會依訓練堂數、內容深度與是否客製化而不同。建議先了解自己的程度與目標，再選擇合適方案。',
   },
   {
     q: '一定要自備車輛嗎？',
@@ -161,9 +181,9 @@ export default function Page() {
     '@type': 'WebPage',
     '@id': `${pageUrl}#webpage`,
     url: pageUrl,
-    name: '道路駕駛課程是什麼？新手上路、駕照不敢開完整說明',
+    name: '道路駕駛課程是什麼？新手上路、有駕照不敢開完整說明',
     description:
-      '整理道路駕駛課程是什麼、適合哪些人、會練哪些內容、如何選擇適合自己的訓練方式，幫助剛拿駕照、久未開車與不敢上路者建立穩定駕駛能力。',
+      '道路駕駛課程是專為剛拿駕照、久未開車、有駕照卻不敢上路者設計的一對一實戰駕駛訓練。整理道路駕駛課程是什麼、適合哪些人、會練哪些內容、費用與如何選擇方案。',
     inLanguage: 'zh-TW',
     breadcrumb: {
       '@id': `${pageUrl}#breadcrumb`,
@@ -239,12 +259,12 @@ export default function Page() {
             <h1 className="mt-4 text-4xl font-bold leading-tight text-neutral-900 md:text-6xl">
               道路駕駛課程是什麼？
               <br />
-              給新手上路與駕照不敢開者的完整說明
+              給新手上路、有駕照不敢開者的完整說明
             </h1>
 
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-neutral-600 md:text-xl">
               道路駕駛課程是在真實道路環境中進行的一對一駕駛訓練，
-              目的不是只讓你會考試，而是讓你能在市區、路口、停車與生活動線中，
+              目的不是只讓你會考試，而是讓你能在市區道路、路口判斷、停車與生活動線中，
               建立穩定、可複製且更有信心的駕駛能力。
             </p>
 
@@ -275,7 +295,7 @@ export default function Page() {
           <div className="mx-auto mt-12 max-w-4xl rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-neutral-200 md:p-10">
             <p className="text-lg leading-8 text-neutral-700">
               對多數人來說，問題往往不是「完全不會開車」，而是缺少在真實道路中被正確引導與修正的機會。
-              因此，道路駕駛課程通常會比單純重複場地練習更有效。
+              因此，道路駕駛課程通常會比單純重複場地練習更有效，也更貼近日常生活中真正會遇到的駕駛需求。
             </p>
           </div>
         </section>
@@ -336,7 +356,7 @@ export default function Page() {
                   道路駕駛課程通常會練什麼？
                 </h2>
                 <p className="mt-5 text-lg leading-8 text-neutral-600">
-                  課程會依學員狀況客製安排，會圍繞幾個核心能力展開，目的是讓你從「不知道怎麼開」走到「能穩定行駛」。 
+                  課程會依學員狀況客製安排，會圍繞幾個核心能力展開，目的是讓你從「不知道怎麼開」走到「能穩定行駛」。
                 </p>
               </div>
 
@@ -365,7 +385,7 @@ export default function Page() {
                 <li>• 道路駕駛課程重點在真實道路實戰，而不是只做場地練習。</li>
                 <li>• 適合新手、久未開車、會開但不敢上路的人。</li>
                 <li>• 常見內容包含市區道路、路口判斷、停車與客製化路線。</li>
-                <li>• 如果你想知道更完整的實際方案與堂數安排，可再查看課程頁。</li>
+                <li>• 如果你想知道更完整的實際方案、課程費用與堂數安排，可再查看課程頁。</li>
               </ul>
 
               <div className="mt-8 rounded-2xl bg-white/10 p-5 ring-1 ring-white/10">
@@ -401,7 +421,7 @@ export default function Page() {
             <SectionHeading
               eyebrow="FAQ"
               title="道路駕駛課程常見問題"
-              description="以下整理最常見的疑問，幫助你快速理解道路駕駛課程的用途與適合對象。"
+              description="以下整理最常見的疑問，幫助你快速理解道路駕駛課程的用途、費用與適合對象。"
             />
 
             <div className="mt-12 space-y-4">
@@ -442,7 +462,7 @@ export default function Page() {
               </p>
 
               <p>
-                如果你想進一步了解實際方案、訓練堂數與教學安排，可以再回到完整課程頁查看。
+                如果你想進一步了解道路駕駛課程費用、訓練堂數與教學安排，可以再回到完整課程頁查看。
               </p>
             </div>
 
