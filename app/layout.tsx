@@ -30,27 +30,27 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: 'website',
-    siteName: 'DriveMate駕駛課程',
+    siteName: 'DriveMate駕駛訓練中心',
     locale: 'zh_TW',
     url: 'https://drivemate-tw.com/',
-    title: 'DriveMate駕駛課程｜道路駕駛訓練・新手上路教學・教練培訓',
+    title: 'DriveMate道路駕駛課程｜道路駕駛訓練・新手上路教學・教練培訓',
     description:
-      '提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
+      'DriveMate提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
     images: [
       {
         url: '/images/drivemate-logo.png',
         width: 1200,
         height: 630,
-        alt: 'DriveMate駕駛課程',
+        alt: 'DriveMate駕駛訓練中心',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'DriveMate駕駛課程｜道路駕駛訓練・新手上路教學・教練培訓',
+    title: 'DriveMate道路駕駛課程｜道路駕駛訓練・新手上路教學・教練培訓',
     description:
-      '提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
+      'DriveMate提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
     images: ['/images/drivemate-logo.png'],
   },
 
@@ -81,11 +81,11 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': 'https://drivemate-tw.com/#website',
-    name: 'DriveMate 駕駛課程',
+    name: 'DriveMate駕駛訓練中心',
     url: 'https://drivemate-tw.com/',
     inLanguage: 'zh-TW',
     description:
-      'DriveMate提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
+      'DriveMate提供道路駕駛課程、運動駕駛、賽道駕駛與教練培訓課程。',
     publisher: {
       '@id': 'https://drivemate-tw.com/#organization',
     },
@@ -95,7 +95,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': 'https://drivemate-tw.com/#organization',
-    name: 'DriveMate駕駛課程',
+    name: 'DriveMate駕駛訓練中心',
     alternateName: 'DriveMate駕駛訓練中心',
     url: 'https://drivemate-tw.com/',
     logo: {
@@ -108,7 +108,7 @@ export default function RootLayout({
       'https://www.threads.net/@drivemate.tw',
     ],
     description:
-      'DriveMate提供道路駕駛課程、新手上路教學、運動駕駛、賽道體驗與教練培訓課程。',
+      'DriveMate提供道路駕駛課程、運動駕駛、賽道駕駛與教練培訓課程。',
     knowsAbout: [
       '道路駕駛課程',
       '道路駕駛訓練',
@@ -127,7 +127,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     '@id': 'https://drivemate-tw.com/#education',
-    name: 'DriveMate駕駛課程',
+    name: 'DriveMate駕駛訓練中心',
     alternateName: 'DriveMate駕駛訓練中心',
     url: 'https://drivemate-tw.com/',
     parentOrganization: {
@@ -152,8 +152,14 @@ export default function RootLayout({
       '教練培訓',
       '運動駕駛',
     ],
-    keywords:
-      '道路駕駛課程, 道路駕駛教學, 新手上路訓練, 駕駛訓練, 停車技巧, 台中駕駛課程',
+   keywords: [
+      '道路駕駛課程',
+      '道路駕駛訓練',
+      '新手上路教學',
+      '一對一駕駛教學',
+      '道路駕駛推薦',
+      '道路駕駛費用',
+    ],
     subjectOf: [
       {
         '@type': 'WebPage',
@@ -174,7 +180,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': 'https://drivemate-tw.com/#localbusiness',
-    name: 'DriveMate駕駛課程',
+    name: 'DriveMate駕駛訓練中心',
     alternateName: 'DriveMate駕駛訓練中心',
     image: 'https://drivemate-tw.com/images/drivemate-logo.png',
     url: 'https://drivemate-tw.com/',
@@ -182,7 +188,7 @@ export default function RootLayout({
       '@id': 'https://drivemate-tw.com/#organization',
     },
     description:
-      '提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
+      'DriveMate提供道路駕駛課程、新手上路教學、運動駕駛與教練培訓課程。',
     areaServed: {
       '@type': 'Country',
       name: 'TW',

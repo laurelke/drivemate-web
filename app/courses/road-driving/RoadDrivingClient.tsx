@@ -173,7 +173,7 @@ export default function RoadDrivingClient() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
-              DriveMate道路駕駛課程專為剛拿駕照、久未開車、缺乏道路駕駛經驗與不敢獨立上路者設計，
+              DriveMate道路駕駛課程專為剛拿駕照、久未開車、缺乏道路駕駛經驗與不敢上路者設計，
               透過一對一教練陪同與真實路況訓練，幫助你建立安全、穩定的駕駛能力。
             </p>
           </div>

@@ -84,6 +84,9 @@ export default function Header() {
                 <Link href="/courses/road-driving" className="hover:text-black/70">
                   課程介紹
                 </Link>
+                <Link href="/road-driving-course" className="hover:text-black/70">
+                  課程Q&A
+                </Link>
                 <Link href="#info" className="hover:text-black/70">
                   付款方式
                 </Link>
@@ -194,6 +197,16 @@ export default function Header() {
   }}
 >
   課程介紹
+</button>
+
+<button
+  className="text-left"
+  onClick={() => {
+    setOpen(false)
+    window.location.href = '/road-driving-course'
+  }}
+>
+  課程Q&A
 </button>
 
       <button
