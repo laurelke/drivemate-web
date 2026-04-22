@@ -12,7 +12,7 @@ export const metadata = {
     description:
       '有駕照卻不敢開車上路怎麼辦？整理常見原因、改善方法、適合的練習方式與常見問題，幫助你從害怕上路走向穩定駕駛。',
     url: 'https://drivemate-tw.com/afraid-of-driving',
-    siteName: 'DriveMate 駕駛訓練中心',
+    siteName: 'DriveMate駕駛訓練中心',
     locale: 'zh_TW',
     type: 'article',
     images: [
@@ -163,7 +163,7 @@ export default function Page() {
     isPartOf: {
       '@type': 'WebSite',
       '@id': 'https://drivemate-tw.com/#website',
-      name: 'DriveMate 駕駛訓練中心',
+      name: 'DriveMate駕駛訓練中心',
       url: 'https://drivemate-tw.com/',
     },
   }
@@ -347,7 +347,7 @@ export default function Page() {
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/45">
                   Summary
                 </p>
-                <h3 className="text-2xl font-bold">這頁重點整理</h3>
+                <h3 className="text-2xl font-bold">本頁重點整理</h3>
 
                 <ul className="mt-6 space-y-4 text-sm leading-7 text-white/80">
                   <li>• 有駕照卻不敢開車，是很常見的狀況。</li>
