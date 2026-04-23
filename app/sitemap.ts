@@ -3,12 +3,11 @@ import { seoRoutes } from './seo/routes'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://drivemate-tw.com'
-  const lastModified = new Date()
 
   return seoRoutes.map((route) => ({
     url: `${baseUrl}${route.path}`,
-    lastModified,
-    changeFrequency: route.changeFrequency as MetadataRoute.Sitemap[number]['changeFrequency'],
+    lastModified: new Date(route.lastModified),
+    changeFrequency: route.changeFrequency,
     priority: route.priority,
   }))
 }

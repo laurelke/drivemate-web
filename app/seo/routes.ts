@@ -1,37 +1,78 @@
-export const seoRoutes = [
+export type SeoRoute = {
+  path: string
+  priority: number
+  changeFrequency:
+    | 'always'
+    | 'hourly'
+    | 'daily'
+    | 'weekly'
+    | 'monthly'
+    | 'yearly'
+    | 'never'
+  lastModified: string
+}
+
+export const seoRoutes: SeoRoute[] = [
   {
     path: '/',
-    changeFrequency: 'weekly',
     priority: 1,
+    changeFrequency: 'weekly',
+    lastModified: '2026-04-23',
   },
+
   {
     path: '/courses',
+    priority: 0.92,
     changeFrequency: 'monthly',
-    priority: 0.9,
+    lastModified: '2026-04-23',
   },
+
   {
     path: '/courses/road-driving',
-    changeFrequency: 'monthly',
-    priority: 0.9,
+    priority: 0.95,
+    changeFrequency: 'weekly',
+    lastModified: '2026-04-23',
   },
+
   {
-  path: '/courses/road-driving/instructor-car',
-  changeFrequency: 'monthly',
-  priority: 0.8,
+    path: '/road-driving-course',
+    priority: 0.9,
+    changeFrequency: 'weekly',
+    lastModified: '2026-04-23',
   },
+
+  {
+    path: '/afraid-of-driving',
+    priority: 0.9,
+    changeFrequency: 'weekly',
+    lastModified: '2026-04-23',
+  },
+
+  {
+    path: '/courses/road-driving/instructor-car',
+    priority: 0.78,
+    changeFrequency: 'monthly',
+    lastModified: '2026-04-23',
+  },
+
   {
     path: '/courses/sport-driving',
+    priority: 0.85,
     changeFrequency: 'monthly',
-    priority: 0.9,
+    lastModified: '2026-04-23',
   },
+
   {
     path: '/courses/track-driving',
+    priority: 0.82,
     changeFrequency: 'monthly',
-    priority: 0.9,
+    lastModified: '2026-04-23',
   },
+
   {
     path: '/courses/instructor-training',
+    priority: 0.8,
     changeFrequency: 'monthly',
-    priority: 0.9,
+    lastModified: '2026-04-23',
   },
 ]

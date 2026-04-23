@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://drivemate-tw.com'
+
   return {
     rules: [
       {
@@ -8,11 +10,14 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
+          '/_next/',
           '/admin/',
+          '/private/',
+          '/tmp/',
         ],
       },
     ],
-    sitemap: 'https://drivemate-tw.com/sitemap.xml',
-    host: 'https://drivemate-tw.com',
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   }
 }
