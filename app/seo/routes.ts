@@ -10,6 +10,7 @@ export type SeoRoute = {
     | 'yearly'
     | 'never'
   lastModified: string
+  seoType?: 'core' | 'conversion' | 'content' | 'support'
 }
 
 export const seoRoutes: SeoRoute[] = [
@@ -18,34 +19,39 @@ export const seoRoutes: SeoRoute[] = [
     priority: 1,
     changeFrequency: 'weekly',
     lastModified: '2026-04-23',
+    seoType: 'core',
   },
 
   {
     path: '/courses',
-    priority: 0.92,
+    priority: 0.9,
     changeFrequency: 'monthly',
     lastModified: '2026-04-23',
+    seoType: 'support',
   },
 
   {
     path: '/courses/road-driving',
-    priority: 0.95,
+    priority: 0.98,
     changeFrequency: 'weekly',
     lastModified: '2026-04-23',
+    seoType: 'conversion',
   },
 
   {
     path: '/road-driving-course',
-    priority: 0.9,
+    priority: 0.95,
     changeFrequency: 'weekly',
     lastModified: '2026-04-23',
+    seoType: 'content',
   },
 
   {
     path: '/afraid-of-driving',
-    priority: 0.9,
+    priority: 0.95,
     changeFrequency: 'weekly',
     lastModified: '2026-04-23',
+    seoType: 'content',
   },
 
   {
@@ -53,13 +59,15 @@ export const seoRoutes: SeoRoute[] = [
     priority: 0.78,
     changeFrequency: 'monthly',
     lastModified: '2026-04-23',
+    seoType: 'support',
   },
 
   {
     path: '/courses/sport-driving',
-    priority: 0.85,
+    priority: 0.84,
     changeFrequency: 'monthly',
     lastModified: '2026-04-23',
+    seoType: 'conversion',
   },
 
   {
@@ -67,6 +75,7 @@ export const seoRoutes: SeoRoute[] = [
     priority: 0.82,
     changeFrequency: 'monthly',
     lastModified: '2026-04-23',
+    seoType: 'conversion',
   },
 
   {
@@ -74,5 +83,6 @@ export const seoRoutes: SeoRoute[] = [
     priority: 0.8,
     changeFrequency: 'monthly',
     lastModified: '2026-04-23',
+    seoType: 'conversion',
   },
 ]
