@@ -107,7 +107,6 @@ export default function InstructorCarAddOnPage() {
       {/* ================= 運動駕駛 教練車 ================= */}
 <InstructorCarSection
   title="「Mazda MX-5」教練車加購方案"
-  price="單堂 / 3 小時 加購 NT$5,000"
   image="/images/instructor-car-sport.png"
   imageAlt="DriveMate 運動駕駛課程使用之教練車款（Mazda MX-5）"
   carName="Mazda MX-5"
