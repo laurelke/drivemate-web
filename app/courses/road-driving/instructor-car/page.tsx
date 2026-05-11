@@ -35,7 +35,7 @@ export default function InstructorCarAddOnPage() {
 
       {/* ================= 教練車款（動畫在 Client Component） ================= */}
       <InstructorCarSection
-  title="「道路駕駛」教練車加購方案"
+  title="「Toyota Vios」教練車加購方案"
   image="/images/instructor-car-1.png"
   imageAlt="DriveMate 道路駕駛課程使用之教練車款（Toyota Vios）"
   carName="Toyota Vios"
@@ -103,10 +103,10 @@ export default function InstructorCarAddOnPage() {
           </p>
         </div>
       </section>
-      
+
       {/* ================= 運動駕駛 教練車 ================= */}
 <InstructorCarSection
-  title="「運動駕駛」教練車加購方案"
+  title="「Mazda MX-5」教練車加購方案"
   price="單堂 / 3 小時 加購 NT$5,000"
   image="/images/instructor-car-sport.png"
   imageAlt="DriveMate 運動駕駛課程使用之教練車款（Mazda MX-5）"
@@ -120,9 +120,65 @@ export default function InstructorCarAddOnPage() {
   disclaimer="實際車輛配備與規格依當日安排之車款為準。"
 />
 
+{/* ================= 價格方案 ================= */}
+      <section className="grid gap-6 md:grid-cols-3 items-stretch">
+        {/* 單堂 */}
+        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
+          <h2 className="mb-1 text-xl font-semibold">
+            能力評估＋關鍵矯正
+          </h2>
+          <p className="mb-4 text-sm text-neutral-500">
+            彈性選擇｜適合短期體驗
+          </p>
+
+          <div className="mb-6">
+            <span className="text-3xl font-bold">NT$1,500</span>
+            <span className="ml-1 text-sm text-neutral-500">／堂</span>
+          </div>
+        </div>
+
+        {/* 14 天方案 */}
+        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
+          <h2 className="mb-1 text-xl font-semibold">
+            14 天獨立上路成果計畫
+          </h2>
+          <p className="mb-4 text-sm text-neutral-500">
+            熱門方案｜建立基本上路能力
+          </p>
+
+          <div className="mb-4">
+            <span className="text-3xl font-bold">NT$5,000</span>
+            <span className="ml-1 text-sm text-neutral-500">／ 4 堂</span>
+          </div>
+
+          <p className="text-sm text-neutral-500">
+            共 4 堂教練車練習
+          </p>
+        </div>
+
+        {/* 21 天方案 */}
+        <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
+          <h2 className="mb-1 text-xl font-semibold">
+            21 天通勤駕駛穩定方案
+          </h2>
+          <p className="mb-4 text-sm text-neutral-500">
+            進階成果型方案
+          </p>
+
+          <div className="mb-4">
+            <span className="text-3xl font-bold">NT$10,000</span>
+            <span className="ml-1 text-sm text-neutral-500">／ 8 堂</span>
+          </div>
+
+          <p className="text-sm text-neutral-500">
+            共 8 堂教練車練習
+          </p>
+        </div>
+      </section>
+
 {/* ================= 賽道駕駛 教練車 ================= */}
 <InstructorCarSection
-  title="「賽道駕駛」教練車加購方案"
+  title="「Porsche GT4」教練車加購方案"
   price="單堂 /4節 加購 NT$30,000"
   image="/images/instructor-car-track.png"
   imageAlt="DriveMate 賽道駕駛課程使用之教練車款（Porsche Cayman GT4）"
