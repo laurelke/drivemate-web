@@ -33,7 +33,22 @@ export default function InstructorCarAddOnPage() {
         </p>
       </section>
 
-      {/* ================= 價格方案 ================= */}
+      {/* ================= 教練車款（動畫在 Client Component） ================= */}
+      <InstructorCarSection
+  title="「道路駕駛」教練車加購方案"
+  image="/images/instructor-car-1.png"
+  imageAlt="DriveMate 道路駕駛課程使用之教練車款（Toyota Vios）"
+  carName="Toyota Vios"
+  tags={['燃油', '前輪驅動', '自動排檔']}
+  stats={[
+    { value: '11.4 s', label: '0 - 100 km/h 加速' },
+    { value: '106 PS', label: '動力' },
+    { value: '170 km/h', label: '極速' },
+  ]}
+  disclaimer="實際車輛配備與規格依當日安排之車款為準。"
+/>
+
+{/* ================= 價格方案 ================= */}
       <section className="grid gap-6 md:grid-cols-3 items-stretch">
         {/* 單堂 */}
         <div className="rounded-2xl border bg-white p-6 shadow-sm flex flex-col items-center justify-center text-center">
@@ -88,22 +103,7 @@ export default function InstructorCarAddOnPage() {
           </p>
         </div>
       </section>
-
-      {/* ================= 教練車款（動畫在 Client Component） ================= */}
-      <InstructorCarSection
-  title="「道路駕駛」教練車加購方案"
-  image="/images/instructor-car-1.png"
-  imageAlt="DriveMate 道路駕駛課程使用之教練車款（Toyota Vios）"
-  carName="Toyota Vios"
-  tags={['燃油', '前輪驅動', '自動排檔']}
-  stats={[
-    { value: '11.4 s', label: '0 - 100 km/h 加速' },
-    { value: '106 PS', label: '動力' },
-    { value: '170 km/h', label: '極速' },
-  ]}
-  disclaimer="實際車輛配備與規格依當日安排之車款為準。"
-/>
-
+      
       {/* ================= 運動駕駛 教練車 ================= */}
 <InstructorCarSection
   title="「運動駕駛」教練車加購方案"
