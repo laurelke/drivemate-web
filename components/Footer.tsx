@@ -69,6 +69,21 @@ export default function Footer() {
                   <span>drivemate.tw@gmail.com</span>
                 </a>
               </li>
+              <li>
+                <a
+                  href="mailto:drivemate.group@gmail.com"
+                  className="
+                    inline-flex items-center gap-2
+                    transition-colors hover:text-neutral-900
+                    underline-offset-4 hover:underline
+                    justify-center md:justify-start
+                  "
+                  aria-label="寄信給 DriveMate drivemate.group@gmail.com"
+                >
+                  <Mail className="h-4 w-4 text-neutral-400" />
+                  <span>drivemate.group@gmail.com</span>
+                </a>
+              </li>
 
               {/* Phone 1 */}
               <li>
