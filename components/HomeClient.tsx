@@ -160,7 +160,6 @@ export default function HomePage() {
           <ul className="list-disc pl-5">
             <li>09:00 – 12:00</li>
             <li>14:00 – 17:00</li>
-            <li>19:00 – 22:00</li>
           </ul>
           <p>單堂課程為 3 小時 (小資專案、賽道駕駛除外)</p>
           <p>教練將依學員狀況設定 2–3 個課綱，協助改善駕駛問題。</p>

@@ -73,23 +73,6 @@ export default function Footer() {
               {/* Phone 1 */}
               <li>
                 <a
-                  href="tel:+886906896750"
-                  className="
-                    inline-flex items-center gap-2
-                    transition-colors hover:text-neutral-900
-                    underline-offset-4 hover:underline
-                    justify-center md:justify-start
-                  "
-                  aria-label="致電 DriveMate 0906-896-750"
-                >
-                  <Phone className="h-4 w-4 text-neutral-400" />
-                  <span>0906-896-750</span>
-                </a>
-              </li>
-
-              {/* Phone 2 */}
-              <li>
-                <a
                   href="tel:+886960840750"
                   className="
                     inline-flex items-center gap-2
